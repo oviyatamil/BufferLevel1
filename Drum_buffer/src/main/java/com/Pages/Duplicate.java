@@ -20,7 +20,7 @@ public class Duplicate extends BasePage{
 	private By product = By.xpath("//span[text()=' Product ']");
 	private By product2 = By.xpath("(//span[text()=' Product '])[2]");
 	private By productcategory=By.xpath("//span[text()=' Product Category ']");
-	private By active = By.xpath("//table[@role='table']/tbody/tr/td[8]/span/span");
+	private By active = By.xpath("//table[@role='table']/tbody/tr/td[10]/span/span");
 	private By activecoll = By.xpath("//table[@role='table']/tbody/tr/td[2]/span");
 	private By pnamelist = By.xpath("//span[text()='Select Product']/ancestor::div[1]/mat-option[@role='option']/span");
 	private By pnamedrop = By.xpath("(//mat-select[@role='combobox'])[2]/descendant::div[3]");
@@ -107,7 +107,7 @@ public class Duplicate extends BasePage{
 				}
 			}
 		}
-		System.out.println("Size of map is "+ m.size());
+		System.out.println("Size of map is "+ l2.size());
 		
 	} catch (InterruptedException e) {
 		e.printStackTrace();

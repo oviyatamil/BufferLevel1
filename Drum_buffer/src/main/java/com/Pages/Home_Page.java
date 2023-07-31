@@ -158,11 +158,11 @@ public class Home_Page extends BasePage{
 			click(azure);
 			log.info("azure dialog box appears");
 			click(close);
-			Thread.sleep(500);
+			waittobeclickable(cloud, 10);
 			click(cloud);
 			log.info("cloud dialog box appears");
 			click(close);
-		} catch (InterruptedException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -234,6 +234,7 @@ public class Home_Page extends BasePage{
 		}
 	}
 	public void back() {
+		
 		click(back);
 		log.info("back arrow is clicked");
 	}

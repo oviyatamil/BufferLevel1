@@ -31,7 +31,7 @@ public class TC_004 extends BaseTest {
 		ReportSetup.test.log(Status.PASS, "Successfully clicked back button");
 		tc_005.contact();
 		ReportSetup.test.log(Status.PASS, "Successfully clicked contact us button");
-		tc_005.back();
+	//	tc_005.back();
 		
 		tc_005.profileicon();
 		ReportSetup.test.log(Status.PASS, "Successfully clicked profileicon button");

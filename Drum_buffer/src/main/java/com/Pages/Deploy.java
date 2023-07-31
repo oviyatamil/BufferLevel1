@@ -36,7 +36,7 @@ public class Deploy extends BasePage{
 	private By view = By.xpath("//span[contains(text(),'View')]");
 	private By threedots = By.xpath("//table/tbody/tr/td[7]/button/span[1]/mat-icon");
 	private By listing = By.xpath("//span[contains(text(),'Listing')]");
-	private By categoryarr = By.xpath("//div[contains(text(),'Category')]/following::div[1]");
+	private By categoryarr = By.xpath("//div[contains(text(),'Product Name ')]/following::div[1]");
 	private By domainarr = By.xpath("//div[contains(text(),'Domain')]/following::div[1]");
 	private By statusarr = By.xpath("//div[contains(text(),'Status')]/following::div[1]");
 	private By actionarr = By.xpath("//div[contains(text(),'Action')]/following::div[1]");
