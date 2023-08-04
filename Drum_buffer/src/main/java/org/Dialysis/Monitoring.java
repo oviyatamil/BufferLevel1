@@ -9,7 +9,6 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.*;
 import com.BasePage.BasePage;
 
 public class Monitoring extends BasePage {
@@ -29,12 +28,8 @@ public class Monitoring extends BasePage {
 	private By yeardd = By.xpath("//span[contains(text(),'2023')]/parent::span");
 	private By txt = By.xpath("(//mat-select[@role='combobox'])[2]/descendant::span[2]");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By month = By.xpath("//div[text()=' JUL ']/parent::button");
-	private By startdate = By.xpath("//div[text()=' 23 ']/parent::button");	
-	private By enddate = By.xpath("//div[text()=' 21 ']/parent::button");
 	private By chart = By.xpath("//*[local-name()='g' and contains(@class,'crossline-value-group')]/*[local-name()='rect']");
 	private By legend = By.xpath("(//*[local-name()='g' and contains(@class,'legend')])[2]/*[local-name()='g']/*[local-name()='rect']");
-	private By rel = By.xpath("//*[local-name()='g' and contains(@class,'crossline-label-group')]/*[local-name()='text']");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
 	
@@ -91,7 +86,7 @@ public class Monitoring extends BasePage {
 			String m =split3[1];
 					
 			int n = (Integer.parseInt(m))-1;	
-			WebElement start = driver.findElement(By.xpath("//div[contains(text(),'"+String.valueOf(n)+"')]/parent::button"));
+			WebElement start = driver.findElement(By.xpath("//div[contains(text(),'"+n+"')]/parent::button"));
 			start.click();
 			WebElement end = driver.findElement(By.xpath("//div[contains(text(),'"+m+"')]/parent::button"));
 			end.click();

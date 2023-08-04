@@ -88,7 +88,10 @@ public class Kpi_oee extends BasePage {
 	private By pgmno = By.xpath("//div[contains(text(),'Emergency Stop')]/ancestor::table/tbody/tr/td[3]/div[1]");
 	private By partstable = By.xpath("//*[@id='element-to-export']/div[6]/div[7]/table/tbody/tr/td");
 	private By partrowsize = By.xpath("//*[@id='element-to-export']/div[4]/div[8]/div[7]/div/table/tbody/tr");
-
+	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
+	private By signout = By.xpath("//span[text()='Sign out']");
+	
+	
 	public void oee() {
 		try {
 			waittobeclickable(ninedots, 20);
@@ -520,6 +523,7 @@ public class Kpi_oee extends BasePage {
 					for (int g = 6; g <9; g++) {
 						List<WebElement> td = driver.findElements(
 								By.xpath("//*[@id='element-to-export']/div[4]/div[8]/div["+g+"]/div/table/tbody/tr"));
+						if(td.size()>1) {
 						for(int j=1;j<td.size();j++) {
 						
 						List<WebElement> part = driver.findElements(By.xpath(
@@ -530,12 +534,14 @@ public class Kpi_oee extends BasePage {
 							String txt = part.get(f).getText();
 							if (txt.equals("0")) {
 								continue;
-							} else {
+							} else if(txt.equals("N/A")) {
+								log.info("Part count is Not Available");
+							}else {
 								count.add(Integer.valueOf(txt));
 							}
 						}
 					}
-					}
+					
 
 					int y = 0;
 					for (Integer x : count) {
@@ -550,8 +556,8 @@ public class Kpi_oee extends BasePage {
 					log.info("Total parts in table in " + gettext(equiptext) + " is not equal to actual count");
 					}
 					if (count.size() == 0) {
-						System.out.println("Maximum parts count from table is 0%");
-						System.out.println("Minimum parts count from table is 0%");
+						System.out.println("Maximum parts count from table is 0");
+						System.out.println("Minimum parts count from table is 0");
 					} else {
 						System.out.println("Maximum parts count from table is " + Collections.max(count));
 						System.out.println("Minimum parts count from table is " + Collections.min(count));
@@ -567,7 +573,13 @@ public class Kpi_oee extends BasePage {
 					}else {
 						log.info("Pgm number is not displayed");
 					}
+			}else {
+				log.info("Part count table has no data for "+gettext(equiptext));				
+			}
+				//		td.clear();
+					}
 					System.out.println("----------------------------------------");
+					
 					if(i<equipment.size()-1) {
 						click(equipdd);	
 				}else {
@@ -575,8 +587,9 @@ public class Kpi_oee extends BasePage {
 				}
 
 
-				}
+				
 		
+		}
 		}catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -594,6 +607,17 @@ public class Kpi_oee extends BasePage {
 		System.out.println("Alert percentage for all equipment is printed");
 		System.out.println("Down percentage for all equipment is printed");
 
+	}
+	public void profile() {
+		try {
+			Thread.sleep(1000);
+			click(profile);
+			System.out.println("profile button is clicked");
+			click(signout);
+			System.out.println("signout button is clicked");
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

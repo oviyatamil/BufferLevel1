@@ -2,7 +2,6 @@ package org.Energy;
 
 
 import org.energy.Energy_Analytics;
-import org.energy.Energy_monitoring;
 import org.testng.annotations.Test;
 
 import com.BasePage.ReportSetup;
@@ -19,12 +18,12 @@ protected void analytic() {
 	ReportSetup.test.assignCategory("E-3");
 	ea.home();
 	ReportSetup.test.log(Status.PASS, "Navigates to Energy home page");
-//	ea.analytic();
-//	ReportSetup.test.log(Status.PASS, "Navigates to Energy live monitoring page");
-//	ea.dd();
-//	ReportSetup.test.log(Status.PASS, "Successfully checked all tables and card count");
-//	ea.chart();
-//	ReportSetup.test.log(Status.PASS, "Navigates to Energy liveflow analysis page");
+	ea.analytic();
+	ReportSetup.test.log(Status.PASS, "Navigates to Energy live monitoring page");
+	ea.dd();
+	ReportSetup.test.log(Status.PASS, "Successfully checked all tables and card count");
+	ea.chart();
+	ReportSetup.test.log(Status.PASS, "Navigates to Energy liveflow analysis page");
 	ea.heatmaphome();
 	ReportSetup.test.log(Status.PASS, "Successfully checked all flow diagram");
 	ea.heatmap();

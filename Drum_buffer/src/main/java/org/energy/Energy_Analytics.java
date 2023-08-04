@@ -23,11 +23,8 @@ public class Energy_Analytics extends BasePage{
 	private By analytics = By.xpath("//span[contains(text(),'Analytics')]");
 	private By consumption = By.xpath("//span[contains(text(),'Consumption')]");
 	private By heat = By.xpath("//span[contains(text(),'Heat Map')]");
-	private By pareto = By.xpath("//span[contains(text(),' Pareto Analysis ')]");
-	
-
+	private By pareto = By.xpath("//span[contains(text(),' Pareto Analysis ')]");	
 	private By equip = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
-	private By msg = By.xpath("//span[contains(@class,'fusioncharts-container')]/*[local-name()='svg']");
 	private By bar = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[8]/*[local-name()='rect']");
 	private By map = By.xpath("//*[local-name()='g' and contains(@class,'plot-group')]/*[local-name()='rect']");
 	private By floor = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[26]/*[local-name()='rect']");
@@ -40,7 +37,6 @@ public class Energy_Analytics extends BasePage{
 	private By back = By.xpath("//span[text()='Back']");
 	private By txt = By.xpath("(//mat-select[@role='combobox'])[1]/descendant::span[2]");
 	private By slider = By.xpath("(//*[local-name()='g' and contains(@class,'slider')])[1]/*[3]");
-	private By site = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[4]");
 	private By catlist = By.xpath("//span[text()='Select Category']/ancestor::div[1]/mat-option");
 	private By dd = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[4]");
 	private By ddlist = By.xpath("//span[text()='Select Site']/ancestor::div[1]/mat-option");
@@ -49,22 +45,12 @@ public class Energy_Analytics extends BasePage{
 	private By legend2 = By.xpath("(//*[local-name()='g' and contains(@class,'legend')])[4]/*[local-name()='g']/*[local-name()='rect']");
 	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[18]");
 	private By yeardd = By.xpath("//span[contains(text(),'2023')]/parent::span");
-	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By month = By.xpath("//div[text()=' JUL ']/parent::button");
+	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");	
 	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
-	private By enddate = By.xpath("//div[text()=' 21 ']/parent::button");
-	private By chart = By.xpath("//*[local-name()='g' and contains(@class,'crosslineBottom')]");
 	private By table = By.xpath("//table/tbody/tr/td");
-
-	private By rel = By.xpath("//*[local-name()='g' and contains(@class,'crossline-label-group')]/*[local-name()='text']");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
 	private By export = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[1]/*[local-name()='rect'][2]");
-	private By jpg = By.xpath("(//span[text()='Export As JPG'])[1]");
-	private By export2 = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[2]/*[local-name()='rect'][2]");
-	private By jpg2 = By.xpath("(//span[text()='Export As JPG'])[2]");
-	private By pdf = By.xpath("//mat-icon[@mattooltip='Export to PDF']");
-
 	public void home() {
 		try {
 			waittobeclickable(ninedots, 20);
@@ -121,7 +107,7 @@ public class Energy_Analytics extends BasePage{
 
 			int n = (Integer.parseInt(m)) - 1;
 
-			WebElement end = driver	.findElement(By.xpath("//div[contains(text(),'" + String.valueOf(n) + "')]/parent::button"));
+			WebElement end = driver	.findElement(By.xpath("//div[contains(text(),'" + n + "')]/parent::button"));
 			end.click();
 			Thread.sleep(1000);
 			click(equip);
@@ -221,21 +207,8 @@ public class Energy_Analytics extends BasePage{
 		try {
 			Thread.sleep(2000);
 			String data = new SimpleDateFormat("MMM dd,yyyy,hh:mm").format(new Date());
-			System.out.println("Current timing is " + data);
-			String[] split = data.split(" ");
-			String s = split[0].toUpperCase();
-			click(calendar);
-			click(yeardd);
-			click(year);
-			WebElement mon = driver.findElement(By.xpath("//div[contains(text(),'" + s + "')]/parent::button"));
-			mon.click();
-			click(startdate);
-			String[] split2 = data.split(",");
-			String[] split3 = split2[0].split(" ");
-			String m = split3[1];
-			WebElement end = driver
-					.findElement(By.xpath("//div[contains(text(),'" + m + "')]/parent::button"));
-			end.click();
+			System.out.println("Current timing is " + data);			
+			calendar(calendar, yeardd, year, startdate);
 			Thread.sleep(1000);
 			click(equip);
 			
@@ -309,7 +282,7 @@ public class Energy_Analytics extends BasePage{
 			String[] split3 = split2[0].split(" ");
 			String m = split3[1];
 			int n = (Integer.parseInt(m)) - 1;
-			WebElement end = driver.findElement(By.xpath("//div[contains(text(),'" + String.valueOf(n) + "')]/parent::button"));
+			WebElement end = driver.findElement(By.xpath("//div[contains(text(),'" + n + "')]/parent::button"));
 			end.click();
 			Thread.sleep(1000);
 			click(equip);

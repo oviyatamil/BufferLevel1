@@ -1,9 +1,8 @@
 package com.BaseTest;
 
-import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -16,8 +15,6 @@ import com.BasePage.BasePage;
 import com.BasePage.ReportSetup;
 
 import com.Pages.Pages_TC_001;
-import com.SuperadminPage.LoginPage;
-import com.aventstack.extentreports.Status;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
@@ -68,7 +65,6 @@ public class BaseTest {
 			driver.manage().deleteAllCookies();
 			driver.navigate().refresh();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

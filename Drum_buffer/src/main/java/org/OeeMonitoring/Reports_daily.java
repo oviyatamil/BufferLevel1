@@ -27,11 +27,11 @@ public class Reports_daily extends BasePage {
 	private By site = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
 	private By sitelist = By.xpath("(//span[text()=' Chennai '])/ancestor::div[1]/mat-option");
 	private By smartdrum = By.xpath("//mat-icon[@mattooltip='Click to Filter']");
-	private By location = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[3]");
+	private By location = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[4]");
 	private By locationlist = By.xpath("(//span[text()=' Sriperumbudur '])/ancestor::div[1]/mat-option");
-	private By shift = By.xpath("(//mat-select[@role='combobox'])[3]/ancestor::div[1]/descendant::div[3]");
+	private By shift = By.xpath("(//mat-select[@role='combobox'])[3]/ancestor::div[1]/descendant::div[4]");
 	private By shiftlist = By.xpath("(//span[text()=' Shift 1 '])/ancestor::div[1]/mat-option");
-	private By machine = By.xpath("(//mat-select[@role='combobox'])[4]/ancestor::div[1]/descendant::div[3]");
+	private By machine = By.xpath("(//mat-select[@role='combobox'])[4]/ancestor::div[1]/descendant::div[4]");
 	private By mechlist = By.xpath("(//span[text()=' TL-01 '])/ancestor::div[1]/mat-option");
 	private By monthmm = By.xpath("(//mat-select[@role='combobox'])[3]/ancestor::div[1]/descendant::div[3]");
 	private By monthlist = By.xpath("//span[text()=' JANUARY ']/ancestor::div[1]/mat-option");
@@ -113,7 +113,7 @@ public class Reports_daily extends BasePage {
 
 			int n = (Integer.parseInt(m)) - 1;
 
-			WebElement end = driver	.findElement(By.xpath("//div[contains(text(),'" + String.valueOf(n) + "')]/parent::button"));
+			WebElement end = driver	.findElement(By.xpath("//div[contains(text(),'" + n + "')]/parent::button"));
 			end.click();
 			
 			click(site);
@@ -127,24 +127,20 @@ public class Reports_daily extends BasePage {
 			click(machine);
 			List<WebElement> list3 = findWebElements(mechlist);
 			for(int i=0;i<list3.size();i++) {
-				if(i==0) {
-				list3.get(i).click();
-				}else {
+				if(i>0) {
 					click(machine);
-					list3.get(i).click();
 				}
+					list3.get(i).click();
+				
 				click(shift);
 				List<WebElement> l2 = findWebElements(shiftlist);
 				for(int j=0;j<l2.size();j++) {
-					if(j==0) {
-					l2.get(j).click();
-					}else {
+					if(j>0) {
 						click(shift);
-						l2.get(j).click();
-						
-					}
+					}					
+						l2.get(j).click();											
 					click(apply);
-					Thread.sleep(1000);
+					Thread.sleep(2000);
 					System.out.println(gettext(daterep));
 					Thread.sleep(500);
 					List<WebElement> lis = findWebElements(prodhour);

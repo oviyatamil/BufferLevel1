@@ -1,9 +1,7 @@
 package org.Oee;
 
 import org.OeeMonitoring.Analytics_Production;
-import org.OeeMonitoring.SpindleMonitor;
 import org.testng.annotations.Test;
-
 import com.BasePage.ReportSetup;
 import com.BaseTest.BaseTest;
 import com.aventstack.extentreports.Status;

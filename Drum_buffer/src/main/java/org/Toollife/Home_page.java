@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -20,9 +21,6 @@ public class Home_page extends BasePage{
 	
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
 	private By tool= By.xpath("//div[text()='Tool Life Management']");
-	
-	private By apply = By.xpath("//span[contains(text(),'Apply')]");
-	
 	private By table = By.xpath("//div[text()='TL-01']/parent::div/parent::div/parent::div/div/div[1]/div");
 	private By time = By.xpath("//div[text()='TL-01']/parent::div/parent::div/parent::div/div/div[2]/div[1]/span[2]");
 	private By oee = By.xpath("//div[text()='TL-01']/parent::div/parent::div/parent::div/div/div[2]/div[2]/span[2]");
@@ -31,7 +29,9 @@ public class Home_page extends BasePage{
 	private By performance = By.xpath("//div[text()='TL-01']/parent::div/parent::div/parent::div/div/div[2]/div[4]/span[2]");
 	private By partcount = By.xpath("//div[text()='TL-01']/parent::div/parent::div/parent::div/div/div[2]/div[6]/span[2]");
 	private By pgm = By.xpath("//div[text()='TL-01']/parent::div/parent::div/parent::div/div/div[2]/div[7]/span[2]");
-	private By smartdrum = By.xpath("//mat-icon[@mattooltip='Click to Filter']");
+	private By toolid = By.xpath("//*[@id='element-to-export']/div");
+	private By home = By.xpath("//a[contains(text(),'Home')]");
+	private By search = By.xpath("//div[text()='TL-01']/parent::div/parent::div/parent::div/descendant::button/span[1]");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
 	
@@ -60,9 +60,9 @@ public class Home_page extends BasePage{
 		try {
 			List<WebElement> list = findWebElements(table);
 			for(int i=0;i<list.size();i++) {
+				Thread.sleep(500);
 				System.out.println("EQUIPMENT IS "+list.get(i).getText());
 				List<WebElement> timestamp = findWebElements(time);
-				String text = timestamp.get(i).getText();
 				String data = new SimpleDateFormat("MMM dd,yyyy,hh:mm").format(new Date());		
 				System.out.println("Current timing is "+data);
 				System.out.println("Timestamp in machine is "+timestamp.get(i).getText());
@@ -91,6 +91,7 @@ public class Home_page extends BasePage{
 						}
 					}
 				}
+				
 			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -98,6 +99,35 @@ public class Home_page extends BasePage{
 	
 	
 }
+	public void sear() {
+		try {			
+			List<WebElement> list = findWebElements(table);
+			for(int i=0;i<list.size();i++) {
+				List<WebElement> list2 = findWebElements(table);	
+				String txt = list2.get(i).getText();
+				Thread.sleep(500);
+			List<WebElement> se = findWebElements(search);
+			se.get(i).click();
+			Thread.sleep(500);
+			
+			if(findWebElements(toolid).size()>2) {		
+				click(home);				
+				log.info("No record found for "+txt);	
+				
+			}else {
+				Thread.sleep(1000);
+				System.out.println("Record is displayed");	
+				JavascriptExecutor j = (JavascriptExecutor)driver;
+				j.executeScript("arguments[0].scrollIntoView(false);", findWebElement(home));
+				click(home);
+			}
+			
+}
+			System.out.println("All records are checked");
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
 	public void profile() {
 		waittobeclickable(profile, 10);
 		click(profile);

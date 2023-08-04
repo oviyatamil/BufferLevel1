@@ -24,7 +24,6 @@ public class Energy_reports extends BasePage{
 	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[18]");
 	private By yeardd = By.xpath("//span[contains(text(),'2023')]/parent::span");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By month = By.xpath("//div[text()=' JUL ']/parent::button");
 	private By table = By.xpath("//table/tbody/tr/td[2]");
 	private By apply = By.xpath("//span[contains(text(),'Apply')]");
 	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
@@ -74,32 +73,17 @@ public class Energy_reports extends BasePage{
 		try {
 			String data = new SimpleDateFormat("MMM dd,yyyy,hh:mm").format(new Date());
 			System.out.println("Current timing is " + data);
-			String[] split = data.split(" ");
-			String s = split[0].toUpperCase();
-			click(calendar);
-			click(yeardd);
-			click(year);
-			WebElement mon = driver.findElement(By.xpath("//div[contains(text(),'" + s + "')]/parent::button"));
-			mon.click();
-			click(startdate);
-			String[] split2 = data.split(",");
-			String[] split3 = split2[0].split(" ");
-			String m = split3[1];
-
-			WebElement end = driver	.findElement(By.xpath("//div[contains(text(),'" + m + "')]/parent::button"));
-			end.click();
+			calendar(calendar, yeardd, year, startdate);
 			Thread.sleep(1000);
 			click(dd);
 			List<WebElement> l = findWebElements(ddlist);
 			for(int i=1;i<l.size();i++) {
-				if (i == 1) {
-					l.get(i).click();
-				} else {
-					Thread.sleep(1000);
+				if (i>1) {
 					click(dd);
-					l.get(i).click();
 				}
+					l.get(i).click();				
 				click(apply);
+				Thread.sleep(3000);
 				if(findWebElement(table).isDisplayed()!=true) {
 					log.info("Table is not displayed for "+gettext(txt));					
 				}else {

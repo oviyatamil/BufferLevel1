@@ -1,9 +1,7 @@
 package org.tool;
 
-import org.OeeMonitoring.OeeMonitoring;
 import org.Toollife.Home_page;
 import org.testng.annotations.Test;
-
 import com.BasePage.ReportSetup;
 import com.BaseTest.BaseTest;
 import com.aventstack.extentreports.Status;
@@ -20,6 +18,8 @@ protected void home() {
 	ReportSetup.test.log(Status.PASS, "Navigates to toollife home page");
 	h.table();
 	ReportSetup.test.log(Status.PASS, "Successfully click equipment dropdown and get status of Overall OEE,Availability,Performance,Quality,Part count,Program for all equipments ");
+	h.sear();
+	ReportSetup.test.log(Status.PASS, "Successfully checked all equipments search boxes ");
 	h.profile();	
 	ReportSetup.test.log(Status.PASS, "Successfully logout from application");
 }

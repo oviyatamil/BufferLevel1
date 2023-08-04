@@ -48,7 +48,7 @@ public class Business_vertical extends BasePage {
 	private By lastpage = By.xpath("//button[@aria-label='Last page']/span");
 	private By previous = By.xpath("//button[@aria-label='Previous page']/span");
 	private By search = By.xpath("//input[contains(@placeholder,'earch')]");
-	private By profile = By.xpath("//span[text()=' Master ']/following::button[3]/span[1]/span/mat-icon");
+	private By profile = By.xpath("//span[contains(text(),'Master')]/following::button[3]/span[1]/span/mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
 	private By bnarr = By.xpath("//table/thead/tr[1]/th[2]/div/child::div[2]");
 	private By descarr = By.xpath("//table/thead/tr[1]/th[3]/div/child::div[2]");

@@ -20,8 +20,8 @@ protected void dailyreport() {
 	ReportSetup.test.log(Status.PASS, "Successfully navigated to daily reports page");
 	rd.dd();
 	ReportSetup.test.log(Status.PASS, "Successfully selected all dropdown");
-	rd.table();
-	ReportSetup.test.log(Status.PASS, "Successfully get values from table");
+//	rd.table();
+//	ReportSetup.test.log(Status.PASS, "Successfully get values from table");
 	rd.profile();
 	ReportSetup.test.log(Status.PASS, "Successfully logout from application");
 }

@@ -109,8 +109,8 @@ public class LiveMonitoring extends BasePage {
 				Thread.sleep(500);
 				if(oeepercentage.get(i).getText().equals("0%")) {
 					if(avail.get(i).getText().equals("0%")){
-						if(perf.get(i).getText().equals("0%")){
-							if(part.get(i).getText().equals("0%")){
+						if(perf.get(i).getText().equals("0")){
+							if(part.get(i).getText().equals("0")){
 								if(prog.get(i).getText().equals("0%")){
 									log.info("All datas in equipment is 0% except quality for "+list.get(i).getText());
 								}

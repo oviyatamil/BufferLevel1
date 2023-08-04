@@ -26,6 +26,7 @@ public class Reports_prod extends BasePage {
 	private By reports = By.xpath("//span[contains(text(),'Reports')]");
 	private By apply = By.xpath("//span[contains(text(),'Apply')]");
 	private By production = By.xpath("//span[text()=' Production Report ']");
+	private By equiptext = By.xpath("//mat-label[text()='Functional Location']/ancestor::div[1]/descendant::div[2]/span[1]/span");
 	private By site = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
 	private By sitelist = By.xpath("(//span[text()=' Chennai '])/ancestor::div[1]/mat-option");
 	private By smartdrum = By.xpath("//mat-icon[@mattooltip='Click to Filter']");
@@ -67,8 +68,8 @@ public class Reports_prod extends BasePage {
 	private By alerttime2 = By.xpath("(//table)[2]/tbody/tr/td[8]");
 	private By down2 = By.xpath("(//table)[2]/tbody/tr/td[9]");
 	private By part2 = By.xpath("(//table)[2]/tbody/tr/td[10]");
-	private By rej2 = By.xpath("(//table)[2]/tbody/tr/td[11]");
-	private By hold2 = By.xpath("(//table)[2]/tbody/tr/td[12]");
+	private By rej2 = By.xpath("(//table)[2]/tbody/tr/td[12]");
+	private By hold2 = By.xpath("(//table)[2]/tbody/tr/td[11]");
 	private By lossdate = By.xpath("(//table)[3]/tbody/tr/td[1]");
 	private By losshour = By.xpath("(//table)[3]/tbody/tr/td[2]");
 
@@ -139,22 +140,7 @@ public class Reports_prod extends BasePage {
 			List<WebElement> list = findWebElements(sitelist);
 			list.get(0).click();
 			
-			String data = new SimpleDateFormat("MMM dd,yyyy,hh:mm").format(new Date());
-			System.out.println("Current timing is " + data);
-			String[] split = data.split(" ");
-			String s = split[0].toUpperCase();
-			click(calendar);
-			click(yeardd);
-			click(year);
-			WebElement mon = driver.findElement(By.xpath("//div[contains(text(),'" + s + "')]/parent::button"));
-			mon.click();
-			click(startdate);
-			String[] split2 = data.split(",");
-			String[] split3 = split2[0].split(" ");
-			String mn = split3[1];
-			WebElement end = driver
-					.findElement(By.xpath("//div[contains(text(),'" + mn + "')]/parent::button"));
-			end.click();
+			calendar(calendar, yeardd, year, startdate);
 			Thread.sleep(1000);
 			System.out.println("Calendar date is selected");
 			waittobeclickable(location, 20);
@@ -174,10 +160,10 @@ public class Reports_prod extends BasePage {
 				f.add(valueOf);
 				fl = fl + f.get(i);
 			}
-		  float m = fl/f.size();
-			String val = String.valueOf(Math.round(m));
+//		  float m = fl/f.size();
+//			String val = String.valueOf(Math.round(m));
 			if (findWebElement(overalloee).getText().equals("0")) {
-				log.info("Overall oee shows 0 in table");
+				log.info("Overall oee shows 0 in table for "+gettext(equiptext));
 				
 			} else {
 				System.out.println("Average oee is " + fl / f.size());
@@ -196,7 +182,7 @@ public class Reports_prod extends BasePage {
 			float n = fl2/f2.size();
 			String val2 = String.valueOf(Math.round(n));
 			if (findWebElement(availability2).getText().equals("0")) {
-				log.info("Overall availability shows 0 in table");
+				log.info("Overall availability shows 0 in table for "+gettext(equiptext));
 				
 			} else {
 				System.out.println("Average availability is " + fl2 / f2.size());
@@ -215,7 +201,7 @@ public class Reports_prod extends BasePage {
 			float n2 = fl3/f3.size();
 			String val3 = String.valueOf(n2);
 			if (findWebElement(performance).getText().equals("0")) {
-				log.info("Overall performance shows 0 in table");				
+				log.info("Overall performance shows 0 in table for "+gettext(equiptext));				
 			} else {
 				System.out.println("Average performance is " + fl3 / f3.size());
 			}
@@ -234,7 +220,7 @@ public class Reports_prod extends BasePage {
 			String val4 = String.valueOf(Math.round(n3));
 			System.out.println(val4);
 			if (findWebElement(quality).getText().equals("0")) {
-				log.info("Overall quality mshows 0 in table");
+				log.info("Overall quality mshows 0 in table for "+gettext(equiptext));
 				
 			} else {
 				System.out.println("Average Quality is " + n3);
@@ -252,19 +238,19 @@ public class Reports_prod extends BasePage {
 			}
 			System.out.println("***"+fl9);
 			String v = String.valueOf(fl9);
-			if (findWebElement(part).getText().equals(v)) {
+			if (v.contains(findWebElement(part).getText())) {
 				System.out.println("Total part count is " + fl9);				
 			} else {
-				log.info("Overall part count mismatches with part count in table");				
+				log.info("Overall part count mismatches with part count in table for "+gettext(equiptext));				
 			}
 			Thread.sleep(1000);
 			List<WebElement> r = findWebElements(rej2);
-			List<Float> f10 = new LinkedList<>();
-			float fl10 = 0f;
+			List<Integer> f10 = new LinkedList<>();
+			Integer fl10 = 0;
 			for (int i = 0; i < r.size(); i++) {
 				String text = r.get(i).getText();
 			//	String replace = text.replace("%", "");
-				Float valueOf = Float.valueOf(text);
+				Integer valueOf = Integer.valueOf(text);
 				f10.add(valueOf);
 				fl10 = fl10 + f10.get(i);
 			}
@@ -272,17 +258,17 @@ public class Reports_prod extends BasePage {
 			if (findWebElement(rej).getText().equals(val10)) {
 				System.out.println("Total rejected count is " + val10);
 			}else {
-				log.info("Overall rejected count mismatches with rejected count in table");
+				log.info("Overall rejected count mismatches with rejected count in table for "+gettext(equiptext));
 			}	
 				
 			Thread.sleep(1000);
 			List<WebElement> h = findWebElements(hold2);
-			List<Float> f11 = new LinkedList<>();
-			float fl11 = 0f;
+			List<Integer> f11 = new LinkedList<>();
+			int fl11 = 0;
 			for (int i = 0; i < h.size(); i++) {
 				String text = h.get(i).getText();
 			//	String replace = text.replace("%", "");
-				Float valueOf = Float.valueOf(text);
+				Integer valueOf = Integer.valueOf(text);
 				f11.add(valueOf);
 				fl11 = fl11 + f11.get(i);
 			}
@@ -290,7 +276,7 @@ public class Reports_prod extends BasePage {
 			if (findWebElement(hold).getText().contains(val11)) {
 				System.out.println("Total hold count is " + val11);
 			} else {
-				log.info("Overall hold count mismatches with hold count in table");
+				log.info("Overall hold count mismatches with hold count in table for "+gettext(equiptext));
 			}
 			if(fs<list2.size()-1) {
 				click(location);

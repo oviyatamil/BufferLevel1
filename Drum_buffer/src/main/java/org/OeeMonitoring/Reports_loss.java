@@ -27,8 +27,8 @@ public class Reports_loss extends BasePage {
 	private By search = By.xpath("//span[contains(text(),'Search')]");
 	private By lossrep = By.xpath("//span[text()=' Loss Report ']");
 	private By smartdrum = By.xpath("//mat-icon[@mattooltip='Click to Filter']");
-	private By machine = By.xpath("(//mat-select[@role='combobox'])[3]/ancestor::div[1]/descendant::div[3]");
-	private By shift = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[3]");
+	private By machine = By.xpath("(//mat-select[@role='combobox'])[3]/ancestor::div[1]/descendant::div[4]");
+	private By shift = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[4]");
 	private By shiftlist = By.xpath("(//span[text()='Shift 1'])/ancestor::div[1]/mat-option");
 	private By operation = By.xpath("(//mat-select[@role='combobox'])[4]/ancestor::div[1]/descendant::div[3]");
 	private By mechlist = By.xpath("(//span[text()=' TL-01 '])/ancestor::div[1]/mat-option");
@@ -42,8 +42,8 @@ public class Reports_loss extends BasePage {
 	private By text = By.xpath("(//mat-select[@role='combobox'])[2]/descendant::span[2]");
 	private By loss = By.xpath("(//*[local-name()='g' and contains(@class,'dataset-axis')])[2]/*");
 	private By losspercent = By.xpath("(//*[local-name()='g' and contains(@class,'fusioncharts-datalabels')])[2]/*");
-	private By chart1 = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[1]/*");
-	private By chart2 = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[5]/*");
+	private By chart1 = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[1]");
+	private By chart2 = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[2]");
 	
 	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[14]");
 	private By yeardd = By.xpath("(//span[contains(text(),'2023')])[2]/parent::span");
@@ -101,51 +101,36 @@ public class Reports_loss extends BasePage {
 	}
 	public void dd() {
 		try {
-			click(shift);
-			List<WebElement> l1 = findWebElements(shiftlist);
-			l1.get(0).click();
-			click(machine);
-			List<WebElement> l2 = findWebElements(mechlist);
-			l2.get(2).click();
+			calendar(calendar, yeardd, year, startdate);
 			click(operation);
 			List<WebElement> l3 = findWebElements(operalist);
 			l3.get(0).click();
 			click(filter);
 			List<WebElement> l4 = findWebElements(filterlist);
 			l4.get(0).click();
-			String data = new SimpleDateFormat("MMM dd,yyyy,hh:mm").format(new Date());
-			System.out.println("Current timing is " + data);
-			String[] split = data.split(" ");
+			click(shift);
+			List<WebElement> l1 = findWebElements(shiftlist);
+			l1.get(0).click();
+			click(machine);
+			List<WebElement> l2 = findWebElements(mechlist);
+			for(int i=1;i<l2.size();i++) {
+				if(i>1) {
+					click(machine);
+				}
+			l2.get(i).click();			
+			String datas = new SimpleDateFormat("MMM dd,yyyy,hh:mm").format(new Date());
+			System.out.println("Current timing is " + datas);
+			String[] split = datas.split(" ");
 			String s = split[0].toUpperCase();
-			Thread.sleep(1000);
-			click(calendar);
-			click(yeardd);
-			click(year);
-			WebElement mon = driver.findElement(By.xpath("//div[contains(text(),'" + s + "')]/parent::button"));
-			mon.click();
-			click(startdate);
-			String[] split2 = data.split(",");
-			String[] split3 = split2[0].split(" ");
-			String m = split3[1];
-			WebElement end = driver
-					.findElement(By.xpath("//div[contains(text(),'" + m + "')]/parent::button"));
-			end.click();
-			Thread.sleep(1000);
+			Thread.sleep(1000);					
 			System.out.println("Calendar date is selected");
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}	
-		click(search);
-	}
-	
-	public void table() {
-		try {
+			click(search);
 			Thread.sleep(2000);
 			List<WebElement> h = findWebElements(head);
-			List<String> s = new LinkedList<String>();
+			List<String> s1 = new LinkedList<String>();
 			for(WebElement x:h) {
 				String txt = x.getText();
-				s.add(txt);
+				s1.add(txt);
 			}
 			List<WebElement> d = findWebElements(data);
 			List<String> s2 = new LinkedList<String>();
@@ -156,48 +141,18 @@ public class Reports_loss extends BasePage {
 			if(findWebElement(no).getText().contains("No Records Found")) {
 				log.info("No records found");
 			}else {
-			for(int i=0;i<s.size();i++) {
-			System.out.println("Losstime report is "+s.get(i)+" ------ "+s2.get(i));
+			for(int j=0;j<s1.size();j++) {
+			System.out.println("Losstime report is "+s1.get(i)+" ------ "+s2.get(i));
 			}
+			}
+			Thread.sleep(1000);
 			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
-		}
+		}	
+		
 	}
-	public void losschart() {
-		try {
-			Thread.sleep(1000);
-			if(findWebElement(chart1).isDisplayed()) {
-				System.out.println("Pareto chart for loss reson is displayed");
-			}else {
-				log.info("Pareto chart for loss reson is not displayed");
-			}
-			if(findWebElement(chart2).isDisplayed()) {
-				System.out.println("Loss time analysis chart is displayed");
-			}else {
-				log.info("Loss time analysis chart is not displayed");
-			}
-			Thread.sleep(1000);
-			List<WebElement> l = findWebElements(loss);
-			List<String> s = new LinkedList<String>();
-			for(WebElement x:l) {
-				String txt = x.getText();
-				s.add(txt);
-			}
-			List<WebElement> lp = findWebElements(losspercent);
-			List<String> s2 = new LinkedList<String>();
-			for(WebElement x:lp) {
-				String txt = x.getText();
-				s2.add(txt);
-			}
-			for(int i=0;i<l.size();i++) {
-				System.out.println("Losstime report is "+s.get(i)+" ------ "+s2.get(i));
-}
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
 	
-	}
 	public void profile() {
 		waittobeclickable(profile, 10);
 		click(profile);

@@ -1,6 +1,4 @@
 package org.Fire;
-
-import org.fire.Home_page;
 import org.fire.Monitor;
 import org.testng.annotations.Test;
 
@@ -18,8 +16,8 @@ protected void fire() {
 	ReportSetup.test.assignCategory("Fire-2");
 	m.fire();
 	ReportSetup.test.log(Status.PASS, "Successfully navigated to fire monitoring home page");
-//	m.monitor();
-//	ReportSetup.test.log(Status.PASS, "Navigated to monitoring page and check if chart is displayed or not");
+	m.monitor();
+	ReportSetup.test.log(Status.PASS, "Navigated to monitoring page and check if chart is displayed or not");
 	m.report();
 	ReportSetup.test.log(Status.PASS, "Navigated to reports page and check reports are displayed or not");
 	m.profile();

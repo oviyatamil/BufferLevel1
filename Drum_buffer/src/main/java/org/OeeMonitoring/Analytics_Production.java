@@ -92,26 +92,11 @@ public class Analytics_Production extends BasePage {
 
 	public void calendar() {
 		try {
-			String data = new SimpleDateFormat("MMM dd,yyyy,hh:mm").format(new Date());
-			System.out.println("Current timing is " + data);
-			String[] split = data.split(" ");
-			String s = split[0].toUpperCase();
-			click(calendar);
-			click(yeardd);
-			click(year);
-			WebElement mon = driver.findElement(By.xpath("//div[contains(text(),'" + s + "')]/parent::button"));
-			mon.click();
-			click(startdate);
-			String[] split2 = data.split(",");
-			String[] split3 = split2[0].split(" ");
-			String m = split3[1];
-			WebElement end = driver
-					.findElement(By.xpath("//div[contains(text(),'" + m + "')]/parent::button"));
-			end.click();
+			calendar(calendar, yeardd, year, startdate);
 			Thread.sleep(1000);
-			log.info("Calendar date is selected");
+			System.out.println("Calendar date is selected");
 			click(equipdd);
-			log.info("Equipment dropdown is selected");
+			System.out.println("Equipment dropdown is selected");
 			List<WebElement> list = findWebElements(equiplist);
 			for (int i = 1; i < list.size(); i++) {				
 				list.get(i).click();

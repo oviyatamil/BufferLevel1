@@ -1,6 +1,5 @@
 package org.dialysis;
 
-import org.Dialysis.Kpi_dialysis;
 import org.Dialysis.Monitoring;
 import org.testng.annotations.Test;
 

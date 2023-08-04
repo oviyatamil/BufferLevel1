@@ -35,11 +35,9 @@ public class Oxygen_reports extends BasePage{
 	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[18]");
 	private By yeardd = By.xpath("//span[contains(text(),'2023')]/parent::span");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By month = By.xpath("//div[text()=' JUL ']/parent::button");
 	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
 	private By txt = By.xpath("(//mat-select[@role='combobox'])[1]/descendant::span[2]");
-	private By row = By.xpath("//table/tbody/tr");
-	
+	private By row = By.xpath("//table/tbody/tr");	
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
 	
@@ -134,20 +132,7 @@ public class Oxygen_reports extends BasePage{
 			l4.get(0).click();
 			String data = new SimpleDateFormat("MMM dd,yyyy,hh:mm").format(new Date());	
 			System.out.println("Current timing is "+data);
-			String[] split = data.split(" ");
-			String s = split[0].toUpperCase();
-			click(calendar);
-			click(yeardd);
-			click(year);
-			WebElement mon = driver.findElement(By.xpath("//div[contains(text(),'"+s+"')]/parent::button"));
-			mon.click();	
-			click(startdate);
-			String[] split2 = data.split(",");
-			String[] split3 = split2[0].split(" ");
-			String m =split3[1];			
-			WebElement end = driver.findElement(By.xpath("//div[contains(text(),'"+m+"')]/parent::button"));
-			end.click();
-			click(apply);
+			calendar(calendar, yeardd, year, startdate);
 			if(findWebElement(table).isDisplayed()!=true) {
 				log.info("Table is not displayed for "+gettext(txt));			
 			}else {
@@ -204,19 +189,7 @@ public class Oxygen_reports extends BasePage{
 			l4.get(0).click();
 			String data = new SimpleDateFormat("MMM dd,yyyy,hh:mm").format(new Date());	
 			System.out.println("Current timing is "+data);
-			String[] split = data.split(" ");
-			String s = split[0].toUpperCase();
-			click(calendar);
-			click(yeardd);
-			click(year);
-			WebElement mon = driver.findElement(By.xpath("//div[contains(text(),'"+s+"')]/parent::button"));
-			mon.click();	
-			click(startdate);
-			String[] split2 = data.split(",");
-			String[] split3 = split2[0].split(" ");
-			String m =split3[1];
-			WebElement end = driver.findElement(By.xpath("//div[contains(text(),'"+m+"')]/parent::button"));
-			end.click();
+			calendar(calendar, yeardd, year, startdate);
 			click(apply);
 			if(findWebElement(table).isDisplayed()!=true) {
 				log.info("Table is not displayed for "+gettext(txt));

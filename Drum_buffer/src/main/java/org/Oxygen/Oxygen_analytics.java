@@ -26,7 +26,6 @@ public class Oxygen_analytics extends BasePage {
 	private By equip = By.xpath("//span[contains(text(),'Equipment Wise Consumption')]");
 	private By charts = By.xpath("(//*[local-name()='g' and contains(@class,'fusioncharts-datalabels')])[3]/*[local-name()='text']");
 	private By msg = By.xpath("//span[contains(@class,'fusioncharts-container')]/*[local-name()='svg']");
-	private By mouse = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[1]/*[local-name()='rect'][5]");
 	private By txt = By.xpath("(//mat-select[@role='combobox'])[1]/descendant::span[2]");
 	private By slider = By.xpath("(//*[local-name()='g' and contains(@class,'slider')])[1]/*[3]");
 	private By site = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
@@ -38,19 +37,13 @@ public class Oxygen_analytics extends BasePage {
 	private By legend = By.xpath("(//*[local-name()='g' and contains(@class,'legend')])[2]/*[local-name()='g']/*[local-name()='rect']");
 	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[18]");
 	private By yeardd = By.xpath("//span[contains(text(),'2023')]/parent::span");
-	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By month = By.xpath("//div[text()=' JUL ']/parent::button");
-	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
-	private By enddate = By.xpath("//div[text()=' 21 ']/parent::button");
-	private By chart = By.xpath("//*[local-name()='g' and contains(@class,'crosslineBottom')]");
-	private By mouseover = By.xpath("//*[local-name()='g' and contains(@class,'fusioncharts-datalabels')]/*[local-name()='text']");
-	private By rel = By.xpath("//*[local-name()='g' and contains(@class,'crossline-label-group')]/*[local-name()='text']");
+	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");	
+	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");	
+	private By mouseover = By.xpath("//*[local-name()='g' and contains(@class,'fusioncharts-datalabels')]/*[local-name()='text']");	
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
 	private By export = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[1]/*[local-name()='rect'][2]");
-	private By jpg = By.xpath("(//span[text()='Export As JPG'])[1]");
-	private By export2 = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[2]/*[local-name()='rect'][2]");
-	private By jpg2 = By.xpath("(//span[text()='Export As JPG'])[2]");
+	private By jpg = By.xpath("(//span[text()='Export As JPG'])[1]");	
 	private By pdf = By.xpath("//mat-icon[@mattooltip='Export to PDF']");
 
 	public void home() {
@@ -195,22 +188,8 @@ public class Oxygen_analytics extends BasePage {
 		try {
 			Thread.sleep(2000);
 			String data = new SimpleDateFormat("MMM dd,yyyy,hh:mm").format(new Date());
-			System.out.println("Current timing is " + data);
-			String[] split = data.split(" ");
-			String s = split[0].toUpperCase();
-			click(calendar);
-			click(yeardd);
-			click(year);
-			WebElement mon = driver.findElement(By.xpath("//div[contains(text(),'" + s + "')]/parent::button"));
-			mon.click();
-			click(startdate);
-			String[] split2 = data.split(",");
-			String[] split3 = split2[0].split(" ");
-			String m = split3[1];
-	//		int n = (Integer.parseInt(m)) - 1;
-			WebElement end = driver
-					.findElement(By.xpath("//div[contains(text(),'" + m + "')]/parent::button"));
-			end.click();
+			System.out.println("Current timing is " + data);			
+			calendar(calendar, yeardd, year, startdate);
 			click(apply);
 			Thread.sleep(1000);
 			click(site);
@@ -284,7 +263,7 @@ public class Oxygen_analytics extends BasePage {
 			String[] split3 = split2[0].split(" ");
 			String m = split3[1];
 			int n = (Integer.parseInt(m)) - 1;
-			WebElement end = driver.findElement(By.xpath("//div[contains(text(),'" + String.valueOf(n) + "')]/parent::button"));
+			WebElement end = driver.findElement(By.xpath("//div[contains(text(),'" + n + "')]/parent::button"));
 			end.click();			
 			click(apply);
 			Thread.sleep(1000);

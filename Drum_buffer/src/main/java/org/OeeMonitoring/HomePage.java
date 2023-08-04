@@ -166,7 +166,7 @@ public class HomePage extends BasePage{
 			for(WebElement x2:list) {
 				x2.click();			
 			}
-			log.info("Legends working properly");
+			System.out.println("Legends working properly");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

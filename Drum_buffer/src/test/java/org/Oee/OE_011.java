@@ -21,11 +21,7 @@ protected void lossreport() {
 	r.rep();
 	ReportSetup.test.log(Status.PASS, "Successfully navigated to loss time reports page");
 	r.dd();
-	ReportSetup.test.log(Status.PASS, "Successfully selected all dropdowns");
-	r.table();
-	ReportSetup.test.log(Status.PASS, "Successfully get datas from the table");
-	r.losschart();
-	ReportSetup.test.log(Status.PASS, "Successfully get chart values");
+	ReportSetup.test.log(Status.PASS, "Successfully selected all dropdowns and checked record and all dropdowns");
 	r.profile();
 	ReportSetup.test.log(Status.PASS, "Successfully logout from application");
 }

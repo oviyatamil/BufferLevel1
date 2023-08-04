@@ -1,7 +1,6 @@
 package org.Oee;
 
 import org.OeeMonitoring.HomePage;
-import org.OeeMonitoring.OeeMonitoring;
 import org.testng.annotations.Test;
 
 import com.BasePage.ReportSetup;
@@ -15,7 +14,7 @@ HomePage home;
 @Test
 protected void homepage() {
 	home = new HomePage(driver);
-	ReportSetup.test = ReportSetup.report.createTest("HOME PAGE");
+	ReportSetup.test = ReportSetup.report.createTest("OEE-HOME PAGE");
 	ReportSetup.test.assignCategory("Oee-2");
 	home.oee();
 	ReportSetup.test.log(Status.PASS, "Successfully navigated to oee home page");

@@ -6,8 +6,6 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -158,8 +156,6 @@ public class Home_page extends BasePage {
 					log.info("Table not displayed");
 				
 				}
-			
-			System.out.println(driver.getWindowHandle());
 	}
 	}
 

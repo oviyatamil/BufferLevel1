@@ -1,7 +1,6 @@
 package org.Oee;
 
 import org.OeeMonitoring.LiveMonitoring;
-import org.OeeMonitoring.OeeMonitoring;
 import org.testng.annotations.Test;
 
 import com.BasePage.ReportSetup;

@@ -1,9 +1,7 @@
 package org.Oee;
 
-import org.OeeMonitoring.Reports_loss;
 import org.OeeMonitoring.Reports_spindle;
 import org.testng.annotations.Test;
-
 import com.BasePage.ReportSetup;
 import com.BaseTest.BaseTest;
 import com.aventstack.extentreports.Status;
@@ -11,7 +9,7 @@ import com.aventstack.extentreports.Status;
 public class OE_013 extends BaseTest {
 Reports_spindle rs;
 @Test
-protected void maintenance() {
+protected void spindlereport() {
 	rs = new Reports_spindle(driver);
 	ReportSetup.test = ReportSetup.report.createTest("SPINDLE REPORTS PAGE");
 	ReportSetup.test.assignCategory("Oee-13");

@@ -4,7 +4,6 @@ import static org.testng.Assert.assertEquals;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -25,25 +24,12 @@ public class Dialysis extends BasePage{
 	private By nomonth = By.xpath("(//span[text()='No. of Dialysis'])[2]/parent::div/div");
 	private By runhrsyes = By.xpath("(//span[text()='Run Hours'])[1]/parent::div/div");
 	private By runhrsmon = By.xpath("(//span[text()='Run Hours'])[2]/parent::div/div");
-	private By monitoring = By.xpath("//span[contains(text(),' Monitoring ')]");
-	private By firemonitoring = By.xpath("//span[contains(text(),' Fire Monitoring ')]");
-	private By report = By.xpath("//span[contains(text(),' Report ')]");
-	private By chart = By.xpath("(//*[local-name()='g'])[1]//*[local-name()='image'][1]");
 	private By dd = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
 	private By ddlist = By.xpath("(//div[@role='listbox'])[1]/ancestor::div[1]/div[1]/mat-option");
 	private By location = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[3]");
 	private By loclist = By.xpath("//span[text()='All']/parent::mat-option/parent::div/mat-option");
 	private By time = By.xpath("//span[text()='Last Telemetry']/ancestor::div[4]/div[2]/div[1]/div[1]/span[2]");
 	private By table = By.xpath("//span[text()='Last Telemetry']/ancestor::div[4]/div[1]/div");
-	private By ddtext = By.xpath("//mat-select[@role='combobox']/div/div/span/span[1]");
-	private By loctext = By.xpath("(//mat-select[@role='combobox'])[2]/div/div/span/span[1]");
-	
-	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[18]");
-	private By yeardd = By.xpath("(//span[contains(text(),'2023')])[2]/parent::span");
-	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By month = By.xpath("//div[text()=' JUL ']/parent::button");
-	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");	
-	private By enddate = By.xpath("//div[text()=' 21 ']/parent::button");
 	private By runhrtable = By.xpath("//span[text()='Last Telemetry']/ancestor::div[4]/div[2]/div[1]/div[5]/span[2]");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
@@ -129,7 +115,6 @@ public class Dialysis extends BasePage{
 			}else {
 				log.info("Date in machine mismatches with actual time "+timestamp.get(i).getText());
 			}
-			List<WebElement> runhrs = findWebElements(runhrtable);
 			System.out.println("Run hours yesterday is "+findWebElements(runhrtable).get(i).getText());
 			Thread.sleep(500);
 }

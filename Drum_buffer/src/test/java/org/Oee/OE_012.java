@@ -21,5 +21,7 @@ public class OE_012 extends BaseTest{
 		ReportSetup.test.log(Status.PASS, "Navigates to kpi page");
 		k.data();
 		ReportSetup.test.log(Status.PASS, "Successfully checked all datas");
+		k.profile();
+		ReportSetup.test.log(Status.PASS, "Successfully logged out from application");
 	}
 }

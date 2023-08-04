@@ -41,15 +41,15 @@ public class SpindleMonitor extends BasePage{
 		try {
 			waittobeclickable(ninedots, 20);
 			click(ninedots);
-			log.info("Ninedots button is clicked");
+			System.out.println("Ninedots button is clicked");
 			waittobeclickable(Oee, 20);
 			click(Oee);
-			log.info("Oee option is clicked");
+			System.out.println("Oee option is clicked");
 			Thread.sleep(2000);
 			String ExpectedURL = "https://portal.drumbuffer.io/#/oee/home";
 			String ActualURL = getCurrentURL();
 			assertEquals(ExpectedURL, ActualURL);
-			log.info("Assert verification is done for Oee home page");
+			System.out.println("Assert verification is done for Oee home page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -60,17 +60,17 @@ public class SpindleMonitor extends BasePage{
 		try {
 			waittobeclickable(monitoring, 10);
 			click(monitoring);
-			log.info("Monitoring button is clicked");
+			System.out.println("Monitoring button is clicked");
 			waittobeclickable(spindle, 20);
 			click(spindle);
-			log.info("oee monitor option is clicked");
+			System.out.println("oee monitor option is clicked");
 			Thread.sleep(2000);
 			String ExpectedURL2 = "https://portal.drumbuffer.io/#/oee/spindle-monitoring";
 			String ActualURL2 = getCurrentURL();
 			assertEquals(ExpectedURL2, ActualURL2);
 			log.info("Assert verification is done for spindle monitoring page");
 			click(smartdrum);
-			log.info("Smart drum is clicked");
+			System.out.println("Smart drum is clicked");
 			click(smartdrum);
 		} catch (InterruptedException e) {
 			e.printStackTrace();

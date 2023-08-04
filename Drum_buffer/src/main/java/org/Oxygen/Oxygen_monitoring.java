@@ -1,16 +1,12 @@
 package org.Oxygen;
 
 import static org.testng.Assert.assertEquals;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-
 import com.BasePage.BasePage;
 
 public class Oxygen_monitoring extends BasePage{
@@ -30,9 +26,6 @@ public class Oxygen_monitoring extends BasePage{
 	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[18]");
 	private By yeardd = By.xpath("//span[contains(text(),'2023')]/parent::span");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By month = By.xpath("//div[text()=' JUL ']/parent::button");
-	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");	
-	private By enddate = By.xpath("//div[text()=' 21 ']/parent::button");
 	private By flowrate = By.xpath("//span[contains(text(),'Flow Rate')]/parent::div/div");
 	private By line = By.xpath("//span[contains(text(),'Line Pressure')]/parent::div/div");
 	private By reset = By.xpath("(//*[local-name()='g' and contains(@class,'toolbar')])[2]/*[local-name()='g'][3]/*[local-name()='rect'][2]");
@@ -50,7 +43,6 @@ public class Oxygen_monitoring extends BasePage{
 	private By chart3 = By.xpath("(//*[local-name()='g' and contains(@class,'crosslineBottom')])[3]");
 	private By legend3 = By.xpath("(//*[local-name()='g' and contains(@class,'legend')])[6]/*[local-name()='g']/*[local-name()='rect']");
 	private By reset3 = By.xpath("(//*[local-name()='g' and contains(@class,'toolbar')])[6]/*[local-name()='g'][3]/*[local-name()='rect'][2]");
-	private By rel = By.xpath("//*[local-name()='g' and contains(@class,'crossline-label-group')]/*[local-name()='text']");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
 	
@@ -106,14 +98,14 @@ public class Oxygen_monitoring extends BasePage{
 			String[] split2 = data.split(",");
 			String[] split3 = split2[0].split(" ");
 			String m =split3[1];
-			
+			int mn = Integer.parseInt(m);
 			
 			int n = (Integer.parseInt(m))-1;
 
 			WebElement start = driver.findElement(By.xpath("//div[contains(text(),'"+n+"')]/parent::button"));
 			start.click();
 			
-			WebElement end = driver.findElement(By.xpath("//div[contains(text(),'"+m+"')]/parent::button"));
+			WebElement end = driver.findElement(By.xpath("//div[contains(text(),'"+mn+"')]/parent::button"));
 			end.click();
 			Thread.sleep(1000);
 			click(site);

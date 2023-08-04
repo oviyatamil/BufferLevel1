@@ -68,7 +68,6 @@ public class BasePage extends ReportSetup{
 				findWebElement(locator).sendKeys(Input);
 				//testStepInfo("Entered into the username");
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	    	
@@ -172,7 +171,7 @@ public class BasePage extends ReportSetup{
          }
          public void move(WebElement x) {
         	 Actions a = new Actions(driver);
-        	 a.moveToElement(x);
+        	 a.moveToElement(x).perform();
          }
          public void draganddrop(By locator) {
          	Actions a = new Actions(driver);
@@ -195,7 +194,8 @@ public class BasePage extends ReportSetup{
 				String[] split2 = data.split(",");
 				String[] split3 = split2[0].split(" ");
 				String m = split3[1];
-				WebElement end = driver.findElement(By.xpath("//div[contains(text(),'" + m + "')]/parent::button"));
+				int p = Integer.parseInt(m);
+				WebElement end = driver.findElement(By.xpath("//div[contains(text(),'" + p + "')]/parent::button"));
 				end.click();
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {

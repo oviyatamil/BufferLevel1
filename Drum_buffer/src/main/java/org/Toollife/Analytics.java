@@ -34,9 +34,7 @@ public class Analytics extends BasePage {
 	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[14]");
 	private By yeardd = By.xpath("(//span[contains(text(),'2023')])[2]/parent::span");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By month = By.xpath("//div[text()=' JUL ']/parent::button");
 	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
-	private By enddate = By.xpath("//div[text()=' 20 ']/parent::button");
 
 	public void tool() {
 		try {
@@ -132,20 +130,7 @@ public class Analytics extends BasePage {
 			Thread.sleep(500);
 			String data = new SimpleDateFormat("MMM dd,yyyy,hh:mm").format(new Date());
 			System.out.println("Current timing is " + data);
-			String[] split = data.split(" ");
-			String s = split[0].toUpperCase();
-			click(calendar);
-			click(yeardd);
-			click(year);
-			WebElement mon = driver.findElement(By.xpath("//div[contains(text(),'" + s + "')]/parent::button"));
-			mon.click();
-			click(startdate);
-			String[] split2 = data.split(",");
-			String[] split3 = split2[0].split(" ");
-			String m = split3[1];
-			WebElement end = driver
-					.findElement(By.xpath("//div[contains(text(),'" + m + "')]/parent::button"));
-			end.click();
+			calendar(calendar, yeardd, year, startdate);
 			Thread.sleep(1000);
 			System.out.println("Calendar date is selected");
 			click(machine);

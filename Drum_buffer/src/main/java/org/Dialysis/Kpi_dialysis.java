@@ -23,14 +23,10 @@ public class Kpi_dialysis extends BasePage{
 	private By machine = By.xpath("//span[contains(text(),'Machine Utilization')]");
 	private By dd = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
 	private By ddlist = By.xpath("(//div[@role='listbox'])[1]/ancestor::div[1]/div[1]/mat-option");
-	private By apply = By.xpath("//span[contains(text(),'Apply')]");
-	private By kpi2 = By.xpath("(//span[text()='No. of Dialysis'])[1]/parent::div/div");
+	private By apply = By.xpath("//span[contains(text(),'Apply')]");	
 	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[18]");
 	private By yeardd = By.xpath("//span[contains(text(),'2023')]/parent::span");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By month = By.xpath("//div[text()=' JUL ']/parent::button");
-	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");	
-	private By enddate = By.xpath("//div[text()=' 21 ']/parent::button");
 	private By mach = By.xpath("//*[@id='element-to-export']/div[4]/div/child::div/child::div/child::div[1]");
 	private By act = By.xpath("//*[@id='element-to-export']/div[4]/div/child::div/child::div[1]/descendant::span[3]");
 	private By inact = By.xpath("//*[@id='element-to-export']/div[4]/div/child::div/child::div[1]/descendant::span[4]");
@@ -92,7 +88,7 @@ public class Kpi_dialysis extends BasePage{
 			String[] split3 = split2[0].split(" ");
 			String m =split3[1];
 			int n = (Integer.parseInt(m))-1;
-			WebElement end = driver.findElement(By.xpath("//div[contains(text(),'"+String.valueOf(n)+"')]/parent::button"));
+			WebElement end = driver.findElement(By.xpath("//div[contains(text(),'"+n+"')]/parent::button"));
 			end.click();
 			click(apply);
 		} catch (InterruptedException e) {

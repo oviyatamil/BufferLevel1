@@ -39,15 +39,15 @@ public class Reports_spindle extends BasePage{
 		try {
 			waittobeclickable(ninedots, 20);
 			click(ninedots);
-			log.info("Ninedots button is clicked");
+			System.out.println("Ninedots button is clicked");
 			waittobeclickable(Oee, 20);
 			click(Oee);
-			log.info("Oee option is clicked");
+			System.out.println("Oee option is clicked");
 			Thread.sleep(2000);
 			String ExpectedURL = "https://portal.drumbuffer.io/#/oee/home";
 			String ActualURL = getCurrentURL();
 			assertEquals(ExpectedURL, ActualURL);
-			log.info("Assert verification is done for Oee home page");
+			System.out.println("Assert verification is done for Oee home page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -58,17 +58,17 @@ public class Reports_spindle extends BasePage{
 		try {
 			waittobeclickable(reports, 20);
 			click(reports);
-			log.info("report button is clicked");
+			System.out.println("report button is clicked");
 			waittobeclickable(spindlerep, 20);
 			click(spindlerep);
-			log.info("spindle runtime report option is clicked");
+			System.out.println("spindle runtime report option is clicked");
 			Thread.sleep(2000);
 			String ExpectedURL2 = "https://portal.drumbuffer.io/#/oee/spindle-run-time-reports";
 			String ActualURL2 = getCurrentURL();
 			assertEquals(ExpectedURL2, ActualURL2);
 			log.info("Assert verification is done for spindle runtime reports page");
 			click(smartdrum);
-			log.info("Smart drum is clicked");
+			System.out.println("Smart drum is clicked");
 			click(smartdrum);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -95,9 +95,9 @@ public class Reports_spindle extends BasePage{
 	public void profile() {
 		waittobeclickable(profile, 10);
 		click(profile);
-		log.info("profile button is clicked");
+		System.out.println("profile button is clicked");
 		click(signout);
-		log.info("signout button is clicked");
+		System.out.println("signout button is clicked");
 	}
 	public void table() {
 		try {
@@ -105,7 +105,7 @@ public class Reports_spindle extends BasePage{
 			List<WebElement> h = findWebElements(head);
 			List<String> s = new LinkedList<String>();
 			String data = new SimpleDateFormat("dd-MMM-yyyy").format(new Date());
-			if((h.get(0).getText()).contains("01")){
+			if((h.get(1).getText()).contains("01")){
 				
 				System.out.println("Table has correct start date");
 				}else {

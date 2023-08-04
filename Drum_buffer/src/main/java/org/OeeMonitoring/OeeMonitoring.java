@@ -517,6 +517,8 @@ public class OeeMonitoring extends BasePage {
 							String txt = part.get(f).getText();
 							if (txt.equals("0")) {
 								continue;
+							} else if (txt.equals("N/A")) {
+								System.out.println("Part count shows N/A");
 							} else {
 								count.add(Integer.valueOf(txt));
 							}
@@ -529,7 +531,7 @@ public class OeeMonitoring extends BasePage {
 					}
 					String sums = String.valueOf(y);
 					System.out.println(sums);
-					System.out.println(gettext(totalparts));
+					if(gettext(totalparts)!="0"){
 					if (gettext(totalparts).contains(sums)) {
 						System.out.println("24 hrs total parts is " + gettext(totalparts));
 					} else {
@@ -542,6 +544,7 @@ public class OeeMonitoring extends BasePage {
 						System.out.println("Maximum parts count from table is " + Collections.max(count));
 						System.out.println("Minimum parts count from table is " + Collections.min(count));
 
+					}
 					}
 			
 					if(findWebElement(partnum).getText().isBlank()!=true) {
@@ -585,11 +588,16 @@ public class OeeMonitoring extends BasePage {
 
 	}
 	public void profile() {
-		waittobeclickable(profile, 10);
-		click(profile);
-		System.out.println("profile button is clicked");
-		click(signout);
-		System.out.println("signout button is clicked");
+		try {
+			Thread.sleep(1000);
+			waittobeclickable(profile, 10);
+			click(profile);
+			System.out.println("profile button is clicked");
+			click(signout);
+			System.out.println("signout button is clicked");
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

@@ -1,7 +1,6 @@
 package org.dialysis;
 
 import org.Dialysis.Analytics;
-import org.Dialysis.Kpi_dialysis;
 import org.testng.annotations.Test;
 
 import com.BasePage.ReportSetup;

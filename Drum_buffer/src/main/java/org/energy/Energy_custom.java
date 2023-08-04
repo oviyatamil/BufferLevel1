@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -37,7 +38,6 @@ public class Energy_custom extends BasePage{
 	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[18]");
 	private By yeardd = By.xpath("//span[contains(text(),'2023')]/parent::span");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By month = By.xpath("//div[text()=' JUL ']/parent::button");
 	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
 	private By row = By.xpath("//table/tbody/tr");
 	
@@ -152,86 +152,10 @@ public class Energy_custom extends BasePage{
 		}
 	
 }
-	public void dd() {
-		try {
-			String data = new SimpleDateFormat("MMM dd,yyyy,hh:mm").format(new Date());	
-			System.out.println("Current timing is "+data);
-			String[] split = data.split(" ");
-			String s = split[0].toUpperCase();
-			click(calendar);
-			click(yeardd);
-			click(year);
-			WebElement mon = driver.findElement(By.xpath("//div[contains(text(),'"+s+"')]/parent::button"));
-			mon.click();	
-			click(startdate);
-			String[] split2 = data.split(",");
-			String[] split3 = split2[0].split(" ");
-			String m =split3[1];		
-			WebElement end = driver.findElement(By.xpath("//div[contains(text(),'"+m+"')]/parent::button"));
-			end.click();			
-				click(loc);
-				List<WebElement> l2 = findWebElements(loclist);
-				l2.get(1).click();	
-				click(cat);
-				Thread.sleep(500);
-				List<WebElement> l3 = findWebElements(catlist);
-				l3.get(0).click();
-				Thread.sleep(500);
-				click(machine);
-				List<WebElement> l4 = findWebElements(catlist);
-				l4.get(0).click();
-				click(site);
-				List<WebElement> l = findWebElements(sitelist);
-				for(int i=1;i<l.size();i++) {
-					if(i>1) {
-						click(site);
-					}
-						l.get(i).click();
-					
-				click(apply);
-				Thread.sleep(2000);
-				if(findWebElement(table).isDisplayed()!=true) {
-					log.info("No records found");
-					
-				}else {
-					System.out.println("Table is displayed");
-				}
-				
-			Thread.sleep(500);
-//		String data2 = new SimpleDateFormat("dd").format(new Date());	
-//		int p = Integer.parseInt(data2);
-//		int p2 = p-1;
-//		String v = String.valueOf(p2);
-//		System.out.println(v);
-//			List<WebElement> rows = findWebElements(row);
-//				WebElement text = driver.findElement(By.xpath("//table/tbody/tr["+rows.size()+"]/td[5]"));		
-//			String[] split4 = text.getText().split(",");
-//			String[] split5 = split4[1].split("-");
-//			String g =split5[0];
-//			System.out.println(g);
-		//	int k = (Integer.valueOf(g)) + 1;
-		} 
-		}catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
+	
 	public void dd2() {
 		try {
-			String data = new SimpleDateFormat("MMM dd,yyyy,hh:mm").format(new Date());	
-			System.out.println("Current timing is "+data);
-			String[] split = data.split(" ");
-			String s = split[0].toUpperCase();
-			click(calendar);
-			click(yeardd);
-			click(year);
-			WebElement mon = driver.findElement(By.xpath("//div[contains(text(),'"+s+"')]/parent::button"));
-			mon.click();	
-			click(startdate);
-			String[] split2 = data.split(",");
-			String[] split3 = split2[0].split(" ");
-			String m =split3[1];		
-			WebElement end = driver.findElement(By.xpath("//div[contains(text(),'"+m+"')]/parent::button"));
-			end.click();			
+			calendar(calendar, yeardd, year, startdate);		
 				click(loc);
 				List<WebElement> l2 = findWebElements(loclist);
 				l2.get(1).click();	
@@ -273,6 +197,8 @@ public class Energy_custom extends BasePage{
 			String text2 = text.getText();
 			String[] split4 = text2.split(",");
 			System.out.println(split4[1]);
+			JavascriptExecutor j = (JavascriptExecutor)driver;
+			j.executeScript("arguments[0].scrollIntoView(true);", text);
 			if(split4[1].contains(h)) {
 				System.out.println("Report end date is correct");
 			}else {
@@ -286,19 +212,7 @@ public class Energy_custom extends BasePage{
 		try {
 			String data = new SimpleDateFormat("MMM dd,yyyy,hh:mm").format(new Date());	
 			System.out.println("Current timing is "+data);
-			String[] split = data.split(" ");
-			String s = split[0].toUpperCase();
-			click(calendar);
-			click(yeardd);
-			click(year);
-			WebElement mon = driver.findElement(By.xpath("//div[contains(text(),'"+s+"')]/parent::button"));
-			mon.click();	
-			click(startdate);
-			String[] split2 = data.split(",");
-			String[] split3 = split2[0].split(" ");
-			String m =split3[1];		
-			WebElement end = driver.findElement(By.xpath("//div[contains(text(),'"+m+"')]/parent::button"));
-			end.click();			
+			calendar(calendar, yeardd, year, startdate);		
 				click(loc);
 				List<WebElement> l2 = findWebElements(loclist);
 				l2.get(1).click();	

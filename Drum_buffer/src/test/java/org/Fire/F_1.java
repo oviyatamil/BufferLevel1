@@ -13,7 +13,7 @@ Home_page h;
 @Test
 protected void home() {
 	h= new Home_page(driver);
-	ReportSetup.test = ReportSetup.report.createTest("HOME SCREEN");
+	ReportSetup.test = ReportSetup.report.createTest("HOME SCREEN FIRE");
 	ReportSetup.test.assignCategory("Fire-1");
 	h.fire();
 	ReportSetup.test.log(Status.PASS, "Navigates to fire home page");

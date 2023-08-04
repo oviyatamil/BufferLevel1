@@ -9,8 +9,6 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-
 import com.BasePage.BasePage;
 
 public class Analytics extends BasePage{
@@ -27,7 +25,6 @@ public class Analytics extends BasePage{
 	private By heatmap2 = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[3]");
 	private By heatmap3 = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[5]");
 	private By diasum = By.xpath("//span[contains(text(),'Dialysis Summary')]");
-	private By mouse = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[1]/*[local-name()='rect'][5]");
 	private By slider = By.xpath("(//*[local-name()='g' and contains(@class,'slider')])[1]/*[3]");
 	private By dd = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[4]");
 	private By ddlist = By.xpath("(//div[@role='listbox'])[1]/ancestor::div[1]/div[1]/mat-option");
@@ -36,12 +33,8 @@ public class Analytics extends BasePage{
 	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[18]");
 	private By yeardd = By.xpath("//span[contains(text(),'2023')]/parent::span");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By month = By.xpath("//div[text()=' JUL ']/parent::button");
-	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");	
-	private By enddate = By.xpath("//div[text()=' 21 ']/parent::button");
-	private By chart = By.xpath("//*[local-name()='g' and contains(@class,'crosslineBottom')]");
-	private By legenddia = By.xpath("(//*[local-name()='g' and contains(@class,'legend')])[4]/*[local-name()='g']/*[local-name()='rect']");
-	private By rel = By.xpath("//*[local-name()='g' and contains(@class,'crossline-label-group')]/*[local-name()='text']");
+	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");		
+	private By legenddia = By.xpath("(//*[local-name()='g' and contains(@class,'legend')])[4]/*[local-name()='g']/*[local-name()='rect']");	
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
 	private By export = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[1]/*[local-name()='rect'][2]");
@@ -50,7 +43,7 @@ public class Analytics extends BasePage{
 	private By jpg2 = By.xpath("(//span[text()='Export As JPG'])[2]");
 	private By pdf = By.xpath("//mat-icon[@mattooltip='Export to PDF']");
 	private By charts = By.xpath("(//*[local-name()='g' and contains(@class,'plots')])[1]");
-	private By charts2 = By.xpath("(//*[local-name()='g' and contains(@class,'plots')])[2]");
+
 	
 	public void home() {
 		try {
@@ -107,7 +100,7 @@ public class Analytics extends BasePage{
 			String[] split3 = split2[0].split(" ");
 			String m =split3[1];			
 			int n = (Integer.parseInt(m))-1;	
-			WebElement end = driver.findElement(By.xpath("//div[contains(text(),'"+String.valueOf(n)+"')]/parent::button"));
+			WebElement end = driver.findElement(By.xpath("//div[contains(text(),'"+n+"')]/parent::button"));
 			end.click();
 			click(apply);
 			Thread.sleep(1000);
@@ -174,7 +167,7 @@ public class Analytics extends BasePage{
 			String[] split3 = split2[0].split(" ");
 			String m =split3[1];
 			int n = (Integer.parseInt(m))-1;
-			WebElement end = driver.findElement(By.xpath("//div[contains(text(),'"+String.valueOf(n)+"')]/parent::button"));
+			WebElement end = driver.findElement(By.xpath("//div[contains(text(),'"+n+"')]/parent::button"));
 			end.click();
 			click(apply);
 			Thread.sleep(1000);

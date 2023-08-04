@@ -1,7 +1,6 @@
 package org.dialysis;
 
 import org.Dialysis.Dialysis;
-import org.fire.Home_page;
 import org.testng.annotations.Test;
 
 import com.BasePage.ReportSetup;
@@ -15,7 +14,7 @@ Dialysis d;
 @Test
 protected void home() {
 	d= new Dialysis(driver);
-	ReportSetup.test = ReportSetup.report.createTest("HOME SCREEN");
+	ReportSetup.test = ReportSetup.report.createTest("DIALYSIS-HOME SCREEN");
 	ReportSetup.test.assignCategory("Dia-1");
 	d.home();
 	ReportSetup.test.log(Status.PASS, "Navigates to Dialysis home page");

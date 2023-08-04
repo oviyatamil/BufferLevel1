@@ -1,9 +1,7 @@
 package org.Oee;
 
-import org.OeeMonitoring.HomePage;
 import org.OeeMonitoring.SpindleMonitor;
 import org.testng.annotations.Test;
-
 import com.BasePage.ReportSetup;
 import com.BaseTest.BaseTest;
 import com.aventstack.extentreports.Status;
@@ -11,7 +9,7 @@ import com.aventstack.extentreports.Status;
 public class OE_004 extends BaseTest {
 SpindleMonitor sp;
 @Test
-protected void spindle() {
+protected void spindlemonitor() {
 	sp = new SpindleMonitor(driver);
 	ReportSetup.test = ReportSetup.report.createTest("Spindle Monitoring Screen");
 	ReportSetup.test.assignCategory("Oee-4");
