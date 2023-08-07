@@ -4,11 +4,8 @@ import static org.testng.Assert.assertEquals;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -34,16 +31,7 @@ public class Reports_loss extends BasePage {
 	private By mechlist = By.xpath("(//span[text()=' TL-01 '])/ancestor::div[1]/mat-option");
 	private By filter = By.xpath("(//mat-select[@role='combobox'])[5]/ancestor::div[1]/descendant::div[3]");
 	private By filterlist = By.xpath("(//span[text()='Monthly'])/ancestor::div[1]/mat-option");
-	private By monthmm = By.xpath("(//mat-select[@role='combobox'])[6]/ancestor::div[1]/descendant::div[3]");
-	private By monthlist = By.xpath("(//span[text()='JANUARY'])/ancestor::div[1]/mat-option");
-	private By yearyy = By.xpath("(//mat-select[@role='combobox'])[7]/ancestor::div[1]/descendant::div[3]");
-	private By yearlist = By.xpath("(//span[text()=' 2022 '])/ancestor::div[1]/mat-option");
 	private By operalist = By.xpath("(//span[text()=' Idle Time '])/ancestor::div[1]/mat-option");
-	private By text = By.xpath("(//mat-select[@role='combobox'])[2]/descendant::span[2]");
-	private By loss = By.xpath("(//*[local-name()='g' and contains(@class,'dataset-axis')])[2]/*");
-	private By losspercent = By.xpath("(//*[local-name()='g' and contains(@class,'fusioncharts-datalabels')])[2]/*");
-	private By chart1 = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[1]");
-	private By chart2 = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[2]");
 	
 	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[14]");
 	private By yeardd = By.xpath("(//span[contains(text(),'2023')])[2]/parent::span");
@@ -51,13 +39,13 @@ public class Reports_loss extends BasePage {
 //	private By month = By.xpath("//div[text()=' JUL ']/parent::button");
 	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
 //	private By enddate = By.xpath("//div[text()=' 18 ']/parent::button");
-	private By pdf = By.xpath("//mat-icon[@mattooltip='Export to PDF']");
+
 	private By no = By.xpath("//table/tbody/tr/td");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
 	private By head = By.xpath("//table/thead/tr/th");
 	private By data = By.xpath("//table/tbody/tr/td");
-	private By row = By.xpath("//table/tbody/tr");
+	
 	
 	public void oee() {
 		try {
@@ -120,8 +108,6 @@ public class Reports_loss extends BasePage {
 			l2.get(i).click();			
 			String datas = new SimpleDateFormat("MMM dd,yyyy,hh:mm").format(new Date());
 			System.out.println("Current timing is " + datas);
-			String[] split = datas.split(" ");
-			String s = split[0].toUpperCase();
 			Thread.sleep(1000);					
 			System.out.println("Calendar date is selected");
 			click(search);

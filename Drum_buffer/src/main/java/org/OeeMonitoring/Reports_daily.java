@@ -33,24 +33,15 @@ public class Reports_daily extends BasePage {
 	private By shiftlist = By.xpath("(//span[text()=' Shift 1 '])/ancestor::div[1]/mat-option");
 	private By machine = By.xpath("(//mat-select[@role='combobox'])[4]/ancestor::div[1]/descendant::div[4]");
 	private By mechlist = By.xpath("(//span[text()=' TL-01 '])/ancestor::div[1]/mat-option");
-	private By monthmm = By.xpath("(//mat-select[@role='combobox'])[3]/ancestor::div[1]/descendant::div[3]");
-	private By monthlist = By.xpath("//span[text()=' JANUARY ']/ancestor::div[1]/mat-option");
-	private By yearyy = By.xpath("(//mat-select[@role='combobox'])[4]/ancestor::div[1]/descendant::div[3]");
-	private By yearlist = By.xpath("(//span[text()=' 2022 '])/ancestor::div[1]/mat-option");
-	private By pdf = By.xpath("//mat-icon[@mattooltip='Export to PDF']");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
-	private By head = By.xpath("//table/thead/tr/th");
 	private By text = By.xpath("(//mat-select[@role='combobox'])[3]/descendant::span[2]");
 	private By text2 = By.xpath("(//mat-select[@role='combobox'])[4]/descendant::span[2]");
 	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[14]");
 	private By yeardd = By.xpath("//span[contains(text(),'2023')]/parent::span");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By month = By.xpath("//div[text()=' JUL ']/parent::button");
 	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
-	private By enddate = By.xpath("//div[text()=' 18 ']/parent::button");
 	private By daterep = By.xpath("//table/tr/th[3]");
-	private By caltext = By.xpath("//input[@formcontrolname='date']");
 	private By prodhour = By.xpath("//table/tr[12]/td");
 
 	public void oee() {

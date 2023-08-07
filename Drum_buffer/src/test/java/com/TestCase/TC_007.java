@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 import com.BasePage.ReportSetup;
 import com.BaseTest.BaseTest;
 import com.Pages.Master_menu;
-import com.Pages.Master_product;
 import com.aventstack.extentreports.Status;
 
 public class TC_007 extends BaseTest{

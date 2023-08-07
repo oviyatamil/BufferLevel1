@@ -28,18 +28,13 @@ public class Home_Page extends BasePage{
 	private By back = By.xpath("//span[text()='Back to Help Center']/parent::span/mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
 	private By search = By.xpath("//input[contains(@placeholder,'Enter')]");
-	private By home = By.xpath("//span[contains(text(),'Home')]");
 	private By profile = By.xpath("//span[text()='Profile']/parent::button/mat-icon");
 	private By edit = By.xpath("//p[text()='Edit Profile']/ancestor::span/mat-icon");
-	private By cancel = By.xpath("//span[contains(text(),'ancel')]");
 	private By status = By.xpath("//span[text()='Status']");
 	private By away = By.xpath("//span[text()='Away']");
 	private By user = By.xpath("//input[@formcontrolname='userName']");
 	private By phno = By.xpath("//input[@formcontrolname='mobileNumber']");
 	private By update = By.xpath("//span[contains(text(),'pdate')]");
-	private By pwd = By.xpath("//span[text()='Away']");
-	private By pwd2 = By.xpath("//input[@id='password-confirm']");
-	private By changepwd = By.xpath("//button[@type='submit']");
 	private By aws = By.xpath("//div[text()='Cost across AWS']/following::div[1]/div");
 	private By azure = By.xpath("//div[text()='Azure']/following::div[1]/div");
 	private By cloud = By.xpath("//div[text()=' Google Cloud']/following::div[1]/div");

@@ -110,6 +110,7 @@ public class Quality_ProductionEntry extends BasePage{
 			EnterText(reason, "low quality");
 			EnterText(quantity, "2");
 			click(save);
+			System.out.println("Successfully entered production entry");
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -164,10 +165,15 @@ public class Quality_ProductionEntry extends BasePage{
 		}
 	}
 	public void profile() {
-		click(profile);
-		System.out.println("profile button is clicked");
-		click(signout);
-		System.out.println("signout button is clicked");
+		try {
+			Thread.sleep(1000);
+			click(profile);
+			System.out.println("profile button is clicked");
+			click(signout);
+			System.out.println("signout button is clicked");
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

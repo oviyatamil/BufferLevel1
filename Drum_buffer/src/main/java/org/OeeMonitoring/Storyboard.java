@@ -110,7 +110,6 @@ public class Storyboard extends BasePage{
 			waittobeclickable(equipdd, 10);
 			click(equipdd);
 			List<WebElement> equipment = findWebElements(equiplist);
-			List<String> s = new LinkedList<>();
 			for (int i = 1; i < equipment.size(); i++) {
 					equipment.get(i).click();
 					System.out.println(gettext(equiptext));
@@ -502,6 +501,7 @@ public class Storyboard extends BasePage{
 							if (txt.equals("0")) {
 								continue;
 							}else if(txt.equals("N/A")){
+								System.out.println("Part count shows N/A");
 								continue;
 							}
 								else {

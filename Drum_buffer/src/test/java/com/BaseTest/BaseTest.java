@@ -42,7 +42,7 @@ public class BaseTest {
 //		ReportSetup.test.log(Status.INFO,"Waiting For 10 sec");
 //		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 		Pages_TC_001 loged =new Pages_TC_001(driver);
-		loged.Login2();
+		loged.Login4();
 //		LoginPage l = new LoginPage(driver);
 //		l.Login();
 	}

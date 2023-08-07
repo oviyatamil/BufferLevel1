@@ -1,12 +1,9 @@
 package org.OeeMonitoring;
 
 import static org.testng.Assert.assertEquals;
-
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Optional;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -48,27 +45,6 @@ public class Kpi_oee extends BasePage {
 	private By qualitylow = By.xpath("//div[text()='Quality']/following::div[8]");
 	private By overalquality = By.xpath("//div[text()='Quality']/following::div[1]");
 
-	
-	private By availtable1 = By.xpath("//*[@id='element-to-export']/div[4]/div[4]/div/table/tbody/tr[2]/td");
-	private By performtable1 = By.xpath("//*[@id='element-to-export']/div[4]/div[4]/div/table/tbody/tr[3]/td");
-	private By qualitytable1 = By.xpath("//*[@id='element-to-export']/div[4]/div[4]/div/table/tbody/tr[4]/td");
-
-	private By oeetables2 = By.xpath("//*[@id='element-to-export']/div[4]/div[5]/div/table/tbody/tr[1]/td");
-	private By availtable2 = By.xpath("//*[@id='element-to-export']/div[4]/div[5]/div/table/tbody/tr[2]/td");
-	private By performtable2 = By.xpath("//*[@id='element-to-export']/div[4]/div[5]/div/table/tbody/tr[3]/td");
-	private By qualitytable2 = By.xpath("//*[@id='element-to-export']/div[4]/div[5]/div/table/tbody/tr[4]/td");
-
-	private By oeetables3 = By.xpath("//*[@id='element-to-export']/div[4]/div[6]/div/table/tbody/tr[1]/td");
-	private By availtable3 = By.xpath("//*[@id='element-to-export']/div[4]/div[6]/div/table/tbody/tr[2]/td");
-	private By performtable3 = By.xpath("//*[@id='element-to-export']/div[4]/div[6]/div/table/tbody/tr[3]/td");
-	private By qualitytable3 = By.xpath("//*[@id='element-to-export']/div[4]/div[6]/div/table/tbody/tr[4]/td");
-	private By header = By.xpath("(//table)[2]/thead/tr[2]/th");
-	private By activetable = By.xpath("//*[@id='element-to-export']/div[5]/div[4]/table/tbody/tr[1]/td");
-	private By spindletable = By.xpath("//*[@id='element-to-export']/div[5]/div[4]/table/tbody/tr[2]/td");
-	private By idletable = By.xpath("//*[@id='element-to-export']/div[5]/div[4]/table/tbody/tr[3]/td");
-	private By alerttable = By.xpath("//*[@id='element-to-export']/div[5]/div[4]/table/tbody/tr[4]/td");
-	private By downtable = By.xpath("//*[@id='element-to-export']/div[5]/div[4]/table/tbody/tr[5]/td");
-
 	private By Active = By.xpath("//div[text()='Device Status']/following::div[5]/span[1]");
 	private By spindle = By.xpath("//div[text()='Device Status']/following::div[5]/span[2]");
 	private By idle = By.xpath("//div[text()='Device Status']/following::div[5]/span[3]");
@@ -86,8 +62,6 @@ public class Kpi_oee extends BasePage {
 	private By timestamp = By.xpath("//div[contains(text(),'Emergency Stop')]/ancestor::table/tbody/tr/td[1]/div[1]");
 	private By msg = By.xpath("//div[contains(text(),'Emergency Stop')]/ancestor::table/tbody/tr/td[2]/div[1]");
 	private By pgmno = By.xpath("//div[contains(text(),'Emergency Stop')]/ancestor::table/tbody/tr/td[3]/div[1]");
-	private By partstable = By.xpath("//*[@id='element-to-export']/div[6]/div[7]/table/tbody/tr/td");
-	private By partrowsize = By.xpath("//*[@id='element-to-export']/div[4]/div[8]/div[7]/div/table/tbody/tr");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
 	
@@ -135,7 +109,6 @@ public class Kpi_oee extends BasePage {
 			waittobeclickable(equipdd, 10);
 			click(equipdd);
 			List<WebElement> equipment = findWebElements(equiplist);
-			List<String> s = new LinkedList<>();
 			for (int i = 1; i < equipment.size(); i++) {
 					equipment.get(i).click();
 					System.out.println(gettext(equiptext));
@@ -227,13 +200,9 @@ public class Kpi_oee extends BasePage {
 					System.out.println("*******");
 					Thread.sleep(1000);
 					List<Float> l = new LinkedList<>();
-					float sum2 = 0f;
-					
+					float sum2 = 0f;					
 					for(int a=4;a<7;a++) {
-					WebElement tab = driver.findElement(By.xpath("//*[@id='element-to-export']/div[4]/div["+a+"]/div/table/tbody/tr[1]/td"));
-					List<WebElement>  dat = driver.findElements(By.xpath("//*[@id='element-to-export']/div[4]/div["+a+"]/div/table/tbody/tr[1]/td"));
-					
-					
+					List<WebElement>  dat = driver.findElements(By.xpath("//*[@id='element-to-export']/div[4]/div["+a+"]/div/table/tbody/tr[1]/td"));										
 					for (int p = 1; p < dat.size(); p++) {
 						String text = dat.get(p).getText();
 						String replace = text.replace("%", "").trim();

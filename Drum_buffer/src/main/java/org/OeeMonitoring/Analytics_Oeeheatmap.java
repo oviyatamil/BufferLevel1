@@ -1,9 +1,6 @@
 package org.OeeMonitoring;
 
 import static org.testng.Assert.assertEquals;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -31,13 +28,10 @@ public class Analytics_Oeeheatmap extends BasePage{
 	private By equiplist = By.xpath("//div[@role='listbox']/mat-option/span");
 	private By type = By.xpath("//mat-label[text()='Type']/ancestor::div[1]/descendant::div[3]");
 	private By typelist = By.xpath("//span[text()='Select type']/ancestor::div[1]/mat-option");
-	private By text = By.xpath("(//mat-select[@role='combobox'])[2]/descendant::span[2]");
 	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[14]");
 	private By yeardd = By.xpath("(//span[contains(text(),'2023')])[2]/parent::span");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By month = By.xpath("//div[text()=' JUL ']/parent::button");
 	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
-	private By enddate = By.xpath("//div[text()=' 18 ']/parent::button");
 	private By mouse = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[1]/*[20]");
 	private By slide = By.xpath("(//*[local-name()='g' and contains(@class,'fc-gl-slider')])[1]/*[local-name()='circle'][3]");
 	private By export = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[1]/*[local-name()='rect'][2]");
@@ -161,7 +155,7 @@ public class Analytics_Oeeheatmap extends BasePage{
 	}
 	public void mouseover() {
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 			Actions(mouse);
 			System.out.println("Mouse over in chart is working");
 			click(pdf);

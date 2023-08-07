@@ -1,11 +1,7 @@
 package org.OeeMonitoring;
 
 import static org.testng.Assert.assertEquals;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -34,9 +30,7 @@ public class Analytics_device extends BasePage{
 	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[14]");
 	private By yeardd = By.xpath("(//span[contains(text(),'2023')])[2]/parent::span");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By month = By.xpath("//div[text()=' JUL ']/parent::button");
 	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
-	private By enddate = By.xpath("//div[text()=' 18 ']/parent::button");
 	private By mouse = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[1]/*[20]");
 	private By slide = By.xpath("(//*[local-name()='g' and contains(@class,'fc-gl-slider')])[1]/*[local-name()='circle'][3]");
 	private By export = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[1]/*[local-name()='rect'][2]");
@@ -44,7 +38,7 @@ public class Analytics_device extends BasePage{
 	private By pdf = By.xpath("//mat-icon[@mattooltip='Export to PDF']");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
-	private By graph = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[1]");
+	
 	
 	
 	

@@ -203,7 +203,7 @@ public class Oxygen_analytics extends BasePage {
 				
 				click(dd);
 				List<WebElement> list = findWebElements(ddlist2);
-				
+				Thread.sleep(1000);
 					list.get(0).click();
 					click(apply);
 					Thread.sleep(2000);

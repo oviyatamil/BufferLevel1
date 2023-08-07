@@ -8,33 +8,20 @@
     <classes>	   
 	 <!--  	<class name="com.TestCase.TC_004" />
 		       <class name="com.Superadmin.SA_003" />
-		    <class name="org.tool.T_01"></class>     
-		         <class name="org.Oxygen.Oxy_1"></class> 
-		          <class name="org.Oee.OE_012"></class>
-				  <class name="org.Fire.F_1"></class>
-					  <class name="org.Fire.F_2"></class>					 					 					
-					 <class name="org.dialysis.Dia_1"></class> 
-					  <class name="org.dialysis.Dia_2"></class>
-					   <class name="org.Oxygen.Oxy_2"></class> 
+		    <class name="org.tool.T_01"></class>     		 
+				  <class name="org.Fire.F_1"></class>					 
 					   <class name="org.dialysis.Dia_3"></class> 
-					   <class name="org.Energy.E_4"></class>	
-					<class name="org.Energy.E_6"></class>					  
-					  <class name="org.Oxygen.Oxy_4"></class>
-					  <class name="org.Oxygen.Oxy_1"></class> 				
-					<class name="org.Oee.OE_005"></class>
-					<class name="org.Oee.OE_001"></class>
-					<class name="org.Oee.OE_016"></class>
-					<class name="org.quality.Q_3"></class>
-					 <class name="org.Oee.OE_001"></class>
-					<class name="org.quality.Q_3"></class>
-				<class name="org.quality.Q_1"></class>
-				<class name="org.quality.Q_2"></class>
-				<class name="org.quality.Q_3"></class>
-				<class name="org.quality.Q_5"></class>
-				<class name="org.quality.Q_6"></class>
-				<class name="org.quality.Q_7"></class> -->
-				 <class name="org.Oxygen.Oxy_2"></class> 					 
-					  <class name="org.Oxygen.Oxy_3"></class>
+					   <class name="org.Energy.E_4"></class>						
+				    <class name="org.Oee.OE_004"></class>				   
+				     <class name="org.Oxygen.Oxy_3"></class> 
+				     <class name="org.quality.Q_1"></class>
+				     <class name="org.quality.Q_2"></class>
+				     <class name="org.quality.Q_3"></class>
+				     <class name="org.quality.Q_4"></class>
+				    <class name="org.quality.Q_5"></class>
+				     <class name="org.quality.Q_6"></class>
+				     <class name="org.quality.Q_7"></class>-->
+				     <class name="org.quality.Q_6"></class>
 					
 					  
 					

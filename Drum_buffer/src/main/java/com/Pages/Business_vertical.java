@@ -20,10 +20,6 @@ public class Business_vertical extends BasePage {
 	
 	private By product =By.xpath("//span[text()=' Product ']");
 	private By businessvertical =By.xpath("//span[text()=' Business Vertical ']");
-	private By colour = By.cssSelector("//table/tbody/tr/td[2]");
-	private By colour2 = By.cssSelector("//table/tbody/tr/td[6]/span[1]/span");
-	private By colour3 = By.cssSelector("//table/tbody/tr/td[6]/span[1]");
-	
 	private By add=By.xpath("//span[text()='Add']");
 	private By businessname= By.xpath("//input[@formcontrolname='business_Name']");
 	private By bnamelist = By.xpath("//table/tbody/tr/td[2]");

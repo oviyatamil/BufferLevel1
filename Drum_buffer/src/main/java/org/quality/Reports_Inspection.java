@@ -22,12 +22,14 @@ public class Reports_Inspection extends BasePage {
 	private By auditreport = By.xpath("//span[contains(text(),'Audit Report')]");
 	private By date = By.xpath("//table/tbody/tr");
 	private By machname = By.xpath("(//mat-select[@role='combobox'])[1]/descendant::div[4]");
+	private By parttext = By.xpath("(//mat-select[@role='combobox'])[2]/descendant::span[2]");
+	private By txt = By.xpath("(//mat-select[@role='combobox'])[1]/descendant::span[2]");
 	private By partno = By.xpath("(//mat-select[@role='combobox'])[2]/descendant::div[4]");
 	private By control = By.xpath("(//mat-select[@role='combobox'])[3]/descendant::div[4]");
 	private By machdd = By.xpath("//span[text()='Select Machine Name']/parent::mat-option/parent::div/mat-option");
 	private By usagepartdd = By.xpath("//span[text()='All']/parent::mat-option/parent::div/mat-option");
-	private By partnodd = By.xpath("//span[text()='Select Part Number']/parent::mat-option/parent::div/mat-option");
-	private By controldd = By.xpath("//span[text()='Select Inspection Plan']/parent::mat-option/parent::div/mat-option");
+	private By partnodd = By.xpath("//span[contains(text(),'Select Part Number')]/ancestor::div[1]/mat-option");
+	private By controldd = By.xpath("//span[contains(text(),'Select Inspection Plan')]/ancestor::div[1]/mat-option");
 	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[13]");
 	private By yeardd = By.xpath("//span[contains(text(),'2023')]/parent::span");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
@@ -123,24 +125,27 @@ public class Reports_Inspection extends BasePage {
 				m.get(i).click();
 				click(partno);
 				List<WebElement> pd = findWebElements(partnodd);
-				for (int j = 1; j < pd.size(); j++) {
-					if(j>1) {
-						click(partno);
-					}
-					pd.get(j).click();
+//				for (int j = 1; j < pd.size(); j++) {
+//					if(j>1) {
+//						click(partno);
+//					}
+					pd.get(1).click();
 					click(control);
 					List<WebElement> c = findWebElements(controldd);
-//					WebDriverWait w = new WebDriverWait(driver,Duration.ofSeconds(10));
-//					 w.until(ExpectedConditions.elementToBeClickable(c.get(1)));
-					c.get(1).click();					
-					click(search);
+					Thread.sleep(500);
+					if(c.size()==1) {
+						System.out.println("No inspection plan");							
+					}else {
+						c.get(c.size()-1).click();	
+						click(search);
+					}				
 					Thread.sleep(1000);
 					if (findWebElements(date).size()>2) {
 						System.out.println("Table displayed");					
 					} else {
-						log.info("Table not displayed");
+						log.info("Table not displayed for "+gettext(txt)+" ---- "+gettext(parttext));
 					}
-				}
+//				}
 				Thread.sleep(500);
 			}
 		} catch (InterruptedException e) {
@@ -160,10 +165,10 @@ public class Reports_Inspection extends BasePage {
 				m.get(i).click();
 				click(apply);
 				Thread.sleep(500);
-				if (findWebElement(record).getText().contains("No Records found")) {
+				if (findWebElement(record).getText().contains("No Records found for "+gettext(txt))) {
 					log.info("No records found");
 				} else {
-					System.out.println("Records found");
+					System.out.println("Records found ");
 				}
 			}
 		} catch (InterruptedException e) {
@@ -184,7 +189,7 @@ public class Reports_Inspection extends BasePage {
 				m.get(i).click();
 				click(apply);
 				Thread.sleep(500);
-				if (findWebElement(record).getText().contains("No Records found")) {
+				if (findWebElement(record).getText().contains("No Records found for "+gettext(txt))) {
 					log.info("No records found");
 				} else {
 					System.out.println("Records found");
@@ -196,10 +201,15 @@ public class Reports_Inspection extends BasePage {
 	}
 
 	public void profile() {
-		click(profile);
-		System.out.println("profile button is clicked");
-		click(signout);
-		System.out.println("signout button is clicked");
+		try {
+			Thread.sleep(1000);
+			click(profile);
+			System.out.println("profile button is clicked");
+			click(signout);
+			System.out.println("signout button is clicked");
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

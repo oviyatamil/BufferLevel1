@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 import com.BasePage.ReportSetup;
 import com.BaseTest.BaseTest;
 import com.SuperadminPage.Monitoring_Parameter;
-import com.SuperadminPage.Uom;
 import com.aventstack.extentreports.Status;
 
 public class SA_004 extends BaseTest {

@@ -59,8 +59,6 @@ public class Deploy extends BasePage{
 	private By product =By.xpath("//span[text()=' Product ']");
 	private By businessvertical =By.xpath("//span[text()=' Business Vertical ']");
 	private By bnamelist = By.xpath("//table/tbody/tr/td[2]");
-	private By threedotsradio = By.xpath("//table/tbody/tr/td[1]/span");
-	
 	
 	public void deploy() {
 		try {

@@ -23,7 +23,7 @@ public class Quality_Analytics extends BasePage{
 	private By partdd = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[4]");
 	private By partlist = By.xpath("//span[text()='Select Part Number']/parent::mat-option/parent::div/mat-option");
 	private By chardd = By.xpath("(//mat-select[@role='combobox'])[3]/ancestor::div[1]/descendant::div[4]");
-	private By charlist = By.xpath("//span[text()='Select Part Characteristic']/parent::mat-option/parent::div/mat-option");
+	private By charlist = By.xpath("//span[text()='Select Part Characteristic']/parent::mat-option/parent::div/mat-option/span");
 	private By search = By.xpath("//span[contains(text(),'Search')]");
 	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[13]");
 	private By yeardd = By.xpath("//span[contains(text(),'2023')]/parent::span");
@@ -100,10 +100,12 @@ public class Quality_Analytics extends BasePage{
 				p.get(1).click();
 				click(chardd);
 				List<WebElement> c = findWebElements(charlist);
+				System.out.println(c.get(1).getText());
 				for(int j=1;j<c.size();j++) {
 					if(j>1) {
 						click(chardd);
 					}
+					Thread.sleep(500);
 					c.get(j).click();
 					click(search);
 					Thread.sleep(500);

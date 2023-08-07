@@ -94,7 +94,7 @@ public class Monitoring_Parameter extends BasePage {
 				String text = x.getText();
 				s.add(text);
 			}
-			for (int i = 0; i < s.size(); i++) {
+			for (int i = 0; i < s.size();) {
 				if (s.get(i).equals("Parameter")) {
 					List<WebElement> rad = findWebElements(radiobtn);
 					rad.get(i).click();

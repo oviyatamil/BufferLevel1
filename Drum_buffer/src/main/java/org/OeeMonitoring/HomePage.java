@@ -1,10 +1,8 @@
 package org.OeeMonitoring;
 
 import static org.testng.Assert.assertEquals;
-
 import java.util.LinkedList;
 import java.util.List;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,8 +16,6 @@ public class HomePage extends BasePage{
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
 	private By Oee = By.xpath("//div[text()='OEE Monitoring']");
-	private By apply = By.xpath("//span[contains(text(),'Apply')]");
-	private By sitedd = By.xpath("//div[@class='cursor-pointer']/button");
 	private By oeepercent = By.xpath("//div[text()='OEE for last 30 days ']/following::mat-icon[1]/parent::div/div");
 	private By availability = By.xpath("//div[text()='OEE for last 30 days ']/following::mat-icon[2]/parent::div/div");
 	private By performance = By.xpath("//div[text()='OEE for last 30 days ']/following::mat-icon[3]/parent::div/div");
@@ -32,8 +28,6 @@ public class HomePage extends BasePage{
 	private By ftm = By.xpath("(//*[local-name()='g'])[229]/*[local-name()='path']");
 	private By ftmchart = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[5]/*");
 	private By pdf = By.xpath("//mat-icon[@mattooltip='Export to PDF']");
-	private By heatmap = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[1]/*[local-name()='rect'][2]");
-	private By heatjpg = By.xpath("(//span[text()='Export As JPG'])[1]");
 	private By machineexport = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[2]/*[local-name()='rect'][2]");
 	private By ftmjpg = By.xpath("(//span[text()='Export As JPG'])[3]");
 	private By machjpg = By.xpath("(//span[text()='Export As JPG'])[2]");

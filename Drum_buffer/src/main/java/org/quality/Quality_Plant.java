@@ -17,7 +17,7 @@ public class Quality_Plant extends BasePage {
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By quality = By.xpath("//div[text()='Quality']");
+	private By quality = By.xpath("//div[text()='Quality']/parent::div/button");
 	private By plant = By.xpath("//span[contains(text(),'Plant Manager')]");
 	private By smartdrum = By.xpath("//mat-icon[@mattooltip='Click to specific filter condition']/img");
 	private By machinedd = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
@@ -79,7 +79,7 @@ public class Quality_Plant extends BasePage {
 			waittobeclickable(ninedots, 20);
 			click(ninedots);
 			System.out.println("Ninedots button is clicked");
-			waittobeclickable(quality, 20);
+			waittobeclickable(quality, 10);
 			click(quality);
 			System.out.println("Quality option is clicked");
 			Thread.sleep(2000);

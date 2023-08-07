@@ -21,7 +21,6 @@ public class LiveMonitoring extends BasePage {
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
 	private By Oee = By.xpath("//div[text()='OEE Monitoring']");
 	private By monitoring = By.xpath("//span[contains(text(),'Monitoring')]");
-	private By apply = By.xpath("//span[contains(text(),'Apply')]");
 	private By live = By.xpath("//span[text()=' Live Monitoring ']");
 	private By table = By.xpath("//div[text()='TL-01']/parent::div/parent::div/parent::div/div/div[1]/div");
 	private By time = By.xpath("//div[text()='TL-01']/parent::div/parent::div/parent::div/div/div[2]/div[1]/span[2]");

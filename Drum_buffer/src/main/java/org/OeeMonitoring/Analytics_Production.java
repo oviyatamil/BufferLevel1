@@ -1,11 +1,7 @@
 package org.OeeMonitoring;
 
 import static org.testng.Assert.assertEquals;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,24 +23,16 @@ public class Analytics_Production extends BasePage {
 	private By equipdd = By.xpath("//mat-label[text()='Equipment']/ancestor::div[1]/descendant::div[3]");
 	private By equiplist = By.xpath("//div[@role='listbox']/mat-option/span");
 	private By text = By.xpath("(//mat-select[@role='combobox'])[2]/descendant::span[2]");
-	private By prodcard = By.xpath("//fuse-card[1]/div[2]/div");
-	private By defcard = By.xpath("//fuse-card[2]/div[2]/div");
 	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[14]");
 	private By yeardd = By.xpath("(//span[contains(text(),'2023')])[2]/parent::span");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By month = By.xpath("//div[text()=' JUL ']/parent::button");
 	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
-	private By enddate = By.xpath("//div[text()=' 17 ']/parent::button");
 	private By productionunit = By.xpath("(//*[local-name()='g' and contains(@class,'fusioncharts-datalabels')])[4]/*");
 	private By rejectunit = By.xpath("(//*[local-name()='g' and contains(@class,'fusioncharts-datalabels')])[8]/*");
 	private By export1 = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[1]/*[local-name()='rect'][2]");
 	private By jpg1 = By.xpath("(//span[text()='Export As JPG'])[1]");
-	private By export2 = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[2]/*[local-name()='rect'][2]");
-	private By jpg2 = By.xpath("(//span[text()='Export As JPG'])[2]");
 	private By export3 = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[3]/*[local-name()='rect'][2]");
 	private By jpg3 = By.xpath("(//span[text()='Export As JPG'])[3]");
-	private By export4 = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[4]/*[local-name()='rect'][2]");
-	private By jpg4 = By.xpath("(//span[text()='Export As JPG'])[4]");
 	private By pdf = By.xpath("//mat-icon[@mattooltip='Export to PDF']");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");

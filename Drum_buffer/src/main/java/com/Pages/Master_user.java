@@ -41,9 +41,6 @@ public class Master_user extends BasePage {
 	private By edit = By.xpath("//span[text()='Edit']");
 	private By update = By.xpath("//span[text()=' Update ']");
 	private By delete = By.xpath("//span[text()='Delete']");
-	private By delfull = By.xpath("//table/tbody/tr[1]/td[2]");
-	private By delrole = By.xpath("//table/tbody/tr[1]/td[3]");
-
 	private By delete2 = By.xpath("//span[text()=' Delete ']");
 	private By fnarrow = By.xpath("//table/thead/tr[1]/th[2]/div/child::div[2]");
 	private By rolearrow = By.xpath("//table/thead/tr[1]/th[3]/div/child::div[2]");

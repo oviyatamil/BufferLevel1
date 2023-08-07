@@ -21,23 +21,24 @@ public class Oxygen_reports extends BasePage{
 	private By oxy = By.xpath("//div[text()='Oxygen Monitoring']");
 	private By custom = By.xpath("//span[contains(text(),'Custom Report')]");
 	private By monthly = By.xpath("//span[contains(text(),'Oxygen Monthly Report')]");
-	private By hourly = By.xpath("//span[contains(text(),'Heat Map')]");
-	private By daily = By.xpath("//span[contains(text(),'Equipment Wise Consumption')]");
+	private By hourly = By.xpath("//span[contains(text(),'Oxygen Hourly Report')]");
+	private By daily = By.xpath("//span[contains(text(),'Oxygen-Daily Report')]");
 	private By site = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
 	private By loc = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[4]");
 	private By loclist = By.xpath("//span[text()='Select Location']/ancestor::div[1]/mat-option");
 	private By cat= By.xpath("(//mat-select[@role='combobox'])[3]/ancestor::div[1]/descendant::div[4]");
 	private By machine = By.xpath("(//mat-select[@role='combobox'])[4]/ancestor::div[1]/descendant::div[4]");
 	private By list = By.xpath("//span[text()='Select Site']/parent::mat-option/parent::div/mat-option");
-	private By list2 = By.xpath("//span[text()='All']/parent::mat-option/parent::div/mat-option");
-	private By apply = By.xpath("//span[contains(text(),'Search')]");
-	private By table = By.xpath("//table/tbody/tr/td/span");
+	private By list2 = By.xpath("//div[@role='listbox']/mat-option/span[contains(text(),'All')]");
+	private By list3 = By.xpath("//div[@role='listbox']/mat-option/span[contains(text(),'All')]");
+	private By table = By.xpath("//table/tbody/tr/td");
 	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[18]");
 	private By yeardd = By.xpath("//span[contains(text(),'2023')]/parent::span");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
 	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
 	private By txt = By.xpath("(//mat-select[@role='combobox'])[1]/descendant::span[2]");
 	private By row = By.xpath("//table/tbody/tr");	
+	private By search = By.xpath("//span[text()='Search']");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
 	
@@ -114,29 +115,33 @@ public class Oxygen_reports extends BasePage{
 	
 }
 	public void dd() {
-		try {
-			click(site);
-			List<WebElement> l = findWebElements(list);
-			l.get(0).click();
-			Thread.sleep(500);
+		try {					
 			click(loc);
 			List<WebElement> l2 = findWebElements(loclist);
 			l2.get(1).click();		
-			click(cat);
+			click(cat);	
 			Thread.sleep(500);
-			List<WebElement> l3 = findWebElements(list);
-			l3.get(0).click();
-			Thread.sleep(500);
+			click(list2);
+			Thread.sleep(100);
 			click(machine);
-			List<WebElement> l4 = findWebElements(list);
-			l4.get(0).click();
+			Thread.sleep(500);
+			click(list3);
 			String data = new SimpleDateFormat("MMM dd,yyyy,hh:mm").format(new Date());	
 			System.out.println("Current timing is "+data);
 			calendar(calendar, yeardd, year, startdate);
-			if(findWebElement(table).isDisplayed()!=true) {
-				log.info("Table is not displayed for "+gettext(txt));			
-			}else {
+			click(site);
+			List<WebElement> l = findWebElements(list);
+			for(int i=1;i<l.size();i++) {
+				if(i>1) {
+					click(site);	
+				}
+			l.get(i).click();	
+			click(search);
+			Thread.sleep(500);
+			if(findWebElements(table).size()>1) {
 				System.out.println("Table is displayed");
+			}else{
+				log.info("Table is not displayed for "+gettext(txt));		
 			}
 			String data2 = new SimpleDateFormat("dd-MMM").format(new Date());	
 			String[] split5 = data2.split("-");
@@ -147,7 +152,7 @@ public class Oxygen_reports extends BasePage{
 			System.out.println(h);
 			Thread.sleep(1000);
 			List<WebElement> rows = findWebElements(row);
-				WebElement text = driver.findElement(By.xpath("//table/tbody/tr["+(rows.size()-1)+"]/td[5]"));		
+				WebElement text = driver.findElement(By.xpath("//table/tbody/tr["+(rows.size())+"]/td[5]"));		
 			String text2 = text.getText();
 			String[] split4 = text2.split(",");
 			System.out.println(split4[1]);
@@ -156,46 +161,44 @@ public class Oxygen_reports extends BasePage{
 			}else {
 				log.info("Report end date is wrong");
 			}
-//			String data2 = new SimpleDateFormat("dd-MMM").format(new Date());	
-//			List<WebElement> rows = findWebElements(row);
-//				WebElement text = driver.findElement(By.xpath("//table/tbody/tr["+(rows.size()-1)+"]/td[5]"));		
-//			String text2 = text.getText();
-//			String[] split4 = text2.split(",");
-//			if(split4[1].contains(data2)) {
-//				System.out.println("Report end date is correct");
-//			}else {
-//				log.info("Report end date is wrong");
-//			}
+			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 	}
 	public void dd2() {
-		try {
-			click(site);
-			List<WebElement> l = findWebElements(list);
-			l.get(1).click();
-			Thread.sleep(500);
+		try {			
 			click(loc);
 			List<WebElement> l2 = findWebElements(loclist);
 			l2.get(1).click();
-			click(cat);
+			click(cat);	
 			Thread.sleep(500);
-			List<WebElement> l3 = findWebElements(list2);
-			l3.get(0).click();
+			click(list2);
+			Thread.sleep(100);
+//			List<WebElement> l3 = findWebElements(list2);
+//			Thread.sleep(500);
+//			l3.get(0).click();
 			click(machine);
 			Thread.sleep(500);
-			List<WebElement> l4 = findWebElements(list2);
-			l4.get(0).click();
+//			List<WebElement> l4 = findWebElements(list2);
+//			l4.get(0).click();
+			click(list3);
 			String data = new SimpleDateFormat("MMM dd,yyyy,hh:mm").format(new Date());	
 			System.out.println("Current timing is "+data);
 			calendar(calendar, yeardd, year, startdate);
-			click(apply);
-			if(findWebElement(table).isDisplayed()!=true) {
-				log.info("Table is not displayed for "+gettext(txt));
-				
-			}else {
+			click(site);
+			List<WebElement> l = findWebElements(list);
+			for(int i=1;i<l.size();i++) {
+				if(i>1) {
+					click(site);	
+				}
+			l.get(i).click();	
+			click(search);
+			Thread.sleep(500);
+			if(findWebElements(table).size()>1) {
 				System.out.println("Table is displayed");
+			}else{
+				log.info("Table is not displayed for "+gettext(txt));		
 			}
 			String data2 = new SimpleDateFormat("dd-MMM").format(new Date());	
 			String[] split5 = data2.split("-");
@@ -213,6 +216,7 @@ public class Oxygen_reports extends BasePage{
 				System.out.println("Report end date is correct");
 			}else {
 				log.info("Report end date is wrong");
+			}
 			}
 		} catch (NumberFormatException | InterruptedException e) {
 			e.printStackTrace();

@@ -1,11 +1,7 @@
 package org.OeeMonitoring;
 
 import static org.testng.Assert.assertEquals;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,7 +17,6 @@ public class Analytics_quality extends BasePage {
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
 	private By Oee = By.xpath("//div[text()='OEE Monitoring']");
 	private By analytics = By.xpath("//span[contains(text(),'Analytics')]");
-	private By apply = By.xpath("//span[contains(text(),'Apply')]");
 	private By quality = By.xpath("//span[text()=' Quality ']");
 	private By smartdrum = By.xpath("//mat-icon[@mattooltip='Click to Filter']");
 	private By bar = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[3]/*[local-name()='rect']");
@@ -31,30 +26,19 @@ public class Analytics_quality extends BasePage {
 	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[14]/parent::button");
 	private By yeardd = By.xpath("(//span[contains(text(),'2023')])[2]/parent::span");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By month = By.xpath("//div[text()=' JUL ']/parent::button");
 	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
-	private By enddate = By.xpath("//div[text()=' 18 ']/parent::button");
 	private By mouse = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[1]/*[20]");
 	private By slide = By
 			.xpath("(//*[local-name()='g' and contains(@class,'fc-gl-slider')])[1]/*[local-name()='circle'][3]");
 	private By export = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[1]/*[local-name()='rect'][2]");
 	private By jpg = By.xpath("(//span[text()='Export As JPG'])[1]");
-	private By export2 = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[2]/*[local-name()='rect'][2]");
-	private By jpg2 = By.xpath("(//span[text()='Export As JPG'])[2]");
-	private By export3 = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[3]/*[local-name()='rect'][2]");
-	private By jpg3 = By.xpath("(//span[text()='Export As JPG'])[3]");
-	private By pdf = By.xpath("//mat-icon[@mattooltip='Export to PDF']");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
 	private By plot = By
 			.xpath("(//*[local-name()='g' and contains(@class,'fusioncharts-datalabels')])[2]/*[local-name()='text']");
-	private By plot2 = By
-			.xpath("(//*[local-name()='g' and contains(@class,'fusioncharts-datalabels')])[4]/*[local-name()='text']");
-
 	private By pareto = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[5]/*[local-name()='rect']");
 	private By pareto2 = By
 			.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[11]/*[local-name()='path']");
-
 	private By overquality = By.xpath("(//fuse-card)[1]/div[2]");
 	private By totrej = By.xpath("(//fuse-card)[3]/div[2]");
 

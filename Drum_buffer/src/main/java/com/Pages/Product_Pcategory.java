@@ -2,14 +2,10 @@ package com.Pages;
 
 import static org.testng.Assert.assertEquals;
 
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,7 +25,6 @@ public class Product_Pcategory extends BasePage{
 	private By addproductcategory =By.xpath("//mat-label[text()='Product Category']/parent::label/parent::span/parent::div/child::input"); 
 	private By save=By.xpath("//span[text()=' Save ']");
 	private By cancel=By.xpath("//span[text()=' Cancel ']");
-	private By active=By.xpath("//span[@class='mat-checkbox-inner-container']");
 	private By pcdropdown = By.xpath("(//mat-select[@role='combobox'])[1]/descendant::div[3]");
 	private By pcdroplist = By.xpath("//span[text()='Select Category']/ancestor::div[1]/mat-option[@role='option']/span");
 	private By pnamedrop = By.xpath("(//mat-select[@role='combobox'])[2]/descendant::div[3]");
@@ -40,7 +35,6 @@ public class Product_Pcategory extends BasePage{
 	private By edit = By.xpath("//span[text()='Edit']");
 	private By update = By.xpath("//span[text()=' Update ']");
 	private By delete = By.xpath("//span[text()='Delete']");
-	private By row = By.xpath("//tbody/tr");
 	private By delpro = By.xpath("//tbody/tr[1]/td[2]/span");
 	private By delpc = By.xpath("//tbody/tr[1]/td[3]/span");
 	private By productlist = By.xpath("//tbody/tr/td[2]/span");

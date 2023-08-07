@@ -63,7 +63,6 @@ public class Master_menu extends BasePage {
 	private By profile = By.xpath("//span[text()=' Master ']/following::button[3]/span[1]/span/mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
 	private By menunamearr = By.xpath("//table/thead/tr[1]/th[2]/div/child::div[2]");
-	private By statusarr2 = By.xpath("//table/thead/tr[1]/th[3]/div/child::div[2]");
 	private By orderarr = By.xpath("//table/thead/tr[1]/th[4]/div/child::div[2]");
 	private By credatearr = By.xpath("//table/thead/tr[1]/th[6]/div/child::div[2]");
 	private By modibyarr = By.xpath("//table/thead/tr[1]/th[7]/div/child::div[2]");

@@ -16,7 +16,6 @@ public class Duplicate extends BasePage{
 		super(driver);
 	}
 	private By master = By.xpath("//span[text()=' Master ']");
-	private By menu = By.xpath("//span[text()=' Menu Permission ']");
 	private By product = By.xpath("//span[text()=' Product ']");
 	private By product2 = By.xpath("(//span[text()=' Product '])[2]");
 	private By productcategory=By.xpath("//span[text()=' Product Category ']");
@@ -29,7 +28,6 @@ public class Duplicate extends BasePage{
 	private By nextpage = By.xpath("//button[@aria-label='Next page']/span");
 	private By profile = By.xpath("//span[text()=' Master ']/following::button[3]/span[1]/span/mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
-	private By cancel = By.xpath("//span[text()=' Cancel ']");
 	
 	public void active() {
 	   try {

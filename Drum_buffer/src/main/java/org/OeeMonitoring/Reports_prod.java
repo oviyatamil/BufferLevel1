@@ -1,18 +1,13 @@
 package org.OeeMonitoring;
 
 import static org.testng.Assert.assertEquals;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import com.BasePage.BasePage;
 
 public class Reports_prod extends BasePage {
@@ -28,28 +23,19 @@ public class Reports_prod extends BasePage {
 	private By production = By.xpath("//span[text()=' Production Report ']");
 	private By equiptext = By.xpath("//mat-label[text()='Functional Location']/ancestor::div[1]/descendant::div[2]/span[1]/span");
 	private By site = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
-	private By sitelist = By.xpath("(//span[text()=' Chennai '])/ancestor::div[1]/mat-option");
-	private By smartdrum = By.xpath("//mat-icon[@mattooltip='Click to Filter']");
+	private By sitelist = By.xpath("(//span[text()=' Chennai '])/ancestor::div[1]/mat-option");	
 	private By location = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[3]");
-	private By locationlist = By.xpath("//span[text()=' TL-01 ']/ancestor::div[1]/mat-option");
-	private By pdf = By.xpath("//mat-icon[@mattooltip='Export to PDF']");
+	private By locationlist = By.xpath("//span[text()=' TL-01 ']/ancestor::div[1]/mat-option");	
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
-	private By signout = By.xpath("//span[text()='Sign out']");
-	private By head = By.xpath("//table/thead/tr/th");
+	private By signout = By.xpath("//span[text()='Sign out']");	
 	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[14]");
 	private By yeardd = By.xpath("//span[contains(text(),'2023')]/parent::span");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By month = By.xpath("//div[text()=' JUL ']/parent::button");
 	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
-	private By enddate = By.xpath("//div[text()=' 20 ']/parent::button");
-	private By daterep = By.xpath("//table/tr/th[3]");
-	private By caltext = By.xpath("//input[@formcontrolname='date']");
-	private By prodhour = By.xpath("//table/tr[12]/td");
 	private By overalloee = By.xpath("(//table)[1]/tr[2]/td[2]");
 	private By availability = By.xpath("(//table)[1]/tr[2]/td[3]");
 	private By performance = By.xpath("(//table)[1]/tr[2]/td[4]");
 	private By quality = By.xpath("(//table)[1]/tr[2]/td[5]");
-
 	private By acttime = By.xpath("(//table)[1]/tr[2]/td[6]");
 	private By idletime = By.xpath("(//table)[1]/tr[2]/td[7]");
 	private By alerttime = By.xpath("(//table)[1]/tr[2]/td[8]");
@@ -57,16 +43,10 @@ public class Reports_prod extends BasePage {
 	private By part = By.xpath("(//table)[1]/tr[2]/td[10]");
 	private By rej = By.xpath("(//table)[1]/tr[2]/td[11]");
 	private By hold = By.xpath("(//table)[1]/tr[2]/td[12]");
-
 	private By oee2 = By.xpath("(//table)[2]/tbody/tr/td[2]");
 	private By availability2 = By.xpath("(//table)[2]/tbody/tr/td[3]");
 	private By performance2 = By.xpath("(//table)[2]/tbody/tr/td[4]");
 	private By quality2 = By.xpath("(//table)[2]/tbody/tr/td[5]");
-
-	private By acttime2 = By.xpath("(//table)[2]/tbody/tr/td[6]");
-	private By idletime2 = By.xpath("(//table)[2]/tbody/tr/td[7]");
-	private By alerttime2 = By.xpath("(//table)[2]/tbody/tr/td[8]");
-	private By down2 = By.xpath("(//table)[2]/tbody/tr/td[9]");
 	private By part2 = By.xpath("(//table)[2]/tbody/tr/td[10]");
 	private By rej2 = By.xpath("(//table)[2]/tbody/tr/td[12]");
 	private By hold2 = By.xpath("(//table)[2]/tbody/tr/td[11]");
@@ -178,9 +158,7 @@ public class Reports_prod extends BasePage {
 				Float valueOf = Float.valueOf(replace);
 				f2.add(valueOf);
 				fl2 = fl2 + f2.get(i);
-			}
-			float n = fl2/f2.size();
-			String val2 = String.valueOf(Math.round(n));
+			}	
 			if (findWebElement(availability2).getText().equals("0")) {
 				log.info("Overall availability shows 0 in table for "+gettext(equiptext));
 				
@@ -197,9 +175,7 @@ public class Reports_prod extends BasePage {
 				Float valueOf = Float.valueOf(replace);
 				f3.add(valueOf);
 				fl3 = fl3 + f3.get(i);
-			}
-			float n2 = fl3/f3.size();
-			String val3 = String.valueOf(n2);
+			}			
 			if (findWebElement(performance).getText().equals("0")) {
 				log.info("Overall performance shows 0 in table for "+gettext(equiptext));				
 			} else {

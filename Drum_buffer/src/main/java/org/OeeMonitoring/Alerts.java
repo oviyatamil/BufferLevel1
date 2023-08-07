@@ -1,9 +1,6 @@
 package org.OeeMonitoring;
 
 import static org.testng.Assert.assertEquals;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -20,7 +17,6 @@ public class Alerts extends BasePage{
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
 	private By Oee = By.xpath("//div[text()='OEE Monitoring']");
 	private By alerts = By.xpath("//span[contains(text(),'Alert')]");
-	private By apply = By.xpath("//span[contains(text(),'Apply')]");
 	private By alert = By.xpath("(//span[contains(text(),'Alert')])[2]");
 	private By smartdrum = By.xpath("//mat-icon[@mattooltip='Click to Filter']");
 	private By equipdd = By.xpath("//mat-label[text()='Equipment']/ancestor::div[1]/descendant::div[3]");
@@ -28,9 +24,7 @@ public class Alerts extends BasePage{
 	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[14]");
 	private By yeardd = By.xpath("(//span[contains(text(),'2023')])[2]/parent::span");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By month = By.xpath("//div[text()=' JUL ']/parent::button");
 	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
-	private By enddate = By.xpath("//div[text()=' 18 ']/parent::button");
 	private By search = By.xpath("//span[contains(text(),'Search')]");
 	private By text = By.xpath("(//mat-select[@role='combobox'])[2]/descendant::span[2]");
 	private By datas = By.xpath("//table/tbody/tr/td");
