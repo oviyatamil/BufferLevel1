@@ -56,7 +56,6 @@ public class BasePage extends ReportSetup{
 				setup = new ReportSetup();
 				//testStepInfo("Entered into the username");
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	    }
@@ -145,14 +144,15 @@ public class BasePage extends ReportSetup{
 						 }
 					 }
 				 }
-			} catch (FileNotFoundException e) {
+				 w.close();
+				 } catch (FileNotFoundException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
         	 
 			return value;
-        	 
+        	
          }
          public void waittobeclickable(By locator,int time) {
         	 WebDriverWait w = new WebDriverWait(driver,Duration.ofSeconds(time));
