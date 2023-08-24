@@ -9,20 +9,59 @@
 	 <!--  	<class name="com.TestCase.TC_004" />
 		       <class name="com.Superadmin.SA_003" />
 		    <class name="org.tool.T_01"></class>     		 
-				  <class name="org.Fire.F_1"></class>					 
+				  					 
 					   <class name="org.dialysis.Dia_3"></class> 
-					   <class name="org.Energy.E_4"></class>						
-				    <class name="org.Oee.OE_004"></class>				   
-				     <class name="org.Oxygen.Oxy_3"></class> 
+					   <class name="org.Energy.E_4"></class>	
+					   <class name="org.Oee.OE_001"></class>					
+				    <class name="org.Oee.OE_004"></class>				   				    
 				     <class name="org.quality.Q_1"></class>
 				     <class name="org.quality.Q_2"></class>
 				     <class name="org.quality.Q_3"></class>
 				     <class name="org.quality.Q_4"></class>
 				    <class name="org.quality.Q_5"></class>
 				     <class name="org.quality.Q_6"></class>
-				     <class name="org.quality.Q_7"></class>-->
-				      <class name="org.Fire.F_1"></class>	
-				       <class name="org.Fire.F_2"></class>	
+				     <class name="org.quality.Q_7"></class>
+				     <class name="org.Fire.F_1"></class>				    	 
+				    	  <class name="org.Energy.E_1"></class>
+				    	   <class name="org.Energy.E_2"></class>
+				    	    <class name="org.Energy.E_3"></class>
+				    	     <class name="org.Energy.E_1"></class>
+				    	     <class name="org.Energy.E_2"></class>
+				    	     <class name="org.Energy.E_3"></class>				    	
+				    	     <class name="org.Energy.E_4"></class>
+				    	     <class name="org.Energy.E_1"></class>
+				    	      <class name="org.quality.Q_1"></class>
+				     <class name="org.quality.Q_2"></class>
+				     <class name="org.quality.Q_3"></class>
+				     <class name="org.quality.Q_4"></class>
+				    <class name="org.quality.Q_5"></class>
+				     <class name="org.quality.Q_6"></class>
+				    <class name="org.dialysis.Dia_1"></class> 
+				    <class name="org.dialysis.Dia_4"></class> 
+				    	<class name="org.dialysis.Dia_2"></class> 
+				    	  <class name="org.Energy.E_1"></class>
+				    	   <class name="org.Energy.E_2"></class>
+				    	   <class name="org.Energy.E_3"></class>
+				    	   <class name="org.Energy.E_4"></class>
+				    	   <class name="org.Energy.E_5"></class>
+				    	   <class name="com.Superadmin.SA_008" />
+				    	  <class name="com.Superadmin.SA_003" />
+				    	   <class name="com.Superadmin.SA_004" />
+				    	    <class name="com.Superadmin.SA_005" />
+				    	     <class name="com.Superadmin.SA_006" />
+				    	      <class name="com.Superadmin.SA_007" />
+				    	       <class name="com.Superadmin.SA_008" />
+				    	        <class name="com.Superadmin.SA_009" />
+				    	        <class name="org.Energy.E_1"></class>			    	 				    	   				    	   				    					    	  				    	   				    	   				    	 
+				    	   <class name="org.Energy.E_1"></class>
+				    	    <class name="org.Energy.E_2"></class>				    	 
+				    	   <class name="org.Energy.E_3"></class>
+				    	    <class name="org.Energy.E_6"></class> 				    	   				    	  
+				    	   <class name="org.Energy.E_7"></class>			    	 
+				    	  <class name="com.Superadmin.SA_009" /> 
+				    	  <class name="com.Superadmin.SA_011" /> --> 
+				    	  <class name="com.Iot.I_04" />  
+				    	
 					
 					  
 					

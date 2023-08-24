@@ -253,6 +253,7 @@ public class Masters_ReferenceData extends BasePage{
 					    rad2.get(i).click();	
 						click(edit);
 						clear(instrument);
+						Thread.sleep(500);
 						EnterText(instrument, "Every month inspection");
 						click(update);
 						System.out.println("Edit and update option is checked");

@@ -115,7 +115,7 @@ public class Analytics extends BasePage {
 			String ExpectedURL = "https://portal.drumbuffer.io/#/ToolLife/management";
 			String ActualURL = getCurrentURL();
 			assertEquals(ExpectedURL, ActualURL);
-			log.info("Assert verification is done for alert page");
+			log.info("Assert verification is done for Tool management page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

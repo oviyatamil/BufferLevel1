@@ -18,12 +18,12 @@ protected void Product() {
 	p = new Product_list(driver);
 	p.home();
 	ReportSetup.test.log(Status.PASS, "Successfully navigated to Home page");
-//	p.prod();
-//	ReportSetup.test.log(Status.PASS, "Successfully navigated to Product listing page");
-//	p.prodlist();
-//	ReportSetup.test.log(Status.PASS, "Successfully get product list");
-//	p.subscription();
-//	ReportSetup.test.log(Status.PASS, "Successfully navigated to Subscription listing page");
+	p.prod();
+	ReportSetup.test.log(Status.PASS, "Successfully navigated to Product listing page");
+	p.prodlist();
+	ReportSetup.test.log(Status.PASS, "Successfully get product list");
+	p.subscription();
+	ReportSetup.test.log(Status.PASS, "Successfully navigated to Subscription listing page");
 	p.uom();
 	ReportSetup.test.log(Status.PASS, "Successfully navigated to Subscription uom page");
 	p.profile();

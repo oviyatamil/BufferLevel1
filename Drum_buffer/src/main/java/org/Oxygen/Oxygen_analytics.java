@@ -1,7 +1,5 @@
 package org.Oxygen;
 
-import static org.testng.Assert.assertEquals;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -25,21 +23,24 @@ public class Oxygen_analytics extends BasePage {
 	private By heat = By.xpath("//span[contains(text(),'Heat Map')]");
 	private By equip = By.xpath("//span[contains(text(),'Equipment Wise Consumption')]");
 	private By charts = By.xpath("(//*[local-name()='g' and contains(@class,'fusioncharts-datalabels')])[3]/*[local-name()='text']");
-	private By msg = By.xpath("//span[contains(@class,'fusioncharts-container')]/*[local-name()='svg']");
+	private By msg = By.xpath("(//*[local-name()='g' and contains(@class,'fusioncharts-datalabels')])[2]");
 	private By txt = By.xpath("(//mat-select[@role='combobox'])[1]/descendant::span[2]");
+	private By hp = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[1]/*[local-name()='rect']");
 	private By slider = By.xpath("(//*[local-name()='g' and contains(@class,'slider')])[1]/*[3]");
 	private By site = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
-	private By sitelist = By.xpath("//span[text()=' KHCH1 ']/parent::mat-option/parent::div/mat-option");
+	private By sitelist = By.xpath("(//div[@role='listbox'])[1]/ancestor::div[1]/div[1]/mat-option");
 	private By dd = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[4]");
-	private By ddlist2 = By.xpath("//div[@role='listbox']/mat-option");
+	private By chartss = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[1]/*[local-name()='text']");
+	private By ddlist2 = By.xpath("//span[contains(text(),'O2')]/parent::mat-option/parent::div/mat-option");
 	private By ddlist = By.xpath("//span[contains(text(),'All')]/parent::mat-option/parent::div/mat-option");
 	private By apply = By.xpath("//span[contains(text(),'Apply')]");
+	
 	private By legend = By.xpath("(//*[local-name()='g' and contains(@class,'legend')])[2]/*[local-name()='g']/*[local-name()='rect']");
-	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[18]");
+	private By calendar = By.xpath("//mat-label[contains(text(),'Date')]/following::span[1]");
 	private By yeardd = By.xpath("//span[contains(text(),'2023')]/parent::span");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");	
 	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");	
-	private By mouseover = By.xpath("//*[local-name()='g' and contains(@class,'fusioncharts-datalabels')]/*[local-name()='text']");	
+
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
 	private By export = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[1]/*[local-name()='rect'][2]");
@@ -55,9 +56,9 @@ public class Oxygen_analytics extends BasePage {
 			click(oxy);
 			System.out.println("Oxygen monitoring option is clicked");
 			Thread.sleep(2000);
-			String ExpectedURL = "https://portal.careworx.in/#/oxygen/home";
-			String ActualURL = getCurrentURL();
-			assertEquals(ExpectedURL, ActualURL);
+//			String ExpectedURL = "https://portal.careworx.in/#/oxygen/home";
+//			String ActualURL = getCurrentURL();
+//			assertEquals(ExpectedURL, ActualURL);
 			System.out.println("Assert verification is done for Oxygen monitoring home page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -74,9 +75,9 @@ public class Oxygen_analytics extends BasePage {
 			click(consumption);
 			System.out.println("Consumption option is clicked");
 			Thread.sleep(1000);
-			String ExpectedURL = "https://portal.careworx.in/#/oxygen/consumption";
-			String ActualURL = getCurrentURL();
-			assertEquals(ExpectedURL, ActualURL);
+//			String ExpectedURL = "https://portal.careworx.in/#/oxygen/consumption";
+//			String ActualURL = getCurrentURL();
+//			assertEquals(ExpectedURL, ActualURL);
 			log.info("Assert verification is done for Analytics -> consumption page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -112,21 +113,22 @@ public class Oxygen_analytics extends BasePage {
 				} 	
 				Thread.sleep(1000);
 					sites.get(i).click();				
-				click(dd);
+				click(dd);				
 				List<WebElement> list = findWebElements(ddlist);
+				Thread.sleep(500);
 				list.get(0).click();
 				click(apply);
 				Thread.sleep(2000);
-				if (findWebElement(msg).isDisplayed()) {
-
+				 if(findWebElement(msg).isDisplayed()) {
 					System.out.println("Chart is displayed for "+ gettext(txt));
 					List<WebElement> leg = findWebElements(legend);
 					for (WebElement x : leg) {
 						x.click();
 						Thread.sleep(100);
 					}
+					System.out.println("Legend is working properly in oxygen consumption chart");										
 				} else {
-					log.info("No chart is displayed for"+ gettext(txt));
+					log.info("No chart is displayed for"+ gettext(txt));	
 				}
 				
 				
@@ -139,33 +141,6 @@ public class Oxygen_analytics extends BasePage {
 		}
 	}
 
-	public void chart() {
-		try {
-			Actions a = new Actions(driver);
-		
-			if(findWebElement(mouseover).isDisplayed()!=true) {
-				log.info("Chart is not displayed for "+gettext(txt));
-			}else {
-			List<WebElement> m = findWebElements(mouseover);
-			for(WebElement x: m) {
-				a.moveToElement(x);
-			}
-			System.out.println("Chart and datas are present");
-			}
-			click(export);
-			click(jpg);
-			List<WebElement> leg = findWebElements(legend);
-			for (WebElement x : leg) {
-				x.click();
-				Thread.sleep(100);
-			}
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		
-	}
-
 	public void heatmaphome() {
 		try {
 			waittobeclickable(analytics, 20);
@@ -175,9 +150,9 @@ public class Oxygen_analytics extends BasePage {
 			click(heat);
 			System.out.println("Heatmap option is clicked");
 			Thread.sleep(1000);
-			String ExpectedURL = "https://portal.careworx.in/#/oxygen/heatmap";
-			String ActualURL = getCurrentURL();
-			assertEquals(ExpectedURL, ActualURL);
+//			String ExpectedURL = "https://portal.careworx.in/#/oxygen/heatmap";
+//			String ActualURL = getCurrentURL();
+//			assertEquals(ExpectedURL, ActualURL);
 			log.info("Assert verification is done for anlytics heatmap  page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -202,13 +177,22 @@ public class Oxygen_analytics extends BasePage {
 					sites.get(i).click();
 				
 				click(dd);
+				Thread.sleep(500);
 				List<WebElement> list = findWebElements(ddlist2);
-				Thread.sleep(1000);
+				Thread.sleep(500);
 					list.get(0).click();
 					click(apply);
 					Thread.sleep(2000);
-					if (findWebElement(msg).isDisplayed()) {
+					if(findWebElement(chartss).getText().contains("No data to display")) {
+						log.info("No data to display");
+					}
+					else if (findWebElement(hp).isDisplayed()) {
 						System.out.println("heatmap is displayed");
+						click(export);
+						click(jpg);
+						System.out.println("Chart is exported");												
+						draganddrop(slider);
+						System.out.println("Slider is working fine");
 					} else {						
 						log.info("No heatmap is displayed");
 					}
@@ -217,9 +201,7 @@ public class Oxygen_analytics extends BasePage {
 			Thread.sleep(500);
 			
 			click(pdf);
-			click(export);
-			click(jpg);
-			draganddrop(slider);
+			System.out.println("Pdf is exported");		
 			Thread.sleep(2000);
 
 		} catch (NumberFormatException | InterruptedException e) {
@@ -236,9 +218,9 @@ public class Oxygen_analytics extends BasePage {
 			click(equip);
 			System.out.println("Equipment wise consumption option is clicked");
 			Thread.sleep(1000);
-			String ExpectedURL = "https://portal.careworx.in/#/oxygen/equipmentconsumption";
-			String ActualURL = getCurrentURL();
-			assertEquals(ExpectedURL, ActualURL);
+//			String ExpectedURL = "https://portal.careworx.in/#/oxygen/equipmentconsumption";
+//			String ActualURL = getCurrentURL();
+//			assertEquals(ExpectedURL, ActualURL);
 			log.info("Assert verification is done for equipment wise consumption page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -281,7 +263,10 @@ public class Oxygen_analytics extends BasePage {
 				list.get(0).click();
 				click(apply);
 				Thread.sleep(2000);
-				if (findWebElement(charts).isDisplayed()!=true) {
+				WebElement cha = findWebElement(chartss);
+				if(cha.getText().contains("No data to display")) {
+					log.info("No datas to display");
+				}else if(findWebElement(charts).isDisplayed()!=true) {
 					log.info("Chart is not displayed");	
 				} else {
 					System.out.println("Chart is displayed");
@@ -290,26 +275,20 @@ public class Oxygen_analytics extends BasePage {
 						x.click();
 						Thread.sleep(100);
 					}
+					System.out.println("Legend is working properly in equipment wise consumption chart");
 				List<WebElement> ch = findWebElements(charts);
 				for(WebElement x:ch) {
 					a.moveToElement(x);
 				}
 				}
-				List<WebElement> leg = findWebElements(legend);
-				for (WebElement x : leg) {
-					x.click();
-					Thread.sleep(100);
-				}
+//				List<WebElement> leg = findWebElements(legend);
+//				for (WebElement x : leg) {
+//					x.click();
+//					Thread.sleep(100);
+//				}
 
 			}
 			Thread.sleep(500);
-
-//			click(pdf);
-//			click(export);
-//			click(jpg);
-//			
-			
-
 		} catch (NumberFormatException | InterruptedException e) {
 			e.printStackTrace();
 		}

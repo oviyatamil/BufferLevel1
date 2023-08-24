@@ -16,15 +16,16 @@ public class SA_012 extends BaseTest {
 		ReportSetup.test.assignCategory("SA-12");
 		p = new Permission2(driver);
 	    p.home();
-//		p.permission();
-//		ReportSetup.test.log(Status.PASS, "Successfully navigated to permission->role screen and add a role list");
-//		p.users();
-//		ReportSetup.test.log(Status.PASS, "Successfully navigated to user screen and add a user list");
+		p.permission();
+		ReportSetup.test.log(Status.PASS, "Successfully navigated to permission->role screen and add a role list");
+		p.users();
+		ReportSetup.test.log(Status.PASS, "Successfully navigated to user screen and add a user list");
 		p.profile();
 		ReportSetup.test.log(Status.PASS, "Successfully logout from application");
 		p.login();
 		ReportSetup.test.log(Status.PASS, "Successfullyogin with newly created user login");
 	    p.home();
+	    p.check();
 	    
 	}
 }

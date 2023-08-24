@@ -120,7 +120,9 @@ public class Quality_Plant extends BasePage {
 				List<WebElement> p = findWebElements(partlist);
 				p.get(1).click();
 				click(chardd);
+				Thread.sleep(500);
 				List<WebElement> c = findWebElements(charlist);
+				Thread.sleep(500);
 					c.get(1).click();
 					click(search);
 					Thread.sleep(500);
@@ -248,9 +250,12 @@ public class Quality_Plant extends BasePage {
 		}
 	}
 	public void exports() {
+		JavascriptExecutor j = (JavascriptExecutor)driver;
+		j.executeScript("arguments[0].scrollIntoView(false);", findWebElement(export));
 		waittobeclickable(export, 10);
 		click(export);
 		click(jpg);
+		System.out.println("Chart is exported");
 		waittobeclickable(export2, 10);
 		click(export2);
 		click(jpg2);

@@ -125,11 +125,13 @@ public class Quality_ProductionEntry extends BasePage{
 			List<WebElement> pd = findWebElements(partnodd);
 			pd.get(1).click();
 			click(control);
+			Thread.sleep(500);
 			List<WebElement> c = findWebElements(controldd);		
 			JavascriptExecutor js = (JavascriptExecutor)driver;
+			Thread.sleep(500);
 			js.executeScript("arguments[0].click();", c.get(c.size()-1));
 		//	c.get(1).click();
-			Thread.sleep(500);
+			
 			List<WebElement> chips = findWebElements(chip);
 			for(int k=0;k<chips.size();k++) {
 			if((findWebElement(valuebox).isDisplayed()==true) & (findWebElements(valuebox).size()>3)) {

@@ -33,7 +33,8 @@ public class Energy_rep extends BasePage{
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
 	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
 	private By row = By.xpath("//table/tbody/tr");
-	
+	private By pdf = By.xpath("//mat-icon[@mattooltip='Export to Excel']");
+	private By daily = By.xpath("//span[contains(text(),'Daily Report')]");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
 	
@@ -60,6 +61,7 @@ public class Energy_rep extends BasePage{
 			System.out.println("Custom reports menu is clicked");
 			Thread.sleep(1000);
 			log.info("Assert verification is done for energy Custom ->report page");
+			click(daily);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -82,13 +84,13 @@ public class Energy_rep extends BasePage{
 				List<WebElement> l = findWebElements(sitelist);
 				for(int i=1;i<l.size();i++) {
 					if(i>1) {
+						waittobeclickable(site, 10);
 						click(site);
 					}
 					l.get(i).click();
 					
 				click(apply);
-				Thread.sleep(4000);
-				
+				Thread.sleep(4000);				
 				if(findWebElements(table).size()>1) {
 					System.out.println("Table is displayed");
 					String data2 = new SimpleDateFormat("dd-MMM").format(new Date());	
@@ -105,13 +107,18 @@ public class Energy_rep extends BasePage{
 					System.out.println(split4[1]);
 					JavascriptExecutor j = (JavascriptExecutor)driver;
 					j.executeScript("arguments[0].scrollIntoView(true);", text);
+					Thread.sleep(2000);
 					if(split4[1].contains(h)) {
-						System.out.println("Report end date is correct");
+						System.out.println("Report end date is correct");											
+						Thread.sleep(2000);
 					}else {
-						log.info("Report end date is wrong");
+						log.info("Report end date is wrong");	
+						j.executeScript("arguments[0].scrollIntoView(false);", findWebElement(pdf));
+						Thread.sleep(1000);
 					}
 				}else {
 					log.info("No records found");
+					Thread.sleep(1000);
 				}
 				}
 			Thread.sleep(500);

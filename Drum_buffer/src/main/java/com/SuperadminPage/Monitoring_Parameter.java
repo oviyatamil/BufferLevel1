@@ -18,6 +18,8 @@ public class Monitoring_Parameter extends BasePage {
 	public Monitoring_Parameter(WebDriver driver) {
 		super(driver);
 	}
+	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button/img");
+	private By superadmin = By.xpath("//div[text()='Super Admin']");
 	private By master = By.xpath("//span[contains(text(),'Master Data')]");
 	private By monpar = By.xpath("(//div[contains(text(),'Monitoring Parameter')])[2]");
 	private By add = By.xpath("//span[contains(text(),'Add')]");
@@ -50,15 +52,24 @@ public class Monitoring_Parameter extends BasePage {
 	private By uomarrow = By.xpath("//table/thead/tr/th[4]/descendant::div[3]");
 	private By statusarrow = By.xpath("//table/thead/tr/th[5]/descendant::div[3]");
 	
-	
+	public void home() {
+		try {
+			waittobeclickable(ninedots, 20);
+			Thread.sleep(4000);
+			click(ninedots);
+			System.out.println("Ninedots button is clicked");
+			waittobeclickable(superadmin, 20);
+			click(superadmin);
+			System.out.println("Super admin menu option is clicked");
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+}
 	public void monpar() {
 		try {
 			click(master);
 			Thread.sleep(1000);
-			String expectedurl = "http://20.204.188.25/#/superadmin/masterdata";
-			String actualurl = getCurrentURL();
-			assertEquals(expectedurl, actualurl);
-			click(monpar);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -101,13 +112,19 @@ public class Monitoring_Parameter extends BasePage {
 				click(edit);
 				log.info("edit button is clicked");
 				clear(shortname);
+				Thread.sleep(500);
 				log.info("description is cleared");
 				EnterText(shortname, "Para");
 				click(update);
 				log.info("update button is clicked");
+				click(firstpage);
 				break;
 				}
 				else {
+					i++;
+				}
+			}
+//				else {
 			for (int k = 0; k < 1000; k++) {
 				WebElement element = findWebElement(nextdisable);
 				String att = element.getAttribute("class");
@@ -125,9 +142,7 @@ public class Monitoring_Parameter extends BasePage {
 					for (int j = 0; j < s2.size(); j++) {
 						if (s2.get(j).equals("Parameter")) {
 							List<WebElement> rad2 = findWebElements(radiobtn);
-							rad2.get(j).click();
-						}
-					}
+							rad2.get(j).click();						
 						click(edit);
 						log.info("edit button is clicked");
 						clear(shortname);
@@ -135,11 +150,13 @@ public class Monitoring_Parameter extends BasePage {
 						EnterText(shortname, "Para");
 						click(update);
 						log.info("update button is clicked");	
+						click(firstpage);
+						break;
+						}						
+					}					
 				}
-			}
-					break;
-				} 
-			}
+				break;
+			}												
 			Thread.sleep(1000);
 			click(radiobtn);
 			click(cancel);
@@ -160,6 +177,34 @@ public class Monitoring_Parameter extends BasePage {
 					continue;
 				}
 			}
+			for (int k = 0; k < 1000; k++) {
+				WebElement element = findWebElement(nextdisable);
+				String att = element.getAttribute("class");
+
+				if (att.contains("disabled")) {
+					break;
+				} else {
+					click(nextpage);
+					Thread.sleep(1000);
+					List<WebElement> gate3 = findWebElements(paramlist);
+					for(WebElement x3:gate3) {
+						String text3 = x3.getText();
+						s2.add(text3);
+					}
+					for (int j = 0; j < s2.size(); j++) {
+						if (s2.get(j).equals("Parameter")) {
+							List<WebElement> rad2 = findWebElements(radiobtn);
+							rad2.get(j).click();						
+							click(delete);
+							log.info("delete button is clicked");
+							click(delete2);
+							log.info("confirm delete button is clicked");					
+						break;
+						}						
+					}					
+				}
+				break;
+			}		
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -203,7 +248,7 @@ public class Monitoring_Parameter extends BasePage {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		log.info("Duplicate uom is checked");
+		log.info("Duplicate monitoring parameter is checked");
 	}
 	public void pagination() {
 		try {

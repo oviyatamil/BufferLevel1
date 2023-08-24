@@ -165,10 +165,10 @@ public class Reports_Inspection extends BasePage {
 				m.get(i).click();
 				click(apply);
 				Thread.sleep(500);
-				if (findWebElement(record).getText().contains("No Records found for "+gettext(txt))) {
+				if (findWebElement(record).getText().contains("No Records found") ){
 					log.info("No records found");
 				} else {
-					System.out.println("Records found ");
+					System.out.println("Records found  for "+gettext(txt));
 				}
 			}
 		} catch (InterruptedException e) {
@@ -189,10 +189,10 @@ public class Reports_Inspection extends BasePage {
 				m.get(i).click();
 				click(apply);
 				Thread.sleep(500);
-				if (findWebElement(record).getText().contains("No Records found for "+gettext(txt))) {
+				if (findWebElement(record).getText().contains("No Records found")) {
 					log.info("No records found");
 				} else {
-					System.out.println("Records found");
+					System.out.println("Records found for "+gettext(txt));
 				}
 			}
 		} catch (InterruptedException e) {

@@ -30,7 +30,7 @@ public class Masters_QualityDefects extends BasePage{
 	private By save = By.xpath("//span[text()=' Save ']");
 	private By deflist = By.xpath("//table/tbody/tr/td[2]/span");
 	private By delete2 = By.xpath("//span[text()=' Delete ']");
-	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
+	private By profile = By.xpath("(//mat-icon[@role='img'])[13]/ancestor::button");
 	private By signout = By.xpath("//span[text()='Sign out']");
 	private By cancelbtn = By.xpath("//span[contains(text(),'Cancel')]");
 	
@@ -100,12 +100,13 @@ public class Masters_QualityDefects extends BasePage{
 				EnterText(desc, "Defects");
 				click(update);
 				System.out.println("Edit and Update option is checked");
+				Thread.sleep(1000);
 				List<WebElement> rad2 = findWebElements(radio);
 				rad2.get(i).click();
 				click(delete);
 				click(delete2);
 				System.out.println("Delete option is checked");
-				
+				break;
 				
 			}
 			}

@@ -19,10 +19,8 @@ protected void monitor() {
 	ReportSetup.test.log(Status.PASS, "Navigates to Dialysis home page");
 	m.monitor();
 	ReportSetup.test.log(Status.PASS, "Successfully navigated to dialysis monitoring page");
-	m.chart();
-	ReportSetup.test.log(Status.PASS, "Successfully checked chart and legend");
 	m.dd();
-	ReportSetup.test.log(Status.PASS, "Successfully selected dropdown and calendar option");	
+	ReportSetup.test.log(Status.PASS, "Successfully selected dropdown,calendar and checked charts and legends");	
 	m.profile();
 	ReportSetup.test.log(Status.PASS, "Successfully logout from application");
 }

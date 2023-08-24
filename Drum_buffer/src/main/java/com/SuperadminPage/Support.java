@@ -53,6 +53,9 @@ public class Support extends BasePage{
 	private By lastpage = By.xpath("//button[@aria-label='Last page']/span");
 	private By cancelbtn = By.xpath("//span[contains(text(),'Cancel')]");
 	private By file = By.xpath("//span[contains(text(),'Open to file')]/following::button[1]/span[1]");
+	private By msg1 = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[1]/*[local-name()='text']");
+	private By msg2 = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[2]/*[local-name()='text']");
+	
 	public void home() {
 		try {
 			waittobeclickable(ninedots, 20);
@@ -73,7 +76,7 @@ public class Support extends BasePage{
 			System.out.println("support menu is clicked");
 			Thread.sleep(1000);
 			click(dash);
-			System.out.println("Navigated to error dahboard screen");
+			System.out.println("Navigated to error dashboard screen");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -83,16 +86,20 @@ public class Support extends BasePage{
 		try {
 			Thread.sleep(5000);
 			System.out.println("Total number of issues are "+ gettext(tot));			
-			System.out.println("Completed issues are "+gettext(curr));
-				if(findWebElement(chart1).isDisplayed()) {
-					System.out.println("Product chart is displayed");
+			System.out.println("Completed issues are "+gettext(curr));		
+				if(findWebElement(msg1).getText().contains("No data to display")) {
+					System.out.println("****************No data to display******** shows instead of product chart");
+				}else if(findWebElement(chart1).isDisplayed()!=true) {
+					System.out.println("**********Product chart not displayed**********");
 				}else {
-					System.out.println("Product chart not displayed");
+					System.out.println("Product chart displayed");
 				}
-				if(findWebElement(chart2).isDisplayed()) {
-					System.out.println("Status chart is displayed");
+				if(findWebElement(msg2).getText().contains("No data to display")) {
+					System.out.println("****************No data to display******** shows instead of status chart");
+				}else if(findWebElement(chart2).isDisplayed()!=true) {
+					System.out.println("**********Status chart not displayed**********");
 				}else {
-					System.out.println("Status chart not displayed");
+					System.out.println("Status chart displayed");
 				}
 				if(findWebElements(table).size()<=1) {				
 					System.out.println("No records found");
@@ -140,18 +147,18 @@ public class Support extends BasePage{
 			click(datearr);
 			click(datearr);
 			Thread.sleep(2000);
-			List<WebElement> f2 = findWebElements(sub);
-			for(int i=0;i<f2.size();i++) {
-				if(f2.get(i).getText().equals("bugsss")) {
-					WebElement fe = driver.findElement(By.xpath("//table/tbody/tr["+(i+1)+"]/td[8]"));
-					fe.click();
-					click(file);
-					System.out.println("File is downloaded");
-					Thread.sleep(500);
-					click(cancelbtn);	
-					break;
-				}
-			}	
+//			List<WebElement> f2 = findWebElements(sub);
+//			for(int i=0;i<f2.size();i++) {
+//				if(f2.get(i).getText().equals("bugsss")) {
+//					WebElement fe = driver.findElement(By.xpath("//table/tbody/tr["+(i+1)+"]/td[8]"));
+//					fe.click();
+//					click(file);
+//					System.out.println("File is downloaded");
+//					Thread.sleep(500);
+//					click(cancelbtn);	
+//					break;
+//				}
+//			}	
 			List<WebElement> f = findWebElements(sub);
 			for(int i=0;i<f.size();i++) {
 				if(f.get(i).getText().equals("bugsss")) {

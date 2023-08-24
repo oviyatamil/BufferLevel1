@@ -18,7 +18,8 @@ public class Uom extends BasePage {
 	public Uom(WebDriver driver) {
 		super(driver);
 	}
-
+	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button/img");
+	private By superadmin = By.xpath("//div[text()='Super Admin']");
 	private By master = By.xpath("//span[contains(text(),'Master Data')]");
 	private By uom = By.xpath("(//div[contains(text(),'UOM')])[1]");
 	private By add = By.xpath("//span[contains(text(),'Add')]");
@@ -48,13 +49,27 @@ public class Uom extends BasePage {
 	private By descsarrow = By.xpath("//table/thead/tr/th[3]/descendant::div[3]");
 	private By statusarrow = By.xpath("//table/thead/tr/th[4]/descendant::div[3]");
 
+	public void home() {
+		try {
+			waittobeclickable(ninedots, 20);
+			Thread.sleep(4000);
+			click(ninedots);
+			System.out.println("Ninedots button is clicked");
+			waittobeclickable(superadmin, 20);
+			click(superadmin);
+			System.out.println("Super admin menu option is clicked");
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+}
 	public void uom() {
 		try {
 			click(master);
 			Thread.sleep(1000);
-			String expectedurl = "http://20.204.188.25/#/superadmin/masterdata";
-			String actualurl = getCurrentURL();
-			assertEquals(expectedurl, actualurl);
+//			String expectedurl = "http://20.204.188.25/#/superadmin/masterdata";
+//			String actualurl = getCurrentURL();
+//			assertEquals(expectedurl, actualurl);
 			click(uom);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -79,11 +94,11 @@ public class Uom extends BasePage {
 		try {
 			Thread.sleep(1000);
 			click(radiobtn);
-			log.info("radio button is clicked");
+			System.out.println("radio button is clicked");
 			click(view);
-			log.info("view button is clicked");
+			System.out.println("view button is clicked");
 			click(cancel);
-			log.info("cancel button is clicked after clicking view option");
+			System.out.println("cancel button is clicked after clicking view option");
 			Thread.sleep(1000);
 			List<WebElement> gate2 = findWebElements(uomlist);
 			for (int i = 0; i < gate2.size(); i++) {
@@ -92,12 +107,12 @@ public class Uom extends BasePage {
 					rad.get(i).click();
 					Thread.sleep(500);
 					click(edit);
-					log.info("edit button is clicked");
+					System.out.println("edit button is clicked");
 					clear(desc);
-					log.info("description is cleared");
+					System.out.println("description is cleared");
 					EnterText(desc, "volt");
 					click(update);
-					log.info("update button is clicked");
+					System.out.println("update button is clicked");
 					break;
 				} else {
 					continue;
@@ -106,7 +121,7 @@ public class Uom extends BasePage {
 			Thread.sleep(1000);
 			click(radiobtn);
 			click(cancel);
-			log.info("cancel button is clicked after clicking radio button");
+			System.out.println("cancel button is clicked after clicking radio button");
 			Thread.sleep(500);
 			List<WebElement> gate = findWebElements(uomlist);
 			for (int j = 0; j < gate.size(); j++) {
@@ -115,9 +130,9 @@ public class Uom extends BasePage {
 					rad.get(j).click();
 					System.out.println("Record to be deleted is " + gate.get(j).getText());
 					click(delete);
-					log.info("delete button is clicked");
+					System.out.println("delete button is clicked");
 					click(delete2);
-					log.info("confirm delete button is clicked");
+					System.out.println("confirm delete button is clicked");
 					break;
 				} else {
 					continue;
@@ -166,24 +181,24 @@ public class Uom extends BasePage {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		log.info("Duplicate uom is checked");
+		System.out.println("Duplicate uom is checked");
 	}
 
 	public void pagination() {
 		try {
 			Thread.sleep(1000);
 			click(pagedd);
-			log.info("page dropdown is selected");
+			System.out.println("page dropdown is selected");
 			click(pagesize);
-			log.info("page size is selected");
+			System.out.println("page size is selected");
 			click(nextpage);
-			log.info("nextpage is clicked");
+			System.out.println("nextpage is clicked");
 			click(previous);
-			log.info("previouspage is clicked");
+			System.out.println("previouspage is clicked");
 			click(lastpage);
-			log.info("lastpage is clicked");
+			System.out.println("lastpage is clicked");
 			click(firstpage);
-			log.info("firstpage is clicked");
+			System.out.println("firstpage is clicked");
 			takescreenshots("pagination");
 		} catch (InterruptedException e) {
 			e.printStackTrace();

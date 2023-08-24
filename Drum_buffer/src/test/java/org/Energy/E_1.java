@@ -16,12 +16,12 @@ protected void home() {
 	ReportSetup.test.assignCategory("E-1");
 	e.home();
 	ReportSetup.test.log(Status.PASS, "Navigates to Energy home page");
-	e.charts();
-	ReportSetup.test.log(Status.PASS, "Successfully checked all charts and mouseover");
 	e.epi();
 	ReportSetup.test.log(Status.PASS, "Navigates to Energy kpi page");
 	e.chart2();
 	ReportSetup.test.log(Status.PASS, "Successfully checked all charts");
+	e.charts();
+	ReportSetup.test.log(Status.PASS, "Successfully checked all charts and mouseover");	
 	e.profile();
 	ReportSetup.test.log(Status.PASS, "Successfully logout from application");
 }

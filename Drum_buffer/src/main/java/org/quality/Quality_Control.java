@@ -103,6 +103,7 @@ public void dd() {
 				if(j>1) {
 					click(chardd);
 				}
+				Thread.sleep(500);
 				c.get(j).click();
 				click(search);
 				Thread.sleep(500);

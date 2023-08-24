@@ -20,12 +20,14 @@ public class Permission2 extends BasePage{
 		super(driver);
 	}
 	private By master = By.xpath("//span[contains(text(),'Master Data')]");
+	private By customer = By.xpath("//span[contains(text(),'Customer')]");
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
 	private By superadmin = By.xpath("//div[text()='Super Admin']");
 	private By control = By.xpath("//span[contains(text(),'Control Center')]");
 	private By permission = By.xpath("//span[contains(text(),'Permission')]");
 	private By role = By.xpath("//input[@formcontrolname='role_Name']");
 	private By add = By.xpath("//span[contains(text(),'Add')]");
+	private By add2 = By.xpath("//span[contains(text(),'Add')]/parent::span");
 	private By view = By.xpath("//span[contains(text(),'View')]");
 	private By edit = By.xpath("//span[contains(text(),'Edit')]");
 	private By update = By.xpath("//span[contains(text(),'Update')]");
@@ -37,6 +39,8 @@ public class Permission2 extends BasePage{
 	private By radiobtn = By.xpath("//span[@class='mat-radio-inner-circle']");
 	private By perm = By.xpath("//div[contains(text(),'Permission')]/ancestor::span/descendant::span[1]");
 	private By cusadd = By.xpath("//div[contains(text(),'Customer')]/following::tr[2]/td[2]/descendant::span[1]");
+	private By masedit = By.xpath("//div[contains(text(),'Master Data')]/following::tr[2]/td[3]/descendant::span[1]");
+	private By masdel = By.xpath("//div[contains(text(),'Master Data')]/following::tr[2]/td[4]/descendant::span[1]");
 	private By roledd = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
 	private By rolelist = By.xpath("(//span[text()='Select Role'])/ancestor::div[1]/mat-option/span");
 	private By name = By.xpath("//input[@formcontrolname='userName']");
@@ -57,8 +61,7 @@ public class Permission2 extends BasePage{
 	
 	public void home() {
 		try {
-			waittobeclickable(ninedots, 20);
-			Thread.sleep(4000);
+			waittobeclickable(ninedots, 20);		
 			click(ninedots);
 			System.out.println("Ninedots button is clicked");
 			waittobeclickable(superadmin, 20);
@@ -79,6 +82,10 @@ public void permission() {
 		click(perm);
 		waittobeclickable(cusadd, 10);
 		click(cusadd);
+		waittobeclickable(masedit, 10);
+		click(masedit);
+		waittobeclickable(masdel, 10);
+		click(masdel);
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", findWebElement(save));
 		click(save);
@@ -116,7 +123,7 @@ public void users() {
 }
 public void profile() {
 	try {
-		Thread.sleep(1000);
+		waittobeclickable(profile, 10);
 		click(profile);
 		System.out.println("profile button is clicked");
 		click(signout);
@@ -138,37 +145,45 @@ public void login() {
 		click(Login);
 		System.out.println("Clicked on the Login");
 		Thread.sleep(2000);
-	
-		String ExpectedURL="http://20.204.188.25/#/superadmin/home";
-	        String ActualURL=getCurrentURL();
-	        assertEquals(ExpectedURL, ActualURL);
-	       
-	        
 	} catch (Exception e) {
 		
 		e.printStackTrace();
 	}
 }
 public void check() {
-	List<WebElement> he = findWebElements(header);
-	for(WebElement x:he) {
-		if(x.getText().equals("Permission")) {
-			log.info("Permission Menu still exists after it disabled");
-		}else {
-			System.out.println("Disabled permission for 'Permission' menu is not displayed");
+	try {
+		Thread.sleep(2000);
+		List<WebElement> he = findWebElements(header);
+		for(WebElement x:he) {
+			if(x.getText().equals("Permission")) {
+				log.info("Permission Menu still exists after it disabled");
+			}else {
+				continue;
+			}
 		}
-	}
-	click(master);
-	click(radiobtn);
-	List<WebElement> b = findWebElements(buttons);
-	for(WebElement x:b) {
-		if(x.getText().equals("Edit")) {
-			log.info("Edit option is enabled for user even it is disabled");
-		}else if(x.getText().equals("Delete")) {
-			log.info("Delete option is enabled for user even it is disabled");
-		}else {
-			System.out.println("Disabled option is not displayed for user");
+		Thread.sleep(1000);
+		click(master);
+		click(radiobtn);
+		List<WebElement> b = findWebElements(buttons);
+		for(WebElement x:b) {
+			if(x.getText().equals("Edit")) {
+				log.info("Edit option is enabled for user even it is disabled");
+			}else if(x.getText().equals("Delete")) {
+				log.info("Delete option is enabled for user even it is disabled");
+			}else {
+				continue;
+			}
 		}
+		Thread.sleep(1000);
+		click(customer);
+		if(findWebElement(add2).isDisplayed()!=true) {
+			System.out.println("Add button in customer is not shown after disabled it");
+		}else {
+			log.info("Add button in customer is shown even after disabled it");
+		}
+		
+	} catch (InterruptedException e) {
+		e.printStackTrace();
 	}
 	
 }

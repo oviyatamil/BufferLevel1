@@ -61,6 +61,7 @@ public class Master_product extends BasePage {
 	private By modidatearr = By.xpath("//table/thead/tr[1]/th[7]/div/child::div[2]");
 	private By moniarr = By.xpath("//table/thead/tr[1]/th[8]/div/child::div[2]");
 	private By statusarr = By.xpath("//table/thead/tr[1]/th[9]/div/child::div[2]");
+	
 
 	public void master() {
 		try {

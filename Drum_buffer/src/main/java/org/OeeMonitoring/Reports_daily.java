@@ -31,7 +31,7 @@ public class Reports_daily extends BasePage {
 	private By locationlist = By.xpath("(//span[text()=' Sriperumbudur '])/ancestor::div[1]/mat-option");
 	private By shift = By.xpath("(//mat-select[@role='combobox'])[3]/ancestor::div[1]/descendant::div[4]");
 	private By shiftlist = By.xpath("(//span[text()=' Shift 1 '])/ancestor::div[1]/mat-option");
-	private By machine = By.xpath("(//mat-select[@role='combobox'])[4]/ancestor::div[1]/descendant::div[4]");
+	private By machine = By.xpath("//mat-label[contains(text(),'Machine')]/ancestor::div[1]/descendant::div[4]");
 	private By mechlist = By.xpath("(//span[text()=' TL-01 '])/ancestor::div[1]/mat-option");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
@@ -114,7 +114,8 @@ public class Reports_daily extends BasePage {
 			click(location);
 			List<WebElement> list2 = findWebElements(locationlist);
 			list2.get(0).click();
-			waittobeclickable(machine, 20);
+		//	waittobeclickable(machine, 20);
+			Thread.sleep(1000);
 			click(machine);
 			List<WebElement> list3 = findWebElements(mechlist);
 			for(int i=0;i<list3.size();i++) {

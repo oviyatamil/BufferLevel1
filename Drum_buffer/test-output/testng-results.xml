@@ -2,43 +2,43 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-07-31T12:09:39 IST" name="Suite" finished-at="2023-07-31T12:11:12 IST" duration-ms="93179">
+  <suite started-at="2023-08-24T14:47:10 IST" name="Suite" finished-at="2023-08-24T14:50:37 IST" duration-ms="207914">
     <groups>
     </groups>
-    <test started-at="2023-07-31T12:09:39 IST" name="Test" finished-at="2023-07-31T12:11:12 IST" duration-ms="93179">
-      <class name="org.Energy.E_5">
-        <test-method is-config="true" signature="BrowserSetup()[pri:0, instance:org.Energy.E_5@72d6b3ba]" started-at="2023-07-31T12:09:34 IST" name="BrowserSetup" finished-at="2023-07-31T12:09:39 IST" duration-ms="4116" status="PASS">
+    <test started-at="2023-08-24T14:47:10 IST" name="Test" finished-at="2023-08-24T14:50:37 IST" duration-ms="207914">
+      <class name="com.Iot.I_04">
+        <test-method is-config="true" signature="BrowserSetup()[pri:0, instance:com.Iot.I_04@72d6b3ba]" started-at="2023-08-24T14:47:04 IST" name="BrowserSetup" finished-at="2023-08-24T14:47:10 IST" duration-ms="5855" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserSetup -->
-        <test-method is-config="true" signature="onetimelogin()[pri:0, instance:org.Energy.E_5@72d6b3ba]" started-at="2023-07-31T12:09:39 IST" name="onetimelogin" finished-at="2023-07-31T12:10:45 IST" duration-ms="66621" status="PASS">
+        <test-method is-config="true" signature="onetimelogin()[pri:0, instance:com.Iot.I_04@72d6b3ba]" started-at="2023-08-24T14:47:10 IST" name="onetimelogin" finished-at="2023-08-24T14:47:19 IST" duration-ms="9132" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- onetimelogin -->
-        <test-method signature="customreport()[pri:0, instance:org.Energy.E_5@72d6b3ba]" started-at="2023-07-31T12:10:45 IST" name="customreport" finished-at="2023-07-31T12:11:01 IST" duration-ms="15282" status="PASS">
+        <test-method signature="device()[pri:0, instance:com.Iot.I_04@72d6b3ba]" started-at="2023-08-24T14:47:19 IST" name="device" finished-at="2023-08-24T14:50:26 IST" duration-ms="187134" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- customreport -->
-        <test-method is-config="true" signature="afterMerhod(org.testng.ITestResult)[pri:0, instance:org.Energy.E_5@72d6b3ba]" started-at="2023-07-31T12:11:01 IST" name="afterMerhod" finished-at="2023-07-31T12:11:01 IST" duration-ms="199" status="PASS">
+        </test-method> <!-- device -->
+        <test-method is-config="true" signature="afterMerhod(org.testng.ITestResult)[pri:0, instance:com.Iot.I_04@72d6b3ba]" started-at="2023-08-24T14:50:26 IST" name="afterMerhod" finished-at="2023-08-24T14:50:26 IST" duration-ms="190" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=customreport status=SUCCESS method=E_5.customreport()[pri:0, instance:org.Energy.E_5@72d6b3ba] output={null}]]]>
+                <![CDATA[[TestResult name=device status=SUCCESS method=I_04.device()[pri:0, instance:com.Iot.I_04@72d6b3ba] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMerhod -->
-        <test-method is-config="true" signature="afterclass()[pri:0, instance:org.Energy.E_5@72d6b3ba]" started-at="2023-07-31T12:11:01 IST" name="afterclass" finished-at="2023-07-31T12:11:12 IST" duration-ms="11011" status="PASS">
+        <test-method is-config="true" signature="afterclass()[pri:0, instance:com.Iot.I_04@72d6b3ba]" started-at="2023-08-24T14:50:26 IST" name="afterclass" finished-at="2023-08-24T14:50:37 IST" duration-ms="11331" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterclass -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:org.Energy.E_5@72d6b3ba]" started-at="2023-07-31T12:11:12 IST" name="teardown" finished-at="2023-07-31T12:11:13 IST" duration-ms="887" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.Iot.I_04@72d6b3ba]" started-at="2023-08-24T14:50:37 IST" name="teardown" finished-at="2023-08-24T14:50:39 IST" duration-ms="1152" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- org.Energy.E_5 -->
+      </class> <!-- com.Iot.I_04 -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

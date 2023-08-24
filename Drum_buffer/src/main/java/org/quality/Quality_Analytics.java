@@ -16,7 +16,7 @@ public class Quality_Analytics extends BasePage{
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By quality = By.xpath("//div[text()='Quality']");
+	private By quality = By.xpath("//div[text()='Quality']/parent::div/button");
 	private By analytics = By.xpath("//span[contains(text(),'Analytics')]");
 	private By machinedd = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
 	private By machlist = By.xpath("//span[text()='Select Machine Name']/parent::mat-option/parent::div/mat-option");

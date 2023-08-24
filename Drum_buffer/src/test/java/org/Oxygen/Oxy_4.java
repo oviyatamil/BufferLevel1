@@ -16,10 +16,10 @@ protected void report() {
 	ReportSetup.test.assignCategory("OXY-4");
 	r.home();
 	ReportSetup.test.log(Status.PASS, "Navigates to oxygen home page");
-//	r.report();
-//	ReportSetup.test.log(Status.PASS, "Navigates to reports->monthly page");	
-//	r.dd2();
-//	ReportSetup.test.log(Status.PASS, "Successfully handled dropdown and calendar and check table");
+	r.report();
+	ReportSetup.test.log(Status.PASS, "Navigates to reports->monthly page");	
+	r.dd2();
+	ReportSetup.test.log(Status.PASS, "Successfully handled dropdown and calendar and check table");
 	r.report2();
 	ReportSetup.test.log(Status.PASS, "Navigates to reports->hourly page");	
 	r.dd();

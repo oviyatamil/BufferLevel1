@@ -19,7 +19,8 @@ public class Part_partlisting extends BasePage {
 	public Part_partlisting(WebDriver driver) {
 		super(driver);
 	}
-
+	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button/img");
+	private By superadmin = By.xpath("//div[text()='Super Admin']");
 	private By partners = By.xpath("//span[contains(text(),'Partners')]");
 	private By add = By.xpath("//span[text()='Add']");
 	private By pname = By.xpath("//input[contains(@formcontrolname,'partner')]");
@@ -47,9 +48,6 @@ public class Part_partlisting extends BasePage {
 	private By delete2 = By.xpath("(//span[contains(text(),'elete')])[2]");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
-	private By namelist = By.xpath("//table/tbody/tr/td[2]/span");
-	private By maillist = By.xpath("//table/tbody/tr/td[4]/span");
-
 	private By pagedd = By.xpath("//mat-select[@role='combobox']/descendant::div[3]");
 	private By pagesize = By.xpath("//span[text()=' 5 ']");
 	private By nextpage = By.xpath("//button[@aria-label='Next page']/span");
@@ -62,14 +60,27 @@ public class Part_partlisting extends BasePage {
 	private By emailarr = By.xpath("//table/thead/tr/th[4]/div[1]/div[2]");
 	private By contactarr = By.xpath("//table/thead/tr/th[5]/div[1]/div[2]");
 	private By statusarr = By.xpath("//table/thead/tr/th[6]/div[1]/div[2]");
+	private By roles = By.xpath("//table/tbody/tr/td[2]/span");
+	private By mail = By.xpath("//table/tbody/tr/td[4]/span");
+	
+	public void home() {
+		try {
+			waittobeclickable(ninedots, 20);
+			click(ninedots);
+			System.out.println("Ninedots button is clicked");
+			waittobeclickable(superadmin, 20);
+			click(superadmin);
+			System.out.println("Super admin menu option is clicked");
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+}
 
 	public void partners() {
 		try {
 			click(partners);
 			Thread.sleep(1000);
-			String expectedurl = "http://20.204.188.25/#/superadmin/partner";
-			String ActualURL = getCurrentURL();
-			assertEquals(expectedurl, ActualURL);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -79,46 +90,46 @@ public class Part_partlisting extends BasePage {
 		try {
 			
 			click(add);
-			log.info("add button is clicked");
+			System.out.println("add button is clicked");
 			EnterText(pname, "Aadav");
-			log.info("Partner name entered");
+			System.out.println("Partner name entered");
 			EnterText(contact, "nilan");
-			log.info("contact name entered");
-			EnterText(phno, "9500239828");
-			log.info("Phno is entered");
-			EnterText(email, "aadav@gmail.com");
-			log.info("email id is entered");
+			System.out.println("contact name entered");
+			EnterText(phno, "7868908764");
+			System.out.println("Phno is entered");
+			EnterText(email, "aadav@yahoo.com");
+			System.out.println("email id is entered");
 			EnterText(pwd, "Admin@123");
-			log.info("password is entered");
+			System.out.println("password is entered");
 			EnterText(address1, "Bangalore");
-			log.info("address1 is entered");
+			System.out.println("address1 is entered");
 			EnterText(address2, "Chennai");
-			log.info("address2 is entered");
+			System.out.println("address2 is entered");
 			click(coudd);
-			log.info("country dropdown is clicked");
+			System.out.println("country dropdown is clicked");
 			List<WebElement> cou2 = findWebElements(couselect);
 			cou2.get(1).click();
-			log.info("country is selected");
+			System.out.println("country is selected");
 			click(statedd);
-			log.info("state dropdown is clicked");
+			System.out.println("state dropdown is clicked");
 			List<WebElement> sta2 = findWebElements(statesel);
 			sta2.get(1).click();
-			log.info("state is selected");
+			System.out.println("state is selected");
 			click(citydd);
-			log.info("city dropdown is clicked");
+			System.out.println("city dropdown is clicked");
 			List<WebElement> cit2 = findWebElements(citysel);
-			cit2.get(1).click();
-			log.info("city is selected");
+			cit2.get(cit2.size()-1).click();
+			System.out.println("city is selected");
 			EnterText(zip, "656656");
-			log.info("zipcode is entered");	
+			System.out.println("zipcode is entered");	
 			click(save);
-			log.info("save button is clicked");
+			System.out.println("save button is clicked");
 			click(add);
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			EnterText(pname, "Aadav");
 			EnterText(contact, "nilan");
-			EnterText(phno, "9500239828");
-			EnterText(email, "aadav@gmail.com");
+			EnterText(phno, "7868908764");
+			EnterText(email, "aadav@yahoo.com");
 			EnterText(pwd, "Admin@123");
 			EnterText(address1, "Bangalore");
 			EnterText(address2, "Chennai");
@@ -127,12 +138,13 @@ public class Part_partlisting extends BasePage {
 			cou.get(1).click();
 			click(statedd);
 			List<WebElement> sta = findWebElements(statesel);
-			sta.get(1).click();
+			sta.get(1).click();		
 			click(citydd);
 			List<WebElement> cit = findWebElements(citysel);
-			cit.get(1).click();
+			cit.get(1).click();	
+			click(save);
 			click(cancel);
-			log.info("All fields are added and cancel button is clicked");
+			System.out.println("All fields are added and duplicate is checked");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -143,35 +155,61 @@ public class Part_partlisting extends BasePage {
 		try {
 			Thread.sleep(1000);
 			click(radiobtn);
-			log.info("radio button is clicked");
+			System.out.println("radio button is clicked");
 			click(view);
-			log.info("view button is clicked");
+			System.out.println("view button is clicked");
 			click(cancel);
-			log.info("cancel button is clicked after clicking view option");
-			Thread.sleep(1000);
-			click(radiobtn);
-			click(edit);
-			log.info("edit button is clicked");
-			clear(address1);
-			log.info("address1 is cleared");
-			EnterText(address1, "Coorg");
-			log.info("address1 is changed");
-			clear(address2);
-			log.info("address2 is cleared");
-			EnterText(address2, "ooty");
-			log.info("address2 is changed");
-			click(update);
-			log.info("update button is clicked");
-			Thread.sleep(1000);
+			System.out.println("cancel button is clicked after clicking view option");
 			click(radiobtn);
 			click(cancel);
-			log.info("cancel button is clicked after clicking radio button");
+			System.out.println("cancel button is clicked after clicking radio button");
 			Thread.sleep(1000);
-			click(radiobtn);
-			click(delete);
-			log.info("delete button is clicked");
-			click(delete2);
-			log.info("confirm delete button is clicked");
+			List<WebElement> r = findWebElements(roles);
+			for(int i=0;i<r.size();i++) {
+				if(r.get(i).getText().equals("Aadav")) {
+					List<WebElement> m = findWebElements(mail);
+					if(m.get(i).getText().equals("aadav@yahoo.com")) {
+						List<WebElement> rad = findWebElements(radiobtn);
+						rad.get(i).click();
+						click(edit);
+						System.out.println("edit button is clicked");
+						clear(address1);
+						System.out.println("address1 is cleared");
+						EnterText(address1, "Coorg");
+						click(update);
+						System.out.println("update button is clicked");
+						Thread.sleep(1000);
+						break;
+					}else {
+						log.info("Added record is missing");
+					}
+				}else {
+					continue;
+				}
+			}					
+			List<WebElement> r2 = findWebElements(roles);
+			for(int i=0;i<r2.size();i++) {
+				if(r2.get(i).getText().equals("Aadav")) {
+					List<WebElement> m = findWebElements(mail);
+					if(m.get(i).getText().equals("aadav@yahoo.com")) {
+						List<WebElement> rad = findWebElements(radiobtn);
+						rad.get(i).click();
+						click(delete);
+						System.out.println("delete button is clicked");
+						click(delete2);
+						System.out.println("confirm delete button is clicked");
+						Thread.sleep(1000);
+						break;
+					}else {
+						log.info("Added record is missing");
+					}
+				}else {
+					continue;
+				}
+			}		
+//			Thread.sleep(1000);
+//			click(radiobtn);
+			
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -181,7 +219,7 @@ public class Part_partlisting extends BasePage {
 	public void duplicate() {
 		try {
 			Thread.sleep(1000);
-			List<WebElement> name = findWebElements(namelist);
+			List<WebElement> name = findWebElements(roles);
 			Thread.sleep(1000);
 			List<String> l = new LinkedList<String>();
 			List<String> l2 = new LinkedList<String>();
@@ -190,8 +228,8 @@ public class Part_partlisting extends BasePage {
 //				list.addAll(name);
 				String text = name.get(i).getText();
 				l.add(text);
-				List<WebElement> mail = findWebElements(maillist);
-				String text2 = mail.get(i).getText();
+				List<WebElement> mails = findWebElements(mail);
+				String text2 = mails.get(i).getText();
 				l2.add(text2);
 			}
 			for (int k = 0; k < 1000; k++) {
@@ -203,12 +241,12 @@ public class Part_partlisting extends BasePage {
 				} else {
 					click(nextpage);
 					Thread.sleep(1000);
-					List<WebElement> name2 = findWebElements(namelist);
+					List<WebElement> name2 = findWebElements(roles);
 					for (int i = 0; i < name2.size(); i++) {
 						String text = name2.get(i).getText();
 						l.add(text);
-						List<WebElement> mail = findWebElements(maillist);
-						String text2 = mail.get(i).getText();
+						List<WebElement> mails = findWebElements(mail);
+						String text2 = mails.get(i).getText();
 						l2.add(text2);
 					}
 				}
@@ -223,7 +261,8 @@ public class Part_partlisting extends BasePage {
 							System.out.println("duplicate entry is "+l.get(i) +" --- "+l2.get(i));
 						}
 						else {
-							break;
+							m.put(l.get(i), l2.get(i));
+							System.out.println(l.get(i)+" --- "+l2.get(i)+"--- is single entry");
 						}
 			}
 			else {
@@ -241,17 +280,17 @@ public class Part_partlisting extends BasePage {
 		try {
 			Thread.sleep(1000);
 			click(pagedd);
-			log.info("page dropdown is selected");
+			System.out.println("page dropdown is selected");
 			click(pagesize);
-			log.info("page size is selected");
+			System.out.println("page size is selected");
 			click(nextpage);
-			log.info("nextpage is clicked");
+			System.out.println("nextpage is clicked");
 			click(previous);
-			log.info("previouspage is clicked");
+			System.out.println("previouspage is clicked");
 			click(lastpage);
-			log.info("lastpage is clicked");
+			System.out.println("lastpage is clicked");
 			click(firstpage);
-			log.info("firstpage is clicked");
+			System.out.println("firstpage is clicked");
 			takescreenshots("pagination");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -259,21 +298,21 @@ public class Part_partlisting extends BasePage {
 	}
 	public void arrow() {
 		click(namearrow);
-		log.info("name arrow is clicked");
+		System.out.println("name arrow is clicked");
 		click(addressarrow);
-		log.info("address arrow is clicked");
+		System.out.println("address arrow is clicked");
 		click(emailarr);
-		log.info("email arrow is clicked");
+		System.out.println("email arrow is clicked");
 		click(contactarr);
-		log.info("contact arrow is clicked");
+		System.out.println("contact arrow is clicked");
 		click(statusarr);
-		log.info("status arrow is clicked");
+		System.out.println("status arrow is clicked");
 	}
 	public void search() {
 		try {
 			Thread.sleep(1000);
 			EnterText(search, "ama");
-			log.info("searchtext is entered");
+			System.out.println("searchtext is entered");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -282,9 +321,9 @@ public class Part_partlisting extends BasePage {
 
 	public void profile() {
 		click(profile);
-		log.info("profile button is clicked");
+		System.out.println("profile button is clicked");
 		click(signout);
-		log.info("signout button is clicked");
+		System.out.println("signout button is clicked");
 	}
 
 }

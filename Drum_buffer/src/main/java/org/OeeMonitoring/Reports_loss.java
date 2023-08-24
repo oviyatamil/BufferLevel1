@@ -25,6 +25,8 @@ public class Reports_loss extends BasePage {
 	private By lossrep = By.xpath("//span[text()=' Loss Report ']");
 	private By smartdrum = By.xpath("//mat-icon[@mattooltip='Click to Filter']");
 	private By machine = By.xpath("(//mat-select[@role='combobox'])[3]/ancestor::div[1]/descendant::div[4]");
+	private By text = By.xpath("(//mat-select[@role='combobox'])[3]/descendant::span[2]");
+
 	private By shift = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[4]");
 	private By shiftlist = By.xpath("(//span[text()='Shift 1'])/ancestor::div[1]/mat-option");
 	private By operation = By.xpath("(//mat-select[@role='combobox'])[4]/ancestor::div[1]/descendant::div[3]");
@@ -39,7 +41,8 @@ public class Reports_loss extends BasePage {
 //	private By month = By.xpath("//div[text()=' JUL ']/parent::button");
 	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
 //	private By enddate = By.xpath("//div[text()=' 18 ']/parent::button");
-
+private By chart = By.xpath("//*[local-name()='g' and contains(@class,'plot-group')][1]/*[local-name()='rect']");
+private By chart2 = By.xpath("//*[local-name()='g' and contains(@class,'plot-group')][5]");
 	private By no = By.xpath("//table/tbody/tr/td");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
@@ -114,22 +117,27 @@ public class Reports_loss extends BasePage {
 			Thread.sleep(2000);
 			List<WebElement> h = findWebElements(head);
 			List<String> s1 = new LinkedList<String>();
-			for(WebElement x:h) {
-				String txt = x.getText();
-				s1.add(txt);
+			for(int k=1;k<h.size();k++) {
+				String text = h.get(k).getText();
+				s1.add(text);
 			}
 			List<WebElement> d = findWebElements(data);
 			List<String> s2 = new LinkedList<String>();
-			for(WebElement x2:d) {
-				String txt2 = x2.getText();
-				s2.add(txt2);
+			for(int k=1;k<d.size();k++) {
+				String text = d.get(k).getText();
+				s2.add(text);
 			}
-			if(findWebElement(no).getText().contains("No Records Found")) {
-				log.info("No records found");
+			if(findWebElements(no).size()<=1) {
+				log.info("No records found for "+gettext(text));
 			}else {
 			for(int j=0;j<s1.size();j++) {
-			System.out.println("Losstime report is "+s1.get(i)+" ------ "+s2.get(i));
+			System.out.println("Losstime report is "+s1.get(j)+" ------ "+s2.get(j));
+			if(findWebElement(chart).isDisplayed()) {
+				System.out.println("Loss time Chart is displayed");
+			}else {
+				log.info("Loss time chart is not displyed for "+gettext(text));
 			}
+			}			
 			}
 			Thread.sleep(1000);
 			}

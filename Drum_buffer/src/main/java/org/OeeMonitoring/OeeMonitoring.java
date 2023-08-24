@@ -206,9 +206,11 @@ public class OeeMonitoring extends BasePage {
 					
 					for (int p = 1; p < dat.size(); p++) {
 						String text = dat.get(p).getText();
-						String replace = text.replace("%", "").trim();
-						Float valueOf = Float.valueOf(replace);
-						l.add(valueOf);
+						if(!text.contains("N/A")) {
+							String replace = text.replace("%", "").trim();
+							Float valueOf = Float.valueOf(replace);
+							l.add(valueOf);	
+						}
 					}
 					
 					System.out.println(l);
@@ -216,6 +218,7 @@ public class OeeMonitoring extends BasePage {
 						sum2 = sum2 + l.get(w);
 
 					}
+					if(l.size()>=1) {
 					Float fs = sum2 / l.size();
 					int round = Math.round(fs);
 					String rou = String.valueOf(round);
@@ -226,7 +229,7 @@ public class OeeMonitoring extends BasePage {
 							log.info("Actual Oee percentage from table is "+gettext(overalloee)+" mismatches with overall calculated oee "+sum2 / l.size());
 						}
 					} 
-		
+					
 					List<Float> l2 = new LinkedList<>();
 					for (int j = 0; j < l.size(); j++) {
 						String text = l.get(j).toString();
@@ -245,6 +248,10 @@ public class OeeMonitoring extends BasePage {
 						System.out.println("MINIMUM OEE from calculation IS " + Collections.min(l2));
 
 					}
+					}else {
+						System.out.println("MAXIMUM OEE from calculation IS N/A");
+						System.out.println("MINIMUM OEE from calculation IS N/A");
+					}
 					List<Float> l3 = new LinkedList<>();
 					float sum3 = 0f;
 					
@@ -253,12 +260,10 @@ public class OeeMonitoring extends BasePage {
 					
 					for (int k = 1; k < dat2.size(); k++) {
 						String text = dat2.get(k).getText();
-						if (text.equals("0%")) {
-							continue;
-						} else {
+						if(!text.contains("N/A")) {
 							String replace = text.replace("%", "").trim();
 							Float valueOf = Float.valueOf(replace);
-							l3.add(valueOf);
+							l3.add(valueOf);	
 						}
 					}
 					
@@ -266,15 +271,16 @@ public class OeeMonitoring extends BasePage {
 						sum3 = sum3 + l3.get(w);
 
 					}
+					if(l3.size()>=1) {
 					Float fs2 = sum3 / l.size();
 					int round2 = Math.round(fs2);
 					String rou2 = String.valueOf(round2);
 					if (sum3 == 0) {
 						System.out.println("Sum is 0");
 					} else if (gettext(overalavailable).contains(rou2)) {
-						System.out.println("Average actual availability from calculation is " + sum3 / l.size());
+						System.out.println("Average actual availability from calculation is " + sum3 / l3.size());
 					} else {
-						log.info("Actual availability percentage from table is "+gettext(overalavailable)+" mismatches with calculated availability "+sum3 / l.size());
+						log.info("Actual availability percentage from table is "+gettext(overalavailable)+" mismatches with calculated availability "+sum3 / l3.size());
 					}
 
 					if (l3.size() == 0) {
@@ -285,6 +291,10 @@ public class OeeMonitoring extends BasePage {
 						System.out.println("MINIMUM Availability from calculation IS " + Collections.min(l3));
 
 					}
+					}else {
+						System.out.println("MAXIMUM Availability from calculation IS N/A");
+						System.out.println("MINIMUM Availability from calculation IS N/A");
+					}
 					List<Float> l4 = new LinkedList<>();
 					float sum4 = 0f;
 					
@@ -293,12 +303,10 @@ public class OeeMonitoring extends BasePage {
 					
 					for (int m = 1; m < dat3.size(); m++) {
 						String text = dat3.get(m).getText();
-						if (text.equals("0%")) {
-							continue;
-						} else {
+						if(!text.contains("N/A")) {
 							String replace = text.replace("%", "").trim();
 							Float valueOf = Float.valueOf(replace);
-							l4.add(valueOf);
+							l4.add(valueOf);	
 						}
 					}
 					
@@ -306,16 +314,17 @@ public class OeeMonitoring extends BasePage {
 						sum4 = sum4 + l4.get(w);
 
 					}
-					Float fs3 = sum4 / l.size();
+					if(l4.size()>=1) {
+					Float fs3 = sum4 / l4.size();
 					int round3 = Math.round(fs3);
 					String rou3 = String.valueOf(round3);
 					if (sum4 == 0) {
 						System.out.println("Performance is 0");
 					} else {
 						if (gettext(overalperf).contains(rou3)) {
-							System.out.println("Average actual performance from calculation is " + sum4 / l.size());
+							System.out.println("Average actual performance from calculation is " + sum4 / l4.size());
 						} else {
-							log.info("Actual performance percentage displayed is "+ gettext(overalperf)+" mismatches with calculated performance "+sum4 / l.size());
+							log.info("Actual performance percentage displayed is "+ gettext(overalperf)+" mismatches with calculated performance "+sum4 / l4.size());
 						}
 					}
 					if (l4.size() == 0) {
@@ -326,36 +335,38 @@ public class OeeMonitoring extends BasePage {
 						System.out.println("MINIMUM Performance from calculation IS " + Collections.min(l4));
 
 					}
-					
+					}else {
+						System.out.println("MAXIMUM Performance from calculation IS N/A");
+						System.out.println("MINIMUM Performance from calculation IS N/A");
+					}
 					List<Float> l5 = new LinkedList<>();
 					float sum5 = 0f;
 					
 						List<WebElement>  dat4 = driver.findElements(By.xpath("//*[@id='element-to-export']/div[4]/div[4]/table/tbody/tr[4]/td"));
 					for (int n = 1; n < dat4.size(); n++) {
 						String text = dat4.get(n).getText();
-						if (text.equals("0%")) {
-							continue;
-						} else {
+						if(!text.contains("N/A")) {
 							String replace = text.replace("%", "").trim();
 							Float valueOf = Float.valueOf(replace);
-							l5.add(valueOf);
+							l5.add(valueOf);	
 						}
-					}
+					}					
 					
 					for (int w = 0; w < l5.size(); w++) {
 						sum5 = sum5 + l5.get(w);
 
 					}
-					Float fs4 = sum5 / l.size();
+					if(l5.size()>=1) {
+					Float fs4 = sum5 / l5.size();
 					int round4 = Math.round(fs4);
 					String rou4 = String.valueOf(round4);
 					if (sum5 == 0) {
 						System.out.println("Quality is 0");
 					} else {
 						if (gettext(overalquality).contains(rou4)) {
-							System.out.println("Average actual quality from calculation is " + sum2 / l.size());
+							System.out.println("Average actual quality from calculation is " + sum5 / l5.size());
 						} else {
-							log.info("Actual quality percentage from table is "+ gettext(overalquality)+" mismatches with overall calculated quality "+ sum2 / l.size() );
+							log.info("Actual quality percentage from table is "+ gettext(overalquality)+" mismatches with overall calculated quality "+ sum5 / l5.size() );
 						}
 					}
 					if (l5.size() == 0) {
@@ -366,6 +377,10 @@ public class OeeMonitoring extends BasePage {
 						System.out.println("MINIMUM Quality from calculation IS " + Collections.min(l5));
 
 					}
+					}else {
+						System.out.println("MAXIMUM Quality from calculation IS N/A");
+						System.out.println("MINIMUM Quality from calculation IS N/A");
+					}
 					System.out.println("*******");
 				
 					List<WebElement> act = driver.findElements(By.xpath("//*[@id='element-to-export']/div[5]/div[4]/table/tbody/tr[1]/td"));
@@ -375,9 +390,9 @@ public class OeeMonitoring extends BasePage {
 					}else {
 					for (int j = 1; j < act.size(); j++) {
 						String text = act.get(j).getText();
-						if (text.equals("0%")) {
+						if (text.equals("0%")||text.equals("N/A")) {
 							continue;
-						} else {
+						} else {							
 							String replace = text.replace("%", "").trim();
 							Float valueOf = Float.valueOf(replace);
 							m2.add(valueOf);
@@ -397,7 +412,7 @@ public class OeeMonitoring extends BasePage {
 					List<Float> m3 = new LinkedList<>();
 					for (int j = 1; j < spin.size(); j++) {
 						String text = spin.get(j).getText();
-						if (text.equals("0%")) {
+						if (text.equals("0%")||text.equals("N/A")) {
 							continue;
 						} else {
 							String replace = text.replace("%", "").trim();
@@ -418,7 +433,7 @@ public class OeeMonitoring extends BasePage {
 					List<Float> m4 = new LinkedList<>();
 					for (int m = 1; m < act4.size(); m++) {
 						String text = act4.get(m).getText();
-						if (text.equals("0%")) {
+						if (text.equals("0%")||text.equals("N/A")) {
 							continue;
 						} else {
 							String replace = text.replace("%", "").trim();
@@ -439,7 +454,7 @@ public class OeeMonitoring extends BasePage {
 					List<Float> m5 = new LinkedList<>();
 					for (int n = 1; n < act5.size(); n++) {
 						String text = act5.get(n).getText();
-						if (text.equals("0%")) {
+						if (text.equals("0%")||text.equals("N/A")) {
 							continue;
 						} else {
 							String replace = text.replace("%", "").trim();
@@ -461,7 +476,7 @@ public class OeeMonitoring extends BasePage {
 					List<Float> m6 = new LinkedList<>();
 					for (int n = 1; n < act6.size(); n++) {
 						String text = act6.get(n).getText();
-						if (text.equals("0%")) {
+						if (text.equals("0%")||text.equals("N/A")) {
 							continue;
 						} else {
 							String replace = text.replace("%", "").trim();

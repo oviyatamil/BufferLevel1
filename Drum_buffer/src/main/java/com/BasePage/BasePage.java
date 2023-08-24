@@ -32,10 +32,10 @@ public class BasePage extends ReportSetup{
 	    public static ReportSetup setup;
 	    
 	    public  BasePage(WebDriver driver) {
-	    	this.driver = driver;
+	    	BasePage.driver = driver;
 	    }
 	    public void setdriver(WebDriver driver) {
-	    	this.driver=driver;
+	    	BasePage.driver=driver;
 	    }
 	    protected WebElement findWebElement(By locator) {
 	    	return driver.findElement(locator);
@@ -175,7 +175,7 @@ public class BasePage extends ReportSetup{
          }
          public void draganddrop(By locator) {
          	Actions a = new Actions(driver);
-         	a.dragAndDropBy(findWebElement(locator), 50, 0).perform();
+         	a.dragAndDropBy(findWebElement(locator), 200, 0).perform();
          	
          	 
           }

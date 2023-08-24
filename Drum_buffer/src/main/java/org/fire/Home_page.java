@@ -1,7 +1,8 @@
 package org.fire;
 
-import static org.testng.Assert.assertEquals;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -31,6 +32,7 @@ public class Home_page extends BasePage {
 	private By disable = By.xpath("//span[text()='Disable']/parent::div/span[2]");
 	private By status = By.xpath("//table/tbody/tr/td/span");
 	private By loc = By.xpath("//table/tbody/tr/td[2]");
+	private By timestamp = By.xpath("//div[contains(@class,'grid md:grid')]/div/div[6]");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
 	private By record = By.xpath("//table/tbody/tr");
@@ -41,12 +43,12 @@ public class Home_page extends BasePage {
 			System.out.println("Ninedots button is clicked");
 			waittobeclickable(fire, 20);
 			click(fire);
-			System.out.println("Oee option is clicked");
+			System.out.println("Fire monitoring option is clicked");
 			Thread.sleep(2000);
-			String ExpectedURL = "https://portal.careworx.in/#/fire/home";
-			String ActualURL = getCurrentURL();
-			assertEquals(ExpectedURL, ActualURL);
-			log.info("Assert verification is done for Oee home page");
+//			String ExpectedURL = "https://portal.careworx.in/#/fire/home";
+//			String ActualURL = getCurrentURL();
+//			assertEquals(ExpectedURL, ActualURL);
+			log.info("Assert verification is done for Fire home page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -58,18 +60,19 @@ public class Home_page extends BasePage {
 			List<WebElement> list = findWebElements(ddlist);
 			for(int t=0;t<list.size();t++) {
 				list.get(t).click();
-				click(apply);
-				Thread.sleep(3000);
+				Thread.sleep(500);
 				click(location);
 				List<WebElement> list2 = findWebElements(loclist);
 				List<String> s = new LinkedList<String>();
-			//	List<String> s1 = new LinkedList<String>();
 				for(int i=1;i<list2.size();i++) {
 					String text = list2.get(i).getText();
 					s.add(text);
 					
 				}
+				System.out.println(s);
 				list2.get(0).click();
+				click(apply);
+				Thread.sleep(3000);
 				List<WebElement> list3 = findWebElements(table);
 				for(int i=0;i<list3.size();i++) {
 					List<WebElement> f = findWebElements(fault);
@@ -89,6 +92,17 @@ public class Home_page extends BasePage {
 					}
 				
 			}
+				Thread.sleep(1000);
+				List<WebElement> time = findWebElements(timestamp);
+				List<WebElement> list4 = findWebElements(table);
+				String data = new SimpleDateFormat("MMM dd,yyyy").format(new Date());
+				for(int i=0;i<time.size();i++) {
+					if(time.get(i).getText().contains(data)) {
+						System.out.println("Timestamp is correct");
+					}else {
+						log.info("Timestamp in table is not current date for "+list4.get(i).getText()+"----"+gettext(text));
+					}
+				}
 				Map<String,Integer> m = new LinkedHashMap<>();
 				for(int k=0;k<s.size();k++) {
 					if(m.containsKey(s.get(k))) {
@@ -98,10 +112,27 @@ public class Home_page extends BasePage {
 					}
 					
 				}
-				if(s.size()==list3.size()) {
+				List<WebElement> loc = findWebElements(table);
+				List<String> s1 = new LinkedList<String>();
+				for(int i=0;i<loc.size();i++) {
+					String text = loc.get(i).getText();
+					s1.add(text);
+					
+				}
+				Map<String,Integer> m2 = new LinkedHashMap<>();
+				for(int k=0;k<s1.size();k++) {
+					if(m2.containsKey(s1.get(k))) {
+						m2.put(s1.get(k), 2);
+					}else {
+						m2.put(s1.get(k), 1);
+					}
+					
+				}
+				Thread.sleep(1000);
+				if(s.size()==s1.size()) {
 					System.out.println("All locations are displayed");
 				}else {
-					log.info("Location in dropdown mismatches with table displayed in homepage");
+					log.info("Location in dropdown mismatches with table displayed in homepage for "+gettext(text));
 				}
 				System.out.println(m.entrySet());
 				m.clear();

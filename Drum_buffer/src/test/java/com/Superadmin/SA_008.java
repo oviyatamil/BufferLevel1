@@ -26,8 +26,6 @@ protected void permission() {
 	ReportSetup.test.log(Status.PASS, "Successfully checked view,edit,delete and cancel option in role list");
 	p.profile();
 	ReportSetup.test.log(Status.PASS, "Successfully logout from application");
-//	p.login();
-//	p.perm();
 	
 }
 }

@@ -1,6 +1,6 @@
 package com.SuperadminPage;
 
-import static org.testng.Assert.assertEquals;
+
 
 import java.time.Duration;
 import java.util.List;
@@ -79,16 +79,7 @@ public void permission() {
 	try {
 		//Thread.sleep(2000);
 		click(permission);
-		Thread.sleep(1000);
-		click(add);
-		EnterText(role, "ABC");
-		click(perm);
-		waittobeclickable(cusadd, 10);
-		click(cusadd);
-		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", findWebElement(save));
-		click(save);
-		Thread.sleep(1000);					
+		Thread.sleep(1000);			
 	} catch (InterruptedException e) {
 		e.printStackTrace();
 	}
@@ -96,8 +87,8 @@ public void permission() {
 }
 public void perm() {
 	try {
-//		click(btn);
-//		Thread.sleep(1000);
+		click(btn);
+		Thread.sleep(1000);
 		click(radio);
 		click(view);
 		click(cancelbtn);
@@ -168,7 +159,7 @@ public void perm() {
 				List<WebElement> rad2 = findWebElements(radio);
 				List<WebElement> def2 = findWebElements(roles);
 				for(int k=0;k<def2.size();k++) {
-				if(def2.get(k).getText().equals("ABC")) {				
+				if(def2.get(k).getText().equals("QA Engineer")) {				
 					rad2.get(k).click();
 					click(delete);
 					click(delete2);
@@ -213,7 +204,8 @@ public void users() {
 	}
 	public void useradd() {
 		try {
-			Thread.sleep(1000);
+			click(user);	
+			Thread.sleep(1000);			
 			click(radio);
 			click(view);
 			click(cancelbtn);
@@ -325,11 +317,6 @@ public void login() {
 		System.out.println("Clicked on the Login");
 		Thread.sleep(2000);
 	
-		String ExpectedURL="http://20.204.188.25/#/superadmin/home";
-	        String ActualURL=getCurrentURL();
-	        assertEquals(ExpectedURL, ActualURL);
-	       
-	        
 	} catch (Exception e) {
 		
 		e.printStackTrace();

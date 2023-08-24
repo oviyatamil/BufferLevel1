@@ -32,6 +32,6 @@ protected void analytic() {
 	ea2.peakdemand();
 	ReportSetup.test.log(Status.PASS, "successfully checked the charts");
 	ea2.profile();
-	ReportSetup.test.log(Status.PASS, "Successfully clogout from application");
+	ReportSetup.test.log(Status.PASS, "Successfully logout from application");
 }
 }

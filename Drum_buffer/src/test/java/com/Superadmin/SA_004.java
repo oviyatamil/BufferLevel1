@@ -15,8 +15,9 @@ Monitoring_Parameter mp;
 @Test
 protected void monitoringParameter() {
 	ReportSetup.test = ReportSetup.report.createTest("MASTER MONITORING PARAMETER SCREEN");
-	ReportSetup.test.assignCategory("SA4");
+	ReportSetup.test.assignCategory("SA-4");
 	mp = new Monitoring_Parameter(driver);
+	mp.home();
 	mp.monpar();
 	ReportSetup.test.log(Status.PASS, "Successfully navigated to Master monitoring parameter screen");
 	mp.add();

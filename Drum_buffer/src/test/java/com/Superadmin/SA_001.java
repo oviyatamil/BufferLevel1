@@ -15,6 +15,8 @@ public class SA_001 extends BaseTest {
 		ReportSetup.test=ReportSetup.report.createTest("PARTNER - PART LISTING");
 		ReportSetup.test.assignCategory("SA1");
 		part = new Part_partlisting(driver);
+		part.home();
+		ReportSetup.test.log(Status.PASS, "Successfully navigated to home page");
 		part.partners();
 		ReportSetup.test.log(Status.PASS, "Successfully navigated to Partner listing page");
 		part.add();

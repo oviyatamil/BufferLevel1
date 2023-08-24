@@ -114,6 +114,7 @@ public class Quality_Parts extends BasePage {
 			u.get(1).click();
 			EnterText(drawno, "Asd123");
 			calendar(calendar,yeardd, year, startdate);
+			Thread.sleep(2000);
 			click(parttier);
 			List<WebElement> t = findWebElements(tierdd);
 			t.get(1).click();
@@ -135,8 +136,10 @@ public class Quality_Parts extends BasePage {
 			List<WebElement> u2 = findWebElements(uomdd);
 			u2.get(1).click();
 			EnterText(drawno, "Asd123");
-			calendar(calendar,yeardd, year, startdate);
+			calendar(calendar,yeardd, year, startdate);	
+			waittobeclickable(parttier, 10);
 			click(parttier);
+			Thread.sleep(500);
 			List<WebElement> t2 = findWebElements(tierdd);
 			t2.get(1).click();
 			click(classi);
@@ -257,7 +260,7 @@ public class Quality_Parts extends BasePage {
 					
 				}
 			}		
-					Thread.sleep(1000);
+					Thread.sleep(2000);
 					click(parts);
 					Thread.sleep(2000);
 					List<WebElement> lists = findWebElements(category2);

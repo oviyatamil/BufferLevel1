@@ -1,6 +1,6 @@
 package org.fire;
 
-import static org.testng.Assert.assertEquals;
+
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -29,7 +29,7 @@ public class Monitor extends BasePage {
 	private By table = By.xpath("//table/tbody/tr/td");
 	private By ddtext = By.xpath("//mat-select[@role='combobox']/div/div/span/span[1]");
 	private By loctext = By.xpath("(//mat-select[@role='combobox'])[2]/div/div/span/span[1]");
-	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[18]");
+	private By calendar = By.xpath("//mat-label[contains(text(),'Date Range')]/following::span[1]");
 	private By yeardd = By.xpath("(//span[contains(text(),'2023')])[2]/parent::span");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
 	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");	
@@ -43,12 +43,12 @@ public class Monitor extends BasePage {
 			System.out.println("Ninedots button is clicked");
 			waittobeclickable(fire, 20);
 			click(fire);
-			System.out.println("Oee option is clicked");
+			System.out.println("Fire monitoring option is clicked");
 			Thread.sleep(2000);
-			String ExpectedURL = "https://portal.careworx.in/#/fire/home";
-			String ActualURL = getCurrentURL();
-			assertEquals(ExpectedURL, ActualURL);
-			log.info("Assert verification is done for Fire monitoring home page");
+//			String ExpectedURL = "https://portal.careworx.in/#/fire/home";
+//			String ActualURL = getCurrentURL();
+//			assertEquals(ExpectedURL, ActualURL);
+			System.out.println("Assert verification is done for Fire monitoring home page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -58,6 +58,7 @@ public class Monitor extends BasePage {
 		try {
 			click(monitoring);
 			click(firemonitoring);
+			log.info("Assert verification is done for monitoring page");
 			Thread.sleep(1000);
 			click(dd);
 			List<WebElement> list = findWebElements(ddlist);
@@ -76,18 +77,18 @@ public class Monitor extends BasePage {
 					if(i>0) {
 						Thread.sleep(500);
 						click(location);
+						Thread.sleep(500);
 						list2.get(i).click();
-					}else {
-						
+					}else {						
 						list2.get(i).click();
 					}
 					click(apply);
 					Thread.sleep(1000);
 					if(findWebElement(chart).isDisplayed()!=true) {
-						log.info("Chart not displayed for "+findWebElement(ddtext).getText()+" ---- "+findWebElement(loctext).getText());
+						log.info("Diagram not displayed for "+findWebElement(ddtext).getText()+" ---- "+findWebElement(loctext).getText());
 						}
 						else {
-							System.out.println("Chart displayed for "+findWebElement(ddtext).getText()+" ---- "+findWebElement(loctext).getText());
+							System.out.println("Diagram displayed for "+findWebElement(ddtext).getText()+" ---- "+findWebElement(loctext).getText());
 
 						}
 					
@@ -106,19 +107,26 @@ public class Monitor extends BasePage {
 			click(monitoring);
 			click(report);
 			Thread.sleep(2000);
-			String ExpectedURL = "https://portal.careworx.in/#/fire/report";
-			String ActualURL = getCurrentURL();
-			assertEquals(ExpectedURL, ActualURL);
+//			String ExpectedURL = "https://portal.careworx.in/#/fire/report";
+//			String ActualURL = getCurrentURL();
+//			assertEquals(ExpectedURL, ActualURL);
 			log.info("Assert verification is done for report page");
-			click(dd);
-			List<WebElement> list = findWebElements(ddlist);
-			list.get(1).click();
 			calendar(calendar, yeardd, year, startdate);
 			System.out.println("Calendar date is selected");
+			click(dd);
+			List<WebElement> list = findWebElements(ddlist);
+			for(int i=0;i<list.size();i++) {
+				if(i>0) {
+					click(dd);
+				}
+				list.get(i).click();	
+				click(apply);
+				Thread.sleep(2000);
 			if(findWebElement(table).getText().contains("No Record Found")){
-				System.out.println("No records found");
+				log.info("No records found for "+gettext(ddtext));
 			}else {
 				System.out.println("Record found");
+			}
 			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();

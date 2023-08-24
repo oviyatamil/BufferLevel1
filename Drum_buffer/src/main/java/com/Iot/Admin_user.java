@@ -14,9 +14,7 @@ public class Admin_user extends BasePage{
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button/img");
-	private By admin = By.xpath("//div[contains(text(),'Admin') or contains(text(),'Organisation')]");
-	private By threedots = By.xpath("//table/tbody/tr/td[8]/button");
-	private By location = By.xpath("//span[contains(text(),'Location')]");
+	private By admin = By.xpath("//div[contains(text(),'Admin') or contains(text(),'Organisation')]");	
 	private By userm = By.xpath("//span[contains(text(),'User Management')]");
 	private By user = By.xpath("//div[contains(text(),'User')]");
 	private By masterdata = By.xpath("//span[contains(text(),'Master Data')]");
@@ -25,15 +23,13 @@ public class Admin_user extends BasePage{
 	private By dep = By.xpath("//input[@formcontrolname='department_Name']");
 	
 	private By catlist = By.xpath("//table/tbody/tr/td[2]/span");
+	private By maillist = By.xpath("//table/tbody/tr/td[4]/span");
 	private By radiobtn = By.xpath("//span[@class='mat-radio-inner-circle']");
 	private By equipcat = By.xpath("//div[contains(text(),'Equipment Category')]");
+	private By role = By.xpath("(//div[contains(text(),'Role')])[1]");
 	private By equip = By.xpath("//div[contains(text(),'Equipment Type')]");
 	private By depart = By.xpath("//div[contains(text(),'Department')]");
 	private By categorylist = By.xpath("(//span[text()='Select Category'])/ancestor::div[1]/mat-option/span");
-//	private By type = By.xpath("//input[@formcontrolname='description']");
-	
-	private By loclist = By.xpath("//table/tbody/tr/td[3]/span");
-	private By shiftlist = By.xpath("//table/tbody/tr/td[2]/span");
 	private By add = By.xpath("//span[contains(text(),'Add')]");
 	private By view = By.xpath("//span[contains(text(),'View')]");
 	private By edit = By.xpath("//span[contains(text(),'Edit')]");
@@ -80,7 +76,7 @@ public class Admin_user extends BasePage{
 			Actions a = new Actions(driver);
 			click(userm);
 			click(add);
-			EnterText(rolename, "asdfg");
+			EnterText(rolename, "Advisor");
 			click(diaanalytics);
 			waittobeclickable(energykpi, 10);
 			click(energykpi);
@@ -89,9 +85,10 @@ public class Admin_user extends BasePage{
 			waittobeclickable(save, 10);
 			click(save);
 			Thread.sleep(1000);
+			System.out.println("Role is added");
 			click(user);
-			click(add);
 			Thread.sleep(500);
+			click(add);			
 			click(sitedd);
 			List<WebElement> r2 = findWebElements(sitelist);
 			r2.get(0).click();
@@ -100,19 +97,43 @@ public class Admin_user extends BasePage{
 			List<WebElement> r = findWebElements(rolelist);
 			for (int i = 1; i < r.size(); i++) {
 				String text = r.get(i).getText();
-				if(text.equals("asdfg")) {
+				if(text.equals("Advisor")) {
 					r.get(i).click();
 					break;
 				}
 				Thread.sleep(100);
 				
 			}
-			EnterText(name, "maya");
+			EnterText(name, "Anamica");
 			EnterText(ph, "7657657655");		
 			EnterText(mail, "maya@yahoo.com");
 			EnterText(pwd, "Admin@123");
 			EnterText(address, "Madurai");
 			click(save);
+			System.out.println("User is added");
+			List<WebElement> m = findWebElements(maillist);
+			for(int j=0;j<m.size();j++) {
+				if(m.get(j).getText().equals("maya@yahoo.com")) {
+					List<WebElement> rs = findWebElements(radiobtn);
+					rs.get(j).click();
+					click(delete);
+					click(delete2);
+					break;
+				}
+			}
+			Thread.sleep(1000);
+			click(role);
+			Thread.sleep(500);
+			List<WebElement> c = findWebElements(catlist);
+			for(int j=0;j<c.size();j++) {
+				if(c.get(j).getText().equals("Advisor")) {
+					List<WebElement> rs = findWebElements(radiobtn);
+					rs.get(j).click();
+					click(delete);
+					click(delete2);
+					break;
+				}
+			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -121,14 +142,17 @@ public class Admin_user extends BasePage{
 		try {
 			click(masterdata);
 			Thread.sleep(500);
-//			click(add);
-//			EnterText(cat, "Chocolate");
-//			EnterText(desc, "candy");
-//			click(save);
-//			Thread.sleep(1000);
-//			click(radiobtn);
-//			click(view);
-//			click(cancelbtn);
+			click(add);
+			EnterText(cat, "Chocolate");
+			EnterText(desc, "candy");
+			click(save);
+			System.out.println("Equipment category is added");
+			Thread.sleep(1000);
+			click(radiobtn);
+			click(view);
+			click(cancelbtn);
+			System.out.println("View option is checked");
+			Thread.sleep(1000);
 			List<WebElement> c = findWebElements(catlist);
 			for(int i=0;i<c.size();i++) {
 				if(c.get(i).getText().equals("Chocolate")) {
@@ -138,7 +162,9 @@ public class Admin_user extends BasePage{
 					clear(desc);
 					EnterText(desc, "candies");
 					click(update);
-					Thread.sleep(500);									
+					Thread.sleep(500);	
+					System.out.println("Update option is checked");
+					break;					
 				}
 			}
 			click(equip);
@@ -153,7 +179,8 @@ public class Admin_user extends BasePage{
 			}
 			EnterText(cat, "Art");
 			click(save);
-			Thread.sleep(200);	
+			Thread.sleep(500);	
+			System.out.println("Equip type is added");	
 			List<WebElement> c2 = findWebElements(catlist);
 			for(int i=0;i<c2.size();i++) {
 				if(c2.get(i).getText().equals("Art")) {
@@ -164,17 +191,30 @@ public class Admin_user extends BasePage{
 					EnterText(cat, "Arts");
 					click(update);
 					Thread.sleep(500);
-					r.get(i).click();
-					click(delete);
-					click(delete2);
+					Thread.sleep(500);	
+					System.out.println("Update option is checked in equip type");
 					break;
 				}
 			}
+			List<WebElement> cc = findWebElements(catlist);
+			for(int i=0;i<cc.size();i++) {
+				if(cc.get(i).getText().equals("Arts")) {
+					List<WebElement> r = findWebElements(radiobtn);
+					r.get(i).click();
+					click(delete);
+					click(delete2);
+					Thread.sleep(500);	
+					System.out.println("Delete option is checked in equip type");
+					break;
+				}
+			}									
 			click(depart);
 			click(add);
 			EnterText(dep, "ECE");
 			EnterText(desc, "Electronics");
 			click(save);
+			Thread.sleep(500);	
+			System.out.println("Department is added");
 			List<WebElement> c3 = findWebElements(catlist);
 			for(int i=0;i<c3.size();i++) {
 				if(c3.get(i).getText().equals("ECE")) {
@@ -184,22 +224,35 @@ public class Admin_user extends BasePage{
 					clear(desc);
 					EnterText(desc, "Communication");
 					click(update);
-					Thread.sleep(500);
+					Thread.sleep(500);	
+					System.out.println("Update option is checked in department");
+					break;
+				}
+			}	
+			Thread.sleep(500);
+			List<WebElement> cc3 = findWebElements(catlist);
+			for(int i=0;i<cc3.size();i++) {
+				if(cc3.get(i).getText().equals("ECE")) {
+					List<WebElement> r = findWebElements(radiobtn);
 					r.get(i).click();
 					click(delete);
 					click(delete2);
+					Thread.sleep(500);	
+					System.out.println("Delete option is checked in departmnet");
 					break;
-				}
+					}
 			}
 			click(equipcat);
 			Thread.sleep(1000);
 			List<WebElement> c4 = findWebElements(catlist);
 			for(int i=0;i<c4.size();i++) {
-				if(c4.get(i).getText().equals("Chocolates")) {
+				if(c4.get(i).getText().equals("Chocolate")) {
 					List<WebElement> r = findWebElements(radiobtn);
 					r.get(i).click();
 					click(delete);
 					click(delete2);
+					Thread.sleep(500);	
+					System.out.println("Delete option is checked in equip category");
 					break;									
 				}
 			}
@@ -210,7 +263,7 @@ public class Admin_user extends BasePage{
 	}
 	public void profile() {
 		try {
-			Thread.sleep(500);
+			Thread.sleep(1000);
 			click(profile);
 			System.out.println("profile button is clicked");
 			click(signout);

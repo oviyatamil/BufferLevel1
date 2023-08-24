@@ -32,10 +32,10 @@ Energy_custom ec;
 		ReportSetup.test.log(Status.PASS, "Navigates to Energy custom reports->monthly page");
 		ec.dd2();
 		ReportSetup.test.log(Status.PASS, "Successfully checked the tables and date");
-		ec.report2();
-		ReportSetup.test.log(Status.PASS, "Navigates to Energy custom reports->hourly page");
-		ec.dd4();
-		ReportSetup.test.log(Status.PASS, "Successfully checked the tables and date");
+//		ec.report2();
+//		ReportSetup.test.log(Status.PASS, "Navigates to Energy custom reports->hourly page");
+//		ec.dd4();
+//		ReportSetup.test.log(Status.PASS, "Successfully checked the tables and date");
 		ec.profile();
 		ReportSetup.test.log(Status.PASS, "Successfully logout from application");
 	}

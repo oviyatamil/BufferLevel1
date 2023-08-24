@@ -124,6 +124,7 @@ public class Product_list extends BasePage {
 			click(product);
 			System.out.println("Product menu is clicked");
 			Thread.sleep(1000);
+			waittobeclickable(uom, 20);
 			click(uom);	
 			click(add);		
 			EnterText(uomname,"AAA");	

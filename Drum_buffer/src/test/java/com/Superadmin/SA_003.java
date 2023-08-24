@@ -14,6 +14,7 @@ public class SA_003 extends BaseTest {
 		ReportSetup.test = ReportSetup.report.createTest("MASTER UOM SCREEN");
 		ReportSetup.test.assignCategory("SA3");
 		u = new Uom(driver);
+		u.home();
 		u.uom();
 		ReportSetup.test.log(Status.PASS, "Successfully navigated to Master uom screen");
 		u.add();

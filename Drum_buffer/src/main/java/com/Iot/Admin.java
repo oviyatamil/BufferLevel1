@@ -110,6 +110,7 @@ public class Admin extends BasePage {
 			List<WebElement> d = findWebElements(ddlist);
 			d.get(1).click();
 			click(save);
+			System.out.println("Location is added");
 			Thread.sleep(500);
 			click(radiobtn);
 			click(view);
@@ -148,6 +149,7 @@ public class Admin extends BasePage {
 			ce.get(1).click();
 			click(save);
 			Thread.sleep(500);
+			System.out.println("Zone is added");
 			click(loc);
 			click(pagedd);
 			click(pagesize);
@@ -159,7 +161,8 @@ public class Admin extends BasePage {
 					r.get(i).click();
 					Thread.sleep(200);
 					click(delete);
-					click(delete2);					
+					click(delete2);	
+					System.out.println("Location is deleted");
 					break;
 				}
 			}
@@ -188,6 +191,7 @@ public class Admin extends BasePage {
 			EnterText(breakmin, "15");
 			click(tick);
 			click(save);
+			System.out.println("Shift is added");
 			Thread.sleep(500);
 			List<WebElement> s = findWebElements(shiftlist);
 			for(int i=0;i<s.size();i++) {
@@ -195,7 +199,8 @@ public class Admin extends BasePage {
 					List<WebElement> r = findWebElements(radiobtn);
 					r.get(i).click();
 					click(delete);
-					click(delete2);					
+					click(delete2);		
+					System.out.println("Shift is deleted");
 					break;
 				}
 			}

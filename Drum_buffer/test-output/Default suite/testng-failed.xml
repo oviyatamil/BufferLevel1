@@ -3,16 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.TestCase.TC_001">
+      <class name="com.Superadmin.SA_011">
         <methods>
           <include name="afterMerhod"/>
           <include name="teardown"/>
-          <include name="onetimelogin"/>
           <include name="afterclass"/>
+          <include name="onetimelogin"/>
+          <include name="support"/>
           <include name="BrowserSetup"/>
-          <include name="tc_001"/>
         </methods>
-      </class> <!-- com.TestCase.TC_001 -->
+      </class> <!-- com.Superadmin.SA_011 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -73,9 +73,6 @@ public class Reports_spindle extends BasePage{
 	}
 	public void dd() {
 		try {
-			click(machine);
-			List<WebElement> l2 = findWebElements(mechlist);
-			l2.get(1).click();
 			click(monthmm);
 			Thread.sleep(500);
 			List<WebElement> l5 = findWebElements(monthlist);
@@ -83,7 +80,33 @@ public class Reports_spindle extends BasePage{
 			click(yearyy);
 			List<WebElement> l6 = findWebElements(yearlist);
 			l6.get(1).click();
-			click(search);
+			click(machine);
+			List<WebElement> l2 = findWebElements(mechlist);
+			for(int i=1;i<l2.size();i++) {
+				if(i>1) {
+					click(machine);
+				}
+				l2.get(i).click();
+				click(search);
+				Thread.sleep(1000);
+				List<WebElement> h = findWebElements(head);
+				String data = new SimpleDateFormat("dd-MMM-yyyy").format(new Date());
+				if((h.get(1).getText()).contains("01")){
+					
+					System.out.println("Table has correct start date");
+					}else {
+						log.info("Table header start date is wrong");
+					}
+
+				if((h.get(h.size()-1).getText()).equals(data)){
+					
+				System.out.println("Table has correct end date");
+				}else {
+					log.info("Table header last date is wrong");
+				}
+				Thread.sleep(500);
+			}			
+			
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -94,32 +117,5 @@ public class Reports_spindle extends BasePage{
 		System.out.println("profile button is clicked");
 		click(signout);
 		System.out.println("signout button is clicked");
-	}
-	public void table() {
-		try {
-			Thread.sleep(1000);
-			List<WebElement> h = findWebElements(head);
-			String data = new SimpleDateFormat("dd-MMM-yyyy").format(new Date());
-			if((h.get(1).getText()).contains("01")){
-				
-				System.out.println("Table has correct start date");
-				}else {
-					log.info("Table header start date is wrong");
-				}
-
-			if((h.get(h.size()-1).getText()).equals(data)){
-				
-			System.out.println("Table has correct end date");
-			}else {
-				log.info("Table header last date is wrong");
-			}
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
-
-	
-	
-	
-	
+	} 				
 }

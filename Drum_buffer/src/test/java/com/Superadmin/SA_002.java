@@ -15,6 +15,7 @@ public class SA_002 extends BaseTest{
 		ReportSetup.test=ReportSetup.report.createTest("GATEWAY TYPE SCREEN");
 		ReportSetup.test.assignCategory("SA2");
 		g = new Gateway_Type(driver);
+		g.home();
 		g.device_gateway();
 		ReportSetup.test.log(Status.PASS,"Successfully navigated to Device gateway type screen");
 		g.add();
@@ -23,6 +24,12 @@ public class SA_002 extends BaseTest{
 		ReportSetup.test.log(Status.PASS,"Successfully checked view,edit,cancel and delete option");
 		g.gatelist();
 		ReportSetup.test.log(Status.PASS,"Successfully checked the duplicates");
+		g.gateway();
+		ReportSetup.test.log(Status.PASS,"Successfully navigated to Device gateway screen");
+		g.gatecheck();
+		ReportSetup.test.log(Status.PASS,"Successfully checked view,edit,cancel and delete option");
+		g.dots();
+		ReportSetup.test.log(Status.PASS,"Successfully checked Sid,Sim and Notification submenus");
 		g.pagination();
 		ReportSetup.test.log(Status.PASS,"Successfully done pagination");
 		g.arrow();

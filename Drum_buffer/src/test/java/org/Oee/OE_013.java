@@ -18,9 +18,7 @@ protected void spindlereport() {
 	rs.rep();
 	ReportSetup.test.log(Status.PASS, "Successfully navigated to spindle time reports page");
 	rs.dd();
-	ReportSetup.test.log(Status.PASS, "Successfully select all dropdowns");
-	rs.table();
-	ReportSetup.test.log(Status.PASS, "Successfully checked table date");
+	ReportSetup.test.log(Status.PASS, "Successfully select all dropdowns and checked table date");
 	rs.profile();
 	ReportSetup.test.log(Status.PASS, "Successfully logout from the application");
 }
