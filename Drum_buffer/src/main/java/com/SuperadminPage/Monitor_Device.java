@@ -27,11 +27,9 @@ public class Monitor_Device extends BasePage{
 	private By paradd = By.xpath("(//mat-select[@role='combobox'])[2]/descendant::div[4]");
 	private By paralist = By.xpath("//div[@role='listbox']/mat-option/span");
 	private By datadd = By.xpath("(//mat-select[@role='combobox'])[3]/descendant::div[4]");
-//	private By datalist = By.xpath("//span[contains(text(),'Select City')]/ancestor::div[1]/mat-option/span");
 	private By add = By.xpath("//span[text()='Add']");
 	private By radiobtn = By.xpath("//span[@class='mat-radio-inner-circle']");
 	private By view = By.xpath("//span[text()='View']");
-	private By nextdisable = By.xpath("//button[@aria-label='Next page']");
 	private By edit = By.xpath("//span[text()='Edit']");
 	private By update = By.xpath("//span[text()=' Update ']");
 	private By delete = By.xpath("//span[text()='Delete']");

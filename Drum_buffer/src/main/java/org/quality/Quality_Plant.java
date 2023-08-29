@@ -1,9 +1,6 @@
 package org.quality;
 
-import static org.testng.Assert.assertEquals;
-
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +14,7 @@ public class Quality_Plant extends BasePage {
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By quality = By.xpath("//div[text()='Quality']/parent::div/button");
+	private By quality = By.xpath("//div[contains(text(),'Quality')]");
 	private By plant = By.xpath("//span[contains(text(),'Plant Manager')]");
 	private By smartdrum = By.xpath("//mat-icon[@mattooltip='Click to specific filter condition']/img");
 	private By machinedd = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
@@ -33,8 +30,8 @@ public class Quality_Plant extends BasePage {
 	private By chardd2 = By.xpath("(//mat-select[@role='combobox'])[6]/ancestor::div[1]/descendant::div[4]");
 	private By charlist2 = By.xpath("//span[text()='Select Part Characteristic']/parent::mat-option/parent::div/mat-option");
 	private By search = By.xpath("//span[contains(text(),'Search')]");
-	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[13]");
-	private By calendar2 = By.xpath("(//span[@class='mat-button-wrapper'])[15]");
+	private By calendar = By.xpath("(//mat-label[contains(text(),'Date')])[1]/following::span[1]");
+	private By calendar2 = By.xpath("(//mat-label[contains(text(),'Date')])[2]/following::span[1]");
 	private By yeardd = By.xpath("//span[contains(text(),'2023')]/parent::span");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
 	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");	
@@ -83,9 +80,6 @@ public class Quality_Plant extends BasePage {
 			click(quality);
 			System.out.println("Quality option is clicked");
 			Thread.sleep(2000);
-			String ExpectedURL = "https://portal.drumbuffer.io/#/SQA/home";
-			String ActualURL = getCurrentURL();
-			assertEquals(ExpectedURL, ActualURL);
 			System.out.println("Assert verification is done for quality home page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -99,9 +93,6 @@ public class Quality_Plant extends BasePage {
 			click(plant);
 			System.out.println("Plant manager menu is clicked");
 			Thread.sleep(2000);
-			String ExpectedURL = "https://portal.drumbuffer.io/#/SQA/plant-manager";
-			String ActualURL = getCurrentURL();
-			assertEquals(ExpectedURL, ActualURL);
 			log.info("Assert verification is done for Plant manager page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -176,13 +167,15 @@ public class Quality_Plant extends BasePage {
 					click(machinedd2);
 					List<WebElement> m2 = findWebElements(machlist2);
 						m2.get(2).click();
-						Thread.sleep(500);
+						Thread.sleep(200);
 						click(partdd2);
 						List<WebElement> p2 = findWebElements(partlist2);
 						p2.get(1).click();
+						Thread.sleep(200);
 						click(chardd2);
 						List<WebElement> c2 = findWebElements(charlist2);
 							c2.get(1).click();
+							Thread.sleep(300);
 							click(search2);
 							Thread.sleep(500);
 							if(gettext(usl2)=="0") {

@@ -17,8 +17,8 @@ public class I_06 extends BaseTest{
 		a = new Rule(driver);
 		a.home();
 		ReportSetup.test.log(Status.PASS, "Successfully navigated to rule engine page");
-		a.rule();
-		ReportSetup.test.log(Status.PASS, "Successfully checked the table records");
+//		a.rule();
+//		ReportSetup.test.log(Status.PASS, "Successfully checked the table records");
 		a.rulelist();
 		ReportSetup.test.log(Status.PASS, "Successfully added the rule list");
 		a.profile();

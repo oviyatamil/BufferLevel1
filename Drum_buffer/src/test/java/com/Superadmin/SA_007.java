@@ -33,8 +33,8 @@ protected void controlcenter() {
 	ReportSetup.test.log(Status.PASS, "Successfully navigated to OTA mobile and add a record");
 	cc.radio();
 	ReportSetup.test.log(Status.PASS, "Successfully check duplicate listing,add,view,edit,delete,cancel functions");
-//	cc.connect();
-//	ReportSetup.test.log(Status.PASS, "Successfully navigated to Remote gateway connect and check function and then navigated to live data and check records");
+	cc.connect();
+	ReportSetup.test.log(Status.PASS, "Successfully navigated to Remote gateway connect and check function and then navigated to live data and check records");
 	cc.profile();
 	ReportSetup.test.log(Status.PASS, "Successfully logout from application");
 

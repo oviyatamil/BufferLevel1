@@ -19,7 +19,7 @@ public class Home_page extends BasePage {
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By fire = By.xpath("//div[text()='Fire Safety Monitoring']");
+	private By fire = By.xpath("//div[contains(text(),'Fire Safety Monitoring')]");
 	private By apply = By.xpath("//span[contains(text(),'Apply')]");
 	private By btn = By.xpath("//div[contains(@class,'grid md:grid')]/div/div[1]/div[2]/button/span[1]");
 	private By dd = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[3]");
@@ -60,7 +60,7 @@ public class Home_page extends BasePage {
 			List<WebElement> list = findWebElements(ddlist);
 			for(int t=0;t<list.size();t++) {
 				list.get(t).click();
-				Thread.sleep(500);
+				Thread.sleep(1000);
 				click(location);
 				List<WebElement> list2 = findWebElements(loclist);
 				List<String> s = new LinkedList<String>();
@@ -70,9 +70,10 @@ public class Home_page extends BasePage {
 					
 				}
 				System.out.println(s);
+				Thread.sleep(500);
 				list2.get(0).click();
 				click(apply);
-				Thread.sleep(3000);
+				Thread.sleep(4000);
 				List<WebElement> list3 = findWebElements(table);
 				for(int i=0;i<list3.size();i++) {
 					List<WebElement> f = findWebElements(fault);

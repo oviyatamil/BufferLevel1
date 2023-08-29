@@ -16,7 +16,7 @@ public class Oxy_custom extends BasePage{
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By oxy = By.xpath("//div[text()='Oxygen Monitoring']");
+	private By oxy = By.xpath("//div[contains(text(),'Oxygen Monitoring')]");
 	private By custom = By.xpath("//span[contains(text(),'Custom Report')]");
 	private By monthly = By.xpath("//span[contains(text(),'Oxygen Monthly Report')]");
 	private By hourly = By.xpath("//span[contains(text(),'Oxygen Hourly Report')]");

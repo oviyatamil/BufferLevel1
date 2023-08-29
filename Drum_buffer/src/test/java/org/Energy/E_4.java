@@ -11,7 +11,7 @@ public class E_4 extends BaseTest{
 Energy_reports r;
 
 
-@Test
+@Test(groups="Energy")
 protected void report() {
 	r= new Energy_reports(driver);
 	ReportSetup.test = ReportSetup.report.createTest("ENERGY REPORTS SCREEN");

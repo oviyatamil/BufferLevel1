@@ -6,14 +6,9 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import com.BasePage.BasePage;
-import com.BasePage.ReportSetup;
-import com.aventstack.extentreports.Status;
-
 public class Permission extends BasePage{
 
 	public Permission(WebDriver driver) {
@@ -22,7 +17,6 @@ public class Permission extends BasePage{
 
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button/img");
 	private By superadmin = By.xpath("//div[text()='Super Admin']");
-	private By control = By.xpath("//span[contains(text(),'Control Center')]");
 	private By permission = By.xpath("//span[contains(text(),'Permission')]");
 	private By role = By.xpath("//input[@formcontrolname='role_Name']");
 	private By add = By.xpath("//span[contains(text(),'Add')]");
@@ -35,8 +29,6 @@ public class Permission extends BasePage{
 	private By save = By.xpath("//span[contains(text(),'Save')]");
 	private By user = By.xpath("//div[contains(text(),'User')]");
 	private By btn = By.xpath("//div[contains(text(),'Role')]");
-	private By perm = By.xpath("//div[contains(text(),'Permission')]/ancestor::span/descendant::span[1]");
-	private By cusadd = By.xpath("//div[contains(text(),'Customer')]/following::tr[2]/td[2]/descendant::span[1]");
 	private By roledd = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
 	private By rolelist = By.xpath("(//span[text()='Select Role'])/ancestor::div[1]/mat-option/span");
 	private By name = By.xpath("//input[@formcontrolname='userName']");

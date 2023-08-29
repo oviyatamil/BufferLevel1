@@ -16,7 +16,7 @@ public class Energy_reports extends BasePage{
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By energy = By.xpath("//div[text()='Energy Monitoring']");
+	private By energy = By.xpath("//div[contains(text(),'Energy Monitoring')]");
 	private By reports = By.xpath("//span[contains(text(),'Reports')]");
 	private By enreport = By.xpath("//span[contains(text(),'Daily Report')]");
 	private By calendar = By.xpath("//mat-label[contains(text(),'Date')]/following::span[1]");
@@ -40,9 +40,6 @@ public class Energy_reports extends BasePage{
 			click(energy);
 			System.out.println("Energy monitoring option is clicked");
 			Thread.sleep(2000);
-//			String ExpectedURL = "https://portal.careworx.in/#/energy/Home";
-//			String ActualURL = getCurrentURL();
-//			assertEquals(ExpectedURL, ActualURL);
 			log.info("Assert verification is done for Energy monitoring home page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -54,14 +51,11 @@ public class Energy_reports extends BasePage{
 		try {
 			waittobeclickable(reports, 20);
 			click(reports);
-			System.out.println("Reports menu is clicked");
-			waittobeclickable(enreport, 20);
-			click(enreport);
-			System.out.println("Energy reports option is clicked");
+			System.out.println("Reports menu is clicked");	
+				waittobeclickable(enreport, 20);
+				click(enreport);
+				System.out.println("Energy reports option is clicked");					
 			Thread.sleep(1000);
-//			String ExpectedURL = "https://portal.careworx.in/#/energy/meter-reports";
-//			String ActualURL = getCurrentURL();
-//			assertEquals(ExpectedURL, ActualURL);
 			log.info("Assert verification is done for Reports -> daily reports");
 		} catch (InterruptedException e) {
 			e.printStackTrace();

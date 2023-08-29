@@ -9,7 +9,7 @@ import com.aventstack.extentreports.Status;
 public class E_2 extends BaseTest {
 
 	Energy_monitoring em;
-	@Test
+	@Test(groups="Energy")
 	protected void monitoring() {
 		em= new Energy_monitoring(driver);
 		ReportSetup.test = ReportSetup.report.createTest("ENERGY MONITORING SCREEN");

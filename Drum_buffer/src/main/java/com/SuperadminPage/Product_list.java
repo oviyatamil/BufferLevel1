@@ -16,7 +16,6 @@ public class Product_list extends BasePage {
 
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
 	private By superadmin = By.xpath("//div[text()='Super Admin']");
-	private By control = By.xpath("//span[contains(text(),'Control Center')]");
 	private By product = By.xpath("//span[contains(text(),'Product')]");
 	private By head = By.xpath("//h2[text()='Products List']/following::div[1]/div/descendant::p");	
 	private By pro = By.xpath("//span[contains(text(),' Product Listing ')]");

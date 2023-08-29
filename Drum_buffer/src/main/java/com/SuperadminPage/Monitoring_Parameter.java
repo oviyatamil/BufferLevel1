@@ -1,7 +1,4 @@
 package com.SuperadminPage;
-
-import static org.testng.Assert.assertEquals;
-
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -21,7 +18,6 @@ public class Monitoring_Parameter extends BasePage {
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button/img");
 	private By superadmin = By.xpath("//div[text()='Super Admin']");
 	private By master = By.xpath("//span[contains(text(),'Master Data')]");
-	private By monpar = By.xpath("(//div[contains(text(),'Monitoring Parameter')])[2]");
 	private By add = By.xpath("//span[contains(text(),'Add')]");
 	private By param = By.xpath("//input[@formcontrolname='param_Name']");
 	private By shortname = By.xpath("//input[@formcontrolname='parameter_Short_Name']");
@@ -105,7 +101,7 @@ public class Monitoring_Parameter extends BasePage {
 				String text = x.getText();
 				s.add(text);
 			}
-			for (int i = 0; i < s.size();) {
+			for (int i = 0; i < s.size();i++) {
 				if (s.get(i).equals("Parameter")) {
 					List<WebElement> rad = findWebElements(radiobtn);
 					rad.get(i).click();
@@ -120,11 +116,7 @@ public class Monitoring_Parameter extends BasePage {
 				click(firstpage);
 				break;
 				}
-				else {
-					i++;
-				}
 			}
-//				else {
 			for (int k = 0; k < 1000; k++) {
 				WebElement element = findWebElement(nextdisable);
 				String att = element.getAttribute("class");
@@ -155,7 +147,6 @@ public class Monitoring_Parameter extends BasePage {
 						}						
 					}					
 				}
-				break;
 			}												
 			Thread.sleep(1000);
 			click(radiobtn);
@@ -173,9 +164,7 @@ public class Monitoring_Parameter extends BasePage {
 					click(delete2);
 					log.info("confirm delete button is clicked");
 					break;
-				} else {
-					continue;
-				}
+				} 
 			}
 			for (int k = 0; k < 1000; k++) {
 				WebElement element = findWebElement(nextdisable);
@@ -203,7 +192,6 @@ public class Monitoring_Parameter extends BasePage {
 						}						
 					}					
 				}
-				break;
 			}		
 		} catch (InterruptedException e) {
 			e.printStackTrace();

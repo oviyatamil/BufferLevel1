@@ -14,7 +14,7 @@ public class Oxygen_monitoring extends BasePage{
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By oxy = By.xpath("//div[text()='Oxygen Monitoring']");
+	private By oxy = By.xpath("//div[contains(text(),'Oxygen Monitoring')]");
 	private By monitor = By.xpath("//span[contains(text(),'Monitoring')]");
 	private By oxygen = By.xpath("//span[contains(text(),'Oxygen Monitoring')]");
 	private By site = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
@@ -30,7 +30,7 @@ public class Oxygen_monitoring extends BasePage{
 	private By reset = By.xpath("(//*[local-name()='g' and contains(@class,'toolbar')])[2]/*[local-name()='g'][3]/*[local-name()='rect'][2]");
 	private By flowchart = By.xpath("(//*[local-name()='g' and contains(@class,'common-elems-group')])[1]/*[local-name()='path']");
 	private By linechart = By.xpath("(//*[local-name()='g' and contains(@class,'common-elems-group')])[2]/*[local-name()='path']");
-	private By outletchart = By.xpath("(//*[local-name()='g' and contains(@class,'common-elems-group')])[3]/*[local-name()='path'][2]");
+	private By outletchart = By.xpath("(//*[local-name()='g' and contains(@class,'common-elems-group')])[3]/*[local-name()='path']");
 	private By chartss = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[1]/*[local-name()='text']");
 	private By chartss2 = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[2]/*[local-name()='text']");
 	private By chartss3 = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[3]/*[local-name()='text']");

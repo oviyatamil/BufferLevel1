@@ -15,7 +15,7 @@ public class Monitor extends BasePage {
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By fire = By.xpath("//div[text()='Fire Safety Monitoring']");
+	private By fire = By.xpath("//div[contains(text(),'Fire Safety Monitoring')]");
 	private By apply = By.xpath("//span[contains(text(),'Apply')]");
 	private By monitoring = By.xpath("//span[contains(text(),' Monitoring ')]");
 	private By firemonitoring = By.xpath("//span[contains(text(),' Fire Monitoring ')]");
@@ -57,6 +57,7 @@ public class Monitor extends BasePage {
 	public void monitor() {
 		try {
 			click(monitoring);
+			takescreenshots("Menu");
 			click(firemonitoring);
 			log.info("Assert verification is done for monitoring page");
 			Thread.sleep(1000);
@@ -64,11 +65,12 @@ public class Monitor extends BasePage {
 			List<WebElement> list = findWebElements(ddlist);
 			for(int t=0;t<list.size();t++) {
 				if(t>0) {
-					click(dd);
-					list.get(t).click();
+					click(dd);					
+					list.get(t).click();					
 				}else {
 				list.get(t).click();
 				}
+				Thread.sleep(2000);
 				click(apply);
 				click(location);
 				Thread.sleep(500);
@@ -121,7 +123,7 @@ public class Monitor extends BasePage {
 				}
 				list.get(i).click();	
 				click(apply);
-				Thread.sleep(2000);
+				Thread.sleep(4000);
 			if(findWebElement(table).getText().contains("No Record Found")){
 				log.info("No records found for "+gettext(ddtext));
 			}else {

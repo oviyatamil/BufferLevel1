@@ -17,7 +17,7 @@ public class Oxygen_analytics extends BasePage {
 	}
 
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By oxy = By.xpath("//div[text()='Oxygen Monitoring']");
+	private By oxy = By.xpath("//div[contains(text(),'Oxygen Monitoring')]");
 	private By analytics = By.xpath("//span[contains(text(),'Analytics')]");
 	private By consumption = By.xpath("//span[contains(text(),'Consumption')]");
 	private By heat = By.xpath("//span[contains(text(),'Heat Map')]");
@@ -190,9 +190,7 @@ public class Oxygen_analytics extends BasePage {
 						System.out.println("heatmap is displayed");
 						click(export);
 						click(jpg);
-						System.out.println("Chart is exported");												
-						draganddrop(slider);
-						System.out.println("Slider is working fine");
+						System.out.println("Chart is exported");																		
 					} else {						
 						log.info("No heatmap is displayed");
 					}
@@ -203,7 +201,8 @@ public class Oxygen_analytics extends BasePage {
 			click(pdf);
 			System.out.println("Pdf is exported");		
 			Thread.sleep(2000);
-
+			draganddrop(slider);
+			System.out.println("Slider is working fine");
 		} catch (NumberFormatException | InterruptedException e) {
 			e.printStackTrace();
 		}

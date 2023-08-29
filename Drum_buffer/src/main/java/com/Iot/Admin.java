@@ -38,27 +38,17 @@ public class Admin extends BasePage {
 	private By pagesize = By.xpath("//span[contains(text(),'25')]");
 	private By dd = By.xpath("(//mat-select[@role='combobox'])[1]/descendant::div[4]");
 	private By ddlist = By.xpath("//span[text()='Select Department']/parent::mat-option/parent::div/mat-option");
-	private By nextpage = By.xpath("//button[@aria-label='Next page']/span");
-	private By nextdisable = By.xpath("//button[@aria-label='Next page']");
-	private By firstpage = By.xpath("//button[@aria-label='First page']/span");
-	private By lastpage = By.xpath("//button[@aria-label='Last page']/span");
-	private By previous = By.xpath("//button[@aria-label='Previous page']/span");
-	private By search = By.xpath("//input[contains(@placeholder,'earch')]");
+
 	private By radiobtn = By.xpath("//span[@class='mat-radio-inner-circle']");
 	private By loc = By.xpath("//div[contains(text(),'Location Listing')]");	
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
-	private By signout = By.xpath("//span[text()='Sign out']");
-	
-	
+	private By signout = By.xpath("//span[text()='Sign out']");		
 	private By add = By.xpath("//span[contains(text(),'Add')]");
 	private By view = By.xpath("//span[contains(text(),'View')]");
-	private By edit = By.xpath("//span[contains(text(),'Edit')]");
-	private By update = By.xpath("//span[contains(text(),'Update')]");
 	private By delete = By.xpath("//span[contains(text(),'Delete')]");	
 	private By cancelbtn = By.xpath("//span[contains(text(),'Cancel')]");
 	private By delete2 = By.xpath("//span[text()=' Delete ']");
-	private By save = By.xpath("//span[contains(text(),'Save')]");
-	
+	private By save = By.xpath("//span[contains(text(),'Save')]");	
 	private By shift = By.xpath("//span[contains(text(),'Shift')]");
 	private By sname = By.xpath("//input[@formcontrolname='shift_Name']");
 	private By start = By.xpath("//input[@formcontrolname='start_Time']");
@@ -151,15 +141,13 @@ public class Admin extends BasePage {
 			Thread.sleep(500);
 			System.out.println("Zone is added");
 			click(loc);
-			click(pagedd);
-			click(pagesize);
 			Thread.sleep(500);
 			List<WebElement> l3 = findWebElements(loclist);
 			for(int i=0;i<l3.size();i++) {
 				if(l3.get(i).getText().equals("4Terrace")) {
 					List<WebElement> r = findWebElements(radiobtn);
 					r.get(i).click();
-					Thread.sleep(200);
+					Thread.sleep(500);
 					click(delete);
 					click(delete2);	
 					System.out.println("Location is deleted");

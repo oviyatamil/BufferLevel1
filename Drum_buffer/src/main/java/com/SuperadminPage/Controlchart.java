@@ -79,16 +79,11 @@ public class Controlchart extends BasePage{
 	private By year = By.xpath("//div[text()=' 2023 ']");
 	private By startdate = By.xpath("//div[contains(text(),'30')]/parent::button");
 	private By radio = By.xpath("(//span[@class='mat-radio-inner-circle'])");
-	private By gatename = By.xpath("//table/tbody/tr/td[2]/span");
+	private By gatename = By.xpath("//table/tbody/tr/td[2]/span");	
 	private By time = By.xpath("//table/tbody/tr/td[5]/span");
-	
-	private By not = By.xpath("(//div[contains(text(),'Notification Monitoring')])[2]");	
-	private By gatein = By.xpath("(//div[contains(text(),'Gateways')])[1]/ancestor::div[2]/div[1]/div[2]/div[2]");
-	private By assetin = By.xpath("(//div[contains(text(),'Assets')])[1]/ancestor::div[2]/div[1]/div[2]/div[2]");
-	private By gateact = By.xpath("(//div[contains(text(),'Gateways')])[1]/ancestor::div[2]/div[1]/div[1]/div[2]");
-	private By assetact = By.xpath("(//div[contains(text(),'Assets')])[1]/ancestor::div[2]/div[1]/div[1]/div[2]");
-	private By gatedown = By.xpath("(//div[contains(text(),'Gateways Down')])[1]/ancestor::div[2]/div[1]/div[1]");
-	private By asdown = By.xpath("(//div[contains(text(),'Assets Down')])[1]/ancestor::div[2]/div[1]/div[1]");
+	private By pagedd = By.xpath("//mat-select[@role='combobox']/descendant::div[3]");
+	private By pagesize = By.xpath("//span[text()=' 25 ']");
+	private By arr = By.xpath("//table/thead/tr/th[5]/div/child::div[2]");
 	
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
@@ -224,7 +219,7 @@ public class Controlchart extends BasePage{
 			click(cusdd);
 			List<WebElement> cu = findWebElements(cuslist);
 			for(WebElement x:cu) {
-				if(x.getText().contains("Thanthi")) {
+				if(x.getText().contains("Work Customer 1")) {
 					x.click();
 					break;
 				}
@@ -270,17 +265,25 @@ public class Controlchart extends BasePage{
 		}
 	}
 	public void radio() {
+		click(pagedd);
+		click(pagesize);
 		click(radio);
 		click(view);
 		click(cancelbtn);
 		System.out.println("View option is checked");
+		click(arr);
 		String data = new SimpleDateFormat("MMM dd,yyyy").format(new Date());
-		List<WebElement> rad = findWebElements(radio);
-		List<WebElement> def = findWebElements(gatename);
-		for(int i=0;i<def.size();i++) {
-			if(def.get(i).getText().contains("Thant-Ra-2023-08-001")) {
+		List<WebElement> ti = findWebElements(time);
+		for(int i=0;i<ti.size();i++) {
 				if(findWebElements(time).get(i).getText().contains(data)){
+					if(findWebElements(gatename).get(i).getText().contains("Work")){
+					List<WebElement> rad = findWebElements(radio);	
 				rad.get(i).click();
+				break;
+					}else {
+						continue;
+					}
+				}	
 			click(edit);
 			click(freqdd);
 			List<WebElement> f = findWebElements(freqlist);
@@ -295,9 +298,7 @@ public class Controlchart extends BasePage{
 			break;	
 				}
 	}
-		}
-	
-}
+		
 	public void profile() {
 		click(profile);
 		System.out.println("profile button is clicked");

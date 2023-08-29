@@ -21,6 +21,6 @@ public class Oxy_5 extends BaseTest{
 		r.report();
 		ReportSetup.test.log(Status.PASS, "Navigates to reports->monthly page");	
 		r.profile();
-		ReportSetup.test.log(Status.PASS, "Navigates to reports->monthly page");	
+		ReportSetup.test.log(Status.PASS, "Successfully logout from application");	
 }
 }

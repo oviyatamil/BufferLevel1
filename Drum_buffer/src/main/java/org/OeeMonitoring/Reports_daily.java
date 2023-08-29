@@ -196,8 +196,8 @@ public class Reports_daily extends BasePage {
 	public void profile() {
 		waittobeclickable(profile, 10);
 		click(profile);
-		log.info("profile button is clicked");
+		System.out.println("profile button is clicked");
 		click(signout);
-		log.info("signout button is clicked");
+		System.out.println("signout button is clicked");
 	}
 }

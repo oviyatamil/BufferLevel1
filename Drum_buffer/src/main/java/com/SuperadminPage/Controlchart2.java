@@ -416,9 +416,9 @@ public void control() {
 				rad.get(j).click();
 				System.out.println("Record to be deleted is " + gate.get(j).getText());
 				click(delete);
-				log.info("delete button is clicked");
+				System.out.println("delete button is clicked");
 				click(delete2);
-				log.info("confirm delete button is clicked");
+				System.out.println("confirm delete button is clicked");
 				break;
 			} else {
 				continue;
@@ -443,9 +443,9 @@ public void control() {
 						List<WebElement> rad2 = findWebElements(radiobtn);
 						rad2.get(j).click();						
 						click(delete);
-						log.info("delete button is clicked");
+						System.out.println("delete button is clicked");
 						click(delete2);
-						log.info("confirm delete button is clicked");					
+						System.out.println("confirm delete button is clicked");					
 					break;
 					}						
 				}					
@@ -478,7 +478,8 @@ public void control() {
 			}
 			click(gatedd);
 			List<WebElement> g = findWebElements(gatelist);
-			g.get(1).click();
+			Thread.sleep(500);
+		g.get(g.size()-1).click();
 			Thread.sleep(1000);
 			if(findWebElements(table).size()>1) {
 				System.out.println("Records displayed");

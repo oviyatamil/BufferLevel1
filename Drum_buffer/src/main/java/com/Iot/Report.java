@@ -1,12 +1,8 @@
 package com.Iot;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.InputEvent;
 import java.util.List;
 import org.openqa.selenium.interactions.*;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import com.BasePage.BasePage;
@@ -29,6 +25,8 @@ public class Report extends BasePage{
 	private By menu = By.xpath("//input[@formcontrolname='screenName']");
 	private By add = By.xpath("//span[contains(text(),'Add')]");
 	private By radio = By.xpath("(//span[@class='mat-radio-inner-circle'])[1]");
+	private By radio2 = By.xpath("(//span[@class='mat-radio-inner-circle'])");
+	private By replist = By.xpath("//table/tbody/tr/td[2]/span");
 	private By update = By.xpath("//span[contains(text(),'Update')]");
 	private By edit = By.xpath("//span[contains(text(),'Edit')]");
 	private By name = By.xpath("//input[@formcontrolname='reportName']");
@@ -37,11 +35,13 @@ public class Report extends BasePage{
 	private By display = By.xpath("//mat-label[contains(text(),'Display Option')]/following::span[1]/span[2]");
 	private By rep = By.xpath("//mat-label[contains(text(),'Report based')]/following::span[1]/span[2]");
 	private By group = By.xpath("//mat-label[contains(text(),'Group By')]/following::span[contains(text(),'Daily')]/parent::label/span[1]/span[2]");
-	private By label1 = By.xpath("//h2[contains(text(),'Available data fields')]/following::div[1]/div[1]");
-	private By desc = By.xpath("//h2[contains(text(),'Column Labels')]/following::div[1]/div");
 	private By submit = By.xpath("//span[contains(text(),'Submit')]");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
+	private By drag = By.xpath("(//div[@class='cdk-drop-list item-list'])[1]/div[1]");
+	private By drop = By.xpath("//div[@class='carditems']/div");
+	private By delete = By.xpath("//span[contains(text(),'Delete')]");	
+	private By delete2 = By.xpath("//span[text()=' Delete ']");
 	
 	public void home() {
 		try {
@@ -91,8 +91,9 @@ public class Report extends BasePage{
 					click(rep);
 					click(group);
 					Thread.sleep(1000);
-				//	a.dragAndDrop(findWebElement(label1), findWebElement(desc)).perform();
-					a.clickAndHold(findWebElement(label1)).moveToElement(findWebElement(desc)).release().perform();
+					a.moveToElement(findWebElement(drag)).perform();
+				//	a.dragAndDrop(findWebElement(drag), findWebElement(drop)).perform();
+					a.clickAndHold(findWebElement(drag)).moveToElement(findWebElement(drop)).release(findWebElement(drop)).build().perform();
 					Thread.sleep(500);
 					click(submit);
 				} catch (InterruptedException e) {
@@ -100,19 +101,37 @@ public class Report extends BasePage{
 				}						
 			}
 	public void radio() {
-		try {
-			Actions a = new Actions(driver);
-			click(radio);
+		try {		
+			List<WebElement> r = findWebElements(replist);
+			for(int i=0;i<r.size();i++) {
+				if(r.get(i).getText().equals("AnalyticReport")) {
+					List<WebElement> ra = findWebElements(radio2);
+					ra.get(i).click();
+					break;
+				}
+			}			
 			click(edit);
 			click(next);
+			Thread.sleep(500);	
+			click(datedd);
+			List<WebElement> d = findWebElements(datelist);
+			d.get(3).click();
 			click(next2);
-			WebElement f = findWebElement(label1);
-			WebElement d = findWebElement(desc);
-			a.dragAndDrop(f, d).perform();
-			a.clickAndHold(findWebElement(label1)).moveToElement(findWebElement(desc)).release().build().perform();
 			Thread.sleep(500);	
 			click(update);
-		} catch (InterruptedException e) {
+			Thread.sleep(1000);	
+			List<WebElement> r2 = findWebElements(replist);
+			for(int i=0;i<r2.size();i++) {
+				if(r2.get(i).getText().equals("AnalyticReport")) {
+					List<WebElement> ra = findWebElements(radio2);
+					ra.get(i).click();
+					break;
+				}
+			}
+			click(delete);
+			click(delete2);
+			
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

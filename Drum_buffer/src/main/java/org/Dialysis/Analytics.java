@@ -14,7 +14,7 @@ public class Analytics extends BasePage{
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By dial = By.xpath("//div[text()='Dialysis Monitoring']");
+	private By dial = By.xpath("//div[contains(text(),'Dialysis Monitoring')]");
 	private By analytics = By.xpath("//span[contains(text(),'Analytics')]");
 	private By dialysis = By.xpath("//span[contains(text(),'Dialysis Trend')]");
 	private By heat = By.xpath("//span[contains(text(),'Heat Map')]");

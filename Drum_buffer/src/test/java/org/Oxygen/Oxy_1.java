@@ -8,7 +8,7 @@ import com.aventstack.extentreports.Status;
 public class Oxy_1 extends BaseTest{
 Oxygen o;
 
-@Test
+@Test(groups="Oxygen")
 protected void home() {
 	o= new Oxygen(driver);
 	ReportSetup.test = ReportSetup.report.createTest("OXYGEN HOME SCREEN");

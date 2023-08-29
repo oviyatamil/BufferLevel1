@@ -14,7 +14,7 @@ public class Monitoring extends BasePage {
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By dial = By.xpath("//div[text()='Dialysis Monitoring']");
+	private By dial = By.xpath("//div[contains(text(),'Dialysis Monitoring')]");
 	private By monitor = By.xpath("//span[contains(text(),'Monitoring')]");
 	private By dialysis = By.xpath("//span[contains(text(),'Dialysis Monitoring')]");
 	private By dd = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[4]");
@@ -96,8 +96,9 @@ public class Monitoring extends BasePage {
 				}
 				list.get(i).click();
 				click(apply);
-				Thread.sleep(4000);	
-				if(findWebElement(chartss).getText().contains("No data to display")) {
+				Thread.sleep(7000);	
+				takescreenshots("dia-chart");
+				if(findWebElement(chartss).getText().contains("No data")) {
 					log.info("Chart is not displayed for "+gettext(txt));					
 				}else {
 					System.out.println("Chart is displayed");

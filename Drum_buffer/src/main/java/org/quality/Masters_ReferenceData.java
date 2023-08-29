@@ -16,7 +16,7 @@ public class Masters_ReferenceData extends BasePage{
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By quality = By.xpath("//div[text()='Quality']/parent::div/button");
+	private By quality = By.xpath("//div[contains(text(),'Quality')]");
 	private By master = By.xpath("//span[contains(text(),'Masters')]");
 	private By ref= By.xpath("//span[contains(text(),'Reference Data')]");
 	private By charact = By.xpath("//div[contains(text(),'Characteristics')]");

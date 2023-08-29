@@ -3,7 +3,6 @@ package com.Iot;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import org.openqa.selenium.interactions.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -53,7 +52,6 @@ public class Assets extends BasePage{
 //	private By update2 = By.xpath("(//span[contains(text(),'Update')])[2]");
 	private By delete = By.xpath("//span[contains(text(),'Delete')]");	
 	private By cancelbtn2 = By.xpath("(//span[contains(text(),'Cancel')])[2]");
-	private By cancelbtn = By.xpath("(//span[contains(text(),'Cancel')])");
 	private By delete2 = By.xpath("//span[text()=' Delete ']");
 	private By save = By.xpath("(//button[@type='submit'])[2]");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
@@ -123,7 +121,7 @@ public class Assets extends BasePage{
 			click(save1);
 			Thread.sleep(1000);
 			click(add);
-			EnterText(sys, "systemuser");
+			EnterText(sys, "systemuserS");
 			click(plus);
 			click(edgedd);
 			List<WebElement> st = findWebElements(sitelist2);
@@ -145,7 +143,7 @@ public class Assets extends BasePage{
 			click(cancelbtn2);
 			List<WebElement> f = findWebElements(sublist);
 			for(int j=0;j<f.size();j++) {
-				if(f.get(j).getText().equals("systemuser")) {
+				if(f.get(j).getText().equals("systemuserS")) {
 					List<WebElement> r = findWebElements(radio);
 					r.get(j).click();
 			break;

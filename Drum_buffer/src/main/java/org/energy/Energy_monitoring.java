@@ -1,7 +1,4 @@
 package org.energy;
-
-import static org.testng.Assert.assertEquals;
-
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -9,14 +6,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.BasePage.BasePage;
-import org.openqa.selenium.interactions.*;
 public class Energy_monitoring extends BasePage{
 
 	public Energy_monitoring(WebDriver driver) {
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By energy = By.xpath("//div[text()='Energy Monitoring']");
+	private By energy = By.xpath("//div[contains(text(),'Energy Monitoring')]");
 	private By monitor = By.xpath("//span[text()=' Monitoring ']");
 	private By live = By.xpath("//span[text()=' Live Monitoring ']");
 	private By liveflow = By.xpath("//span[text()=' Live Flow Analysis ']");
@@ -55,9 +51,6 @@ public class Energy_monitoring extends BasePage{
 			click(energy);
 			System.out.println("Energy monitoring option is clicked");
 			Thread.sleep(2000);
-//			String ExpectedURL = "https://portal.careworx.in/#/energy/Home";
-//			String ActualURL = getCurrentURL();
-//			assertEquals(ExpectedURL, ActualURL);
 			log.info("Assert verification is done for Energy monitoring home page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -73,9 +66,6 @@ public class Energy_monitoring extends BasePage{
 			click(live);
 			System.out.println("Live monitoring option is clicked");
 			Thread.sleep(2000);
-//			String ExpectedURL = "https://portal.careworx.in/#/energy/LiveMonitoring";
-//			String ActualURL = getCurrentURL();
-//			assertEquals(ExpectedURL, ActualURL);
 			log.info("Assert verification is done for energy live monitoring page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -94,7 +84,7 @@ public class Energy_monitoring extends BasePage{
 				}
 					l.get(i).click();
 					click(apply);
-				Thread.sleep(7000);
+				Thread.sleep(10000);
 			if(findWebElement(totkwh).getText()=="0") {
 				log.info("Total kwh displayed in card is 0 for "+gettext(txt));
 			}else {
@@ -158,9 +148,6 @@ public class Energy_monitoring extends BasePage{
 			click(liveflow);
 			System.out.println("Live flow analysis option is clicked");
 			Thread.sleep(2000);
-//			String ExpectedURL = "https://portal.careworx.in/#/energy/live-flow-analysis";
-//			String ActualURL = getCurrentURL();
-//			assertEquals(ExpectedURL, ActualURL);
 			log.info("Assert verification is done for energy liveflow analysis page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -170,7 +157,6 @@ public class Energy_monitoring extends BasePage{
 	public void flow() {
 		try {
 			click(equipdd);
-			Actions a = new Actions(driver);
 			List<WebElement> l = findWebElements(equiplist);
 			for(int i=1;i<l.size();i++) {
 				if(i>1) {
@@ -187,26 +173,19 @@ public class Energy_monitoring extends BasePage{
 						cat.get(j).click();
 						click(apply);
 					
-				Thread.sleep(1000);	
+				Thread.sleep(5000);	
 				if(findWebElements(diagram).isEmpty()) {
 					log.info("Flowdiagram is not displayed for "+gettext(text)+"---"+gettext(text2));
 				}else {
 					System.out.println("Flow diagram is displyed for "+gettext(text)+"---"+gettext(text2));								
 				}							
 				}
-//				List<WebElement> dia = findWebElements(diagram);
-//				for(WebElement x: dia) {
-//					a.moveToElement(x).perform();
-//					Thread.sleep(100);
-//				}
 }
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 	}
 	public void profile() {
-//		click(pdf);
-//		System.out.println("pdf is downloaded");
 		click(profile);
 		System.out.println("profile button is clicked");
 		click(signout);

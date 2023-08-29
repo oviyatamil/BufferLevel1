@@ -17,11 +17,11 @@ public class Oxygen_reports extends BasePage{
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By oxy = By.xpath("//div[text()='Oxygen Monitoring']");
+	private By oxy = By.xpath("//div[contains(text(),'Oxygen Monitoring')]");
 	private By custom = By.xpath("//span[contains(text(),'Custom Report')]");
 	private By monthly = By.xpath("//span[contains(text(),'Oxygen Monthly Report')]");
 	private By hourly = By.xpath("//span[contains(text(),'Oxygen Hourly Report')]");
-	private By daily = By.xpath("//span[contains(text(),'Oxygen-Daily Report')]");
+	private By daily = By.xpath("//span[contains(text(),'Oxygen Daily Report')]");
 	private By site = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
 	private By loc = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[4]");
 	private By loclist = By.xpath("//span[text()='Select Location']/ancestor::div[1]/mat-option");

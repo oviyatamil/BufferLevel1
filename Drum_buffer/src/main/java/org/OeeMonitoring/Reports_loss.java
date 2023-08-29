@@ -38,11 +38,8 @@ public class Reports_loss extends BasePage {
 	private By calendar = By.xpath("(//span[@class='mat-button-wrapper'])[14]");
 	private By yeardd = By.xpath("(//span[contains(text(),'2023')])[2]/parent::span");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-//	private By month = By.xpath("//div[text()=' JUL ']/parent::button");
 	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
-//	private By enddate = By.xpath("//div[text()=' 18 ']/parent::button");
 private By chart = By.xpath("//*[local-name()='g' and contains(@class,'plot-group')][1]/*[local-name()='rect']");
-private By chart2 = By.xpath("//*[local-name()='g' and contains(@class,'plot-group')][5]");
 	private By no = By.xpath("//table/tbody/tr/td");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");

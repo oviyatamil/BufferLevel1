@@ -17,7 +17,7 @@ public class Energy_custom extends BasePage{
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By energy = By.xpath("//div[text()='Energy Monitoring']");
+	private By energy = By.xpath("//div[contains(text(),'Energy Monitoring')]");
 	private By cusreports = By.xpath("//span[contains(text(),'Custom Report')]");
 	private By consreport = By.xpath("//span[contains(text(),'Consumption Report')]");
 	private By monthly = By.xpath("//span[contains(text(),'Energy Monthly Report')]");
@@ -265,12 +265,13 @@ public class Energy_custom extends BasePage{
 				WebElement mon = driver.findElement(By.xpath("//div[contains(text(),'"+s+"')]/parent::button"));
 				mon.click();	
 				click(startdate);
-				String[] split2 = data.split(",");
-				String[] split3 = split2[0].split(" ");
-				String m =split3[1];	
-				int mn = Integer.parseInt(m);
-				WebElement end = driver.findElement(By.xpath("//div[contains(text(),'"+mn+"')]/parent::button"));
-				end.click();			
+				click(startdate);
+//				String[] split2 = data.split(",");
+//				String[] split3 = split2[0].split(" ");
+//				String m =split3[1];	
+//				int mn = Integer.parseInt(m);
+//				WebElement end = driver.findElement(By.xpath("//div[contains(text(),'"+mn+"')]/parent::button"));
+//				end.click();			
 					click(loc);
 					List<WebElement> l2 = findWebElements(loclist);
 					l2.get(1).click();	

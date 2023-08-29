@@ -9,7 +9,7 @@ import com.aventstack.extentreports.Status;
 public class Oxy_2 extends BaseTest{
 Oxygen_monitoring om;
 
-@Test
+@Test(groups="Oxygen")
 protected void monitor() {
 	om= new Oxygen_monitoring(driver);
 	ReportSetup.test = ReportSetup.report.createTest("OXYGEN MONITORING SCREEN");

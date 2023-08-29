@@ -1,7 +1,5 @@
 package org.energy;
 
-import static org.testng.Assert.assertEquals;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -17,7 +15,7 @@ public class Energy_Analytics2 extends BasePage {
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By energy = By.xpath("//div[text()='Energy Monitoring']");
+	private By energy = By.xpath("//div[contains(text(),'Energy Monitoring')]");
 	private By analytics = By.xpath("//span[contains(text(),'Analytics')]");
 	private By eflow = By.xpath("//span[contains(text(),'Energy Flow Analysis')]");
 	private By variance = By.xpath("//span[contains(text(),'Variance Analysis')]");

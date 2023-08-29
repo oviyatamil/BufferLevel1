@@ -17,8 +17,9 @@ public class Energy_rep extends BasePage{
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By energy = By.xpath("//div[text()='Energy Monitoring']");
+	private By energy = By.xpath("//div[contains(text(),'Energy Monitoring')]");
 	private By cusreports = By.xpath("//span[contains(text(),'Custom Report')]");
+	private By reports = By.xpath("//span[contains(text(),'Reports')]");
 	private By site = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
 	private By sitelist = By.xpath("//span[text()='Select Site']/ancestor::div[1]/mat-option");
 	private By loc = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[4]");
@@ -27,6 +28,7 @@ public class Energy_rep extends BasePage{
 	private By machine = By.xpath("(//mat-select[@role='combobox'])[4]/ancestor::div[1]/descendant::div[4]");
 	private By catlist = By.xpath("//span[text()='All']/ancestor::div[1]/mat-option");
 	private By apply = By.xpath("//span[contains(text(),'Search')]");
+	private By apply2 = By.xpath("//span[contains(text(),'Apply')]");
 	private By table = By.xpath("//table/tbody/tr/td");
 	private By calendar = By.xpath("//mat-label[contains(text(),'Date')]/following::span[1]");
 	private By yeardd = By.xpath("//span[contains(text(),'2023')]/parent::span");
@@ -37,6 +39,8 @@ public class Energy_rep extends BasePage{
 	private By daily = By.xpath("//span[contains(text(),'Daily Report')]");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
+	private By dd = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
+	private By ddlist = By.xpath("(//div[@role='listbox'])[1]/ancestor::div[1]/div[1]/mat-option");
 	
 	public void home() {
 		try {
@@ -53,7 +57,16 @@ public class Energy_rep extends BasePage{
 		}
 
 	}
-
+	public void report2() {
+		try {
+			waittobeclickable(reports, 20);
+			click(reports);
+			System.out.println("Reports menu is clicked");					
+			log.info("Assert verification is done for Reports -> daily reports");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	public void report() {
 		try {
 			waittobeclickable(cusreports, 20);
@@ -66,7 +79,7 @@ public class Energy_rep extends BasePage{
 			e.printStackTrace();
 		}
 	}
-	public void dd2() {
+	public void dd() {
 		try {
 			calendar(calendar, yeardd, year, startdate);		
 				click(loc);
@@ -125,6 +138,32 @@ public class Energy_rep extends BasePage{
 	
 			
 		} catch (NumberFormatException | InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	public void dd2() {
+		try {
+			String data = new SimpleDateFormat("MMM dd,yyyy,hh:mm").format(new Date());
+			System.out.println("Current timing is " + data);
+			calendar(calendar, yeardd, year, startdate);
+			Thread.sleep(1000);
+			click(dd);
+			List<WebElement> l = findWebElements(ddlist);
+			for(int i=0;i<l.size();i++) {
+				if (i>=1) {
+					click(dd);
+				}
+					l.get(i).click();				
+				click(apply2);
+				Thread.sleep(3000);
+				if(findWebElements(table).size()>1) {
+					System.out.println("Table is displayed");			
+				}else {
+					log.info("No records found");;
+				}
+				Thread.sleep(1000);
+}
+		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 	}

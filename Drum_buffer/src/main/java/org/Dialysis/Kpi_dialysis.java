@@ -15,7 +15,7 @@ public class Kpi_dialysis extends BasePage{
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By dial = By.xpath("//div[text()='Dialysis Monitoring']");
+	private By dial = By.xpath("//div[contains(text(),'Dialysis Monitoring')]");
 	private By kpi = By.xpath("//span[contains(text(),'KPI')]");
 	private By machine = By.xpath("//span[contains(text(),'Machine Utilization')]");
 	private By dd = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");

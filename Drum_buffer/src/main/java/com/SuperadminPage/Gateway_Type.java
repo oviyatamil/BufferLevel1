@@ -1,6 +1,5 @@
 package com.SuperadminPage;
 
-import static org.testng.Assert.assertEquals;
 
 import java.util.LinkedHashMap;
 import java.util.LinkedList;

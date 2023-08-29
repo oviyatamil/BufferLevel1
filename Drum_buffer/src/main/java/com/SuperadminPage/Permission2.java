@@ -1,7 +1,4 @@
 package com.SuperadminPage;
-
-import static org.testng.Assert.assertEquals;
-
 import java.time.Duration;
 import java.util.List;
 
@@ -11,8 +8,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.BasePage.BasePage;
-import com.BasePage.ReportSetup;
-import com.aventstack.extentreports.Status;
 
 public class Permission2 extends BasePage{
 
@@ -23,17 +18,11 @@ public class Permission2 extends BasePage{
 	private By customer = By.xpath("//span[contains(text(),'Customer')]");
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
 	private By superadmin = By.xpath("//div[text()='Super Admin']");
-	private By control = By.xpath("//span[contains(text(),'Control Center')]");
+	
 	private By permission = By.xpath("//span[contains(text(),'Permission')]");
 	private By role = By.xpath("//input[@formcontrolname='role_Name']");
 	private By add = By.xpath("//span[contains(text(),'Add')]");
 	private By add2 = By.xpath("//span[contains(text(),'Add')]/parent::span");
-	private By view = By.xpath("//span[contains(text(),'View')]");
-	private By edit = By.xpath("//span[contains(text(),'Edit')]");
-	private By update = By.xpath("//span[contains(text(),'Update')]");
-	private By delete = By.xpath("//span[contains(text(),'Delete')]");	
-	private By cancelbtn = By.xpath("//span[contains(text(),'Cancel')]");
-	private By delete2 = By.xpath("//span[text()=' Delete ']");
 	private By save = By.xpath("//span[contains(text(),'Save')]");
 	private By user = By.xpath("//div[contains(text(),'User')]");
 	private By radiobtn = By.xpath("//span[@class='mat-radio-inner-circle']");

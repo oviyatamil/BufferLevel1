@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 import com.BasePage.ReportSetup;
 import com.BaseTest.BaseTest;
 import com.SuperadminPage.Permission2;
-import com.SuperadminPage.Uom;
 import com.aventstack.extentreports.Status;
 
 public class SA_012 extends BaseTest {

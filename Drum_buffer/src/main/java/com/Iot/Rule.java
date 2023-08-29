@@ -15,7 +15,7 @@ public class Rule extends BasePage{
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button/img");
 	private By rule = By.xpath("//div[contains(text(),'Rule Engine')]");
-	private By ru = By.xpath("//span[text()='Rules']");
+	private By ru = By.xpath("//span[contains(text(),'Rules')]");
 	private By sitedd = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
 	private By sitelist = By.xpath("//span[text()='Select Site']/parent::mat-option/parent::div/mat-option");
 	private By paradd = By.xpath("(//mat-select[@role='combobox'])[6]/ancestor::div[1]/descendant::div[4]");
@@ -30,6 +30,7 @@ public class Rule extends BasePage{
 	private By maillist = By.xpath("//div[@role='listbox']/mat-option/mat-pseudo-checkbox");
 	private By vallist = By.xpath("//span[text()='Select Relation']/parent::mat-option/parent::div/mat-option");
 	private By value = By.xpath("//input[@formcontrolname='value']");
+	private By rulename = By.xpath("//input[@formcontrolname='rule_Name']");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By table = By.xpath("//table/tbody/tr/td");
 	private By signout = By.xpath("//span[text()='Sign out']");
@@ -85,11 +86,13 @@ public class Rule extends BasePage{
 				if(findWebElements(table).size()>1) {			
 					if(findWebElement(table).getText().contains("No Record Found")!=true) {
 						System.out.println("Table displayed");
+						Thread.sleep(500);
 					}else {
 						log.info("No record found");
 					}				
 				}else {
-					log.info("No record found");
+					log.info("Table not displayed");
+					Thread.sleep(500);
 				}
 			}
 		} catch (InterruptedException e) {
@@ -97,63 +100,76 @@ public class Rule extends BasePage{
 		}
 	}
 	public void rulelist() {
-		Actions a = new Actions(driver);
-		click(ru);
-		click(add);
-		EnterText(rule, "Rule");
-		click(sitedd);
-		List<WebElement> s = findWebElements(sitelist);
-		s.get(1).click();
-		click(locdd);
-		List<WebElement> s1 = findWebElements(loclist);
-		s1.get(1).click();
-		click(proddd);
-		List<WebElement> s2 = findWebElements(prodlist);
-		s2.get(1).click();
-		click(devdd);
-		List<WebElement> s3 = findWebElements(devlist);
-		s3.get(1).click();
-		click(machdd);
-		List<WebElement> s4 = findWebElements(machlist);
-		s4.get(1).click();
-		a.moveToElement(findWebElement(radiobtn2)).click().perform();
-		click(radiobtn2);
-		click(next);
-		
-		click(paradd);
-		List<WebElement> k = findWebElements(paralist);
-		k.get(1).click();
-		click(condd);
-		List<WebElement> k1 = findWebElements(conlist);
-		k1.get(1).click();
-		EnterText(value, "456");
-		click(reldd);
-		List<WebElement> k2 = findWebElements(vallist);
-		k2.get(1).click();
-		click(save);
-		click(next2);
-		click(radiobtn3);
-		click(maildd);
-		List<WebElement> m = findWebElements(maillist);
-		m.get(1).click();
-		a.moveToElement(findWebElement(smsdd)).click().perform();
-		click(smsdd);
-		List<WebElement> m1 = findWebElements(maillist);
-		m1.get(1).click();
-		
-		a.moveToElement(findWebElement(calldd)).click().perform();
-		click(calldd);
-		List<WebElement> m2 = findWebElements(maillist);
-		m2.get(1).click();
-		
-		a.moveToElement(findWebElement(whatdd)).click().perform();
-		click(whatdd);
-		List<WebElement> m3= findWebElements(maillist);
-		m3.get(1).click();
-		a.moveToElement(findWebElement(sms)).click().perform();
-		EnterText(sms, "status:pass");
-		EnterText(recu, "35");
-		click(next);
+		try {
+			Actions a = new Actions(driver);
+			click(ru);
+			click(add);
+			EnterText(rulename, "Rule");
+			click(sitedd);
+			List<WebElement> s = findWebElements(sitelist);
+			Thread.sleep(200);
+			s.get(1).click();
+			click(locdd);
+			List<WebElement> s1 = findWebElements(loclist);
+			Thread.sleep(200);
+			s1.get(1).click();
+			click(proddd);
+			List<WebElement> s2 = findWebElements(prodlist);
+			Thread.sleep(200);
+			s2.get(1).click();
+			Thread.sleep(500);
+			click(devdd);
+			List<WebElement> s3 = findWebElements(devlist);
+			Thread.sleep(200);
+			s3.get(1).click();
+			Thread.sleep(500);
+			click(machdd);
+			List<WebElement> s4 = findWebElements(machlist);
+			Thread.sleep(200);
+			s4.get(1).click();
+			a.moveToElement(findWebElement(radiobtn2)).click().perform();
+			click(radiobtn2);
+			click(next);
+			
+			click(paradd);
+			List<WebElement> k = findWebElements(paralist);
+			Thread.sleep(200);
+			k.get(1).click();
+			click(condd);
+			List<WebElement> k1 = findWebElements(conlist);
+			Thread.sleep(200);
+			k1.get(1).click();
+			EnterText(value, "456");
+			click(reldd);
+			List<WebElement> k2 = findWebElements(vallist);
+			Thread.sleep(200);
+			k2.get(1).click();		
+			click(next2);
+			click(radiobtn3);
+			click(maildd);
+			List<WebElement> m = findWebElements(maillist);
+			m.get(1).click();
+			a.moveToElement(findWebElement(smsdd)).click().perform();
+			click(smsdd);
+			List<WebElement> m1 = findWebElements(maillist);
+			m1.get(1).click();
+			
+			a.moveToElement(findWebElement(calldd)).click().perform();
+			click(calldd);
+			List<WebElement> m2 = findWebElements(maillist);
+			m2.get(1).click();
+			
+			a.moveToElement(findWebElement(whatdd)).click().perform();
+			click(whatdd);
+			List<WebElement> m3= findWebElements(maillist);
+			m3.get(1).click();
+			a.moveToElement(findWebElement(sms)).click().perform();
+			EnterText(sms, "status:pass");
+			EnterText(recu, "35");
+			click(next);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		
 	}
 	public void profile() {

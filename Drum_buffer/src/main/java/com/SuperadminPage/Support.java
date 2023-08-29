@@ -21,7 +21,6 @@ public class Support extends BasePage{
 	private By dash = By.xpath("//span[contains(text(),'Error Dashboard')]");
 	private By log = By.xpath("//span[contains(text(),'Error Log')]");
 	private By ticket = By.xpath("//span[contains(text(),'Ticket Listing')]");
-	private By scroll = By.xpath("//span[contains(text(),'Error Log')]");
 	private By help = By.xpath("//span[text()=' Support ']/following::button[2]/span[1]/mat-icon");
 	private By contact = By.xpath("//span[text()='Contact us']/parent::a");
 	private By name = By.xpath("//input[@formcontrolname='name']");
@@ -29,9 +28,7 @@ public class Support extends BasePage{
 	private By msg = By.xpath("//textarea[@formcontrolname='message']");
 	private By datearr = By.xpath("//table/thead/tr[1]/th[6]/div/child::div[2]");
 	private By attach = By.xpath("//input[@type='file']");
-	private By back = By.xpath("//span[text()='Back to Help Center']/parent::span/mat-icon");
 	private By act = By.xpath("//table/tbody/tr/td[9]");
-	private By status = By.xpath("//table/tbody/tr/td[8]");
 	private By sub = By.xpath("//table/tbody/tr/td[4]");
 	private By save = By.xpath("//span[contains(text(),'Save')]");
 	private By edit = By.xpath("//table/tbody/tr/td[9]/mat-icon");
@@ -41,7 +38,6 @@ public class Support extends BasePage{
 	private By prog = By.xpath("//div[contains(text(),'Inprogress')]/ancestor::div[2]/div[1]/div");
 	private By rej = By.xpath("//div[contains(text(),'Rejected')]/ancestor::div[2]/div[1]/div");
 	private By close = By.xpath("//div[contains(text(),'Closed')]/ancestor::div[2]/div[1]/div");
-	private By slide = By.xpath("//div[@class='overflow-x-auto']");
 	private By tot = By.xpath("(//div[contains(text(),'Total Issues')])[1]/following::div[4] ");
 	private By curr = By.xpath("(//div[contains(text(),'Current Done')])[1]/following::div[7]");
 	private By chart1 = By.xpath("(//*[local-name()='g' and contains(@class,'plots')])[2]/*[local-name()='path']");
@@ -49,10 +45,8 @@ public class Support extends BasePage{
 	private By table = By.xpath("//table/tbody/tr/td");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
-	private By firstpage = By.xpath("//button[@aria-label='First page']/span");
 	private By lastpage = By.xpath("//button[@aria-label='Last page']/span");
 	private By cancelbtn = By.xpath("//span[contains(text(),'Cancel')]");
-	private By file = By.xpath("//span[contains(text(),'Open to file')]/following::button[1]/span[1]");
 	private By msg1 = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[1]/*[local-name()='text']");
 	private By msg2 = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[2]/*[local-name()='text']");
 	

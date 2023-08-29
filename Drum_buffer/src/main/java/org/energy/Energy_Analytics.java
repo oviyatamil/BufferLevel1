@@ -1,6 +1,5 @@
 package org.energy;
 
-import static org.testng.Assert.assertEquals;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -19,7 +18,7 @@ public class Energy_Analytics extends BasePage{
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By energy = By.xpath("//div[text()='Energy Monitoring']");
+	private By energy = By.xpath("//div[contains(text(),'Energy Monitoring')]");
 	private By analytics = By.xpath("//span[contains(text(),'Analytics')]");
 	private By consumption = By.xpath("//span[contains(text(),'Consumption')]");
 	private By heat = By.xpath("//span[contains(text(),'Heat Map')]");
@@ -36,7 +35,6 @@ public class Energy_Analytics extends BasePage{
 	private By chartss2 = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[4]/*[local-name()='text']");
 	private By parchar1 = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[1]/*");
 	private By parchar2 = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[5]/*");
-	private By back = By.xpath("//span[text()='Back']");
 	private By txt = By.xpath("(//mat-select[@role='combobox'])[1]/descendant::span[2]");
 	private By txt2 = By.xpath("(//mat-select[@role='combobox'])[2]/descendant::span[2]");
 	private By slider = By.xpath("(//*[local-name()='g' and contains(@class,'slider')])[1]/*[3]");
@@ -123,7 +121,7 @@ public class Energy_Analytics extends BasePage{
 				}
 					l.get(i).click();				
 				click(apply);
-				Thread.sleep(2000);
+				Thread.sleep(4000);
 				if (findWebElement(bar).isDisplayed()) {					
 					System.out.println("Category wise energy consumption Chart is displayed for "+ gettext(txt));					
 				} else {
@@ -254,11 +252,11 @@ public class Energy_Analytics extends BasePage{
 					Thread.sleep(500);
 						list.get(j).click();
 					click(apply);
-					Thread.sleep(2000);
+					Thread.sleep(5000);
 					if(findWebElement(charts).getText().contains("No data to display")) {
 						log.info("No data to display is shown for "+ gettext(txt));
 					}
-					else if (findWebElement(charts).isDisplayed()!=true) {
+					else if (findWebElement(parchar1).isDisplayed()!=true) {
 						log.info("No heatmap is displayed for "+gettext(txt)+" -- "+gettext(txt2));						
 					} else {						
 						System.out.println("heatmap is displayed");				

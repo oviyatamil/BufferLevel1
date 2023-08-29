@@ -10,7 +10,7 @@ public class Oxy_3 extends BaseTest{
 Oxygen_analytics oa;
 
 
-@Test
+@Test(groups="Oxygen")
 protected void analytics() {
 	oa= new Oxygen_analytics(driver);
 	ReportSetup.test = ReportSetup.report.createTest("OXYGEN ANALYTICS SCREEN");

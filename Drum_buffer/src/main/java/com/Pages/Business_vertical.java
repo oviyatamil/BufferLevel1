@@ -32,8 +32,7 @@ public class Business_vertical extends BasePage {
 	private By edit = By.xpath("//span[text()='Edit']");
 	private By update = By.xpath("//span[text()=' Update ']");
 	private By delete = By.xpath("//span[text()='Delete']");
-	private By deltext = By.xpath("//table/tbody/tr[1]/td[2]");
-	
+	private By deltext = By.xpath("//table/tbody/tr[1]/td[2]");	
 	private By cancelbtn = By.xpath("//span[text()='Cancel']");
 	private By delete2 = By.xpath("//span[text()=' Delete ']");
 	private By pagedd = By.xpath("//mat-select[@role='combobox']/descendant::div[3]");

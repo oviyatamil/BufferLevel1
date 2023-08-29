@@ -16,7 +16,7 @@ public class Dialysis extends BasePage{
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By dial = By.xpath("//div[text()='Dialysis Monitoring']");
+	private By dial = By.xpath("//div[contains(text(),'Dialysis Monitoring')]");
 	private By apply = By.xpath("//span[contains(text(),'Apply')]");
 	private By yesterday = By.xpath("(//span[text()='No. of Dialysis'])[1]/parent::div/div");
 	private By nomonth = By.xpath("(//span[text()='No. of Dialysis'])[2]/parent::div/div");
@@ -91,6 +91,9 @@ public class Dialysis extends BasePage{
 }
 	public void table() {
 	try {
+		if(findWebElements(table).size()<1) {
+			log.info("No record found for Equipments");
+		}else {
 		List<WebElement> list = findWebElements(table);
 		for(int i=0;i<list.size();i++) {
 			System.out.println("EQUIPMENT IS "+list.get(i).getText());
@@ -103,11 +106,12 @@ public class Dialysis extends BasePage{
 			if(text.contains(s)) {
 				System.out.println("Timestamp in machine is "+timestamp.get(i).getText());
 			}else {
-				log.info("Date in machine mismatches with actual time "+timestamp.get(i).getText());
+				log.info("Date in "+list.get(i).getText()+" machine mismatches with actual time "+timestamp.get(i).getText());
 			}
 			System.out.println("Run hours yesterday is "+findWebElements(runhrtable).get(i).getText());
 			Thread.sleep(500);
 }
+		}
 	} catch (InterruptedException e) {
 		e.printStackTrace();
 	}

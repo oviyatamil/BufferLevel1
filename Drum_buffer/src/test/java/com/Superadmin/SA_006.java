@@ -5,8 +5,6 @@ import org.testng.annotations.Test;
 import com.BasePage.ReportSetup;
 import com.BaseTest.BaseTest;
 import com.SuperadminPage.Controlchart;
-import com.SuperadminPage.Controlchart2;
-import com.SuperadminPage.Home;
 import com.aventstack.extentreports.Status;
 
 public class SA_006 extends BaseTest{

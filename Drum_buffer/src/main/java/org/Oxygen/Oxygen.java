@@ -16,7 +16,7 @@ public class Oxygen extends BasePage{
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By oxygen = By.xpath("//div[text()='Oxygen Monitoring']");
+	private By oxygen = By.xpath("//div[contains(text(),'Oxygen Monitoring')]");
 	private By apply = By.xpath("//span[contains(text(),'Apply')]");
 	private By dd = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
 	private By ddlist = By.xpath("//span[text()=' KHCH1 ']/parent::mat-option/parent::div/mat-option");

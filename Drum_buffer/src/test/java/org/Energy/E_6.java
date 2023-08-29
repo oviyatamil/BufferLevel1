@@ -12,7 +12,7 @@ public class E_6 extends BaseTest{
 Energy_Analytics2 ea2;
 
 
-@Test
+@Test(groups="Energy")
 protected void analytic() {
 	ea2= new Energy_Analytics2(driver);
 	ReportSetup.test = ReportSetup.report.createTest("ENERGY ANALYTICS SCREEN 2");

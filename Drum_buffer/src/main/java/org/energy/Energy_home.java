@@ -1,7 +1,5 @@
 package org.energy;
 
-import static org.testng.Assert.assertEquals;
-
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -17,7 +15,7 @@ public class Energy_home extends BasePage {
 	}
 
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By energy = By.xpath("//div[text()='Energy Monitoring']");
+	private By energy = By.xpath("//div[contains(text(),'Energy Monitoring')]");
 	private By msg = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[1]/*[local-name()='text']");
 	private By msg2 = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[2]/*[local-name()='text']");
 	private By msg3 = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[3]/*[local-name()='text']");
@@ -27,13 +25,9 @@ public class Energy_home extends BasePage {
 	private By pie2 = By.xpath(
 			"(//*[local-name()='g' and contains(@class,'pie-label')])[2]/*[local-name()='g']/*[local-name()='text']");
 	private By category = By.xpath("//*[local-name()='g' and contains(@class,'plot-group')]/*[local-name()='rect']");
-	private By charts = By.xpath("(//*[local-name()='g' and contains(@class,'crosslineBottom')])[5]");
-	private By chartss = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[4]/*[local-name()='text']");
 	private By kpi = By.xpath("//span[text()=' KPI ']");
 	private By home = By.xpath("//span[contains(text(),'Home')]");
 	private By epi = By.xpath("//span[text()=' EPI ']");
-	private By area = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[1]");
-	private By beds = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[3]/*[local-name()='path']");
 	private By equiplist = By.xpath("//span[text()='Select Site']/ancestor::div[1]/mat-option");
 	private By equipdd = By.xpath("//mat-select[@role='combobox']/ancestor::div[1]/descendant::div[4]");
 	private By apply = By.xpath("//span[contains(text(),'Apply')]");
@@ -74,7 +68,7 @@ public class Energy_home extends BasePage {
 				}
 					l.get(i).click();
 					click(apply);
-			Thread.sleep(4000);	
+			Thread.sleep(7000);	
 			if(findWebElement(msg).getText().contains("No data to display")) {
 				log.info("Pie chart based on month wise energy consymption not displyed for "+gettext(text));
 			}

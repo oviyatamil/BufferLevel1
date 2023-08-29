@@ -1,7 +1,6 @@
 package com.Iot;
 
 import java.util.List;
-import org.openqa.selenium.interactions.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -44,7 +43,7 @@ public class Device extends BasePage {
 }
 	public void device() {
 	try {
-		Actions a = new Actions(driver);
+	
 		click(sitedd);
 		List<WebElement> s = findWebElements(sitelist);
 		for(int k=1;k<s.size();k++) {

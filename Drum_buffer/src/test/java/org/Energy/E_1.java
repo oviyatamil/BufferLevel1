@@ -9,7 +9,7 @@ import com.aventstack.extentreports.Status;
 
 public class E_1 extends BaseTest{
 Energy_home e;
-@Test
+@Test(groups="Energy")
 protected void home() {
 	e= new Energy_home(driver);
 	ReportSetup.test = ReportSetup.report.createTest("ENERGY HOME AND KPI SCREEN");
