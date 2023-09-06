@@ -15,7 +15,7 @@ public class Product_list extends BasePage {
 	}
 
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By superadmin = By.xpath("//div[text()='Super Admin']");
+	private By superadmin = By.xpath("//div[contains(text(),'Super Admin')]/parent::div/button");
 	private By product = By.xpath("//span[contains(text(),'Product')]");
 	private By head = By.xpath("//h2[text()='Products List']/following::div[1]/div/descendant::p");	
 	private By pro = By.xpath("//span[contains(text(),' Product Listing ')]");
@@ -103,14 +103,13 @@ public class Product_list extends BasePage {
 			click(view);
 			click(cancelbtn);
 			Thread.sleep(300);
-			System.out.println("view button is checked");
-			click(radio);		
-			click(cancelbtn);			
-			System.out.println("cancel button is checked");
+			System.out.println("view button is checked");						
 			Thread.sleep(200);
 			click(radio);		
 			click(delete);
-			click(delete2);
+			click(cancel);
+			click(cancelbtn);
+			System.out.println("cancel button is checked");
 			Thread.sleep(500);
 			System.out.println("delete button is checked");
 		} catch (InterruptedException e) {
@@ -121,10 +120,10 @@ public class Product_list extends BasePage {
 		try {
 			waittobeclickable(product, 20);
 			click(product);
-			System.out.println("Product menu is clicked");
-			Thread.sleep(1000);
+			System.out.println("Product menu is clicked");			
 			waittobeclickable(uom, 20);
 			click(uom);	
+			Thread.sleep(300);
 			click(add);		
 			EnterText(uomname,"AAA");	
 			EnterText(desc,"aaa");			
@@ -155,11 +154,12 @@ public class Product_list extends BasePage {
 						List<WebElement> rad = findWebElements(radio);
 						rad.get(j).click();
 						click(delete);
-						click(cancel);
+						click(delete2);
 						System.out.println("delete button is checked");						
 						break;
 					}
 				}
+			Thread.sleep(500);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -167,12 +167,12 @@ public class Product_list extends BasePage {
 		
 	public void profile() {
 		try {
-			Thread.sleep(500);
+			waittobeclickable(profile, 10);
 			click(profile);
 			System.out.println("profile button is clicked");
 			click(signout);
 			System.out.println("signout button is clicked");
-		} catch (InterruptedException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

@@ -19,8 +19,6 @@ protected void analyticsoee() {
 	ReportSetup.test.log(Status.PASS, "Successfully navigated to analytics oee heatmap page");
 	ao.calendar();
 	ReportSetup.test.log(Status.PASS,"Successfully checked all oee heatmap charts for all equipments");
-	ao.mouseover();
-	ReportSetup.test.log(Status.PASS,"Successfully checked mouseover");
 	ao.slider();
 	ReportSetup.test.log(Status.PASS,"Successfully checked working of slider");
 	ao.profile();

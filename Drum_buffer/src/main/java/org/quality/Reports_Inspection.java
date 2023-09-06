@@ -66,9 +66,6 @@ public class Reports_Inspection extends BasePage {
 			click(insreport);
 			System.out.println("Inspection Report menu is clicked");
 			Thread.sleep(2000);
-//			String ExpectedURL = "https://portal.drumbuffer.io/#/oee/FirstoffReport";
-//			String ActualURL = getCurrentURL();
-//			assertEquals(ExpectedURL, ActualURL);
 			log.info("Assert verification is done for Inspection report page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -99,9 +96,6 @@ public class Reports_Inspection extends BasePage {
 			click(auditreport);
 			System.out.println("Audit Report menu is clicked");
 			Thread.sleep(2000);
-//			String ExpectedURL = "https://portal.drumbuffer.io/#/SQA/auditreport";
-//			String ActualURL = getCurrentURL();
-//			assertEquals(ExpectedURL, ActualURL);
 			log.info("Assert verification is done for Audit report page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();

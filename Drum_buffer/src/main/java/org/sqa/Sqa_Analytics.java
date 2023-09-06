@@ -13,7 +13,7 @@ public class Sqa_Analytics extends BasePage{
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By sqa = By.xpath("//div[contains(text(),'SQA')]");
+	private By sqa = By.xpath("//div[contains(text(),'SQA')]/parent::div/button");
 	private By analytics = By.xpath("//span[contains(text(),'Analytics')]");
 	private By machinedd = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
 	private By supplier = By.xpath("//span[text()='Select Supplier']/parent::mat-option/parent::div/mat-option");

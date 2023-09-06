@@ -21,10 +21,10 @@ public class S_4 extends BaseTest{
 		ReportSetup.test.log(Status.PASS, "Navigates to sqa home page");
 		qp.parts();
 		ReportSetup.test.log(Status.PASS, "Navigates to Parts page");
-//		qp.add();
-//		ReportSetup.test.log(Status.PASS, "Succesfully added parts listing");
-//		qp.check();
-//		ReportSetup.test.log(Status.PASS, "Successfully checked view,edit,delete and cancel button");
+		qp.add();
+		ReportSetup.test.log(Status.PASS, "Succesfully added parts listing");
+		qp.check();
+		ReportSetup.test.log(Status.PASS, "Successfully checked view,edit,delete and cancel button");
 		qp.plan();
 		ReportSetup.test.log(Status.PASS, "Successfully added inspection plan");
 		qp.characteristics();

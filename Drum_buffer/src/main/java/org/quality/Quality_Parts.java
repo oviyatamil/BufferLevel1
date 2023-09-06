@@ -21,7 +21,9 @@ public class Quality_Parts extends BasePage {
 	private By radio = By.xpath("(//span[@class='mat-radio-inner-circle'])");
 	private By insplan = By.xpath("//span[contains(text(),'Inspection Plan')]");
 	private By add = By.xpath("//span[text()='Add']");
+	private By file = By.xpath("//input[@type='file']");
 	private By check = By.xpath("//mat-checkbox/label/span[1]");
+	
 	private By partno= By.xpath("//input[@formcontrolname='partNumber']");
 	private By desc= By.xpath("//input[@formcontrolname='partDescription']");
 	private By parttype= By.xpath("(//mat-select[@role='combobox'])[1]/descendant::div[4]");
@@ -113,14 +115,17 @@ public class Quality_Parts extends BasePage {
 			click(parttier);
 			List<WebElement> t = findWebElements(tierdd);
 			t.get(1).click();
+			EnterText(file, "C:\\Users\\oviya\\Downloads\\OEEMaintanance (1).pdf");
+			log.info("File is attached");
+			Thread.sleep(200);
 			click(classi);
 			List<WebElement> c = findWebElements(classdd);
 			c.get(1).click();
 			EnterText(category, "Industry");
 			EnterText(subcategory, "material");
 			click(save);
-			Thread.sleep(500);
-			click(cancelbtn);
+			System.out.println("Part is added");
+			Thread.sleep(200);			
 			click(add);
 			EnterText(partno, "Abc");
 			EnterText(desc, "ads");
@@ -135,6 +140,9 @@ public class Quality_Parts extends BasePage {
 			waittobeclickable(parttier, 10);
 			click(parttier);
 			Thread.sleep(500);
+			EnterText(file, "C:\\Users\\oviya\\Downloads\\OEEMaintanance (1).pdf");
+			log.info("File is attached");
+			Thread.sleep(200);
 			List<WebElement> t2 = findWebElements(tierdd);
 			t2.get(1).click();
 			click(classi);
@@ -144,6 +152,7 @@ public class Quality_Parts extends BasePage {
 			EnterText(subcategory, "material");
 			click(save);
 			click(cancelbtn);
+			System.out.println("Duplicate part listing is checked");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -163,6 +172,7 @@ public class Quality_Parts extends BasePage {
 			}
 			click(check);
 			click(save);
+			System.out.println("Inspection plan is saved");
 			
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -225,31 +235,8 @@ public class Quality_Parts extends BasePage {
 					List<WebElement> cm = findWebElements(cmdd);
 					cm.get(1).click();
 					click(save);
-					
+					System.out.println("Part characteristics is added");
 					Thread.sleep(1000);
-//					List<WebElement> b2 = findWebElements(btn);
-//					List<WebElement> r2 = findWebElements(radbtn);
-//					for(int j=0;j<b2.size();j++) {
-//						if(b2.get(j).getText().contains("Coil Width")) {							
-//							r2.get(j).click();
-//							click(view);
-//							click(cancelbtn);
-//							System.out.println("View option is checked");
-//							Thread.sleep(1000);
-//							List<WebElement> r3 = findWebElements(radbtn);
-//							r3.get(j).click();
-//							click(edit);
-//							clear(usl);
-//							EnterText(usl, "110");
-//							click(update);
-//							System.out.println("Edit and update option is checked");
-//							Thread.sleep(500);
-//							List<WebElement> r4 = findWebElements(radbtn);
-//							r4.get(j).click();
-//							click(delete);
-//							click(delete2);
-//							System.out.println("Delete option is checked");
-//					
 //					
 //				}
 //			}		

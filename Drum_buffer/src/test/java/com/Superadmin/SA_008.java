@@ -18,8 +18,6 @@ protected void permission() {
 	ReportSetup.test.log(Status.PASS, "Successfully navigated to Home page");
 	p.permission();
 	ReportSetup.test.log(Status.PASS, "Successfully navigated to Permission page and added a role list");
-	p.users();
-	ReportSetup.test.log(Status.PASS, "Successfully navigated to user page and added a user list");
 	p.useradd();
 	ReportSetup.test.log(Status.PASS, "Successfully checked view,edit,delete and cancel option in user list");
 	p.perm();

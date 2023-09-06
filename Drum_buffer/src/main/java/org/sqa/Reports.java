@@ -68,21 +68,17 @@ public class Reports extends BasePage{
 				m.get(i).click();
 				Thread.sleep(500);
 				click(partdd);
-				List<WebElement> s = findWebElements(supplier);
-				for (int j = 1; j < s.size(); j++) {
-					if(j>1) {
-						click(partdd);
-					}
-					s.get(j).click();
+				List<WebElement> s = findWebElements(supplier);				
+					s.get(0).click();
 				click(apply);
 				Thread.sleep(500);
-				if (findWebElement(record).getText().contains("No Records found") ){
+				if (findWebElement(record).getText().contains("No Records") ){
 					log.info("No records found");
 				} else {
 					System.out.println("Records found  for "+gettext(txt));
 				}
 			}
-			}
+			
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

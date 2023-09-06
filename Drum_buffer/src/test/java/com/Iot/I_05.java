@@ -16,8 +16,8 @@ public class I_05 extends BaseTest{
 		a = new Report(driver);
 		a.home();
 		ReportSetup.test.log(Status.PASS, "Successfully navigated to report page");
-//		a.report();
-//		ReportSetup.test.log(Status.PASS, "Successfully add a report and check all functions");
+		a.report();
+		ReportSetup.test.log(Status.PASS, "Successfully add a report and check all functions");
 		a.radio();
 		a.profile();
 		ReportSetup.test.log(Status.PASS, "Successfully logout from application");

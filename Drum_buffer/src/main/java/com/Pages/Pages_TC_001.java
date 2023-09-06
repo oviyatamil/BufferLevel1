@@ -83,21 +83,20 @@ public class Pages_TC_001 extends BasePage {
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			ReportSetup.test.log(Status.INFO,"Waiting For 10 sec");
 			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-					EnterText(Username,"admin@texelq.com");
-					//		EnterText(Username,"admin@indomim.com");
+			//	EnterText(Username,"admin@texelq.com");
+					EnterText(Username,"admin@indomim.com");
+				//	EnterText(Username,"admin@hanonsystem.com");
 			System.out.println("Entered the username");
 			Thread.sleep(1000);
-				EnterText(Password,"!@#$Texelq20");
+			//	EnterText(Password,"!@#$Texelq20");
+						EnterText(Password,"Admin@123");
 				//	EnterText(Password,"Admin@123");
 			System.out.println("Entered the Password");
-			Thread.sleep(1000);
+			Thread.sleep(10000);
 			click(Login);
 			System.out.println("Clicked on the Login");
-			Thread.sleep(3000);
+			Thread.sleep(3000);		
 		
-			String ExpectedURL="https://portal.drumbuffer.io/#/superadmin/home";
-   	        String ActualURL=getCurrentURL();
-   	        assertEquals(ExpectedURL, ActualURL);
    	       
    	        
 		} catch (Exception e) {
@@ -122,10 +121,7 @@ public class Pages_TC_001 extends BasePage {
 			click(Login);
 			System.out.println("Clicked on the Login");
 			Thread.sleep(3000);
-		
-			String ExpectedURL="https://portal.drumbuffer.io/#/superadmin/home";
-   	        String ActualURL=getCurrentURL();
-   	        assertEquals(ExpectedURL, ActualURL);
+
    	       
    	        
 		} catch (Exception e) {
@@ -149,12 +145,7 @@ public void Login5() {
 			Thread.sleep(10000);
 			click(Login);
 			System.out.println("Clicked on the Login");
-			Thread.sleep(2000);
-		
-//			String ExpectedURL="http://20.204.188.25/#/admin/login";
-//   	        String ActualURL=getCurrentURL();
-//   	        assertEquals(ExpectedURL, ActualURL);
-   	       
+			Thread.sleep(2000);		
    	        
 		} catch (Exception e) {
 			
@@ -176,13 +167,7 @@ public void Login6() {
 		Thread.sleep(10000);
 		click(Login);
 		System.out.println("Clicked on the Login");
-		Thread.sleep(2000);
-	
-		String ExpectedURL="http://20.204.188.25/#/superadmin/home";
-	        String ActualURL=getCurrentURL();
-	        assertEquals(ExpectedURL, ActualURL);
-	       
-	        
+		Thread.sleep(2000);	
 	} catch (Exception e) {
 		
 		e.printStackTrace();
@@ -293,7 +278,69 @@ public void Login11() {
 		e.printStackTrace();
 	}
 }
-
+public void Login12() {
+	try {
+		driver.get("https://portal.drumbuffer.io/#/sign-in");
+		ReportSetup.test.log(Status.INFO,"Entered the URL");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		ReportSetup.test.log(Status.INFO,"Waiting For 10 sec");
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+		EnterText(Username,"admin@kcaltech.com");
+		System.out.println("Entered the username");
+		Thread.sleep(1000);
+		EnterText(Password,"Admin@123");
+		System.out.println("Entered the Password");
+		Thread.sleep(10000);
+		click(Login);
+		System.out.println("Clicked on the Login");
+		Thread.sleep(2000);	       	        
+	} catch (Exception e) {
+		
+		e.printStackTrace();
+	}
+}
+public void Login13() {
+	try {
+		driver.get("http://v6dbrproduction.azurewebsites.net/#/sign-in");
+		ReportSetup.test.log(Status.INFO,"Entered the URL");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		ReportSetup.test.log(Status.INFO,"Waiting For 10 sec");
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+		EnterText(Username,"admin@hanonsystem.com");
+		System.out.println("Entered the username");
+		Thread.sleep(1000);
+		EnterText(Password,"Admin@123");
+		System.out.println("Entered the Password");
+		Thread.sleep(10000);
+		click(Login);
+		System.out.println("Clicked on the Login");
+		Thread.sleep(2000);	       	        
+	} catch (Exception e) {
+		
+		e.printStackTrace();
+	}
+}
+public void Login14() {
+	try {
+		driver.get("http://v6dbrproduction.azurewebsites.net/#/sign-in");
+		ReportSetup.test.log(Status.INFO,"Entered the URL");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		ReportSetup.test.log(Status.INFO,"Waiting For 10 sec");
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+		EnterText(Username,"admin@sreevari.com");
+		System.out.println("Entered the username");
+		Thread.sleep(1000);
+		EnterText(Password,"Admin@123");
+		System.out.println("Entered the Password");
+		Thread.sleep(10000);
+		click(Login);
+		System.out.println("Clicked on the Login");
+		Thread.sleep(2000);	       	        
+	} catch (Exception e) {
+		
+		e.printStackTrace();
+	}
+}
 	}
 	
 

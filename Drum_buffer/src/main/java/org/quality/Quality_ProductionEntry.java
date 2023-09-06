@@ -36,7 +36,7 @@ public class Quality_ProductionEntry extends BasePage{
 	private By controldd= By.xpath("//span[contains(text(),'Inspection Characteristics')]/following::div[@role='listbox']/mat-option");
 	private By save = By.xpath("//span[text()=' Save ']");
 	private By submit = By.xpath("//button[@type='submit']");
-	private By profile = By.xpath("//span[contains(text(),'Master')]/following::button[5]/span[1]/span/mat-icon");
+	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
 
 	

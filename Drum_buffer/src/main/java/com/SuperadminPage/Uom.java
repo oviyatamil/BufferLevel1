@@ -17,7 +17,7 @@ public class Uom extends BasePage {
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button/img");
-	private By superadmin = By.xpath("//div[text()='Super Admin']");
+	private By superadmin = By.xpath("//div[contains(text(),'Super Admin')]/parent::div/button");
 	private By master = By.xpath("//span[contains(text(),'Master Data')]");
 	private By uom = By.xpath("(//div[contains(text(),'UOM')])[1]");
 	private By add = By.xpath("//span[contains(text(),'Add')]");
@@ -205,18 +205,18 @@ public class Uom extends BasePage {
 
 	public void arrow() {
 		click(uomarrow);
-		log.info("gateway type arrow is clicked");
+		System.out.println("gateway type arrow is clicked");
 		click(descsarrow);
-		log.info("description arrow is clicked");
+		System.out.println("description arrow is clicked");
 		click(statusarrow);
-		log.info("status arrow is clicked");
+		System.out.println("status arrow is clicked");
 	}
 
 	public void search() {
 		try {
 			Thread.sleep(1000);
 			EnterText(search, "Cur");
-			log.info("searchtext is entered");
+			System.out.println("searchtext is entered");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -224,9 +224,9 @@ public class Uom extends BasePage {
 
 	public void profile() {
 		click(profile);
-		log.info("profile button is clicked");
+		System.out.println("profile button is clicked");
 		click(signout);
-		log.info("signout button is clicked");
+		System.out.println("signout button is clicked");
 	}
 
 }

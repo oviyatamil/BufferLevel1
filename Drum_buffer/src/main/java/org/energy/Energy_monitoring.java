@@ -96,7 +96,7 @@ public class Energy_monitoring extends BasePage{
 				System.out.println("Incomer kwh displayed in card is "+findWebElement(inckwh).getText());
 			}
 			
-			if(!findWebElements(machine).isEmpty()) {
+			if(findWebElements(machine).isEmpty()!=true) {
 				List<WebElement> l2 = findWebElements(machine);
 				for(int j=0;j<l2.size();j++) {
 					Thread.sleep(500);				

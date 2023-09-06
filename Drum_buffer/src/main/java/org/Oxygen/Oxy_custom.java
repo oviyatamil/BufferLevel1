@@ -109,7 +109,7 @@ public class Oxy_custom extends BasePage{
 						if(split4[1].contains(h)) {
 							System.out.println("Report end date is correct");
 						}else {
-							log.info("Report end date is wrong");
+							log.info("Report end date is wrong for "+gettext(txt));
 						}
 					}else{
 						log.info("Table is not displayed for "+gettext(txt));		

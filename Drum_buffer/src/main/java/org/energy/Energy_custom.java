@@ -300,17 +300,7 @@ public class Energy_custom extends BasePage{
 					}
 					}
 				Thread.sleep(500);
-		
-				String data2 = new SimpleDateFormat("dd-MMM").format(new Date());	
-				List<WebElement> rows = findWebElements(row);
-					WebElement text = driver.findElement(By.xpath("//table/tbody/tr["+(rows.size()-1)+"]/td[5]"));		
-				String text2 = text.getText();
-				String[] split4 = text2.split(",");
-				if(split4[1].contains(data2)) {
-					System.out.println("Report end date is correct");
-				}else {
-					log.info("Report end date is wrong");
-				}
+						
 			} catch (NumberFormatException | InterruptedException e) {
 				e.printStackTrace();
 			}

@@ -16,7 +16,7 @@ public class Support extends BasePage{
 	}
 
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button/img");
-	private By superadmin = By.xpath("//div[text()='Super Admin']");
+	private By superadmin = By.xpath("//div[contains(text(),'Super Admin')]/parent::div/button");
 	private By support = By.xpath("//span[contains(text(),'Support')]");
 	private By dash = By.xpath("//span[contains(text(),'Error Dashboard')]");
 	private By log = By.xpath("//span[contains(text(),'Error Log')]");
@@ -155,7 +155,7 @@ public class Support extends BasePage{
 //			}	
 			List<WebElement> f = findWebElements(sub);
 			for(int i=0;i<f.size();i++) {
-				if(f.get(i).getText().equals("bugsss")) {
+				if(f.get(i).getText().equals("Defect")) {
 					WebElement fe = driver.findElement(By.xpath("//table/tbody/tr["+(i+1)+"]/td[9]/mat-icon"));
 					fe.click();
 					click(dd);

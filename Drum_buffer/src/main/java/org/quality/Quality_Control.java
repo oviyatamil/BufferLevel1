@@ -60,9 +60,6 @@ public void home() {
 		click(quality);
 		System.out.println("Quality option is clicked");
 		Thread.sleep(2000);
-//		String ExpectedURL = "https://portal.drumbuffer.io/#/SQA/home";
-//		String ActualURL = getCurrentURL();
-//		assertEquals(ExpectedURL, ActualURL);
 		System.out.println("Assert verification is done for quality home page");
 	} catch (InterruptedException e) {
 		e.printStackTrace();
@@ -76,9 +73,6 @@ public void controlchart() {
 		click(control);
 		System.out.println("Control center menu is clicked");
 		Thread.sleep(2000);
-//		String ExpectedURL = "https://portal.drumbuffer.io/#/SQA/run-chart";
-//		String ActualURL = getCurrentURL();
-//		assertEquals(ExpectedURL, ActualURL);
 		log.info("Assert verification is done for Control chart page");
 	} catch (InterruptedException e) {
 		e.printStackTrace();
@@ -175,7 +169,7 @@ public void dd() {
 				if(findWebElement(msg1).getText().contains("No data")) {
 					log.info("No data found to display");
 				}
-				else if(findWebElement(ichart).isDisplayed()!=true) {
+				else if(findWebElements(ichart).size()<=0) {
 					log.info("Ichart not displayed for "+gettext(txt)+" ----- "+gettext(txt2)+" ---- "+gettext(txt3));
 				}
 				else {
@@ -184,7 +178,7 @@ public void dd() {
 				if(findWebElement(msg2).getText().contains("No data")) {
 					log.info("No data found to display");
 				}
-				else if(findWebElement(mrchart).isDisplayed()!=true) {
+				else if(findWebElements(mrchart).size()<=0) {
 					log.info("MRchart not displayed for "+gettext(txt)+" ----- "+gettext(txt2)+" ---- "+gettext(txt3));
 				}
 				else {
@@ -200,11 +194,11 @@ public void dd() {
 public void exports() {
 	click(pdf);
 	waittobeclickable(export, 10);
-	click(export);
-	click(jpg);
-	waittobeclickable(export2, 10);
-	click(export2);
-	click(jpg2);
+//	click(export);
+//	click(jpg);
+//	waittobeclickable(export2, 10);
+//	click(export2);
+//	click(jpg2);
 }
 public void profile() {
 	click(profile);

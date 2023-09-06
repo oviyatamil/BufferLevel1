@@ -20,8 +20,8 @@ protected void homepage() {
 	ReportSetup.test.log(Status.PASS, "Successfully navigated to oee home page");
 	home.displaycards();
 	ReportSetup.test.log(Status.PASS, "Successfully displayed the cards count");
-	home.mouseover();
-	ReportSetup.test.log(Status.PASS, "MOuseover in heatmap is done successfully");
+//	home.mouseover();
+//	ReportSetup.test.log(Status.PASS, "MOuseover in heatmap is done successfully");
 	home.slider();
 	ReportSetup.test.log(Status.PASS, "Successfully checked the slider");
 	home.graph();

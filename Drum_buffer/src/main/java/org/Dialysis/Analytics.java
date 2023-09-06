@@ -36,6 +36,7 @@ public class Analytics extends BasePage{
 	private By signout = By.xpath("//span[text()='Sign out']");
 	private By export = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[1]/*[local-name()='rect'][2]");
 	private By jpg = By.xpath("(//span[text()='Export As JPG'])[1]");
+	private By msg = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[1]/*[local-name()='text']");
 	private By export2 = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[2]/*[local-name()='rect'][2]");
 	private By jpg2 = By.xpath("(//span[text()='Export As JPG'])[2]");
 	private By pdf = By.xpath("//mat-icon[@mattooltip='Export to PDF']");
@@ -182,7 +183,10 @@ public class Analytics extends BasePage{
 			Thread.sleep(1000);
 			if(findWebElement(heatmap1).isDisplayed()!=true) {
 				log.info("Heatmap doesn't displayed");
-			}else {
+			}else if(findWebElement(msg).getText().contains("No data")) {
+				log.info("No data to display is displayed instead of heatmap");
+			}
+			else {
 				System.out.println("Heatmap displayed");
 			}
 			click(pdf);		

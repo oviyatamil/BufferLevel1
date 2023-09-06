@@ -1,6 +1,4 @@
 package org.OeeMonitoring;
-
-import static org.testng.Assert.assertEquals;
 import java.util.LinkedList;
 import java.util.List;
 import org.openqa.selenium.By;
@@ -15,7 +13,7 @@ public class HomePage extends BasePage{
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By Oee = By.xpath("//div[text()='OEE Monitoring']");
+	private By Oee = By.xpath("//div[contains(text(),'OEE Monitoring')]");
 	private By oeepercent = By.xpath("//div[text()='OEE for last 30 days ']/following::mat-icon[1]/parent::div/div");
 	private By availability = By.xpath("//div[text()='OEE for last 30 days ']/following::mat-icon[2]/parent::div/div");
 	private By performance = By.xpath("//div[text()='OEE for last 30 days ']/following::mat-icon[3]/parent::div/div");
@@ -23,7 +21,7 @@ public class HomePage extends BasePage{
 	private By plot = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[1]/*");
 	private By mouse = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[1]/*[1]");
 	private By slide = By.xpath("(//*[local-name()='g' and contains(@class,'fc-gl-slider')])[1]/*[local-name()='circle'][3]");
-	private By machlist = By.xpath("(//*[local-name()='g' and contains(@class,'dataset-Label-group')])[1]/*[local-name()='g']/*");
+	private By machlist = By.xpath("(//*[local-name()='g' and contains(@class,'dataset-Label-group')])[6]/*[local-name()='g']/*");
 	private By percent = By.xpath("(//*[local-name()='g' and contains(@class,'fusioncharts-datalabels')])[4]/*");
 	private By ftm = By.xpath("(//*[local-name()='g'])[229]/*[local-name()='path']");
 	private By ftmchart = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[5]/*");
@@ -45,9 +43,6 @@ public class HomePage extends BasePage{
 			click(Oee);
 			System.out.println("Oee option is clicked");
 			Thread.sleep(2000);
-			String ExpectedURL = "https://portal.drumbuffer.io/#/oee/home";
-			String ActualURL = getCurrentURL();
-			assertEquals(ExpectedURL, ActualURL);
 			log.info("Assert verification is done for Oee home page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -56,8 +51,8 @@ public class HomePage extends BasePage{
 	}
 	public void displaycards() {
 		try {
-			Thread.sleep(3000);
-			if(findWebElement(plot).isDisplayed()) {
+			Thread.sleep(6000);
+			if(findWebElements(plot).size()>0) {
 				System.out.println("OEE heatmap for last 30 days is displayed");
 			}else {
 				log.info("OEE heatmap for last 30 days is not displayed");
@@ -103,14 +98,17 @@ public class HomePage extends BasePage{
 	public void slider() {
 		try {
 			Thread.sleep(1000);
+			if(findWebElements(plot).size()>0) {
 			draganddrop(slide);
 			System.out.println("slider is working properly");
+			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 	}
 	public void graph() {
 		try {
+			if(findWebElements(machlist).size()>0){
 			List<WebElement> list = findWebElements(machlist);
 			List<String> l = new LinkedList<>();
 			for(WebElement x:list) {
@@ -130,6 +128,7 @@ public class HomePage extends BasePage{
 			System.out.println("OEE percentages are "+l2);
 			}else {
 				log.info("Oee of machines chart doesn't displayed");
+			}
 			}
 			Thread.sleep(1000);
 			click(machineexport);

@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.BasePage.BasePage;
-
+import org.openqa.selenium.interactions.*;
 public class Control extends BasePage{
 
 	public Control(WebDriver driver) {
@@ -60,9 +60,6 @@ public class Control extends BasePage{
 			click(sqa);
 			System.out.println("SQA option is clicked");
 			Thread.sleep(2000);
-//			String ExpectedURL = "https://portal.drumbuffer.io/#/SQA/home";
-//			String ActualURL = getCurrentURL();
-//			assertEquals(ExpectedURL, ActualURL);
 			System.out.println("Assert verification is done for SQA home page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -76,9 +73,6 @@ public class Control extends BasePage{
 			click(control);
 			System.out.println("Control center menu is clicked");
 			Thread.sleep(2000);
-//			String ExpectedURL = "https://portal.drumbuffer.io/#/SQA/run-chart";
-//			String ActualURL = getCurrentURL();
-//			assertEquals(ExpectedURL, ActualURL);
 			log.info("Assert verification is done for Control chart page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -86,6 +80,7 @@ public class Control extends BasePage{
 	}
 	public void dd() {
 		try {
+			Actions a = new Actions(driver);
 			click(machinedd);
 			List<WebElement> m = findWebElements(supplier);
 			for(int i=1;i<m.size();i++) {
@@ -93,7 +88,7 @@ public class Control extends BasePage{
 					click(machinedd);
 				}
 				m.get(i).click();
-				Thread.sleep(500);
+				Thread.sleep(300);
 				click(partdd);
 				List<WebElement> p = findWebElements(partlist);
 				for(int l=1;l<p.size();l++) {
@@ -101,7 +96,7 @@ public class Control extends BasePage{
 						click(partdd);
 					}				
 					p.get(l).click();
-				Thread.sleep(500);
+				Thread.sleep(300);
 				click(chardd);
 				List<WebElement> c = findWebElements(charlist);
 				for(int j=1;j<c.size();j++) {
@@ -109,6 +104,9 @@ public class Control extends BasePage{
 						click(chardd);
 					}				
 					c.get(j).click();
+					Thread.sleep(500);
+					a.moveToElement(findWebElement(search)).click().perform();
+					waittobeclickable(search, 10);
 					click(search);
 					Thread.sleep(500);
 					if(gettext(usl).equals("0")) {

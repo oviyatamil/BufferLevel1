@@ -176,7 +176,7 @@ public class Home_Page extends BasePage{
 			log.info("Subject is entered");
 			EnterText(msg, "Kindly solve the issue");
 			log.info("Message is entered");
-			EnterText(file, "C:\\Users\\oviya\\eclipse-workspace\\.metadata\\DrumBuffer\\screenshot\\update202307050535.png");
+			EnterText(file, "C:\\Users\\oviya\\Downloads\\OEEMaintanance (1).pdf");
 			log.info("File is attached");
 			Thread.sleep(1000);
 			click(reset);

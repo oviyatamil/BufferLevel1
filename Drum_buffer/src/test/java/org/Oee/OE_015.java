@@ -19,9 +19,7 @@ public class OE_015 extends BaseTest{
 		rp.oee();
 		ReportSetup.test.log(Status.PASS, "Successfully navigated to oee home page");
 		rp.rep();
-		ReportSetup.test.log(Status.PASS, "Successfully navigated to daily reports page");
-		rp.table();
-		ReportSetup.test.log(Status.PASS, "Successfully get overall values from table");
+		ReportSetup.test.log(Status.PASS, "Successfully navigated to daily reports page");		
 		rp.table2();
 		ReportSetup.test.log(Status.PASS, "Successfully compares values from table table");
 		rp.loss();

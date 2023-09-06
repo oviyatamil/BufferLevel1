@@ -19,11 +19,11 @@ protected void analytic() {
 	ea.home();
 	ReportSetup.test.log(Status.PASS, "Navigates to Energy home page");
 	ea.analytic();
-	ReportSetup.test.log(Status.PASS, "Navigates to Analytics-> consumption page");	
-	ea.chart();
-	ReportSetup.test.log(Status.PASS, "Successfully checked legends");
+	ReportSetup.test.log(Status.PASS, "Navigates to Analytics-> consumption page");		
 	ea.dd();
 	ReportSetup.test.log(Status.PASS, "Successfully checked all charts and mouseover action");
+	ea.chart();
+	ReportSetup.test.log(Status.PASS, "Successfully checked legends");
 	ea.heatmaphome();
 	ReportSetup.test.log(Status.PASS, "Navigates to Analytics-> heatmap page");
 	ea.heatmap();

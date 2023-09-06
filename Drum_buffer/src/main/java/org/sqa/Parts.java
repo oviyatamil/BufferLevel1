@@ -20,13 +20,14 @@ public class Parts extends BasePage {
 	private By parts = By.xpath("//div[contains(text(),'Part Listing')]");
 	private By radio = By.xpath("(//span[@class='mat-radio-inner-circle'])");
 	private By radbtn = By.xpath("//table/tbody/tr/td[1]/descendant::span[1]/span[2]");
-	private By insplan = By.xpath("//span[contains(text(),'Supplier Mapping')]");
+	private By supmap = By.xpath("//span[contains(text(),'Supplier Mapping')]");
 	private By add = By.xpath("//span[text()='Add']");
 	private By partno= By.xpath("//input[@formcontrolname='partNumber']");
 	private By desc= By.xpath("//input[@formcontrolname='partDescription']");
 	private By parttype= By.xpath("(//mat-select[@role='combobox'])[1]/descendant::div[4]");
 	private By parttypedd= By.xpath("//span[text()='Select Part Type']/parent::mat-option/parent::div/mat-option");
 	private By uom= By.xpath("(//mat-select[@role='combobox'])[2]/descendant::div[4]");
+	private By file = By.xpath("//input[@type='file']");
 	private By uomdd= By.xpath("//span[text()='Select UOM']/parent::mat-option/parent::div/mat-option");
 	private By mc= By.xpath("//span[text()='Select SC']/parent::mat-option/parent::div/mat-option");
 	private By drawno= By.xpath("//input[@formcontrolname='drawingNumber']");
@@ -115,6 +116,10 @@ public class Parts extends BasePage {
 			click(parttier);
 			List<WebElement> t = findWebElements(tierdd);
 			t.get(1).click();
+			Thread.sleep(200);
+			EnterText(file, "C:\\Users\\oviya\\Downloads\\OEEMaintanance (1).pdf");
+			log.info("File is attached");
+			Thread.sleep(200);
 			click(classi);
 			List<WebElement> c = findWebElements(classdd);
 			c.get(1).click();
@@ -159,7 +164,7 @@ public class Parts extends BasePage {
 				if((list.get(i).getText()).contains("Abc")) {
 					WebElement act = driver.findElement(By.xpath("//table/tbody/tr["+(i+1)+"]/td[9]/button"));				
 					act.click();
-					click(insplan);
+					click(supmap);
 					Thread.sleep(500);
 					break;
 				}
@@ -171,8 +176,8 @@ public class Parts extends BasePage {
 			click(submit);
 			Thread.sleep(500);
 			takescreenshots("supplier2");
-			click(trash);
-			click(delete2);
+//			click(trash);
+//			click(delete2);
 			click(parts);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -181,93 +186,6 @@ public class Parts extends BasePage {
 	public void characteristics() {
 		try {
 			Thread.sleep(1000);
-			click(arr);
-			click(arr);
-			List<WebElement> list = findWebElements(category2);
-			for (int i = 0; i < list.size(); i++) {
-				if((list.get(i).getText()).contains("Abc")) {
-					WebElement act = driver.findElement(By.xpath("//table/tbody/tr["+(i+1)+"]/td[9]/button"));				
-					act.click();
-					click(subchar);
-					Thread.sleep(500);
-					break;
-				}
-			}
-					click(add);
-					Thread.sleep(500);
-					click(parttype);
-					List<WebElement> pc = findWebElements(partchar);
-					pc.get(1).click();
-					Thread.sleep(300);
-					click(uom);
-					List<WebElement> sc = findWebElements(mc);
-					Thread.sleep(500);
-					sc.get(1).click();
-					EnterText(usl, "100");
-					EnterText(median, "90");
-					EnterText(lsl, "80");
-					String data = new SimpleDateFormat("MMM dd,yyyy,hh:mm").format(new Date());
-					String[] split = data.split(" ");
-					String s = split[0].toUpperCase();
-					Thread.sleep(500);
-					click(calendar);
-					click(yeardd);
-					click(year);
-					WebElement mon = driver.findElement(By.xpath("//div[contains(text(),'" + s + "')]/parent::button"));
-					mon.click();
-					String[] split2 = data.split(",");
-					String[] split3 = split2[0].split(" ");
-					String m = split3[1];
-					int p = Integer.parseInt(m);
-					WebElement end = driver
-							.findElement(By.xpath("//div[contains(text(),'" + p + "')]/parent::button"));
-					end.click();
-					Thread.sleep(1000);
-					System.out.println("Calendar date is selected");
-					click(actions);
-					click(parttier);
-					List<WebElement> in = findWebElements(ins);
-					in.get(1).click();
-					Thread.sleep(500);
-					EnterText(size, "5");
-					click(classi);
-					List<WebElement> fr = findWebElements(freq);
-					fr.get(1).click();
-					click(controlmethod);
-					List<WebElement> cm = findWebElements(cmdd);
-					cm.get(1).click();
-					click(save);
-					
-					Thread.sleep(1000);
-//					List<WebElement> b2 = findWebElements(btn);
-//					List<WebElement> r2 = findWebElements(radbtn);
-//					for(int j=0;j<b2.size();j++) {
-//						if(b2.get(j).getText().contains("Coil Width")) {							
-//							r2.get(j).click();
-//							click(view);
-//							click(cancelbtn);
-//							System.out.println("View option is checked");
-//							Thread.sleep(1000);
-//							List<WebElement> r3 = findWebElements(radbtn);
-//							r3.get(j).click();
-//							click(edit);
-//							clear(usl);
-//							EnterText(usl, "110");
-//							click(update);
-//							System.out.println("Edit and update option is checked");
-//							Thread.sleep(500);
-//							List<WebElement> r4 = findWebElements(radbtn);
-//							r4.get(j).click();
-//							click(delete);
-//							click(delete2);
-//							System.out.println("Delete option is checked");
-//					
-//					
-//				}
-//			}		
-//					Thread.sleep(2000);
-					click(parts);
-					Thread.sleep(2000);
 					List<WebElement> lists = findWebElements(category2);
 					for (int i = 0; i < lists.size(); i++) {
 						if((lists.get(i).getText()).contains("Abc")) {

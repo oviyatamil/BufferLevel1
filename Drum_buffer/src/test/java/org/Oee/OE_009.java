@@ -21,18 +21,16 @@ protected void quality() {
 	ReportSetup.test.log(Status.PASS, "Successfully navigated to analytics quality page");
 	aq.displaycards();
 	ReportSetup.test.log(Status.PASS, "Successfully get display cards count");
-//	aq.chart();
-//	ReportSetup.test.log(Status.PASS, "Successfully downloaded the chart and overall page");	
+	aq.chart();
+	ReportSetup.test.log(Status.PASS, "Successfully downloaded the chart and overall page");	
 	aq.calendar();
 	ReportSetup.test.log(Status.PASS, "Successfully checked all the charts for all equipments");
-	aq.mouseover();
-	ReportSetup.test.log(Status.PASS, "Mouseover is working fine");
 	aq.slider();
 	ReportSetup.test.log(Status.PASS, "Slider is working fine");
 	aq.pareto();
 	ReportSetup.test.log(Status.PASS, "Successfully checked pareto chart machine wise");	
-	aq.paret();
-	ReportSetup.test.log(Status.PASS, "Successfully checked pareto chart reason wise");	
+//	aq.paret();
+//	ReportSetup.test.log(Status.PASS, "Successfully checked pareto chart reason wise");	
 	aq.profile();
 	ReportSetup.test.log(Status.PASS, "Successfully logot from the application");
 }

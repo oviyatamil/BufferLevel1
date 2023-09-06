@@ -25,6 +25,7 @@ public class Energy_Analytics extends BasePage{
 	private By pareto = By.xpath("//span[contains(text(),'Pareto Analysis')]");	
 	private By equip = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
 	private By bar = By.xpath("(//*[local-name()='g' and contains(@class,'manager-anchor-group')])[1]/*[local-name()='g'][3]/*[local-name()='rect']");
+	private By bartext = By.xpath("(//*[local-name()='g' and contains(@class,'manager-anchor-group')])[1]/following::*[local-name()='g' and contains(@class,'sumLabelsLayer fusioncharts-datalabels')][1]/*[local-name()='text']");
 	private By map = By.xpath("//*[local-name()='g' and contains(@class,'plot-group')]/*[local-name()='rect']");
 	private By floor = By.xpath("(//*[local-name()='g' and contains(@class,'manager-anchor-group')])[2]/*[local-name()='g'][3]/*[local-name()='rect']");
 	private By pie1 = By.xpath("(//*[local-name()='g' and contains(@class,'pie-label')])[1]/*[local-name()='g']/*");
@@ -51,7 +52,7 @@ public class Energy_Analytics extends BasePage{
 	private By table = By.xpath("//table/tbody/tr/td[2]");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
-	
+	private By date = By.xpath("(//*[local-name()='g' and contains(@class,'dataset-Label-group')])[2]/*[local-name()='g']/*[local-name()='text']");
 	private By export = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[1]/*[local-name()='rect'][2]");
 	public void home() {
 		try {
@@ -121,15 +122,23 @@ public class Energy_Analytics extends BasePage{
 				}
 					l.get(i).click();				
 				click(apply);
-				Thread.sleep(4000);
+				Thread.sleep(5000);
 				if (findWebElement(bar).isDisplayed()) {					
 					System.out.println("Category wise energy consumption Chart is displayed for "+ gettext(txt));					
+					List<WebElement> p1 = findWebElements(bartext);
+					List<WebElement> da = findWebElements(date);
+					for(int j=0;j<p1.size();j++) {
+						if(p1.get(j).getText().equals("0")) {
+							log.info("Consumption data not showed in chart for "+da.get(j).getText());
+						}
+					}
 				} else {
 					log.info("Category wise energy consumption Chart is not displayed for"+ gettext(txt));
 				}
 				Thread.sleep(1000);
 				if (findWebElement(floor).isDisplayed()) {					
 					System.out.println("Floor wise energy consumption Chart is displayed for "+ gettext(txt));				
+				
 				} else {
 					log.info("Floor wise energy consumption Chart is not displayed for"+ gettext(txt));
 				}
@@ -241,6 +250,7 @@ public class Energy_Analytics extends BasePage{
 					click(equip);
 				}
 					sites.get(i).click();
+					Thread.sleep(1000);
 					click(apply);
 				click(dd);
 				List<WebElement> list = findWebElements(catlist);

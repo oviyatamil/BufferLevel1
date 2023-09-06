@@ -16,7 +16,7 @@ public class Monitoring_Parameter extends BasePage {
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button/img");
-	private By superadmin = By.xpath("//div[text()='Super Admin']");
+	private By superadmin = By.xpath("//div[contains(text(),'Super Admin')]/parent::div/button");
 	private By master = By.xpath("//span[contains(text(),'Master Data')]");
 	private By add = By.xpath("//span[contains(text(),'Add')]");
 	private By param = By.xpath("//input[@formcontrolname='param_Name']");
@@ -72,15 +72,15 @@ public class Monitoring_Parameter extends BasePage {
 	}
 	public void add() {
 		click(add);
-		EnterText(param, "Parameter");
-		EnterText(shortname, "Params");
+		EnterText(param, "Anklet");
+		EnterText(shortname, "Ank");
 		click(uomdd);
 		List<WebElement> uom = findWebElements(uomselect);
 		uom.get(1).click();
 		click(save);
 		click(add);
-		EnterText(param, "Parameter");
-		EnterText(shortname, "Params");
+		EnterText(param, "Anklet");
+		EnterText(shortname, "Ank");
 		click(save);
 		click(cancel);
 	}
@@ -88,11 +88,11 @@ public class Monitoring_Parameter extends BasePage {
 		try {
 			Thread.sleep(1000);
 			click(radiobtn);
-			log.info("radio button is clicked");
+			System.out.println("radio button is clicked");
 			click(view);
-			log.info("view button is clicked");
+			System.out.println("view button is clicked");
 			click(cancel);
-			log.info("cancel button is clicked after clicking view option");
+			System.out.println("cancel button is clicked after clicking view option");
 			Thread.sleep(1000);
 			List<String> s = new LinkedList<String>();
 			List<String> s2 = new LinkedList<String>();
@@ -102,67 +102,36 @@ public class Monitoring_Parameter extends BasePage {
 				s.add(text);
 			}
 			for (int i = 0; i < s.size();i++) {
-				if (s.get(i).equals("Parameter")) {
+				if (s.get(i).equals("Anklet")) {
 					List<WebElement> rad = findWebElements(radiobtn);
 					rad.get(i).click();
 				click(edit);
-				log.info("edit button is clicked");
+				System.out.println("edit button is clicked");
 				clear(shortname);
 				Thread.sleep(500);
-				log.info("description is cleared");
+				System.out.println("description is cleared");
 				EnterText(shortname, "Para");
 				click(update);
-				log.info("update button is clicked");
+				System.out.println("update button is clicked");
 				click(firstpage);
 				break;
 				}
-			}
-			for (int k = 0; k < 1000; k++) {
-				WebElement element = findWebElement(nextdisable);
-				String att = element.getAttribute("class");
-
-				if (att.contains("disabled")) {
-					break;
-				} else {
-					click(nextpage);
-					Thread.sleep(1000);
-					List<WebElement> gate3 = findWebElements(paramlist);
-					for(WebElement x3:gate3) {
-						String text3 = x3.getText();
-						s2.add(text3);
-					}
-					for (int j = 0; j < s2.size(); j++) {
-						if (s2.get(j).equals("Parameter")) {
-							List<WebElement> rad2 = findWebElements(radiobtn);
-							rad2.get(j).click();						
-						click(edit);
-						log.info("edit button is clicked");
-						clear(shortname);
-						log.info("description is cleared");
-						EnterText(shortname, "Para");
-						click(update);
-						log.info("update button is clicked");	
-						click(firstpage);
-						break;
-						}						
-					}					
-				}
-			}												
+			}														
 			Thread.sleep(1000);
 			click(radiobtn);
 			click(cancel);
-			log.info("cancel button is clicked after clicking radio button");
+			System.out.println("cancel button is clicked after clicking radio button");
 			Thread.sleep(500);
 			List<WebElement> gate = findWebElements(paramlist);
 			for (int j = 0; j < gate.size(); j++) {
-				if (gate.get(j).getText().equals("Parameter")) {
+				if (gate.get(j).getText().equals("Anklet")) {
 					List<WebElement> rad = findWebElements(radiobtn);
 					rad.get(j).click();
 					System.out.println("Record to be deleted is " + gate.get(j).getText());
 					click(delete);
-					log.info("delete button is clicked");
+					System.out.println("delete button is clicked");
 					click(delete2);
-					log.info("confirm delete button is clicked");
+					System.out.println("confirm delete button is clicked");
 					break;
 				} 
 			}
@@ -181,13 +150,13 @@ public class Monitoring_Parameter extends BasePage {
 						s2.add(text3);
 					}
 					for (int j = 0; j < s2.size(); j++) {
-						if (s2.get(j).equals("Parameter")) {
+						if (s2.get(j).equals("Anklet")) {
 							List<WebElement> rad2 = findWebElements(radiobtn);
 							rad2.get(j).click();						
 							click(delete);
-							log.info("delete button is clicked");
+							System.out.println("delete button is clicked");
 							click(delete2);
-							log.info("confirm delete button is clicked");					
+							System.out.println("confirm delete button is clicked");					
 						break;
 						}						
 					}					
@@ -242,17 +211,17 @@ public class Monitoring_Parameter extends BasePage {
 		try {
 			Thread.sleep(1000);
 			click(pagedd);
-			log.info("page dropdown is selected");
+			System.out.println("page dropdown is selected");
 			click(pagesize);
-			log.info("page size is selected");
+			System.out.println("page size is selected");
 			click(nextpage);
-			log.info("nextpage is clicked");
+			System.out.println("nextpage is clicked");
 			click(previous);
-			log.info("previouspage is clicked");
+			System.out.println("previouspage is clicked");
 			click(lastpage);
-			log.info("lastpage is clicked");
+			System.out.println("lastpage is clicked");
 			click(firstpage);
-			log.info("firstpage is clicked");
+			System.out.println("firstpage is clicked");
 			takescreenshots("pagination");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -261,20 +230,20 @@ public class Monitoring_Parameter extends BasePage {
 
 	public void arrow() {
 		click(paramarrow);
-		log.info("Parameter arrow is clicked");
+		System.out.println("Parameter arrow is clicked");
 		click(shortarrow);
-		log.info("shortname arrow is clicked");
+		System.out.println("shortname arrow is clicked");
 		click(uomarrow);
-		log.info("uom arrow is clicked");
+		System.out.println("uom arrow is clicked");
 		click(statusarrow);
-		log.info("status arrow is clicked");
+		System.out.println("status arrow is clicked");
 	}
 
 	public void search() {
 		try {
 			Thread.sleep(1000);
 			EnterText(search, "par");
-			log.info("searchtext is entered");
+			System.out.println("searchtext is entered");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -282,9 +251,9 @@ public class Monitoring_Parameter extends BasePage {
 
 	public void profile() {
 		click(profile);
-		log.info("profile button is clicked");
+		System.out.println("profile button is clicked");
 		click(signout);
-		log.info("signout button is clicked");
+		System.out.println("signout button is clicked");
 	}
 	
 }

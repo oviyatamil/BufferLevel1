@@ -25,6 +25,8 @@ public class SA_012 extends BaseTest {
 		ReportSetup.test.log(Status.PASS, "Successfullyogin with newly created user login");
 	    p.home();
 	    p.check();
+	    p.profile();
+		ReportSetup.test.log(Status.PASS, "Successfully logout from application");
 	    
 	}
 }

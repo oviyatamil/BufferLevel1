@@ -3,6 +3,7 @@ package com.Iot;
 import java.util.List;
 import org.openqa.selenium.interactions.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import com.BasePage.BasePage;
@@ -109,7 +110,9 @@ public class Report extends BasePage{
 					ra.get(i).click();
 					break;
 				}
-			}			
+			}	
+			JavascriptExecutor js = (JavascriptExecutor)driver;
+			js.executeScript("arguments[0].scrollIntoView(false);", findWebElement(edit));
 			click(edit);
 			click(next);
 			Thread.sleep(500);	
@@ -119,6 +122,7 @@ public class Report extends BasePage{
 			click(next2);
 			Thread.sleep(500);	
 			click(update);
+			System.out.println("Report is updated");
 			Thread.sleep(1000);	
 			List<WebElement> r2 = findWebElements(replist);
 			for(int i=0;i<r2.size();i++) {
@@ -128,9 +132,10 @@ public class Report extends BasePage{
 					break;
 				}
 			}
+			js.executeScript("arguments[0].scrollIntoView(false);", findWebElement(delete));
 			click(delete);
 			click(delete2);
-			
+			System.out.println("Report is updated");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

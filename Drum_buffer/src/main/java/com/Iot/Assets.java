@@ -121,7 +121,7 @@ public class Assets extends BasePage{
 			click(save1);
 			Thread.sleep(1000);
 			click(add);
-			EnterText(sys, "systemuserS");
+			EnterText(sys, "Buffers");
 			click(plus);
 			click(edgedd);
 			List<WebElement> st = findWebElements(sitelist2);
@@ -141,19 +141,19 @@ public class Assets extends BasePage{
 			click(radio);
 			click(view);
 			click(cancelbtn2);
-			List<WebElement> f = findWebElements(sublist);
-			for(int j=0;j<f.size();j++) {
-				if(f.get(j).getText().equals("systemuserS")) {
-					List<WebElement> r = findWebElements(radio);
-					r.get(j).click();
-			break;
-				}
-			}
-			click(edit2);
-			clear(sys);
-			EnterText(sys, "SystemInfo");
-			click(update);
-			Thread.sleep(500);
+//			List<WebElement> f = findWebElements(sublist);
+//			for(int j=0;j<f.size();j++) {
+//				if(f.get(j).getText().equals("Buffer")) {
+//					List<WebElement> r = findWebElements(radio);
+//					r.get(j).click();
+//			break;
+//				}
+//			}
+//			click(edit2);
+//			clear(sys);
+//			EnterText(sys, "DBuffer");
+//			click(update);
+//			Thread.sleep(500);
 			click(cancelbtn2);
 			Thread.sleep(2000);
 			List<WebElement> su = findWebElements(sublist);

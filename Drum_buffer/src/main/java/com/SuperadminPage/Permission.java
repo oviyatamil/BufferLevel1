@@ -6,6 +6,7 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import com.BasePage.BasePage;
@@ -16,7 +17,7 @@ public class Permission extends BasePage{
 	}
 
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button/img");
-	private By superadmin = By.xpath("//div[text()='Super Admin']");
+	private By superadmin = By.xpath("//div[contains(text(),'Super Admin')]/parent::div/button");
 	private By permission = By.xpath("//span[contains(text(),'Permission')]");
 	private By role = By.xpath("//input[@formcontrolname='role_Name']");
 	private By add = By.xpath("//span[contains(text(),'Add')]");
@@ -135,6 +136,8 @@ public void perm() {
 		for(int i=0;i<def3.size();i++) {
 			if(def3.get(i).getText().equals("QA Engineer")) {				
 				rad3.get(i).click();
+				JavascriptExecutor js = (JavascriptExecutor)driver;
+				js.executeScript("arguments[0].scrollIntoView(false);", findWebElement(delete));
 				click(delete);
 				click(delete2);
 				System.out.println("Delete option is checked");
@@ -153,6 +156,8 @@ public void perm() {
 				for(int k=0;k<def2.size();k++) {
 				if(def2.get(k).getText().equals("QA Engineer")) {				
 					rad2.get(k).click();
+					JavascriptExecutor js = (JavascriptExecutor)driver;
+					js.executeScript("arguments[0].scrollIntoView(false);", findWebElement(delete));
 					click(delete);
 					click(delete2);
 					System.out.println("Delete option is checked");
@@ -168,32 +173,6 @@ public void perm() {
 		e.printStackTrace();
 	}
 }
-public void users() {
-		try {
-			Thread.sleep(1000);
-			click(user);
-			click(add);
-			click(roledd);
-			List<WebElement> r = findWebElements(rolelist);
-			for (int i = 1; i < r.size(); i++) {
-				String text = r.get(i).getText();
-				if(text.equals("ABC")) {
-					r.get(i).click();
-					break;
-				}
-				Thread.sleep(100);
-				
-			}
-			EnterText(name, "Oviya");
-			EnterText(ph, "8876543210");
-			EnterText(address, "Madurai");
-			EnterText(mail, "oviya@yahoo.com");
-			EnterText(pwd, "Admin@123");
-			click(save);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
 	public void useradd() {
 		try {
 			click(user);	

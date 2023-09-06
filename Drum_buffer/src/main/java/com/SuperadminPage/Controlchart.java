@@ -18,7 +18,7 @@ public class Controlchart extends BasePage{
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By superadmin = By.xpath("//div[text()='Super Admin']");
+	private By superadmin = By.xpath("//div[contains(text(),'Super Admin')]/parent::div/button");
 	private By control = By.xpath("//span[contains(text(),'Control Center')]");
 	private By api = By.xpath("(//div[contains(text(),'API')])[2]/ancestor::div[2]/div[1]/div");
 	private By job = By.xpath("(//div[contains(text(),'Job')])[2]/ancestor::div[2]/div[1]/div[1]");
@@ -84,6 +84,7 @@ public class Controlchart extends BasePage{
 	private By pagedd = By.xpath("//mat-select[@role='combobox']/descendant::div[3]");
 	private By pagesize = By.xpath("//span[text()=' 25 ']");
 	private By arr = By.xpath("//table/thead/tr/th[5]/div/child::div[2]");
+	private By search = By.xpath("//input[contains(@placeholder,'search')]");
 	
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
@@ -224,10 +225,10 @@ public class Controlchart extends BasePage{
 					break;
 				}
 			}
-			
+			Thread.sleep(200);
 			click(sitedd);		
 			List<WebElement> s = findWebElements(site);			
-			s.get(s.size()-1).click();
+			s.get(1).click();
 			Thread.sleep(500);
 			click(productdd);
 			List<WebElement> p = findWebElements(prod);		
@@ -290,8 +291,9 @@ public class Controlchart extends BasePage{
 			f.get(2).click();
 			click(update);
 			System.out.println("Edit and Update option is checked");
+			EnterText(search, "wor");
 			List<WebElement> rad2 = findWebElements(radio);
-			rad2.get(i).click();
+			rad2.get(0).click();
 			click(delete);
 			click(delete2);
 			System.out.println("Delete option is checked");

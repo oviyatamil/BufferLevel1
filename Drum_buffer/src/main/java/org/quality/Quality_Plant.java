@@ -117,47 +117,47 @@ public class Quality_Plant extends BasePage {
 					c.get(1).click();
 					click(search);
 					Thread.sleep(500);
-					if(gettext(usl)=="0") {
+					if(gettext(usl).equals("0")) {
 						log.info("USL card count is 0");
 					}else {
 						System.out.println("USL card count is "+gettext(usl)+" for "+gettext(txt)+" ----- "+gettext(txt2)+" ---- "+gettext(txt3));
 					}
-					if(gettext(nominal)=="0") {
+					if(gettext(nominal).equals("0")) {
 						log.info("Nominal card count is 0");
 					}else {
 						System.out.println("Nominal card count is "+gettext(nominal)+" for "+gettext(txt)+" ----- "+gettext(txt2)+" ---- "+gettext(txt3));
 					}
-					if(gettext(lsl)=="0") {
+					if(gettext(lsl).equals("0")) {
 						log.info("LSL card count is 0");
 					}else {
 						System.out.println("LSL card count is "+gettext(lsl)+" for "+gettext(txt)+" ----- "+gettext(txt2)+" ---- "+gettext(txt3));
 					}
-					if(gettext(sigma)=="0") {
+					if(gettext(sigma).equals("0")) {
 						log.info("Sigma card count is 0");
 					}else {
 						System.out.println("Sigma card count is "+gettext(sigma)+" for "+gettext(txt)+" ----- "+gettext(txt2)+" ---- "+gettext(txt3));
 					}
-					if(gettext(cp)=="0") {
+					if(gettext(cp).equals("0")) {
 						log.info("CP card count is 0");
 					}else {
 						System.out.println("CP card count is "+gettext(cp)+" for "+gettext(txt)+" ----- "+gettext(txt2)+" ---- "+gettext(txt3));
 					}
-					if(gettext(cpk)=="0") {
+					if(gettext(cpk).equals("0")) {
 						log.info("CPK card count is 0");
 					}else {
 						System.out.println("CPK card count is "+gettext(cpk)+" for "+gettext(txt)+" ----- "+gettext(txt2)+" ---- "+gettext(txt3));
 					}
-					if(gettext(sigma2)=="0") {
+					if(gettext(sigma2).equals("0")) {
 						log.info("Process capability long term card count is 0");
 					}else {
 						System.out.println("Process capability long term card count is "+gettext(sigma2)+" for "+gettext(txt)+" ----- "+gettext(txt2)+" ---- "+gettext(txt3));
 					}
-					if(gettext(pp)=="0") {
+					if(gettext(pp).equals("0")) {
 						log.info("pp card count is 0");
 					}else {
 						System.out.println("pp card count is "+gettext(pp)+" for "+gettext(txt)+" ----- "+gettext(txt2)+" ---- "+gettext(txt3));
 					}
-					if(gettext(ppk)=="0") {
+					if(gettext(ppk).equals("0")) {
 						log.info("PPK card count is 0");
 					}else {
 						System.out.println("PPK card count is "+gettext(ppk)+" for "+gettext(txt)+" ----- "+gettext(txt2)+" ---- "+gettext(txt3));
@@ -166,59 +166,59 @@ public class Quality_Plant extends BasePage {
 					calendar(calendar2, yeardd, year, startdate);
 					click(machinedd2);
 					List<WebElement> m2 = findWebElements(machlist2);
-						m2.get(2).click();
-						Thread.sleep(200);
+						m2.get(1).click();
+						Thread.sleep(100);
 						click(partdd2);
 						List<WebElement> p2 = findWebElements(partlist2);
-						p2.get(1).click();
-						Thread.sleep(200);
+						p2.get(2).click();
+						Thread.sleep(300);
 						click(chardd2);
 						List<WebElement> c2 = findWebElements(charlist2);
 							c2.get(1).click();
-							Thread.sleep(300);
+							Thread.sleep(200);
 							click(search2);
-							Thread.sleep(500);
-							if(gettext(usl2)=="0") {
+							Thread.sleep(300);
+							if(gettext(usl2).equals("0")) {
 								log.info("USL card count is 0");
 							}else {
 								System.out.println("USL card count is "+gettext(usl2)+" for "+gettext(txt4)+" ----- "+gettext(txt5)+" ---- "+gettext(txt6));
 							}
-							if(gettext(nominal2)=="0") {
+							if(gettext(nominal2).equals("0")) {
 								log.info("Nominal card count is 0");
 							}else {
 								System.out.println("Nominal card count is "+gettext(nominal2)+" for "+gettext(txt4)+" ----- "+gettext(txt5)+" ---- "+gettext(txt6));
 							}
-							if(gettext(lsl2)=="0") {
+							if(gettext(lsl2).equals("0")) {
 								log.info("LSL card count is 0");
 							}else {
 								System.out.println("LSL card count is "+gettext(lsl2)+" for "+gettext(txt4)+" ----- "+gettext(txt5)+" ---- "+gettext(txt6));
 							}
-							if(gettext(sigma3)=="0") {
+							if(gettext(sigma3).equals("0")) {
 								log.info("Sigma card count is 0");
 							}else {
 								System.out.println("Sigma card count is "+gettext(sigma3)+" for "+gettext(txt4)+" ----- "+gettext(txt5)+" ---- "+gettext(txt6));
 							}
-							if(gettext(cp2)=="0") {
+							if(gettext(cp2).equals("0")) {
 								log.info("CP card count is 0");
 							}else {
 								System.out.println("CP card count is "+gettext(cp2)+" for "+gettext(txt4)+" ----- "+gettext(txt5)+" ---- "+gettext(txt6));
 							}
-							if(gettext(cpk2)=="0") {
+							if(gettext(cpk2).equals("0")) {
 								log.info("CPK card count is 0");
 							}else {
 								System.out.println("CPK card count is "+gettext(cpk2)+" for "+gettext(txt4)+" ----- "+gettext(txt5)+" ---- "+gettext(txt6));
 							}
-							if(gettext(sigma4)=="0") {
+							if(gettext(sigma4).equals("0")) {
 								log.info("Process capability long term card count is 0");
 							}else {
 								System.out.println("Process capability long term count is "+gettext(sigma4)+" for "+gettext(txt4)+" ----- "+gettext(txt5)+" ---- "+gettext(txt6));
 							}
-							if(gettext(pp2)=="0") {
+							if(gettext(pp2).equals("0")) {
 								log.info("Pp long term card count is 0");
 							}else {
 								System.out.println("Pp long term sigma card count is "+gettext(pp2)+" for "+gettext(txt4)+" ----- "+gettext(txt5)+" ---- "+gettext(txt6));
 							}
-							if(gettext(ppk2)=="0") {
+							if(gettext(ppk2).equals("0")) {
 								log.info("PPK card count is 0");
 							}else {
 								System.out.println("PPK card count is "+gettext(ppk2)+" for "+gettext(txt4)+" ----- "+gettext(txt5)+" ---- "+gettext(txt6));

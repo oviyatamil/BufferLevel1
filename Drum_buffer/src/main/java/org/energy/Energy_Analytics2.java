@@ -211,7 +211,7 @@ public class Energy_Analytics2 extends BasePage {
 					click(apply);
 					Thread.sleep(2000);
 					click(dd);
-					List<WebElement> sites2 = findWebElements(loclist);
+					List<WebElement> sites2 = findWebElements(loclist);					
 					for (int j = 1; j < sites2.size(); j++) {
 						if (j>1) {
 							click(dd);
@@ -223,6 +223,7 @@ public class Energy_Analytics2 extends BasePage {
 							Thread.sleep(500);
 							click(equipment);
 							List<WebElement> sites3 = findWebElements(equiplist);
+							if(sites3.size()>0) {
 							for (int k = 1; k < sites3.size(); k++) {
 								if (k>1) {
 									click(equipment);
@@ -232,12 +233,16 @@ public class Energy_Analytics2 extends BasePage {
 								
 									click(apply);
 									Thread.sleep(500);
+							
 									if (findWebElement(chart).isDisplayed()!=true) {
 										log.info("Bar diagram is  not displayed for "+gettext(txt)+"-----"+gettext(txt2)+"---"+gettext(txt3));
 										
 									} else {						
 										System.out.println("Bar diagram is displayed");
 }
+							}
+		}else {
+			break;
 		}
 			}
 		}

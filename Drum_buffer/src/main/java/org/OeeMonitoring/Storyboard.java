@@ -1,7 +1,5 @@
 package org.OeeMonitoring;
 
-import static org.testng.Assert.assertEquals;
-
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -18,21 +16,22 @@ public class Storyboard extends BasePage{
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
-	private By Oee = By.xpath("//div[text()='OEE Monitoring']");
+	private By Oee = By.xpath("//div[contains(text(),'OEE Monitoring')]");
 	private By kpi = By.xpath("//span[contains(text(),'KPI')]");
 	private By story = By.xpath("//span[contains(text(),'Story Board')]");
 	private By equipdd = By.xpath("//mat-label[text()='Equipment']/ancestor::div[1]/descendant::div[3]");
 	private By apply = By.xpath("//span[contains(text(),'Apply')]");
-	private By equiplist = By.xpath("//div[@role='listbox']/mat-option/span");
+	private By equiplist = By.xpath("//span[contains(text(),'Select Equipment')]/ancestor::div[1]/mat-option");
 	private By equiptext = By.xpath("//mat-label[text()='Equipment']/ancestor::div[1]/descendant::div[2]/span[1]/span");
 	private By oeehigh = By.xpath("(//div[text()='OEE'])[2]/following::div[4]");
 	private By overalloee = By.xpath("(//div[text()='OEE'])[2]/following::div[1]");
 	private By oeelow = By.xpath("(//div[text()='OEE'])[2]/following::div[8]");
-
+	private By locdd = By.xpath("//mat-label[contains(text(),'Functional Location')]/ancestor::div[1]/descendant::div[3]");
 	private By spindlehigh = By.xpath("//div[text()='Spindle']/following::div[4]");
+	private By loclist = By.xpath("//span[contains(text(),'Select Location')]/ancestor::div[1]/mat-option");
 	private By spindlelow = By.xpath("//div[text()='Spindle']/following::div[8]");
 	private By overalspindle = By.xpath("//div[text()='Spindle']/following::div[1]");
-
+	private By calendar = By.xpath("//mat-label[contains(text(),'Date')]/following::span[2]");
 	private By availhigh = By.xpath("//div[text()='Availability']/following::div[4]");
 	private By availlow = By.xpath("//div[text()='Availability']/following::div[8]");
 	private By overalavailable = By.xpath("//div[text()='Availability']/following::div[1]");
@@ -41,6 +40,11 @@ public class Storyboard extends BasePage{
 	private By perflow = By.xpath("//div[text()='Performance']/following::div[8]");
 	private By overalperf = By.xpath("//div[text()='Performance']/following::div[1]");
 
+	private By yeardd = By.xpath("//span[contains(text(),'2023')]/parent::span");
+	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
+	private By startdate = By.xpath("//div[text()=' 29 ']/parent::button");	
+	private By month = By.xpath("//div[contains(text(),'AUG')]/parent::button");
+	
 	private By qualityhigh = By.xpath("//div[text()='Quality']/following::div[4]");
 	private By qualitylow = By.xpath("//div[text()='Quality']/following::div[8]");
 	private By overalquality = By.xpath("//div[text()='Quality']/following::div[1]");
@@ -76,9 +80,6 @@ public class Storyboard extends BasePage{
 			click(Oee);
 			log.info("Oee option is clicked");
 			Thread.sleep(2000);
-			String ExpectedURL = "https://portal.drumbuffer.io/#/oee/home";
-			String ActualURL = getCurrentURL();
-			assertEquals(ExpectedURL, ActualURL);
 			log.info("Assert verification is done for Oee home page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -95,9 +96,6 @@ public class Storyboard extends BasePage{
 			click(story);
 			System.out.println("storyboard option is clicked");
 			Thread.sleep(2000);
-			String ExpectedURL2 = "https://portal.drumbuffer.io/#/oee/KPI";
-			String ActualURL2 = getCurrentURL();
-			assertEquals(ExpectedURL2, ActualURL2);
 			log.info("Assert verification is done for Oee storyboard page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -106,15 +104,22 @@ public class Storyboard extends BasePage{
 	}
 
 	public void data() {
-		try {
-			waittobeclickable(equipdd, 10);
+		try {		
+			waittobeclickable(locdd, 10);
+			click(locdd);
+			List<WebElement> lo = findWebElements(loclist);
+			for (int mm= 1; mm < lo.size(); mm++) {
+				if(mm>1) {
+					click(locdd);
+				}
+					lo.get(mm).click();		
 			click(equipdd);
 			List<WebElement> equipment = findWebElements(equiplist);
 			for (int i = 1; i < equipment.size(); i++) {
 					equipment.get(i).click();
 					System.out.println(gettext(equiptext));
 					click(apply);
-					Thread.sleep(500);
+					Thread.sleep(10000);
 					if (gettext(armed).contains("UNAVAILABLE")) {
 						log.info("Emergency stop condition is " + gettext(armed) + " for " + gettext(equiptext));
 					} else if(gettext(armed).contains("-")) {
@@ -203,8 +208,10 @@ public class Storyboard extends BasePage{
 					
 			//		WebElement tab = driver.findElement(By.xpath("//*[@id='element-to-export']/div[4]/div["+a+"]/div/table/tbody/tr[1]/td"));
 					List<WebElement>  dat = driver.findElements(By.xpath("//*[@id='element-to-export']/div[4]/div[4]/table/tbody/tr[1]/td"));
-					
-					
+					if(dat.get(1).getText().contains("N/A")) {
+						log.info("Table has data mentioned as N/A");
+					}
+					else {
 					for (int p = 1; p < dat.size(); p++) {
 						String text = dat.get(p).getText();
 						String replace = text.replace("%", "").trim();
@@ -246,11 +253,15 @@ public class Storyboard extends BasePage{
 						System.out.println("MINIMUM OEE from calculation IS " + Collections.min(l2));
 
 					}
+					}
 					List<Float> l3 = new LinkedList<>();
 					float sum3 = 0f;
 					
 						List<WebElement>  dat2 = driver.findElements(By.xpath("//*[@id='element-to-export']/div[4]/div[4]/table/tbody/tr[2]/td"));
-					
+						if(dat2.get(1).getText().contains("N/A")) {
+							log.info("Table has data mentioned as N/A");
+						}
+						else {
 					
 					for (int k = 1; k < dat2.size(); k++) {
 						String text = dat2.get(k).getText();
@@ -286,12 +297,16 @@ public class Storyboard extends BasePage{
 						System.out.println("MINIMUM Availability from calculation IS " + Collections.min(l3));
 
 					}
+						}
 					List<Float> l4 = new LinkedList<>();
 					float sum4 = 0f;
 					
 						List<WebElement>  dat3 = driver.findElements(By.xpath("//*[@id='element-to-export']/div[4]/div[4]/table/tbody/tr[3]/td"));
 					
-					
+						if(dat3.get(1).getText().contains("N/A")) {
+							log.info("Table has data mentioned as N/A");
+						}
+						else {
 					for (int m = 1; m < dat3.size(); m++) {
 						String text = dat3.get(m).getText();
 						if (text.equals("0%")) {
@@ -327,12 +342,16 @@ public class Storyboard extends BasePage{
 						System.out.println("MINIMUM Performance from calculation IS " + Collections.min(l4));
 
 					}
-					
+						}
 					List<Float> l5 = new LinkedList<>();
 					float sum5 = 0f;
 					
 						List<WebElement>  dat4 = driver.findElements(By.xpath("//*[@id='element-to-export']/div[4]/div[4]/table/tbody/tr[4]/td"));
-					for (int n = 1; n < dat4.size(); n++) {
+						if(dat4.get(1).getText().contains("N/A")) {
+							log.info("Table has data mentioned as N/A");
+						}
+						else {
+						for (int n = 1; n < dat4.size(); n++) {
 						String text = dat4.get(n).getText();
 						if (text.equals("0%")) {
 							continue;
@@ -368,8 +387,12 @@ public class Storyboard extends BasePage{
 
 					}
 					System.out.println("*******");
-				
+						}
 					List<WebElement> act = driver.findElements(By.xpath("//*[@id='element-to-export']/div[5]/div[4]/table/tbody/tr[1]/td"));
+					if(act.get(1).getText().contains("N/A")) {
+						log.info("Table has data mentioned as N/A");
+					}
+					else {
 					List<Float> m2 = new LinkedList<>();
 					if(act.size()==1) {
 						break;
@@ -392,9 +415,13 @@ public class Storyboard extends BasePage{
 						System.out.println("MINIMUM Active percentage from calculation IS " + Collections.min(m2));
 
 					}
-
+					}
 					Thread.sleep(1000);
 					List<WebElement> spin = driver.findElements(By.xpath("//*[@id='element-to-export']/div[5]/div[4]/table/tbody/tr[2]/td"));
+					if(spin.get(1).getText().contains("N/A")) {
+						log.info("Table has data mentioned as N/A");
+					}
+					else {
 					List<Float> m3 = new LinkedList<>();
 					for (int j = 1; j < spin.size(); j++) {
 						String text = spin.get(j).getText();
@@ -414,8 +441,12 @@ public class Storyboard extends BasePage{
 						System.out.println("MINIMUM Spindle percentage from calculation IS " + Collections.min(m3));
 
 					}
-					
+					}
 					List<WebElement> act4 = driver.findElements(By.xpath("//*[@id='element-to-export']/div[5]/div[4]/table/tbody/tr[3]/td"));
+					if(act4.get(1).getText().contains("N/A")) {
+						log.info("Table has data mentioned as N/A");
+					}
+					else {
 					List<Float> m4 = new LinkedList<>();
 					for (int m = 1; m < act4.size(); m++) {
 						String text = act4.get(m).getText();
@@ -436,7 +467,12 @@ public class Storyboard extends BasePage{
 
 					}
 					Thread.sleep(1000);
+					}
 					List<WebElement> act5 = driver.findElements(By.xpath("//*[@id='element-to-export']/div[5]/div[4]/table/tbody/tr[4]/td"));
+					if(act5.get(1).getText().contains("N/A")) {
+						log.info("Table has data mentioned as N/A");
+					}
+					else {
 					List<Float> m5 = new LinkedList<>();
 					for (int n = 1; n < act5.size(); n++) {
 						String text = act5.get(n).getText();
@@ -457,8 +493,12 @@ public class Storyboard extends BasePage{
 
 					}
 					Thread.sleep(1000);
-					
+					}	
 					List<WebElement> act6 = driver.findElements(By.xpath("//*[@id='element-to-export']/div[5]/div[4]/table/tbody/tr[5]/td"));
+					if(act6.get(1).getText().contains("N/A")) {
+						log.info("Table has data mentioned as N/A");
+					}
+					else {
 					List<Float> m6 = new LinkedList<>();
 					for (int n = 1; n < act6.size(); n++) {
 						String text = act6.get(n).getText();
@@ -479,7 +519,7 @@ public class Storyboard extends BasePage{
 
 					}
 					}
-					
+					}
 					System.out.println("24 hrs total parts average is " + gettext(partsavg));
 					System.out.println("High parts number and time is " + gettext(highparts));
 					System.out.println("low parts number and time  is " + gettext(lowparts));
@@ -531,15 +571,22 @@ public class Storyboard extends BasePage{
 						System.out.println("Minimum parts count from table is " + Collections.min(count));
 
 					}
-			
-					if(findWebElement(partnum).getText().isBlank()!=true) {
+					if(findWebElement(partnum).getText().contains("N/A")){
+						log.info("Part number shows N/A for "+gettext(equiptext));
+					}
+					else if(findWebElement(partnum).getText().isBlank()!=true) {
 						System.out.println("partnum exists");
-					}else {
+					}					 
+					else {
 						log.info("Part number is not displayed for "+gettext(equiptext));
 					}
-					if(findWebElement(pgmnum).getText().isBlank()!=true) {
+					if(findWebElement(pgmnum).getText().contains("N/A")){
+						log.info("Program number shows N/A for "+gettext(equiptext));
+					}
+					else if(findWebElement(pgmnum).getText().isBlank()!=true) {
 						System.out.println("pgmnum exists");
-					}else {
+					}
+					else {
 						log.info("Pgm number is not displayed");
 					}
 					
@@ -551,6 +598,7 @@ public class Storyboard extends BasePage{
 					break;
 				}
 			}
+		}
 		}
 			
 

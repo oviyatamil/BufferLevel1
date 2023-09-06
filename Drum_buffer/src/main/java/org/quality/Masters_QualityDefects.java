@@ -66,16 +66,16 @@ public class Masters_QualityDefects extends BasePage{
 	public void add() {
 		try {
 			click(add);
-			EnterText(defect,"OK");
-			EnterText(desc, "OK");
-			click(save);
-			click(cancelbtn);
-			System.out.println("Duplicate defect is checked");
+			EnterText(defect,"Defects");
+			EnterText(desc, "Defect");
+			click(save);			
+			System.out.println("Quality defect is added");
 			click(add);
 			EnterText(defect,"Defects");
 			EnterText(desc, "Defect");
 			click(save);
-			System.out.println("Defect is added");
+			click(cancelbtn);
+			System.out.println("Duplicate defect is checkedDefect is added");
 			Thread.sleep(1000);
 			click(radio);
 			click(view);

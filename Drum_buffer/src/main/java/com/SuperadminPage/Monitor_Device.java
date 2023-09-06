@@ -15,7 +15,7 @@ public class Monitor_Device extends BasePage{
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button/img");
-	private By superadmin = By.xpath("//div[text()='Super Admin']");
+	private By superadmin = By.xpath("//div[contains(text(),'Super Admin')]/parent::div/button");
 	private By master = By.xpath("//span[contains(text(),'Master Data')]");
 	private By dev = By.xpath("(//div[contains(text(),'Monitoring Device')])");
 	private By device = By.xpath("//input[@formcontrolname='device_Type']");

@@ -61,7 +61,7 @@ public class Dialysis extends BasePage{
 				Thread.sleep(1000);
 				list2.get(1).click();
 					click(apply);							
-				Thread.sleep(3000);
+				Thread.sleep(5000);
 				if((findWebElement(yesterday).getText()).equals("0")||(findWebElement(yesterday).getText()).equals("-")) {
 					log.info("No of dialysis yesterday is "+findWebElement(yesterday).getText());
 				}else {
@@ -91,11 +91,13 @@ public class Dialysis extends BasePage{
 }
 	public void table() {
 	try {
+		Thread.sleep(3000);
 		if(findWebElements(table).size()<1) {
 			log.info("No record found for Equipments");
 		}else {
 		List<WebElement> list = findWebElements(table);
 		for(int i=0;i<list.size();i++) {
+			Thread.sleep(300);
 			System.out.println("EQUIPMENT IS "+list.get(i).getText());
 			List<WebElement> timestamp = findWebElements(time);
 			String text = timestamp.get(i).getText();
@@ -104,8 +106,10 @@ public class Dialysis extends BasePage{
 			String[] split = data.split(",");
 			String s = split[0];
 			if(text.contains(s)) {
+				Thread.sleep(500);
 				System.out.println("Timestamp in machine is "+timestamp.get(i).getText());
 			}else {
+				Thread.sleep(500);
 				log.info("Date in "+list.get(i).getText()+" machine mismatches with actual time "+timestamp.get(i).getText());
 			}
 			System.out.println("Run hours yesterday is "+findWebElements(runhrtable).get(i).getText());

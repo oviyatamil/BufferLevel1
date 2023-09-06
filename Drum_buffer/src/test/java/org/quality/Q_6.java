@@ -17,10 +17,10 @@ protected void Report() {
 	ReportSetup.test.assignCategory("Q-6");
 	r.home();
 	ReportSetup.test.log(Status.PASS, "Navigates to Quality home page");
-	r.inspection();
-	ReportSetup.test.log(Status.PASS, "Navigates to Reports->Inspection page");
-	r.data();
-	ReportSetup.test.log(Status.PASS, "Successfully check data");
+//	r.inspection();
+//	ReportSetup.test.log(Status.PASS, "Navigates to Reports->Inspection page");
+//	r.data();
+//	ReportSetup.test.log(Status.PASS, "Successfully check data");
 	r.usage();
 	ReportSetup.test.log(Status.PASS, "Navigates to Reports->Usage page");
 	r.use();

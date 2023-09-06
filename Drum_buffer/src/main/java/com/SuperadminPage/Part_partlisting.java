@@ -18,7 +18,7 @@ public class Part_partlisting extends BasePage {
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button/img");
-	private By superadmin = By.xpath("//div[text()='Super Admin']");
+	private By superadmin = By.xpath("//div[contains(text(),'Super Admin')]/parent::div/button");
 	private By partners = By.xpath("//span[contains(text(),'Partners')]");
 	private By add = By.xpath("//span[text()='Add']");
 	private By pname = By.xpath("//input[contains(@formcontrolname,'partner')]");
@@ -41,7 +41,7 @@ public class Part_partlisting extends BasePage {
 	private By view = By.xpath("//span[text()='View']");
 	private By nextdisable = By.xpath("//button[@aria-label='Next page']");
 	private By edit = By.xpath("//span[text()='Edit']");
-	private By update = By.xpath("//span[text()=' Update ']");
+	private By update = By.xpath("//span[contains(text(),'Update')]");
 	private By delete = By.xpath("//span[text()='Delete']");
 	private By delete2 = By.xpath("(//span[contains(text(),'elete')])[2]");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
@@ -93,9 +93,9 @@ public class Part_partlisting extends BasePage {
 			System.out.println("Partner name entered");
 			EnterText(contact, "nilan");
 			System.out.println("contact name entered");
-			EnterText(phno, "7868908764");
+			EnterText(phno, "7888888764");
 			System.out.println("Phno is entered");
-			EnterText(email, "aadav@yahoo.com");
+			EnterText(email, "aadav@outlook.com");
 			System.out.println("email id is entered");
 			EnterText(pwd, "Admin@123");
 			System.out.println("password is entered");
@@ -122,27 +122,6 @@ public class Part_partlisting extends BasePage {
 			System.out.println("zipcode is entered");	
 			click(save);
 			System.out.println("save button is clicked");
-			click(add);
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-			EnterText(pname, "Aadav");
-			EnterText(contact, "nilan");
-			EnterText(phno, "7868908764");
-			EnterText(email, "aadav@yahoo.com");
-			EnterText(pwd, "Admin@123");
-			EnterText(address1, "Bangalore");
-			EnterText(address2, "Chennai");
-			click(coudd);
-			List<WebElement> cou = findWebElements(couselect);
-			cou.get(1).click();
-			click(statedd);
-			List<WebElement> sta = findWebElements(statesel);
-			sta.get(1).click();		
-			click(citydd);
-			List<WebElement> cit = findWebElements(citysel);
-			cit.get(1).click();	
-			click(save);
-			click(cancel);
-			System.out.println("All fields are added and duplicate is checked");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -166,7 +145,7 @@ public class Part_partlisting extends BasePage {
 			for(int i=0;i<r.size();i++) {
 				if(r.get(i).getText().equals("Aadav")) {
 					List<WebElement> m = findWebElements(mail);
-					if(m.get(i).getText().equals("aadav@yahoo.com")) {
+					if(m.get(i).getText().equals("aadav@outlook.com")) {
 						List<WebElement> rad = findWebElements(radiobtn);
 						rad.get(i).click();
 						click(edit);
@@ -189,7 +168,7 @@ public class Part_partlisting extends BasePage {
 			for(int i=0;i<r2.size();i++) {
 				if(r2.get(i).getText().equals("Aadav")) {
 					List<WebElement> m = findWebElements(mail);
-					if(m.get(i).getText().equals("aadav@yahoo.com")) {
+					if(m.get(i).getText().equals("aadav@outlook.com")) {
 						List<WebElement> rad = findWebElements(radiobtn);
 						rad.get(i).click();
 						click(delete);
