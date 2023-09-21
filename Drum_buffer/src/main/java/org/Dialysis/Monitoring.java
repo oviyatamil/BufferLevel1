@@ -105,11 +105,6 @@ public class Monitoring extends BasePage {
 					Thread.sleep(500);
 					click(legend);
 				}
-//				if(findWebElement(charts).isDisplayed()!=true) {
-//					log.info("Chart dosen't displayed for "+gettext(txt));
-//				}else {
-//					System.out.println("Chart displayed for "+gettext(txt));
-//				}
 				
 			}
 			
