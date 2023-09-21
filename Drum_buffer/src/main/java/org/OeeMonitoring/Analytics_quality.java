@@ -20,11 +20,7 @@ public class Analytics_quality extends BasePage {
 	private By bar = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[3]/*[local-name()='rect']");
 	private By equipdd = By.xpath("//mat-label[text()='Equipment']/ancestor::div[1]/descendant::div[4]");
 	private By equiplist = By.xpath("//div[@role='listbox']/mat-option/span");
-	private By text = By.xpath("(//mat-select[@role='combobox'])[2]/descendant::span[2]");
-	private By calendar = By.xpath("//mat-label[contains(text(),'Date')]/following::span[1]");
-	private By yeardd = By.xpath("(//span[contains(text(),'2023')])[2]/parent::span");
-	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
+	private By text = By.xpath("(//mat-select[@role='combobox'])[3]/descendant::span[2]");
 	private By msg = By.xpath("//*[local-name()='g' and contains(@class,'messageGroup')]/*[local-name()='text']");
 	private By msg2 = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[2]/*[local-name()='text']");
 	private By msg3 = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[3]/*[local-name()='text']");
@@ -49,7 +45,7 @@ public class Analytics_quality extends BasePage {
 			waittobeclickable(ninedots, 20);
 			click(ninedots);
 			System.out.println("Ninedots button is clicked");
-			waittobeclickable(Oee, 20);
+			Thread.sleep(1000);
 			click(Oee);
 			System.out.println("Oee option is clicked");
 			Thread.sleep(2000);

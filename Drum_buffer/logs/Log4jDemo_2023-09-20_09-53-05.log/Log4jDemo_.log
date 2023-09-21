@@ -1,0 +1,11 @@
+2023-09-20 09:53:17 INFO com.BasePage.ListnersonStart:97 - ################ Test Scripts Execution as Started ###################
+  2023-09-20 09:53:39 INFO com.BasePage.ListnersonTestStart:38 - #########################homeExecution is started ################
+  2023-09-20 09:53:41 INFO org.Dialysis.Dialysishome:47 - Assert verification is done for Dialysis monitoring home page
+  2023-09-20 09:54:17 INFO org.Dialysis.Dialysistable:113 - Date in Dialysis Machine 11 machine mismatches with actual time Sep 19,2023, 21:17:40
+  2023-09-20 09:54:18 INFO org.Dialysis.Dialysistable:113 - Date in Dialysis Machine 16 machine mismatches with actual time Jan 12,2023, 12:54:38
+  2023-09-20 09:54:19 INFO com.BasePage.ListnersonTestSuccess:49 - #########################home has been Sucessfully Completed ################
+  2023-09-20 09:54:44 INFO com.BasePage.ListnersonTestStart:38 - #########################kpiExecution is started ################
+  2023-09-20 09:54:48 INFO org.Dialysis.Kpi_dialysiskpi:63 - Assert verification is done for machine utilization page
+  2023-09-20 09:55:03 INFO com.BasePage.ListnersonTestSuccess:49 - #########################kpi has been Sucessfully Completed ################
+  2023-09-20 09:55:28 INFO com.BasePage.ListnersonTestStart:38 - #########################monitorExecution is started ################
+  

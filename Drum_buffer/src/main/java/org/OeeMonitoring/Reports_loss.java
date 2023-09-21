@@ -21,21 +21,19 @@ public class Reports_loss extends BasePage {
 	private By reports = By.xpath("//span[contains(text(),'Reports')]");
 	private By search = By.xpath("//span[contains(text(),'Search')]");
 	private By lossrep = By.xpath("//span[text()=' Loss Report ']");
-	private By machine = By.xpath("(//mat-select[@role='combobox'])[3]/ancestor::div[1]/descendant::div[4]");
-	private By text = By.xpath("(//mat-select[@role='combobox'])[3]/descendant::span[2]");
+	private By loc = By.xpath("(//mat-select[@role='combobox'])[3]/ancestor::div[1]/descendant::div[4]");
+	private By loclist = By.xpath("(//span[text()='Select Location'])/ancestor::div[1]/mat-option");
+	private By text = By.xpath("(//mat-select[@role='combobox'])[4]/descendant::span[2]");
 
-	private By shift = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[4]");
-	private By shiftlist = By.xpath("(//span[text()='Shift 1'])/ancestor::div[1]/mat-option");
-	private By operation = By.xpath("(//mat-select[@role='combobox'])[4]/ancestor::div[1]/descendant::div[3]");
+//	private By shift = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[4]");
+//	private By shiftlist = By.xpath("(//span[text()='Shift 1'])/ancestor::div[1]/mat-option");
+	private By machine = By.xpath("(//mat-select[@role='combobox'])[4]/ancestor::div[1]/descendant::div[3]");
 	private By mechlist = By.xpath("(//span[contains(text(),'All')])/ancestor::div[1]/mat-option");
-	private By filter = By.xpath("(//mat-select[@role='combobox'])[5]/ancestor::div[1]/descendant::div[3]");
+	private By opera = By.xpath("(//mat-select[@role='combobox'])[5]/ancestor::div[1]/descendant::div[3]");
+	private By filter = By.xpath("(//mat-select[@role='combobox'])[6]/ancestor::div[1]/descendant::div[3]");
 	private By filterlist = By.xpath("(//span[text()='Monthly'])/ancestor::div[1]/mat-option");
 	private By operalist = By.xpath("(//span[text()=' Idle Time '])/ancestor::div[1]/mat-option");
 	
-	private By calendar = By.xpath("//mat-label[contains(text(),'Date')]/following::span[1]");
-	private By yeardd = By.xpath("(//span[contains(text(),'2023')])[2]/parent::span");
-	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
 private By chart = By.xpath("//*[local-name()='g' and contains(@class,'plot-group')][1]/*[local-name()='rect']");
 	private By no = By.xpath("//table/tbody/tr/td");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
@@ -78,18 +76,18 @@ private By chart = By.xpath("//*[local-name()='g' and contains(@class,'plot-grou
 	public void dd() {
 		try {
 	//		calendar(calendar, yeardd, year, startdate);
-			click(operation);
-			List<WebElement> l3 = findWebElements(operalist);
-			l3.get(0).click();
-			Thread.sleep(200);
-			click(filter);
-			List<WebElement> l4 = findWebElements(filterlist);
+			click(loc);
+			List<WebElement> l3 = findWebElements(loclist);
+			l3.get(1).click();
+			Thread.sleep(500);
+			click(opera);
+			List<WebElement> l4 = findWebElements(operalist);
 			l4.get(0).click();
-			Thread.sleep(200);
-			click(shift);		
-			List<WebElement> l1 = findWebElements(shiftlist);
+			Thread.sleep(300);
+			click(filter);		
+			List<WebElement> l1 = findWebElements(filterlist);
 			l1.get(0).click();
-			Thread.sleep(200);
+			Thread.sleep(300);
 			click(machine);		
 			List<WebElement> l2 = findWebElements(mechlist);
 			for(int i=1;i<l2.size();i++) {

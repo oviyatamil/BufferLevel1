@@ -1,0 +1,39 @@
+2023-09-20 10:20:17 INFO com.BasePage.ListnersonStart:97 - ################ Test Scripts Execution as Started ###################
+  2023-09-20 10:20:34 INFO com.BasePage.ListnersonTestStart:38 - #########################analyticExecution is started ################
+  2023-09-20 10:20:37 INFO org.energy.Energy_Analyticshome:66 - Assert verification is done for Energy monitoring home page
+  2023-09-20 10:20:39 INFO org.energy.Energy_Analyticsanalytic:82 - Assert verification is done for Analytics -> consumption page
+  2023-09-20 10:20:52 INFO org.energy.Energy_Analyticsdd:137 - Category wise energy consumption Chart is not displayed forKHCH1
+  2023-09-20 10:21:27 INFO org.energy.Energy_Analyticsheatmaphome:234 - Assert verification is done for anlytics heatmap  page
+  2023-09-20 10:21:47 INFO org.energy.Energy_Analyticsparet:306 - Assert verification is done for Pareto analysis page
+  2023-09-20 10:22:02 INFO com.BasePage.ListnersonTestSuccess:49 - #########################analytic has been Sucessfully Completed ################
+  2023-09-20 10:22:27 INFO com.BasePage.ListnersonTestStart:38 - #########################reportExecution is started ################
+  2023-09-20 10:22:29 INFO org.energy.Energy_reportshome:43 - Assert verification is done for Energy monitoring home page
+  2023-09-20 10:22:30 INFO org.energy.Energy_reportsreport:59 - Assert verification is done for Reports -> daily reports
+  2023-09-20 10:22:43 INFO com.BasePage.ListnersonTestSuccess:49 - #########################report has been Sucessfully Completed ################
+  2023-09-20 10:23:08 INFO com.BasePage.ListnersonTestStart:38 - #########################customreportExecution is started ################
+  2023-09-20 10:23:10 INFO org.energy.Energy_customhome:57 - Assert verification is done for Energy monitoring home page
+  2023-09-20 10:23:11 INFO org.energy.Energy_customreport3:111 - Assert verification is done for Custom -> Energy daily report page
+  2023-09-20 10:23:25 INFO org.energy.Energy_customdd2:203 - Report end date is wrong
+  2023-09-20 10:23:26 INFO org.energy.Energy_customreport4:129 - Assert verification is done for energy Custom -> Energy yearly report page
+  2023-09-20 10:23:37 INFO org.energy.Energy_customreport5:147 - Assert verification is done for energy Custom -> Energy monthly report page
+  2023-09-20 10:23:50 INFO org.energy.Energy_customdd2:203 - Report end date is wrong
+  2023-09-20 10:23:52 INFO org.energy.Energy_customreport2:93 - Assert verification is done for energy Custom -> Energy hourly report page
+  2023-09-20 10:24:16 INFO com.BasePage.ListnersonTestSuccess:49 - #########################customreport has been Sucessfully Completed ################
+  2023-09-20 10:24:41 INFO com.BasePage.ListnersonTestStart:38 - #########################analyticExecution is started ################
+  2023-09-20 10:24:45 INFO org.energy.Energy_Analytics2analytic:75 - Assert verification is done for Analytics -> energy flow analysis page
+  2023-09-20 10:24:55 INFO org.energy.Energy_Analytics2analytic2:92 - Assert verification is done for Analytics -> Variance analysis page
+  2023-09-20 10:25:22 INFO org.energy.Energy_Analytics2analytic3:109 - Assert verification is done for Analytics -> Peak demand analysis page
+  2023-09-20 10:25:42 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----1F---test
+  2023-09-20 10:25:56 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 07
+  2023-09-20 10:25:58 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 08
+  2023-09-20 10:26:00 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 09
+  2023-09-20 10:26:02 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 10
+  2023-09-20 10:26:04 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---test
+  2023-09-20 10:26:05 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 01
+  2023-09-20 10:26:07 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 02
+  2023-09-20 10:26:09 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 03
+  2023-09-20 10:26:11 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 04
+  2023-09-20 10:26:13 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 05
+  2023-09-20 10:26:15 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 06
+  2023-09-20 10:26:35 INFO com.BasePage.ListnersonTestFailure:63 - #########################analytic has been Failed ################
+  

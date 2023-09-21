@@ -47,9 +47,7 @@ public class Assets extends BasePage{
 	private By add = By.xpath("//span[contains(text(),'Add')]");
 	private By view = By.xpath("//span[contains(text(),'View')]");
 	private By edit = By.xpath("//span[contains(text(),'Edit')]");
-	private By edit2 = By.xpath("(//span[contains(text(),'Edit')])[2]");
 	private By update = By.xpath("//span[contains(text(),'Update')]");
-//	private By update2 = By.xpath("(//span[contains(text(),'Update')])[2]");
 	private By delete = By.xpath("//span[contains(text(),'Delete')]");	
 	private By cancelbtn2 = By.xpath("(//span[contains(text(),'Cancel')])[2]");
 	private By delete2 = By.xpath("//span[text()=' Delete ']");

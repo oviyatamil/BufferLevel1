@@ -1,0 +1,21 @@
+2023-09-20 09:59:25 INFO com.BasePage.ListnersonStart:97 - ################ Test Scripts Execution as Started ###################
+  2023-09-20 09:59:43 INFO com.BasePage.ListnersonTestStart:38 - #########################monitorExecution is started ################
+  2023-09-20 09:59:47 INFO org.Dialysis.Monitoringmonitor:63 - Assert verification is done for monitoring page
+  2023-09-20 09:59:57 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 01
+  2023-09-20 10:00:05 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 02
+  2023-09-20 10:00:13 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 03
+  2023-09-20 10:00:21 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 04
+  2023-09-20 10:00:29 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 05
+  2023-09-20 10:00:37 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 06
+  2023-09-20 10:00:45 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 07
+  2023-09-20 10:00:53 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 08
+  2023-09-20 10:01:01 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 09
+  2023-09-20 10:01:10 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 10
+  2023-09-20 10:01:18 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 11
+  2023-09-20 10:02:01 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 16
+  2023-09-20 10:02:01 INFO com.BasePage.ListnersonTestSuccess:49 - #########################monitor has been Sucessfully Completed ################
+  2023-09-20 10:02:26 INFO com.BasePage.ListnersonTestStart:38 - #########################analyticsExecution is started ################
+  2023-09-20 10:02:31 INFO org.Dialysis.Analyticsanalytic:77 - Assert verification is done for analytics trend page page
+  2023-09-20 10:02:47 INFO org.Dialysis.Analyticsheatmaphome:157 - Assert verification is done for anlytics heatmap  page
+  2023-09-20 10:03:01 INFO com.BasePage.ListnersonTestFailure:63 - #########################analytics has been Failed ################
+  

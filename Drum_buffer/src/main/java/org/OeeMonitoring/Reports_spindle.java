@@ -20,11 +20,11 @@ public class Reports_spindle extends BasePage{
 	private By search = By.xpath("//span[contains(text(),'Search')]");
 	private By spindlerep = By.xpath("//span[text()=' Spindle Run Time ']");
 	private By smartdrum = By.xpath("//mat-icon[@mattooltip='Click to Filter']");
-	private By machine = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[3]");
+	private By machine = By.xpath("(//mat-select[@role='combobox'])[3]/ancestor::div[1]/descendant::div[3]");
 	private By mechlist = By.xpath("(//span[contains(text(),'All')])/ancestor::div[1]/mat-option");
-	private By monthmm = By.xpath("(//mat-select[@role='combobox'])[3]/ancestor::div[1]/descendant::div[3]");
+	private By monthmm = By.xpath("(//mat-select[@role='combobox'])[4]/ancestor::div[1]/descendant::div[3]");
 	private By monthlist = By.xpath("//span[text()=' JANUARY ']/ancestor::div[1]/mat-option");
-	private By yearyy = By.xpath("(//mat-select[@role='combobox'])[4]/ancestor::div[1]/descendant::div[3]");
+	private By yearyy = By.xpath("(//mat-select[@role='combobox'])[5]/ancestor::div[1]/descendant::div[3]");
 	private By yearlist = By.xpath("(//span[text()=' 2022 '])/ancestor::div[1]/mat-option");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");

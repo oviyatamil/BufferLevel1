@@ -31,20 +31,12 @@ public class Storyboard extends BasePage{
 	private By loclist = By.xpath("//span[contains(text(),'Select Location')]/ancestor::div[1]/mat-option");
 	private By spindlelow = By.xpath("//div[text()='Spindle']/following::div[8]");
 	private By overalspindle = By.xpath("//div[text()='Spindle']/following::div[1]");
-	private By calendar = By.xpath("//mat-label[contains(text(),'Date')]/following::span[2]");
 	private By availhigh = By.xpath("//div[text()='Availability']/following::div[4]");
 	private By availlow = By.xpath("//div[text()='Availability']/following::div[8]");
 	private By overalavailable = By.xpath("//div[text()='Availability']/following::div[1]");
-
 	private By perfhigh = By.xpath("//div[text()='Performance']/following::div[4]");
 	private By perflow = By.xpath("//div[text()='Performance']/following::div[8]");
-	private By overalperf = By.xpath("//div[text()='Performance']/following::div[1]");
-
-	private By yeardd = By.xpath("//span[contains(text(),'2023')]/parent::span");
-	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By startdate = By.xpath("//div[text()=' 29 ']/parent::button");	
-	private By month = By.xpath("//div[contains(text(),'AUG')]/parent::button");
-	
+	private By overalperf = By.xpath("//div[text()='Performance']/following::div[1]");	
 	private By qualityhigh = By.xpath("//div[text()='Quality']/following::div[4]");
 	private By qualitylow = By.xpath("//div[text()='Quality']/following::div[8]");
 	private By overalquality = By.xpath("//div[text()='Quality']/following::div[1]");

@@ -20,23 +20,15 @@ public class Permission extends BasePage{
 	private By superadmin = By.xpath("//div[contains(text(),'Super Admin')]/parent::div/button");
 	private By permission = By.xpath("//span[contains(text(),'Permission')]");
 	private By role = By.xpath("//input[@formcontrolname='role_Name']");
-	private By add = By.xpath("//span[contains(text(),'Add')]");
 	private By view = By.xpath("//span[contains(text(),'View')]");
 	private By edit = By.xpath("//span[contains(text(),'Edit')]");
 	private By update = By.xpath("//span[contains(text(),'Update')]");
 	private By delete = By.xpath("//span[contains(text(),'Delete')]");	
 	private By cancelbtn = By.xpath("//span[contains(text(),'Cancel')]");
 	private By delete2 = By.xpath("//span[text()=' Delete ']");
-	private By save = By.xpath("//span[contains(text(),'Save')]");
 	private By user = By.xpath("//div[contains(text(),'User')]");
 	private By btn = By.xpath("//div[contains(text(),'Role')]");
-	private By roledd = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
-	private By rolelist = By.xpath("(//span[text()='Select Role'])/ancestor::div[1]/mat-option/span");
-	private By name = By.xpath("//input[@formcontrolname='userName']");
-	private By ph = By.xpath("//input[@formcontrolname='user_Mobile']");
 	private By address = By.xpath("//input[@formcontrolname='address1']");	
-	private By mail = By.xpath("//input[@formcontrolname='user_Email']");
-	private By pwd = By.xpath("//input[@formcontrolname='user_Password']");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
 	private By radio = By.xpath("//span[@class='mat-radio-inner-circle']");
@@ -60,7 +52,7 @@ public class Permission extends BasePage{
 			waittobeclickable(ninedots, 20);
 			click(ninedots);
 			System.out.println("Ninedots button is clicked");
-			waittobeclickable(superadmin, 20);
+			Thread.sleep(2000);
 			click(superadmin);
 			System.out.println("Super admin menu option is clicked");
 			Thread.sleep(2000);
@@ -149,6 +141,7 @@ public void perm() {
 			String att2 = element2.getAttribute("class");
 
 			if (!att2.contains("disabled")) {
+				Thread.sleep(500);
 				click(nextpage);
 				Thread.sleep(1000);
 				List<WebElement> rad2 = findWebElements(radio);

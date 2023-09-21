@@ -1,7 +1,5 @@
 package org.sqa;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -29,15 +27,11 @@ public class Parts extends BasePage {
 	private By uom= By.xpath("(//mat-select[@role='combobox'])[2]/descendant::div[4]");
 	private By file = By.xpath("//input[@type='file']");
 	private By uomdd= By.xpath("//span[text()='Select UOM']/parent::mat-option/parent::div/mat-option");
-	private By mc= By.xpath("//span[text()='Select SC']/parent::mat-option/parent::div/mat-option");
 	private By drawno= By.xpath("//input[@formcontrolname='drawingNumber']");
 	private By parttier= By.xpath("(//mat-select[@role='combobox'])[3]/descendant::div[4]");
 	private By tierdd= By.xpath("//mat-label[contains(text(),'Part Tier')]/following::div[@role='listbox']/mat-option");
-	private By partchar= By.xpath("//span[text()='Select Part Characteristic']/parent::mat-option/parent::div/mat-option/span");
 	private By classi= By.xpath("(//mat-select[@role='combobox'])[4]/descendant::div[4]");
-	private By controlmethod= By.xpath("(//mat-select[@role='combobox'])[5]/descendant::div[4]");
 	private By classdd= By.xpath("//span[text()='Select Classification']/parent::mat-option/parent::div/mat-option");
-	private By cmdd= By.xpath("//span[text()='Select Contol Method']/parent::mat-option/parent::div/mat-option");
 	private By category= By.xpath("//input[@formcontrolname='category']");
 	private By subcategory= By.xpath("//input[@formcontrolname='subCategory']");
 	private By category2= By.xpath("//table/tbody/tr/td[3]/span");
@@ -45,25 +39,16 @@ public class Parts extends BasePage {
 	private By edit = By.xpath("//span[text()='Edit']");
 	private By update = By.xpath("//span[text()=' Update ']");
 	private By delete = By.xpath("//span[text()='Delete']");
-	private By actions = By.xpath("//mat-icon[@mattooltip='Click to Add']");
 	private By calendar = By.xpath("//mat-label[contains(text(),'Date')]/following::span[2]");
 	private By yeardd = By.xpath("//span[contains(text(),'2023')]/parent::span");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
 	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
 	private By cancelbtn = By.xpath("//span[contains(text(),'Cancel')]/parent::button");
 	private By delete2 = By.xpath("//span[text()=' Delete ']");
-	private By submit = By.xpath("//button[@type='submit']");
-	private By trash = By.xpath("//button[@mattooltip='Click to Delete']");
-	private By usl= By.xpath("//input[@formcontrolname='usl']");
-	private By median= By.xpath("//input[@formcontrolname='median']");
-	private By lsl= By.xpath("//input[@formcontrolname='lsl']");
-	private By size= By.xpath("//input[@formcontrolname='sampleSize']");
+	private By submit = By.xpath("//button[@type='submit']");	
 	private By supplier = By.xpath("//span[text()='Select Supplier']/parent::mat-option/parent::div/mat-option");
-	private By ins= By.xpath("//span[text()='Select Instrument']/parent::mat-option/parent::div/mat-option");
-	private By freq= By.xpath("//span[text()='Select Frequency']/parent::mat-option/parent::div/mat-option");
 	private By arr = By.xpath("//table/thead/tr[1]/th[7]/div/child::div[2]");
-	private By save = By.xpath("//span[text()=' Save ']");
-	private By subchar = By.xpath("//span[text()='Charactertics']");
+	private By save = By.xpath("//span[text()=' Save ']");	
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
 

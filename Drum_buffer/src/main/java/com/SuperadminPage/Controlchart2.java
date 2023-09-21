@@ -1,7 +1,5 @@
 package com.SuperadminPage;
 
-import static org.testng.Assert.assertEquals;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedList;

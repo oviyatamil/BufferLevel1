@@ -50,17 +50,22 @@ public class Supplier extends BasePage {
 			click(supplier);
 			System.out.println("Supplier mapping menu is clicked");
 			click(add);
+			Thread.sleep(500);
 			click(buyerdd);
 			List<WebElement> b = findWebElements(buylist);
+			Thread.sleep(200);
 			for(WebElement x:b) {
 				if(x.getText().equals("Aradhya")) {
 					x.click();
 					break;
 				}
 			}
+			Thread.sleep(200);
 			click(supdd);
 			List<WebElement> s = findWebElements(suplist);
+			Thread.sleep(100);
 			s.get(1).click();
+			Thread.sleep(100);
 			click(save);
 			Thread.sleep(1000);
 			List<WebElement> buy = findWebElements(buyer);

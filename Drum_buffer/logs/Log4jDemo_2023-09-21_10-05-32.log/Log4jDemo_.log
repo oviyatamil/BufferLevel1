@@ -1,0 +1,68 @@
+2023-09-21 10:05:36 INFO com.BasePage.ListnersonStart:97 - ################ Test Scripts Execution as Started ###################
+  2023-09-21 10:05:53 INFO com.BasePage.ListnersonTestStart:38 - #########################homeExecution is started ################
+  2023-09-21 10:05:56 INFO org.energy.Energy_homehome:51 - Assert verification is done for Energy monitoring home page
+  2023-09-21 10:05:59 INFO org.energy.Energy_homeepi:169 - Assert verification is done for energy Kpi page
+  2023-09-21 10:06:38 INFO org.energy.Energy_homeprofile:218 - pdf is downloaded
+  2023-09-21 10:06:38 INFO org.energy.Energy_homeprofile:220 - profile button is clicked
+  2023-09-21 10:06:38 INFO org.energy.Energy_homeprofile:222 - signout button is clicked
+  2023-09-21 10:06:38 INFO com.BasePage.ListnersonTestSuccess:49 - #########################home has been Sucessfully Completed ################
+  2023-09-21 10:07:03 INFO com.BasePage.ListnersonTestStart:38 - #########################monitoringExecution is started ################
+  2023-09-21 10:07:05 INFO org.energy.Energy_monitoringhome:54 - Assert verification is done for Energy monitoring home page
+  2023-09-21 10:07:08 INFO org.energy.Energy_monitoringmonitor:69 - Assert verification is done for energy live monitoring page
+  2023-09-21 10:07:19 INFO org.energy.Energy_monitoringchart:111 - Machine displayed only zero's for BASEMENT LIGHTING PANEL-B1 except average
+  2023-09-21 10:07:19 INFO org.energy.Energy_monitoringchart:111 - Machine displayed only zero's for BASEMENT POWER PANEL-B1 except average
+  2023-09-21 10:07:20 INFO org.energy.Energy_monitoringchart:111 - Machine displayed only zero's for MEDICAL GAS PANEL-B1 except average
+  2023-09-21 10:07:35 INFO org.energy.Energy_monitoringchart:111 - Machine displayed only zero's for VRV MAIN PANEL 3F-T except average
+  2023-09-21 10:07:44 INFO org.energy.Energy_monitoringchart:109 - Machine displayed only zero's for DG 500
+  2023-09-21 10:07:59 INFO org.energy.Energy_monitoringchart:111 - Machine displayed only zero's for Canteen Back Up except average
+  2023-09-21 10:08:05 INFO org.energy.Energy_monitoringchart:111 - Machine displayed only zero's for Diesel Generator-3 380KVA except average
+  2023-09-21 10:08:09 INFO org.energy.Energy_monitoringchart:111 - Machine displayed only zero's for SPARE 4-F3 except average
+  2023-09-21 10:08:19 INFO org.energy.Energy_monitoringchart:109 - Machine displayed only zero's for DG -2 Incomer 600KVA old
+  2023-09-21 10:08:26 INFO org.energy.Energy_monitoringliveflowanalysis:151 - Assert verification is done for energy liveflow analysis page
+  2023-09-21 10:08:49 INFO com.BasePage.ListnersonTestSuccess:49 - #########################monitoring has been Sucessfully Completed ################
+  2023-09-21 10:09:14 INFO com.BasePage.ListnersonTestStart:38 - #########################analyticExecution is started ################
+  2023-09-21 10:09:17 INFO org.energy.Energy_Analyticshome:66 - Assert verification is done for Energy monitoring home page
+  2023-09-21 10:09:18 INFO org.energy.Energy_Analyticsanalytic:82 - Assert verification is done for Analytics -> consumption page
+  2023-09-21 10:09:31 INFO org.energy.Energy_Analyticsdd:137 - Category wise energy consumption Chart is not displayed forKHCH1
+  2023-09-21 10:10:03 INFO org.energy.Energy_Analyticsheatmaphome:234 - Assert verification is done for anlytics heatmap  page
+  2023-09-21 10:10:23 INFO org.energy.Energy_Analyticsparet:306 - Assert verification is done for Pareto analysis page
+  2023-09-21 10:10:38 INFO com.BasePage.ListnersonTestSuccess:49 - #########################analytic has been Sucessfully Completed ################
+  2023-09-21 10:11:03 INFO com.BasePage.ListnersonTestStart:38 - #########################reportExecution is started ################
+  2023-09-21 10:11:05 INFO org.energy.Energy_reportshome:43 - Assert verification is done for Energy monitoring home page
+  2023-09-21 10:11:06 INFO org.energy.Energy_reportsreport:59 - Assert verification is done for Reports -> daily reports
+  2023-09-21 10:11:20 INFO com.BasePage.ListnersonTestSuccess:49 - #########################report has been Sucessfully Completed ################
+  2023-09-21 10:11:44 INFO com.BasePage.ListnersonTestStart:38 - #########################customreportExecution is started ################
+  2023-09-21 10:11:47 INFO org.energy.Energy_customhome:57 - Assert verification is done for Energy monitoring home page
+  2023-09-21 10:11:49 INFO org.energy.Energy_customreport3:111 - Assert verification is done for Custom -> Energy daily report page
+  2023-09-21 10:12:02 INFO org.energy.Energy_customdd2:203 - Report end date is wrong
+  2023-09-21 10:12:04 INFO org.energy.Energy_customreport4:129 - Assert verification is done for energy Custom -> Energy yearly report page
+  2023-09-21 10:12:14 INFO org.energy.Energy_customreport5:147 - Assert verification is done for energy Custom -> Energy monthly report page
+  2023-09-21 10:12:27 INFO org.energy.Energy_customdd2:203 - Report end date is wrong
+  2023-09-21 10:12:29 INFO org.energy.Energy_customreport2:93 - Assert verification is done for energy Custom -> Energy hourly report page
+  2023-09-21 10:12:52 INFO com.BasePage.ListnersonTestSuccess:49 - #########################customreport has been Sucessfully Completed ################
+  2023-09-21 10:13:17 INFO com.BasePage.ListnersonTestStart:38 - #########################analyticExecution is started ################
+  2023-09-21 10:13:21 INFO org.energy.Energy_Analytics2analytic:75 - Assert verification is done for Analytics -> energy flow analysis page
+  2023-09-21 10:13:33 INFO org.energy.Energy_Analytics2analytic2:92 - Assert verification is done for Analytics -> Variance analysis page
+  2023-09-21 10:14:01 INFO org.energy.Energy_Analytics2analytic3:109 - Assert verification is done for Analytics -> Peak demand analysis page
+  2023-09-21 10:14:46 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 08
+  2023-09-21 10:14:48 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 09
+  2023-09-21 10:14:51 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 10
+  2023-09-21 10:14:53 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---test
+  2023-09-21 10:14:55 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 01
+  2023-09-21 10:14:58 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 02
+  2023-09-21 10:15:00 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 03
+  2023-09-21 10:15:02 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 04
+  2023-09-21 10:15:05 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 05
+  2023-09-21 10:15:07 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 06
+  2023-09-21 10:16:09 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----BF---Medical Oxygen Generator
+  2023-09-21 10:16:20 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----CCU---KH044-0290
+  2023-09-21 10:16:22 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----CCU---KH044-0292
+  2023-09-21 10:16:24 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----CCU---KH044-0657
+  2023-09-21 10:16:27 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----CCU---300H
+  2023-09-21 10:16:29 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----CCU---KH044-0479
+  2023-09-21 10:16:32 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----CCU---KH-044-0481
+  2023-09-21 10:16:34 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----CCU---KH044-0291
+  2023-09-21 10:16:36 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----CCU---KH044-0711
+  2023-09-21 10:16:39 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----CCU---KH044-0658
+  2023-09-21 10:17:06 INFO com.BasePage.ListnersonTestFailure:63 - #########################analytic has been Failed ################
+  

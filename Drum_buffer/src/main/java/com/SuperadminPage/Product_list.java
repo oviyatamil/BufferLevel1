@@ -48,7 +48,7 @@ public class Product_list extends BasePage {
 			Thread.sleep(4000);
 			click(ninedots);
 			System.out.println("Ninedots button is clicked");
-			waittobeclickable(superadmin, 20);
+			Thread.sleep(1000);
 			click(superadmin);
 			System.out.println("Super admin menu option is clicked");
 			Thread.sleep(2000);
@@ -167,7 +167,7 @@ public class Product_list extends BasePage {
 		
 	public void profile() {
 		try {
-			waittobeclickable(profile, 10);
+			Thread.sleep(2000);
 			click(profile);
 			System.out.println("profile button is clicked");
 			click(signout);

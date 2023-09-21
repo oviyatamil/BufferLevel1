@@ -8,48 +8,66 @@
 		<classes>
 					
 		
-		<!--	 <class name="com.Superadmin.SA_012" />
-		 <class name="com.Superadmin.SA_008" />
+	<!--	 <class name="com.Superadmin.SA_001" />
+		<class name="com.Superadmin.SA_003" />
+		<class name="com.Superadmin.SA_004" />
+		<class name="com.Superadmin.SA_005" />
+		<class name="com.Superadmin.SA_009" />		
+		<class name="com.Superadmin.SA_011" />
+		<class name="com.Superadmin.SA_012" />
+		<class name="com.Superadmin.SA_008" />
+		<class name="com.Superadmin.SA_013" />-->
+			
 			  
-				     <class name="org.Fire.F_1" />
-			     <class name="org.Fire.F_2" />
+					  	    
 			     <class name="org.dialysis.Dia_1" />
 			     <class name="org.dialysis.Dia_2" />
 			     <class name="org.dialysis.Dia_3" />
 			     <class name="org.dialysis.Dia_4" />
+			 <!--     <class name="org.Fire.F_1" />
+			     <class name="org.Fire.F_2" />
 			     <class name="org.Energy.E_1" />
 			     <class name="org.Energy.E_2" />
 			     <class name="org.Energy.E_3" />
-			     <class name="org.Energy.E_4" />
+			    <class name="org.Energy.E_4" />
 			     <class name="org.Energy.E_5" />
 			     <class name="org.Energy.E_6" />
-			     <class name="org.Oxygen.Oxy_1" />
+			     
+			  <class name="org.Oxygen.Oxy_1" />
 			     <class name="org.Oxygen.Oxy_2" />
 			     <class name="org.Oxygen.Oxy_3" />
-			     <class name="org.Oxygen.Oxy_4" />	-->	
-		  	<!--	<class name="org.Oee.OE_016"></class>			  						   
- 					  <class name="org.Sqa.S_1"></class>	
+			     <class name="org.Oxygen.Oxy_4" />	-->
+			 <!-- 	   <class name="com.Iot.I_04"></class>
+		     <class name="org.Icu.Icu_2"></class>	
+			     <class name="org.Icu.Icu_3"></class>	
+   <class name="org.Sqa.S_1"></class>	
  						    <class name="org.Sqa.S_2"></class> 	
  						      <class name="org.Sqa.S_3"></class> 							      
  						      <class name="org.Sqa.S_5"></class> 	
- 			<class name="com.Iot.I_01"></class>	
-			
- 						      
- 			<class name="org.Oee.OE_002"></class>			       		
+ 			<class name="com.Iot.I_04"></class>		
+ 			<class name="com.Partner.P_3"></class>
+			<class name="com.Partner.P_2"></class>	
+			<class name="com.Partner.P_1"></class>
+			<class name="org.Oee.OE_016"></class>
+			<class name="org.Oee.OE_004"></class>						      
+ 			<class name="org.Oee.OE_002"></class>		       		
 			<class name="org.Oee.OE_003"></class>
-			<class name="org.Oee.OE_004"></class>
-			<class name="org.Oee.OE_005"></class>
+			
+			
+		<class name="org.Oee.OE_005"></class>	
 			<class name="org.Oee.OE_006"></class>
 			<class name="org.Oee.OE_007"></class>
-			<class name="org.Oee.OE_008"></class>
+			<class name="org.Oee.OE_008"></class>	
 			<class name="org.Oee.OE_009"></class>
 			<class name="org.Oee.OE_010"></class>
 			<class name="org.Oee.OE_011"></class>		
-			<class name="org.Oee.OE_013"></class>
+			<class name="org.Oee.OE_013"></class>	
 			<class name="org.Oee.OE_014"></class>
-			<class name="org.Oee.OE_015"></class>					
-			<class name="org.Oee.OE_016"></class> -->	
-			<class name="com.Iot.I_06"></class>
+			<class name="org.Oee.OE_015"></class>-->	
+			
+										
+			
+			
 			
 		
 			

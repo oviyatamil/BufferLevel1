@@ -18,19 +18,14 @@ public class Analytics_device extends BasePage{
 	private By apply = By.xpath("//span[contains(text(),'Apply')]");
 	private By device = By.xpath("//span[text()=' Device Status ']");
 	private By msg = By.xpath("//*[local-name()='g' and contains(@class,'messageGroup')]");	
-	private By plot = By.xpath("//*[local-name()='g' and contains(@class,'fusioncharts-datalabels')]/*[local-name()='text']");
-	private By smartdrum = By.xpath("//mat-icon[@mattooltip='Click to Filter']");
+	private By plot = By.xpath("//*[local-name()='g' and contains(@class,'fusioncharts-datalabels')]/*[local-name()='text']");	
 	private By equipdd = By.xpath("//mat-label[text()='Equipment']/ancestor::div[1]/descendant::div[3]");
 	private By equiplist = By.xpath("//div[@role='listbox']/mat-option/span");
 	private By type = By.xpath("//mat-label[text()='Type']/ancestor::div[1]/descendant::div[3]");
-	private By machtxt = By.xpath("(//mat-select[@role='combobox'])[2]/descendant::span[2]");
+	private By machtxt = By.xpath("(//mat-select[@role='combobox'])[4]/descendant::span[2]");
 	private By typelist = By.xpath("//span[text()='Select type']/ancestor::div[1]/mat-option");
 	private By text = By.xpath("(//mat-select[@role='combobox'])[2]/descendant::span[2]");
 	private By typetext = By.xpath("(//mat-select[@role='combobox'])[3]/descendant::span[2]");
-	private By calendar = By.xpath("//mat-label[contains(text(),'Date')]/following::span[1]");
-	private By yeardd = By.xpath("(//span[contains(text(),'2023')])[2]/parent::span");
-	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
 	private By mouse = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[1]/*[20]");
 	private By slide = By.xpath("(//*[local-name()='g' and contains(@class,'fc-gl-slider')])[1]/*[local-name()='circle'][3]");
 	private By export = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[1]/*[local-name()='rect'][2]");
@@ -67,10 +62,7 @@ public class Analytics_device extends BasePage{
 			click(device);
 			System.out.println("device status option is clicked");
 			Thread.sleep(2000);
-			log.info("Assert verification is done for analytics device status page");
-			click(smartdrum);
-			System.out.println("Smart drum is clicked");
-			click(smartdrum);
+			log.info("Assert verification is done for analytics device status page");			
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

@@ -23,6 +23,8 @@ public class Device extends BasePage {
 	private By info = By.xpath("//table/tbody/tr/td");
 	private By head = By.xpath("//h2");
 	private By topdevice = By.xpath("//a[contains(text(),'Device Connectivity')]");
+	private By gatewaystatus = By.xpath("//form/following::div[@class='ng-star-inserted']/descendant::div[2]/div/descendant::div[6]/span[2]");
+	private By equipstatus = By.xpath("//form/following::div[@class='ng-star-inserted']/descendant::div[2]/div/descendant::div[7]/span[2]");
 	private By topdev = By.xpath("//a[contains(text(),'Devices')]");
 	private By sym = By.xpath("//form/following::div[@class='ng-star-inserted']/descendant::div[2]/div/descendant::div[8]/descendant::mat-icon");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
@@ -33,7 +35,7 @@ public class Device extends BasePage {
 			waittobeclickable(ninedots, 20);			
 			click(ninedots);
 			System.out.println("Ninedots button is clicked");
-			waittobeclickable(device, 20);
+			Thread.sleep(1000);
 			click(device);
 			System.out.println("Device menu option is clicked");
 			Thread.sleep(2000);
@@ -51,15 +53,13 @@ public class Device extends BasePage {
 				click(sitedd);				
 			}
 			List<WebElement> s2 = findWebElements(sitelist);
-			s2.get(k).click();
-			String t = gettext(txt);
+			s2.get(k).click();			
 			Thread.sleep(1000);
+			String t = gettext(txt);
 			if(findWebElements(table).size()>2) {			
-				System.out.println("Table displayed");
+				System.out.println("Table displayed");				
 				List<WebElement> se = findWebElements(search);
-//				a.moveToElement(se.get(0)).click().perform();
 				for(int i=0;i<se.size();i++) {
-//					a.moveToElement(se.get(i)).click().perform();	
 					List<WebElement> f = findWebElements(tabtxt);
 					String t2 = f.get(i).getText();		
 					List<WebElement> se2 = findWebElements(search);
@@ -70,9 +70,25 @@ public class Device extends BasePage {
 						click(topdevice);
 					}	
 					else {
-						System.out.println("Asset status table Records found");
+						System.out.println("Asset status table Records found");						
 						List<WebElement> sy = findWebElements(sym);
-						for(int j=0;j<sy.size();j++) {							
+						for(int j=0;j<sy.size();j++) {	
+							Thread.sleep(300);
+							List<WebElement> g = findWebElements(gatewaystatus);
+							List<WebElement> f2 = findWebElements(tabtxt);
+							String f3 = f2.get(j).getText();
+							if(g.get(j).getText().equalsIgnoreCase("ACTIVE")) {
+								System.out.println("Gateway status is active for "+f3+"----"+t);
+							}else {
+								log.info("Gateway status is inactive for "+f3+"----"+t);
+							}
+							List<WebElement> g2 = findWebElements(equipstatus);
+							if(g2.get(j).getText().equalsIgnoreCase("ACTIVE")) {
+								System.out.println("Equipment status is active for "+f3+"----"+t);
+							}else {
+								log.info("Equipment status is inactive for "+f3+"----"+t);
+							}
+							Thread.sleep(500);
 							List<WebElement> sy2 = findWebElements(sym);
 							sy2.get(j).click();
 							Thread.sleep(1000);

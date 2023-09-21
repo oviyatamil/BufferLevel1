@@ -1,0 +1,12 @@
+2023-09-20 10:05:07 INFO com.BasePage.ListnersonStart:97 - ################ Test Scripts Execution as Started ###################
+  2023-09-20 10:05:25 INFO com.BasePage.ListnersonTestStart:38 - #########################analyticsExecution is started ################
+  2023-09-20 10:05:30 INFO org.Dialysis.Analyticsanalytic:77 - Assert verification is done for analytics trend page page
+  2023-09-20 10:05:37 INFO org.Dialysis.Analyticsdd:107 - Total run hour chart doesn't displayed
+  2023-09-20 10:05:37 INFO org.Dialysis.Analyticsdd:112 - Total number of dialysis chart doesn't displayed
+  2023-09-20 10:05:46 INFO org.Dialysis.Analyticsheatmaphome:157 - Assert verification is done for anlytics heatmap  page
+  2023-09-20 10:06:09 INFO org.Dialysis.Analyticsdiasumhome:216 - Assert verification is done for dialysis summary page
+  2023-09-20 10:06:19 INFO com.BasePage.ListnersonTestSuccess:49 - #########################analytics has been Sucessfully Completed ################
+  2023-09-20 10:06:44 INFO com.BasePage.ListnersonTestStart:38 - #########################homeExecution is started ################
+  2023-09-20 10:06:47 INFO org.fire.Home_pagefire:51 - Assert verification is done for Fire home page
+  2023-09-20 10:07:18 INFO com.BasePage.ListnersonTestSuccess:49 - #########################home has been Sucessfully Completed ################
+  

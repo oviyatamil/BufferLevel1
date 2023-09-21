@@ -63,9 +63,6 @@ public class Energy_Analytics extends BasePage{
 			click(energy);
 			System.out.println("Energy monitoring option is clicked");
 			Thread.sleep(2000);
-//			String ExpectedURL = "https://portal.careworx.in/#/energy/Home";
-//			String ActualURL = getCurrentURL();
-//			assertEquals(ExpectedURL, ActualURL);
 			log.info("Assert verification is done for Energy monitoring home page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -82,9 +79,6 @@ public class Energy_Analytics extends BasePage{
 			click(consumption);
 			System.out.println("Consumption option is clicked");
 			Thread.sleep(1000);
-//			String ExpectedURL = "https://portal.careworx.in/#/energy/consumtion";
-//			String ActualURL = getCurrentURL();
-//			assertEquals(ExpectedURL, ActualURL);
 			log.info("Assert verification is done for Analytics -> consumption page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -122,14 +116,21 @@ public class Energy_Analytics extends BasePage{
 				}
 					l.get(i).click();				
 				click(apply);
-				Thread.sleep(5000);
+				Thread.sleep(7000);
 				if (findWebElement(bar).isDisplayed()) {					
-					System.out.println("Category wise energy consumption Chart is displayed for "+ gettext(txt));					
+					System.out.println("Category wise energy consumption Chart is displayed for "+ gettext(txt));	
+//					WebElement ne = findWebElement(negative);
+//					System.out.println(ne.getText());
+//					if(ne.getText().equals("0")){
+//						System.out.println("Chart has no negative energy consumption");
+//					}else {
+//						log.info("Chart has negative energy consumption");
+//					}
 					List<WebElement> p1 = findWebElements(bartext);
 					List<WebElement> da = findWebElements(date);
 					for(int j=0;j<p1.size();j++) {
 						if(p1.get(j).getText().equals("0")) {
-							log.info("Consumption data not showed in chart for "+da.get(j).getText());
+							log.info("Consumption data showed 0 in chart for "+da.get(j).getText());
 						}
 					}
 				} else {
@@ -238,11 +239,11 @@ public class Energy_Analytics extends BasePage{
 
 	public void heatmap() {
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			String data = new SimpleDateFormat("MMM dd,yyyy,hh:mm").format(new Date());
 			System.out.println("Current timing is " + data);			
 			calendar(calendar, yeardd, year, startdate);
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 			click(equip);			
 			List<WebElement> sites = findWebElements(ddlist);
 			for (int i = 1; i < sites.size(); i++) {
@@ -302,9 +303,6 @@ public class Energy_Analytics extends BasePage{
 			click(pareto);
 			System.out.println("Pareto analysis option is clicked");
 			Thread.sleep(1000);
-//			String ExpectedURL = "https://portal.careworx.in/#/energy/pareto-analysis";
-//			String ActualURL = getCurrentURL();
-//			assertEquals(ExpectedURL, ActualURL);
 			log.info("Assert verification is done for Pareto analysis page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();

@@ -77,7 +77,7 @@ public class Controlchart extends BasePage{
 	private By calendar = By.xpath("//mat-label[contains(text(),'Time')]/following::span[1]");
 	private By yeardd = By.xpath("(//span[contains(text(),'2023')])[2]");
 	private By year = By.xpath("//div[text()=' 2023 ']");
-	private By startdate = By.xpath("//div[contains(text(),'30')]/parent::button");
+	private By startdate = By.xpath("//div[contains(text(),'28')]/parent::button");
 	private By radio = By.xpath("(//span[@class='mat-radio-inner-circle'])");
 	private By gatename = By.xpath("//table/tbody/tr/td[2]/span");	
 	private By time = By.xpath("//table/tbody/tr/td[5]/span");

@@ -1,0 +1,23 @@
+2023-09-21 10:01:52 INFO com.BasePage.ListnersonStart:97 - ################ Test Scripts Execution as Started ###################
+  2023-09-21 10:02:10 INFO com.BasePage.ListnersonTestStart:38 - #########################homeExecution is started ################
+  2023-09-21 10:02:12 INFO org.fire.Home_pagefire:51 - Assert verification is done for Fire home page
+  2023-09-21 10:02:19 INFO org.fire.Home_pagehome:92 - Number of disabled device in Basement Floor---Kauvery - Salem is48
+  2023-09-21 10:02:19 INFO org.fire.Home_pagehome:92 - Number of disabled device in First Floor---Kauvery - Salem is60
+  2023-09-21 10:02:19 INFO org.fire.Home_pagehome:92 - Number of disabled device in Ground Floor---Kauvery - Salem is73
+  2023-09-21 10:02:19 INFO org.fire.Home_pagehome:92 - Number of disabled device in Second Floor---Kauvery - Salem is56
+  2023-09-21 10:02:19 INFO org.fire.Home_pagehome:92 - Number of disabled device in Terrace---Kauvery - Salem is17
+  2023-09-21 10:02:19 INFO org.fire.Home_pagehome:92 - Number of disabled device in Third Floor---Kauvery - Salem is68
+  2023-09-21 10:02:31 INFO org.fire.Home_pagehome:92 - Number of disabled device in 1F Building A---Kauvery - Thennur is3
+  2023-09-21 10:02:31 INFO org.fire.Home_pagehome:92 - Number of disabled device in 6F Building A---Kauvery - Thennur is1
+  2023-09-21 10:02:31 INFO org.fire.Home_pagehome:92 - Number of disabled device in GF Building A---Kauvery - Thennur is10
+  2023-09-21 10:02:31 INFO org.fire.Home_pagehome:92 - Number of disabled device in GF Building B---Kauvery - Thennur is1
+  2023-09-21 10:02:34 INFO org.fire.Home_pagehome:136 - Location in dropdown mismatches with table displayed in homepage for Kauvery - Thennur
+  2023-09-21 10:02:42 INFO org.fire.Home_pagehome:83 - Number of fault device in B1---Kauvery - Heart City is1
+  2023-09-21 10:02:53 INFO org.fire.Home_pagehome:83 - Number of fault device in Ground Floor---Kauvery - Cantonment is1
+  2023-09-21 10:02:53 INFO org.fire.Home_pagehome:92 - Number of disabled device in Basement---Kauvery - Cantonment is1
+  2023-09-21 10:02:53 INFO org.fire.Home_pagehome:92 - Number of disabled device in Ground Floor---Kauvery - Cantonment is1
+  2023-09-21 10:02:56 INFO org.fire.Home_pagehome:136 - Location in dropdown mismatches with table displayed in homepage for Kauvery - Cantonment
+  2023-09-21 10:03:30 INFO com.BasePage.ListnersonTestSuccess:49 - #########################home has been Sucessfully Completed ################
+  2023-09-21 10:03:55 INFO com.BasePage.ListnersonTestStart:38 - #########################fireExecution is started ################
+  2023-09-21 10:04:16 INFO com.BasePage.ListnersonTestFailure:63 - #########################fire has been Failed ################
+  

@@ -35,24 +35,18 @@ public class Rule extends BasePage{
 	private By interval =By.xpath("(//mat-label[contains(text(),'Interval')])[1]/ancestor::div[1]/mat-select/descendant::div[4]");
 	private By escalate = By.xpath("//input[@formcontrolname='after']");
 	private By rulename = By.xpath("//input[@formcontrolname='rule_Name']");
+	private By interlist = By.xpath("//span[text()='Select Interval']/parent::mat-option/parent::div/mat-option");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By table = By.xpath("//table/tbody/tr/td");
 	private By table2 = By.xpath("//table/tbody/tr/td[2]/span");
-
 	private By signout = By.xpath("//span[text()='Sign out']");
 	private By submit = By.xpath("//span[contains(text(),'submit')]");
 	private By add = By.xpath("//span[text()='Add']");
 	private By radiobtn = By.xpath("//span[@class='mat-radio-inner-circle']");
 	private By radiobtn2 = By.xpath("(//span[@class='mat-radio-inner-circle'])[2]");
 	private By radiobtn3 = By.xpath("(//span[@class='mat-radio-inner-circle'])[3]");
-	private By view = By.xpath("//span[text()='View']");
-	private By save = By.xpath("//span[contains(text(),'Save')]");
-	private By nextdisable = By.xpath("//button[@aria-label='Next page']");
-	private By edit = By.xpath("//span[text()='Edit']");
-	private By update = By.xpath("//span[text()=' Update ']");
 	private By delete = By.xpath("//span[text()='Delete']");
 	private By delete2 = By.xpath("(//span[contains(text(),'elete')])[2]");
-	private By name = By.xpath("//input[@formcontrolname='Rule Name']");
 	private By recu = By.xpath("//input[@formcontrolname='recurrency']");
 	private By locdd = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[4]");
 	private By loclist = By.xpath("//span[text()='Select Location']/parent::mat-option/parent::div/mat-option");
@@ -63,6 +57,7 @@ public class Rule extends BasePage{
 	private By machdd = By.xpath("(//mat-select[@role='combobox'])[5]/ancestor::div[1]/descendant::div[4]");
 	private By machlist = By.xpath("//div[@role='listbox']/mat-option/mat-pseudo-checkbox");
 	private By next = By.xpath("//span[contains(text(),'Next')]");
+	private By next3 = By.xpath("(//span[contains(text(),'Next')])[3]");
 	private By next2 = By.xpath("(//span[contains(text(),'Next')])[2]");
 	private By sms = By.xpath("//textarea[@formcontrolname='notification_SMS_Template']");
 	
@@ -192,7 +187,7 @@ public class Rule extends BasePage{
 			EnterText(sms, "status:pass");
 			EnterText(recu, "35");
 			Thread.sleep(200);
-			click(next);
+			click(next3);
 			Thread.sleep(500);
 			click(emailid);
 			List<WebElement> m4= findWebElements(maillist);
@@ -208,7 +203,7 @@ public class Rule extends BasePage{
 			Thread.sleep(200);
 			EnterText(escalate, "10");
 			click(interval);
-			List<WebElement> m6= findWebElements(maillist);
+			List<WebElement> m6= findWebElements(interlist);
 			Thread.sleep(200);
 			m6.get(1).click();
 			a.moveToElement(findWebElement(submit)).click().perform();

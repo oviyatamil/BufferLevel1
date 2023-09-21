@@ -1,0 +1,16 @@
+2023-09-19 17:53:15 INFO com.BasePage.ListnersonStart:97 - ################ Test Scripts Execution as Started ###################
+  2023-09-19 17:53:33 INFO com.BasePage.ListnersonTestStart:38 - #########################analyticExecution is started ################
+  2023-09-19 17:53:37 INFO org.energy.Energy_Analytics2analytic:75 - Assert verification is done for Analytics -> energy flow analysis page
+  2023-09-19 17:53:48 INFO org.energy.Energy_Analytics2analytic2:92 - Assert verification is done for Analytics -> Variance analysis page
+  2023-09-19 17:54:15 INFO org.energy.Energy_Analytics2analytic3:109 - Assert verification is done for Analytics -> Peak demand analysis page
+  2023-09-19 17:54:47 INFO org.energy.Energy_Analytics2peakdemand:239 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 08
+  2023-09-19 17:54:48 INFO org.energy.Energy_Analytics2peakdemand:239 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 09
+  2023-09-19 17:54:50 INFO org.energy.Energy_Analytics2peakdemand:239 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 10
+  2023-09-19 17:54:51 INFO org.energy.Energy_Analytics2peakdemand:239 - Bar diagram is  not displayed for KHCH1-----2F---test
+  2023-09-19 17:54:54 INFO org.energy.Energy_Analytics2peakdemand:239 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 02
+  2023-09-19 17:54:55 INFO org.energy.Energy_Analytics2peakdemand:239 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 03
+  2023-09-19 17:54:57 INFO org.energy.Energy_Analytics2peakdemand:239 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 04
+  2023-09-19 17:54:58 INFO org.energy.Energy_Analytics2peakdemand:239 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 05
+  2023-09-19 17:55:00 INFO org.energy.Energy_Analytics2peakdemand:239 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 06
+  2023-09-19 17:55:25 INFO com.BasePage.ListnersonTestFailure:63 - #########################analytic has been Failed ################
+  

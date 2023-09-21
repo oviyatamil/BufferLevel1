@@ -21,17 +21,13 @@ public class Analytics_Maintenance extends BasePage{
 	private By plot2 = By.xpath("(//*[local-name()='g' and contains(@class,'fusioncharts-datalabels')])[4]/*[local-name()='text']");
 	private By equipdd = By.xpath("//mat-label[text()='Equipment']/ancestor::div[1]/descendant::div[3]");
 	private By equiplist = By.xpath("//div[@role='listbox']/mat-option/span");
-	private By text = By.xpath("(//mat-select[@role='combobox'])[2]/descendant::span[2]");
-	private By calendar = By.xpath("//mat-label[contains(text(),'Date')]/following::span[1]");
-	private By yeardd = By.xpath("(//span[contains(text(),'2023')])[2]/parent::span");
-	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
+	private By text = By.xpath("(//mat-select[@role='combobox'])[3]/descendant::span[2]");
 	private By mouse = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[1]/*[20]");
 	private By slide = By.xpath("(//*[local-name()='g' and contains(@class,'fc-gl-slider')])[1]/*[local-name()='circle'][3]");
 	private By pdf = By.xpath("//mat-icon[@mattooltip='Export to PDF']");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
-	private By overavail = By.xpath("(//fuse-card)[1]/div[2]");
+	private By overavail = By.xpath("(//mat-card)[1]/div[2]/div");
 	private By msg = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[1]/*[local-name()='text']");
 	private By msg2 = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[2]/*[local-name()='text']");
 		

@@ -19,7 +19,7 @@ public class Energy_rep extends BasePage{
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
 	private By energy = By.xpath("//div[contains(text(),'Energy Monitoring')]");
 	private By cusreports = By.xpath("//span[contains(text(),'Custom Report')]");
-	private By reports = By.xpath("//span[contains(text(),'Reports')]");
+	private By reports = By.xpath("//span[contains(text(),'Reports')]");		
 	private By site = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
 	private By sitelist = By.xpath("//span[text()='Select Site']/ancestor::div[1]/mat-option");
 	private By loc = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[4]");
@@ -61,7 +61,7 @@ public class Energy_rep extends BasePage{
 		try {
 			waittobeclickable(reports, 20);
 			click(reports);
-			System.out.println("Reports menu is clicked");					
+			System.out.println("Reports menu is clicked");				
 			log.info("Assert verification is done for Reports -> daily reports");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -125,10 +125,10 @@ public class Energy_rep extends BasePage{
 						System.out.println("Report end date is correct");											
 						Thread.sleep(2000);
 					}else {
-						log.info("Report end date is wrong");	
-						j.executeScript("arguments[0].scrollIntoView(false);", findWebElement(pdf));
+						log.info("Report end date is wrong");							
 						Thread.sleep(1000);
 					}
+					j.executeScript("arguments[0].scrollIntoView(false);", findWebElement(pdf));
 				}else {
 					log.info("No records found");
 					Thread.sleep(1000);

@@ -27,7 +27,7 @@ public class Permission2 extends BasePage{
 	private By user = By.xpath("//div[contains(text(),'User')]");
 	private By radiobtn = By.xpath("//span[@class='mat-radio-inner-circle']");
 	private By perm = By.xpath("//div[contains(text(),'Permission')]/ancestor::span/descendant::span[1]");
-	private By cont = By.xpath("//div[contains(text(),'Control Center')]/following::tr[4]/td[1]/descendant::span[1]");
+	private By cont = By.xpath("//*[contains(text(),'Jobs Monitoring')]/mat-checkbox/label/span[1] ");
 	private By cusadd = By.xpath("//*[contains(text(),'Customer')]/following::tr[2]/td[2]/descendant::span[1]");
 	private By masedit = By.xpath("//div[contains(text(),'Master Data')]/following::tr[2]/td[3]/descendant::span[1]");
 	private By masdel = By.xpath("//div[contains(text(),'Master Data')]/following::tr[2]/td[4]/descendant::span[1]");
@@ -55,7 +55,7 @@ public class Permission2 extends BasePage{
 			waittobeclickable(ninedots, 20);		
 			click(ninedots);
 			System.out.println("Ninedots button is clicked");
-			waittobeclickable(superadmin, 20);
+			Thread.sleep(1000);
 			click(superadmin);
 			System.out.println("Super admin menu option is clicked");
 			Thread.sleep(2000);
@@ -65,18 +65,20 @@ public class Permission2 extends BasePage{
 }
 public void permission() {
 	try {
-		//Thread.sleep(2000);
-		click(cont);
+		//Thread.sleep(2000);		
 		Thread.sleep(500);
 		click(permission);
 		Thread.sleep(1000);
 		click(add);
 		EnterText(role, "ABC");
+		waittobeclickable(cont, 10);
+		click(cont);
+		waittobeclickable(perm, 10);
 		click(perm);
 		waittobeclickable(masedit, 10);
 		click(masedit);
 		waittobeclickable(masdel, 10);
-		click(masdel);
+		click(masdel);		
 		waittobeclickable(cusadd, 10);
 		click(cusadd);			
 		JavascriptExecutor js = (JavascriptExecutor)driver;
@@ -150,7 +152,7 @@ public void check() {
 		click(control);
 		List<WebElement> c = findWebElements(contcheck);
 		for(WebElement x:c) {
-			if(x.getText().equals("Jobs Monitoring")) {
+			if(x.getText().contains("Jobs Monitoring")) {
 				log.info("Jobs monitoring still exists after it disabled");
 				break;
 			}else {

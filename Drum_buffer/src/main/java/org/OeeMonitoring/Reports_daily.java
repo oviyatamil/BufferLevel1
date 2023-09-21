@@ -29,11 +29,6 @@ public class Reports_daily extends BasePage {
 	private By machine = By.xpath("//mat-label[contains(text(),'Machine')]/ancestor::div[1]/descendant::div[4]");
 	private By mechlist = By.xpath("//div[@role='listbox']/mat-option/span");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
-	private By calendar = By.xpath("//mat-label[contains(text(),'Date')]/following::span[2]");
-	private By yeardd = By.xpath("(//span[contains(text(),'2023')])[1]/parent::span");
-	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By startdate = By.xpath("//div[text()=' 29 ']/parent::button");
-	private By month = By.xpath("//div[contains(text(),'AUG')]/parent::button");
 	private By signout = By.xpath("//span[text()='Sign out']");
 	private By text = By.xpath("(//mat-select[@role='combobox'])[3]/descendant::span[2]");
 	private By text2 = By.xpath("(//mat-select[@role='combobox'])[4]/descendant::span[2]");
@@ -130,7 +125,7 @@ public class Reports_daily extends BasePage {
 
 					}
 				}else {
-					log.info("Report has no data because N/A is mentioned in storyboard");
+					log.info("Report has no data because N/A is mentioned in storyboard for "+gettext(text2));
 				}
 					
 				}

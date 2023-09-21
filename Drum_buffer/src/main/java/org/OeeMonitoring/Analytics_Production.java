@@ -15,7 +15,6 @@ public class Analytics_Production extends BasePage {
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button");
 	private By Oee = By.xpath("//div[contains(text(),'OEE Monitoring')]");
 	private By analytics = By.xpath("//span[contains(text(),'Analytics')]");
-	private By month = By.xpath("//div[contains(text(),'AUG')]/parent::button");
 	private By apply = By.xpath("//span[contains(text(),'Apply')]");
 	private By production = By.xpath("(//span[text()=' Production '])[2]");
 	private By smartdrum = By.xpath("//mat-icon[@mattooltip='Click to Filter']");
@@ -23,13 +22,7 @@ public class Analytics_Production extends BasePage {
 	private By equipdd = By.xpath("//mat-label[text()='Equipment']/ancestor::div[1]/descendant::div[4]");
 	private By equiplist = By.xpath("//div[@role='listbox']/mat-option/span");
 	private By text = By.xpath("(//mat-select[@role='combobox'])[2]/descendant::span[2]");
-	private By calendar = By.xpath("//mat-label[contains(text(),'Date')]/following::span[1]");
-	private By yeardd = By.xpath("(//span[contains(text(),'2023')])[2]/parent::span");
-	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
-	private By enddate = By.xpath("//div[text()=' 28 ']/parent::button");
 	private By productionunit = By.xpath("(//*[local-name()='g' and contains(@class,'fusioncharts-datalabels')])[4]/*");
-	//private By rejectunit = By.xpath("(//*[local-name()='g' and contains(@class,'fusioncharts-datalabels')])[8]/*");
 	private By export1 = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[1]/*[local-name()='rect'][2]");
 	private By jpg1 = By.xpath("(//span[text()='Export As JPG'])[1]");
 	private By pdf = By.xpath("//mat-icon[@mattooltip='Export to PDF']");

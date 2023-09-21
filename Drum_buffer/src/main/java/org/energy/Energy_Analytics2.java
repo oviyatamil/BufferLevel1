@@ -3,7 +3,7 @@ package org.energy;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
+import org.openqa.selenium.interactions.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -198,6 +198,7 @@ public class Energy_Analytics2 extends BasePage {
 	}
 	public void peakdemand() {
 		try {
+			Actions a = new Actions(driver);
 			Thread.sleep(1000);
 			click(equip);
 			
@@ -223,16 +224,17 @@ public class Energy_Analytics2 extends BasePage {
 							Thread.sleep(500);
 							click(equipment);
 							List<WebElement> sites3 = findWebElements(equiplist);
-							if(sites3.size()>0) {
+							if(sites3.size()>1) {
 							for (int k = 1; k < sites3.size(); k++) {
 								if (k>1) {
+									Thread.sleep(500);
 									click(equipment);
 								}
 								Thread.sleep(500);
 									sites3.get(k).click();
 								
 									click(apply);
-									Thread.sleep(500);
+									Thread.sleep(1000);
 							
 									if (findWebElement(chart).isDisplayed()!=true) {
 										log.info("Bar diagram is  not displayed for "+gettext(txt)+"-----"+gettext(txt2)+"---"+gettext(txt3));
@@ -241,8 +243,10 @@ public class Energy_Analytics2 extends BasePage {
 										System.out.println("Bar diagram is displayed");
 }
 							}
-		}else {
-			break;
+							continue;
+		}else {	
+			Thread.sleep(200);
+			a.moveToElement(findWebElement(apply)).click().perform();
 		}
 			}
 		}

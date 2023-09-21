@@ -1,0 +1,60 @@
+2023-09-20 10:07:53 INFO com.BasePage.ListnersonStart:97 - ################ Test Scripts Execution as Started ###################
+  2023-09-20 10:08:11 INFO com.BasePage.ListnersonTestStart:38 - #########################homeExecution is started ################
+  2023-09-20 10:08:14 INFO org.fire.Home_pagefire:51 - Assert verification is done for Fire home page
+  2023-09-20 10:08:21 INFO org.fire.Home_pagehome:92 - Number of disabled device in Basement Floor---Kauvery - Salem is48
+  2023-09-20 10:08:21 INFO org.fire.Home_pagehome:92 - Number of disabled device in First Floor---Kauvery - Salem is60
+  2023-09-20 10:08:21 INFO org.fire.Home_pagehome:92 - Number of disabled device in Ground Floor---Kauvery - Salem is73
+  2023-09-20 10:08:21 INFO org.fire.Home_pagehome:92 - Number of disabled device in Second Floor---Kauvery - Salem is56
+  2023-09-20 10:08:21 INFO org.fire.Home_pagehome:92 - Number of disabled device in Terrace---Kauvery - Salem is17
+  2023-09-20 10:08:21 INFO org.fire.Home_pagehome:92 - Number of disabled device in Third Floor---Kauvery - Salem is68
+  2023-09-20 10:08:32 INFO org.fire.Home_pagehome:92 - Number of disabled device in 1F Building A---Kauvery - Thennur is1
+  2023-09-20 10:08:32 INFO org.fire.Home_pagehome:92 - Number of disabled device in 5F Building A---Kauvery - Thennur is1
+  2023-09-20 10:08:32 INFO org.fire.Home_pagehome:92 - Number of disabled device in 6F Building A---Kauvery - Thennur is1
+  2023-09-20 10:08:32 INFO org.fire.Home_pagehome:92 - Number of disabled device in GF Building A---Kauvery - Thennur is12
+  2023-09-20 10:08:32 INFO org.fire.Home_pagehome:92 - Number of disabled device in GF Building B---Kauvery - Thennur is1
+  2023-09-20 10:08:35 INFO org.fire.Home_pagehome:136 - Location in dropdown mismatches with table displayed in homepage for Kauvery - Thennur
+  2023-09-20 10:08:43 INFO org.fire.Home_pagehome:83 - Number of fault device in B1---Kauvery - Heart City is1
+  2023-09-20 10:08:54 INFO org.fire.Home_pagehome:83 - Number of fault device in Ground Floor---Kauvery - Cantonment is1
+  2023-09-20 10:08:55 INFO org.fire.Home_pagehome:92 - Number of disabled device in Basement---Kauvery - Cantonment is1
+  2023-09-20 10:08:55 INFO org.fire.Home_pagehome:92 - Number of disabled device in Ground Floor---Kauvery - Cantonment is1
+  2023-09-20 10:08:58 INFO org.fire.Home_pagehome:136 - Location in dropdown mismatches with table displayed in homepage for Kauvery - Cantonment
+  2023-09-20 10:09:32 INFO com.BasePage.ListnersonTestSuccess:49 - #########################home has been Sucessfully Completed ################
+  2023-09-20 10:09:57 INFO com.BasePage.ListnersonTestStart:38 - #########################fireExecution is started ################
+  2023-09-20 10:10:00 INFO org.fire.Monitormonitor:62 - Assert verification is done for monitoring page
+  2023-09-20 10:10:55 INFO org.fire.Monitormonitor:90 - Diagram not displayed for Kauvery - Thennur ---- Terrace A
+  2023-09-20 10:11:41 INFO org.fire.Monitormonitor:90 - Diagram not displayed for Kauvery - Cantonment ---- Maintenance Room
+  2023-09-20 10:12:33 INFO org.fire.Monitorreport:115 - Assert verification is done for report page
+  2023-09-20 10:12:40 INFO org.fire.Monitorreport:128 - No records found for Kauvery - Salem
+  2023-09-20 10:13:02 INFO org.fire.Monitorreport:128 - No records found for Day Care
+  2023-09-20 10:13:06 INFO org.fire.Monitorreport:128 - No records found for Kauvery - Tirunelveli
+  2023-09-20 10:13:06 INFO com.BasePage.ListnersonTestSuccess:49 - #########################fire has been Sucessfully Completed ################
+  2023-09-20 10:13:31 INFO com.BasePage.ListnersonTestStart:38 - #########################homeExecution is started ################
+  2023-09-20 10:13:34 INFO org.energy.Energy_homehome:51 - Assert verification is done for Energy monitoring home page
+  2023-09-20 10:13:36 INFO org.energy.Energy_homeepi:169 - Assert verification is done for energy Kpi page
+  2023-09-20 10:14:15 INFO org.energy.Energy_homeprofile:218 - pdf is downloaded
+  2023-09-20 10:14:15 INFO org.energy.Energy_homeprofile:220 - profile button is clicked
+  2023-09-20 10:14:15 INFO org.energy.Energy_homeprofile:222 - signout button is clicked
+  2023-09-20 10:14:15 INFO com.BasePage.ListnersonTestSuccess:49 - #########################home has been Sucessfully Completed ################
+  2023-09-20 10:14:40 INFO com.BasePage.ListnersonTestStart:38 - #########################monitoringExecution is started ################
+  2023-09-20 10:14:43 INFO org.energy.Energy_monitoringhome:54 - Assert verification is done for Energy monitoring home page
+  2023-09-20 10:14:45 INFO org.energy.Energy_monitoringmonitor:69 - Assert verification is done for energy live monitoring page
+  2023-09-20 10:15:08 INFO org.energy.Energy_monitoringchart:111 - Machine displayed only zero's for VRV MAIN PANEL 3F-T except average
+  2023-09-20 10:15:09 INFO org.energy.Energy_monitoringchart:111 - Machine displayed only zero's for AC PANEL-6F except average
+  2023-09-20 10:15:10 INFO org.energy.Energy_monitoringchart:111 - Machine displayed only zero's for F7 LDB-1-6F except average
+  2023-09-20 10:15:10 INFO org.energy.Energy_monitoringchart:111 - Machine displayed only zero's for UPS PANEL-6F except average
+  2023-09-20 10:15:11 INFO org.energy.Energy_monitoringchart:111 - Machine displayed only zero's for PSSB-PANEL-6F except average
+  2023-09-20 10:15:18 INFO org.energy.Energy_monitoringchart:111 - Machine displayed only zero's for BASEMENT LIGHTING PANEL-B1 except average
+  2023-09-20 10:15:18 INFO org.energy.Energy_monitoringchart:111 - Machine displayed only zero's for BASEMENT POWER PANEL-B1 except average
+  2023-09-20 10:15:19 INFO org.energy.Energy_monitoringchart:111 - Machine displayed only zero's for MEDICAL GAS PANEL-B1 except average
+  2023-09-20 10:15:21 INFO org.energy.Energy_monitoringchart:109 - Machine displayed only zero's for DG 500
+  2023-09-20 10:15:37 INFO org.energy.Energy_monitoringchart:111 - Machine displayed only zero's for Canteen Back Up except average
+  2023-09-20 10:15:44 INFO org.energy.Energy_monitoringchart:109 - Machine displayed only zero's for DG -2 Incomer 600KVA old
+  2023-09-20 10:15:55 INFO org.energy.Energy_monitoringchart:111 - Machine displayed only zero's for SPARE 4-F3 except average
+  2023-09-20 10:15:59 INFO org.energy.Energy_monitoringchart:111 - Machine displayed only zero's for Diesel Generator-3 380KVA except average
+  2023-09-20 10:16:03 INFO org.energy.Energy_monitoringliveflowanalysis:151 - Assert verification is done for energy liveflow analysis page
+  2023-09-20 10:16:25 INFO com.BasePage.ListnersonTestSuccess:49 - #########################monitoring has been Sucessfully Completed ################
+  2023-09-20 10:16:50 INFO com.BasePage.ListnersonTestStart:38 - #########################analyticExecution is started ################
+  2023-09-20 10:16:53 INFO org.energy.Energy_Analyticshome:66 - Assert verification is done for Energy monitoring home page
+  2023-09-20 10:16:54 INFO org.energy.Energy_Analyticsanalytic:82 - Assert verification is done for Analytics -> consumption page
+  2023-09-20 10:17:13 INFO com.BasePage.ListnersonTestFailure:63 - #########################analytic has been Failed ################
+  

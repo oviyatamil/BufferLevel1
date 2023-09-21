@@ -6,16 +6,16 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.Iot.I_04">
+      <class name="org.dialysis.Dia_4">
         <methods>
           <include name="afterMerhod"/>
           <include name="teardown"/>
-          <include name="afterclass"/>
           <include name="onetimelogin"/>
+          <include name="afterclass"/>
+          <include name="analytics"/>
           <include name="BrowserSetup"/>
-          <include name="device"/>
         </methods>
-      </class> <!-- com.Iot.I_04 -->
+      </class> <!-- org.dialysis.Dia_4 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

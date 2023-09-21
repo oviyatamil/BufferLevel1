@@ -20,13 +20,6 @@ public class Alerts extends BasePage{
 	private By smartdrum = By.xpath("//mat-icon[@mattooltip='Click to Filter']");
 	private By equipdd = By.xpath("//mat-label[text()='Equipment']/ancestor::div[1]/descendant::div[3]");
 	private By equiplist = By.xpath("//div[@role='listbox']/mat-option/span");
-	private By calendar = By.xpath("//mat-label[contains(text(),'Date')]/following::span[1]");
-	private By yeardd = By.xpath("(//span[contains(text(),'2023')])[2]/parent::span");
-	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
-	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
-	private By enddate = By.xpath("//div[text()=' 28 ']/parent::button");
-	private By month = By.xpath("//div[contains(text(),'AUG')]/parent::button");
-	private By search = By.xpath("//span[contains(text(),'Search')]");
 	private By text = By.xpath("(//mat-select[@role='combobox'])[2]/descendant::span[2]");
 	private By datas = By.xpath("//table/tbody/tr/td");
 	private By pdf = By.xpath("//mat-icon[@mattooltip='Export to Excel']");

@@ -21,10 +21,10 @@ public class Reports_prod extends BasePage {
 	private By apply = By.xpath("//span[contains(text(),'Apply')]");
 	private By production = By.xpath("//span[text()=' Production Report ']");
 	private By equiptext = By
-			.xpath("//mat-label[text()='Functional Location']/ancestor::div[1]/descendant::div[2]/span[1]/span");
+			.xpath("//mat-label[text()='Equipment Name']/ancestor::div[1]/descendant::div[2]/span[1]/span");
 	private By site = By.xpath("(//mat-select[@role='combobox'])[1]/ancestor::div[1]/descendant::div[4]");
 	private By sitelist = By.xpath("//div[@role='listbox']/mat-option/span");
-	private By location = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[3]");
+	private By location = By.xpath("(//mat-select[@role='combobox'])[3]/ancestor::div[1]/descendant::div[3]");
 	private By locationlist = By.xpath("//div[@role='listbox']/mat-option/span");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
@@ -51,11 +51,9 @@ public class Reports_prod extends BasePage {
 	private By lossdate = By.xpath("(//table)[3]/tbody/tr/td[1]");
 	private By losshour = By.xpath("(//table)[3]/tbody/tr/td[2]");
 	private By table3 = By.xpath("(//table)[3]/tbody/tr/td");
-	private By month = By.xpath("//div[contains(text(),'AUG')]/parent::button");
 	private By yeardd = By.xpath("(//span[contains(text(),'2023')])[2]/parent::span");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
 	private By startdate = By.xpath("//div[text()=' 1 ']/parent::button");
-	private By enddate = By.xpath("//div[text()=' 28 ']/parent::button");
 
 	public void oee() {
 		try {
@@ -177,60 +175,60 @@ public class Reports_prod extends BasePage {
 				list2.get(fs).click();
 				click(apply);
 				Thread.sleep(2000);
-				if (findWebElements(overalloee).isEmpty() != true) {
+				if (findWebElement(overalloee).getText().isBlank()!= true) {
 					System.out.println("Oee for given date is " + findWebElement(overalloee).getText());
 				} else {
-					log.info("Oee for given date is empty");
+					log.info("Oee for given date is empty for " + gettext(equiptext));
 				}
-				if (findWebElements(availability).isEmpty() != true) {
+				if (findWebElement(availability).getText().isBlank()!= true) {
 					System.out.println("Availability for given date is " + findWebElement(availability).getText());
 				} else {
-					log.info("Availability for given date is empty");
+					log.info("Availability for given date is empty for " + gettext(equiptext));
 				}
-				if (findWebElements(performance).isEmpty() != true) {
+				if (findWebElement(performance).getText().isBlank()!= true) {
 					System.out.println("performance for given date is " + findWebElement(performance).getText());
 				} else {
-					log.info("performance for given date is empty");
+					log.info("performance for given date is empty for " + gettext(equiptext));
 				}
-				if (findWebElements(quality).isEmpty() != true) {
+				if (findWebElement(quality).getText().isBlank()!= true) {
 					System.out.println("quality for given date is " + findWebElement(quality).getText());
 				} else {
-					log.info("quality for given date is empty");
+					log.info("quality for given date is empty for " + gettext(equiptext));
 				}
-				if (findWebElements(acttime).isEmpty() != true) {
+				if (findWebElement(acttime).getText().isBlank()!= true) {
 					System.out.println("Active time for given date is " + findWebElement(acttime).getText());
 				} else {
-					log.info("Active time for given date is empty");
+					log.info("Active time for given date is empty for " + gettext(equiptext));
 				}
-				if (findWebElements(idletime).isEmpty() != true) {
+				if (findWebElement(idletime).getText().isBlank()!= true) {
 					System.out.println("Idle time for given date is " + findWebElement(idletime).getText());
 				} else {
-					log.info("Idle time for given date is empty");
+					log.info("Idle time for given date is empty for " + gettext(equiptext));
 				}
-				if (findWebElements(alerttime).isEmpty() != true) {
+				if (findWebElement(alerttime).getText().isBlank()!= true) {
 					System.out.println("Alert time for given date is " + findWebElement(alerttime).getText());
 				} else {
 					log.info("Alert time for given date is empty");
 				}
-				if (findWebElements(down).isEmpty() != true) {
+				if (findWebElement(down).getText().isBlank()!= true) {
 					System.out.println("down time for given date is " + findWebElement(down).getText());
 				} else {
-					log.info("down time for given date is empty");
+					log.info("down time for given date is empty for " + gettext(equiptext));
 				}
-				if (findWebElements(part).isEmpty() != true) {
+				if (findWebElement(part).getText().isBlank()!= true) {
 					System.out.println("Part count for given date is " + findWebElement(part).getText());
 				} else {
-					log.info("Part count for given date is empty");
+					log.info("Part count for given date is empty for " + gettext(equiptext));
 				}
-				if (findWebElements(rej).isEmpty() != true) {
+				if (findWebElement(rej).getText().isBlank()!= true) {
 					System.out.println("Rejected count for given date is " + findWebElement(rej).getText());
 				} else {
-					log.info("Rejected count for given date is empty");
+					log.info("Rejected count for given date is empty for " + gettext(equiptext));
 				}
-				if (findWebElements(hold).isEmpty() != true) {
+				if (findWebElement(hold).getText().isBlank()!= true) {
 					System.out.println("Hold count for given date is " + findWebElement(hold).getText());
 				} else {
-					log.info("Hold count for given date is empty");
+					log.info("Hold count for given date is empty for " + gettext(equiptext));
 				}
 				if (findWebElements(table).size() > 1) {
 					List<WebElement> oee = findWebElements(oee2);

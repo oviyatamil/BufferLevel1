@@ -42,9 +42,6 @@ private By ppk = By.xpath("//span[contains(text(),'Pp')]/ancestor::div[3]/descen
 private By mrchart = By.xpath("(//*[local-name()='g' and contains(@class,'fusioncharts-datalabels')])[4]/*[local-name()='text']");
 private By pdf = By.xpath("//mat-icon[@mattooltip='Export to PDF']");
 private By export = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[1]/*[local-name()='rect'][2]");
-private By jpg = By.xpath("(//span[text()='Export As JPG'])[1]");
-private By export2 = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[2]/*[local-name()='rect'][2]");
-private By jpg2 = By.xpath("(//span[text()='Export As JPG'])[2]");
 private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 private By msg1 = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[1]/*[local-name()='text']");
 private By msg2 = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[2]/*[local-name()='text']");

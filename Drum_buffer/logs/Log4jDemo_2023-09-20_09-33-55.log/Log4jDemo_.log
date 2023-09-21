@@ -1,0 +1,7 @@
+2023-09-20 09:34:24 INFO com.BasePage.ListnersonStart:97 - ################ Test Scripts Execution as Started ###################
+  2023-09-20 09:34:41 INFO com.BasePage.ListnersonTestStart:38 - #########################homeExecution is started ################
+  2023-09-20 09:34:46 INFO org.Dialysis.Dialysishome:47 - Assert verification is done for Dialysis monitoring home page
+  2023-09-20 09:35:00 INFO org.Dialysis.Dialysismonitor:66 - No of dialysis yesterday is 0
+  2023-09-20 09:35:00 INFO org.Dialysis.Dialysismonitor:71 - No of dialysis for a month is 0
+  2023-09-20 09:35:07 INFO com.BasePage.ListnersonTestFailure:63 - #########################home has been Failed ################
+  

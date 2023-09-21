@@ -52,7 +52,7 @@ public class Dialysis extends BasePage{
 	}
 	public void monitor() {
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(7000);
 			click(dd);
 			List<WebElement> list = findWebElements(ddlist);
 			list.get(1).click();
@@ -91,13 +91,13 @@ public class Dialysis extends BasePage{
 }
 	public void table() {
 	try {
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		if(findWebElements(table).size()<1) {
 			log.info("No record found for Equipments");
 		}else {
 		List<WebElement> list = findWebElements(table);
 		for(int i=0;i<list.size();i++) {
-			Thread.sleep(300);
+			Thread.sleep(500);
 			System.out.println("EQUIPMENT IS "+list.get(i).getText());
 			List<WebElement> timestamp = findWebElements(time);
 			String text = timestamp.get(i).getText();
@@ -113,7 +113,7 @@ public class Dialysis extends BasePage{
 				log.info("Date in "+list.get(i).getText()+" machine mismatches with actual time "+timestamp.get(i).getText());
 			}
 			System.out.println("Run hours yesterday is "+findWebElements(runhrtable).get(i).getText());
-			Thread.sleep(500);
+			Thread.sleep(100);
 }
 		}
 	} catch (InterruptedException e) {

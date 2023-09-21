@@ -1,0 +1,6 @@
+2023-09-19 13:31:27 INFO com.BasePage.ListnersonStart:97 - ################ Test Scripts Execution as Started ###################
+  2023-09-19 13:32:34 INFO com.BasePage.ListnersonTestStart:38 - #########################homeExecution is started ################
+  2023-09-19 13:32:37 INFO org.Icu.Registrationdigital:90 - Patient registration option is clicked
+  2023-09-19 13:32:56 INFO com.BasePage.ListnersonTestSuccess:49 - #########################home has been Sucessfully Completed ################
+  2023-09-19 13:33:07 INFO com.BasePage.ListnersonFinish:108 - ################ Test Scripts Execution as Finished ###################
+  

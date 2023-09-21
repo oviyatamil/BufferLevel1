@@ -1,0 +1,20 @@
+2023-09-20 10:41:30 INFO com.BasePage.ListnersonStart:97 - ################ Test Scripts Execution as Started ###################
+  2023-09-20 10:41:47 INFO com.BasePage.ListnersonTestStart:38 - #########################monitorExecution is started ################
+  2023-09-20 10:41:51 INFO org.Oxygen.Oxygen_monitoringmonitor:81 - Assert verification is done for oxygen monitoring page
+  2023-09-20 10:42:16 INFO com.BasePage.ListnersonTestSuccess:49 - #########################monitor has been Sucessfully Completed ################
+  2023-09-20 10:42:41 INFO com.BasePage.ListnersonTestStart:38 - #########################analyticsExecution is started ################
+  2023-09-20 10:42:46 INFO org.Oxygen.Oxygen_analyticsanalytic:81 - Assert verification is done for Analytics -> consumption page
+  2023-09-20 10:43:02 INFO org.Oxygen.Oxygen_analyticsheatmaphome:156 - Assert verification is done for anlytics heatmap  page
+  2023-09-20 10:43:28 INFO org.Oxygen.Oxygen_analyticsequipment:223 - Assert verification is done for equipment wise consumption page
+  2023-09-20 10:43:44 INFO com.BasePage.ListnersonTestSuccess:49 - #########################analytics has been Sucessfully Completed ################
+  2023-09-20 10:44:09 INFO com.BasePage.ListnersonTestStart:38 - #########################reportExecution is started ################
+  2023-09-20 10:44:12 INFO org.Oxygen.Oxygen_reportshome:56 - Assert verification is done for Oxygen monitoring home page
+  2023-09-20 10:44:13 INFO org.Oxygen.Oxygen_reportsreport:75 - Assert verification is done for Custom -> Oxygen monthly report page
+  2023-09-20 10:44:27 INFO org.Oxygen.Oxygen_reportsreport2:92 - Assert verification is done for Custom -> Oxygen hourly report page
+  2023-09-20 10:44:32 INFO org.Oxygen.Oxygen_reportsdd:154 - Table is not displayed for KHCH1
+  2023-09-20 10:44:33 INFO org.Oxygen.Oxygen_reportsdd:151 - Report end date is wrong
+  2023-09-20 10:44:35 INFO org.Oxygen.Oxygen_reportsdd:151 - Report end date is wrong
+  2023-09-20 10:44:37 INFO org.Oxygen.Oxygen_reportsreport3:110 - Assert verification is done for Custom -> Oxygen daily report page
+  2023-09-20 10:44:48 INFO com.BasePage.ListnersonTestSuccess:49 - #########################report has been Sucessfully Completed ################
+  2023-09-20 10:44:58 INFO com.BasePage.ListnersonFinish:108 - ################ Test Scripts Execution as Finished ###################
+  

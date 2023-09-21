@@ -25,8 +25,7 @@ public class Customer extends BasePage{
 	private By update = By.xpath("(//span[contains(text(),'Update')])");
 	private By delete = By.xpath("//span[contains(text(),'Delete')]");		
 	private By site = By.xpath("(//span[contains(text(),'Site')])");
-	private By sub = By.xpath("(//span[contains(text(),'Subscription')])");
-	private By per = By.xpath("(//span[contains(text(),'Permission')])");
+	private By sub = By.xpath("(//span[contains(text(),'Subscription')])");	
 	private By sitetext = By.xpath("//input[@formcontrolname='name']");
 	private By delete2 = By.xpath("//span[text()=' Delete ']");
 	private By save = By.xpath("//span[contains(text(),'Save')]");
@@ -57,7 +56,7 @@ public class Customer extends BasePage{
 	private By yeardd = By.xpath("//span[contains(text(),'2023')]/parent::span");
 	private By year = By.xpath("//div[text()=' 2023 ']/parent::button");
 	private By cancelbtn = By.xpath("//span[contains(text(),'Cancel')]/parent::button");
-	private By eneanalytics = By.xpath("//p[contains(text(),'Energy Monitoring')]/parent::div/following::span[1]");
+	
 
 	public void home() {
 		try {
@@ -100,7 +99,7 @@ public class Customer extends BasePage{
 			EnterText(zip, "607890");
 			click(save);
 			click(cancelbtn);
-			System.out.println("Customer is added");
+			System.out.println("Customer is already added");
 			Thread.sleep(1000);
 			List<WebElement> cu = findWebElements(cuslist);
 			for(int i=0;i<cu.size();i++) {
@@ -120,16 +119,19 @@ public class Customer extends BasePage{
 			EnterText(add2, "Ooty");
 			click(coudd);
 			List<WebElement> cc = findWebElements(coulist);
-			cc.get(1).click();
-			Thread.sleep(300);
+			Thread.sleep(200);
+			cc.get(1).click();	
+			Thread.sleep(100);
 			click(stadd);
 			List<WebElement> cc2 = findWebElements(stalist);
-			cc2.get(1).click();
 			Thread.sleep(200);
+			cc2.get(1).click();	
+			Thread.sleep(100);
 			click(citydd);
 			List<WebElement> cc3 = findWebElements(citylist);
+			Thread.sleep(200);
 			cc3.get(1).click();
-			Thread.sleep(300);
+			Thread.sleep(100);
 			EnterText(zip, "607890");
 			click(save);
 			System.out.println("Site is added");
@@ -169,18 +171,24 @@ public class Customer extends BasePage{
 				if(cu2.get(i).getText().equals("Aradhya")) {
 					WebElement d = driver.findElement(By.xpath("//table/tbody/tr["+(i+1)+"]/td[7]/child::button/span[1]"));
 				d.click();
+				Thread.sleep(200);
 				click(sub);
 				break;
 				}
 			}
 			Thread.sleep(300);
 			click(add);
+			Thread.sleep(200);
 			click(coudd);
 			List<WebElement> st = findWebElements(sitelist);
+			Thread.sleep(200);
 			st.get(1).click();
+			Thread.sleep(100);
 			click(stadd);
 			List<WebElement> p = findWebElements(prolist);
-			p.get(1).click();
+			Thread.sleep(100);
+			p.get(3).click();
+			Thread.sleep(100);
 			EnterText(qua, "45");
 			EnterText(subscribe, "650");
 			click(calendar);
@@ -196,21 +204,20 @@ public class Customer extends BasePage{
 			int p2 = Integer.parseInt(s2);			
 			WebElement sta = driver.findElement(By.xpath("//div[contains(text(),'" + p2 + "')]/parent::button"));
 			sta.click();		
-	//		WebElement end = driver.findElement(By.xpath("//div[contains(text(),'" + p2 + "')]/parent::button"));
 			sta.click();
 			click(save);
 			System.out.println("Subscription is added");
 			Thread.sleep(1000);
-			List<WebElement> cuu = findWebElements(cuslist);
-			for(int j=0;j<cuu.size();j++) {			
-				if(cuu.get(j).getText().equals("Coorg")) {
-					List<WebElement> rad = findWebElements(radiobtn);
-					rad.get(j).click();
-					click(delete);
-					click(delete2);
-					break;
-				}
-			}
+//			List<WebElement> cuu = findWebElements(cuslist);
+//			for(int j=0;j<cuu.size();j++) {			
+//				if(cuu.get(j).getText().equals("Coorg")) {
+//					List<WebElement> rad = findWebElements(radiobtn);
+//					rad.get(j).click();
+//					click(delete);
+//					click(delete2);
+//					break;
+//				}
+//			}
 			click(topcus);
 			Thread.sleep(500);
 			List<WebElement> cu1 = findWebElements(cuslist);

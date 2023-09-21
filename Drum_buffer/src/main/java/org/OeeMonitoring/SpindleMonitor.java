@@ -22,7 +22,7 @@ public class SpindleMonitor extends BasePage{
 	private By export = By.xpath("//*[local-name()='g' and contains(@class,'toolbar-master')]/*[1]/*[2]/*[3]");
 	private By jpg = By.xpath("//span[text()='Export As JPG']");
 	private By msg = By.xpath("//*[local-name()='g' and contains(@class,'messageGroup')]");
-	private By txt = By.xpath("(//mat-select)[2]/descendant::span[2]");
+	private By txt = By.xpath("(//mat-select)[3]/descendant::span[2]");
 	private By timestamp = By.xpath("//*[local-name()='g' and contains(@class,'range-selector-text')]/*[local-name()='text']");
 	private By drag = By.xpath("//*[local-name()='g' and contains(@class,'brush-group')]/*[local-name()='rect'][2]");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");

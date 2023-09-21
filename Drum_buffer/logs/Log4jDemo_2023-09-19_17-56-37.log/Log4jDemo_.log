@@ -1,0 +1,19 @@
+2023-09-19 17:56:42 INFO com.BasePage.ListnersonStart:97 - ################ Test Scripts Execution as Started ###################
+  2023-09-19 17:56:59 INFO com.BasePage.ListnersonTestStart:38 - #########################analyticExecution is started ################
+  2023-09-19 17:57:03 INFO org.energy.Energy_Analytics2analytic:75 - Assert verification is done for Analytics -> energy flow analysis page
+  2023-09-19 17:57:14 INFO org.energy.Energy_Analytics2analytic2:92 - Assert verification is done for Analytics -> Variance analysis page
+  2023-09-19 17:57:40 INFO org.energy.Energy_Analytics2analytic3:109 - Assert verification is done for Analytics -> Peak demand analysis page
+  2023-09-19 17:58:01 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----1F---test
+  2023-09-19 17:58:15 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 07
+  2023-09-19 17:58:18 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 09
+  2023-09-19 17:58:20 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 10
+  2023-09-19 17:58:22 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---test
+  2023-09-19 17:58:24 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 01
+  2023-09-19 17:58:26 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 02
+  2023-09-19 17:58:28 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 03
+  2023-09-19 17:58:30 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 04
+  2023-09-19 17:58:32 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 05
+  2023-09-19 17:58:34 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----2F---Dialysis Machine 06
+  2023-09-19 17:58:36 INFO org.energy.Energy_Analytics2peakdemand:240 - Bar diagram is  not displayed for KHCH1-----3F---SUB UPS PANEL-3F
+  2023-09-19 17:59:04 INFO com.BasePage.ListnersonTestFailure:63 - #########################analytic has been Failed ################
+  

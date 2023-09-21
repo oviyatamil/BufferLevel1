@@ -1,6 +1,5 @@
 package com.SuperadminPage;
 
-import java.time.Duration;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -31,9 +30,9 @@ public class Part_partlisting extends BasePage {
 	private By coudd = By.xpath("(//mat-select[@role='combobox'])[1]/child::div[1]/div[2]");
 	private By statedd = By.xpath("(//mat-select[@role='combobox'])[2]/child::div[1]/div[2]");
 	private By citydd = By.xpath("(//mat-select[@role='combobox'])[3]/child::div[1]/div[2]");
-	private By couselect = By.xpath("//span[contains(text(),'Select Country')]/ancestor::div[1]/mat-option/span");
-	private By statesel = By.xpath("//span[contains(text(),'Select State')]/ancestor::div[1]/mat-option/span");
-	private By citysel = By.xpath("//span[contains(text(),'Select City')]/ancestor::div[1]/mat-option/span");
+	private By couselect = By.xpath("//span[contains(text(),'Select Country')]/ancestor::div[1]/mat-option");
+	private By statesel = By.xpath("//span[contains(text(),'Select State')]/ancestor::div[1]/mat-option");
+	private By citysel = By.xpath("//span[contains(text(),'Select City')]/ancestor::div[1]/mat-option");
 	private By zip = By.xpath("//input[contains(@formcontrolname,'postal_Code')]");
 	private By save = By.xpath("//span[contains(text(),'Save')]");
 	private By cancel = By.xpath("//span[contains(text(),'Cancel')]");
@@ -106,17 +105,20 @@ public class Part_partlisting extends BasePage {
 			click(coudd);
 			System.out.println("country dropdown is clicked");
 			List<WebElement> cou2 = findWebElements(couselect);
+			Thread.sleep(500);
 			cou2.get(1).click();
 			System.out.println("country is selected");
 			click(statedd);
 			System.out.println("state dropdown is clicked");
 			List<WebElement> sta2 = findWebElements(statesel);
+			Thread.sleep(500);
 			sta2.get(1).click();
 			System.out.println("state is selected");
 			click(citydd);
 			System.out.println("city dropdown is clicked");
 			List<WebElement> cit2 = findWebElements(citysel);
-			cit2.get(cit2.size()-1).click();
+			Thread.sleep(700);
+			cit2.get(1).click();
 			System.out.println("city is selected");
 			EnterText(zip, "656656");
 			System.out.println("zipcode is entered");	
