@@ -1,0 +1,35 @@
+2023-09-21 10:34:22 INFO com.BasePage.ListnersonStart:97 - ################ Test Scripts Execution as Started ###################
+  2023-09-21 10:34:38 INFO com.BasePage.ListnersonTestStart:38 - #########################homeExecution is started ################
+  2023-09-21 10:34:41 INFO org.Dialysis.Dialysishome:47 - Assert verification is done for Dialysis monitoring home page
+  2023-09-21 10:34:55 INFO org.Dialysis.Dialysismonitor:66 - No of dialysis yesterday is 0
+  2023-09-21 10:34:55 INFO org.Dialysis.Dialysismonitor:71 - No of dialysis for a month is 0
+  2023-09-21 10:35:18 INFO org.Dialysis.Dialysistable:113 - Date in Dialysis Machine 12 machine mismatches with actual time Sep 20,2023, 21:26:27
+  2023-09-21 10:35:24 INFO org.Dialysis.Dialysistable:113 - Date in Dialysis Machine 11 machine mismatches with actual time Sep 20,2023, 21:29:22
+  2023-09-21 10:35:26 INFO org.Dialysis.Dialysistable:113 - Date in Dialysis Machine 16 machine mismatches with actual time Jan 12,2023, 12:54:38
+  2023-09-21 10:35:26 INFO com.BasePage.ListnersonTestSuccess:49 - #########################home has been Sucessfully Completed ################
+  2023-09-21 10:35:51 INFO com.BasePage.ListnersonTestStart:38 - #########################kpiExecution is started ################
+  2023-09-21 10:35:55 INFO org.Dialysis.Kpi_dialysiskpi:63 - Assert verification is done for machine utilization page
+  2023-09-21 10:36:12 INFO com.BasePage.ListnersonTestSuccess:49 - #########################kpi has been Sucessfully Completed ################
+  2023-09-21 10:36:37 INFO com.BasePage.ListnersonTestStart:38 - #########################monitorExecution is started ################
+  2023-09-21 10:36:41 INFO org.Dialysis.Monitoringmonitor:63 - Assert verification is done for monitoring page
+  2023-09-21 10:36:51 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 01
+  2023-09-21 10:36:59 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 02
+  2023-09-21 10:37:07 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 03
+  2023-09-21 10:37:15 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 04
+  2023-09-21 10:37:23 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 05
+  2023-09-21 10:37:31 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 06
+  2023-09-21 10:37:39 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 07
+  2023-09-21 10:37:47 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 08
+  2023-09-21 10:37:55 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 09
+  2023-09-21 10:38:03 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 10
+  2023-09-21 10:38:11 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 11
+  2023-09-21 10:38:54 INFO org.Dialysis.Monitoringdd:102 - Chart is not displayed for Dialysis Machine 16
+  2023-09-21 10:38:54 INFO com.BasePage.ListnersonTestSuccess:49 - #########################monitor has been Sucessfully Completed ################
+  2023-09-21 10:39:20 INFO com.BasePage.ListnersonTestStart:38 - #########################analyticsExecution is started ################
+  2023-09-21 10:39:24 INFO org.Dialysis.Analyticsanalytic:77 - Assert verification is done for analytics trend page page
+  2023-09-21 10:39:33 INFO org.Dialysis.Analyticsdd:107 - Total run hour chart doesn't displayed
+  2023-09-21 10:39:33 INFO org.Dialysis.Analyticsdd:112 - Total number of dialysis chart doesn't displayed
+  2023-09-21 10:39:42 INFO org.Dialysis.Analyticsheatmaphome:157 - Assert verification is done for anlytics heatmap  page
+  2023-09-21 10:39:56 INFO com.BasePage.ListnersonTestFailure:63 - #########################analytics has been Failed ################
+  2023-09-21 10:40:08 INFO com.BasePage.ListnersonFinish:108 - ################ Test Scripts Execution as Finished ###################
+  
