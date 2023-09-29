@@ -21,7 +21,7 @@ public class Analytics_Production extends BasePage {
 	private By msg2 = By.xpath("(//*[local-name()='g' and contains(@class,'messageGroup')])[2]/*[local-name()='text']");
 	private By equipdd = By.xpath("//mat-label[text()='Equipment']/ancestor::div[1]/descendant::div[4]");
 	private By equiplist = By.xpath("//div[@role='listbox']/mat-option/span");
-	private By text = By.xpath("(//mat-select[@role='combobox'])[2]/descendant::span[2]");
+	private By text = By.xpath("(//mat-select[@role='combobox'])[3]/descendant::span[2]");
 	private By productionunit = By.xpath("(//*[local-name()='g' and contains(@class,'fusioncharts-datalabels')])[4]/*");
 	private By export1 = By.xpath("(//*[local-name()='g' and @stroke-linecap='round'])[1]/*[local-name()='rect'][2]");
 	private By jpg1 = By.xpath("(//span[text()='Export As JPG'])[1]");
@@ -86,7 +86,7 @@ public class Analytics_Production extends BasePage {
 					log.info("Part wise production unit is empty for "+gettext(text));
 				}else {
 					if(findWebElement(msg2).getText().contains("No data")) {
-						log.info("No data to display");
+						log.info("No data to display for "+gettext(text));
 					}else {
 			System.out.println("Part wise production unit is "+gettext(productionunit));
 					}

@@ -36,7 +36,7 @@ public class Analytics_quality extends BasePage {
 			.xpath("(//*[local-name()='g' and contains(@class,'fusioncharts-datalabels')])[2]/*[local-name()='text']");
 	private By pareto = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[5]/*[local-name()='rect']");
 	private By pareto2 = By
-			.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[11]/*[local-name()='path']");
+			.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[7]/*[local-name()='rect']");
 	private By overquality = By.xpath("(//mat-card)[1]/descendant::div[4]");
 	private By totrej = By.xpath("(//mat-card)[3]/descendant::div[4]");
 

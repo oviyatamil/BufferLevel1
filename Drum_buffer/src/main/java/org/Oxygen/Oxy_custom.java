@@ -133,7 +133,22 @@ public class Oxy_custom extends BasePage{
 					Thread.sleep(500);
 					click(list3);				
 					System.out.println("Current timing is "+data);
-					calendar(calendar, yeardd, year, startdate);
+					click(calendar);
+					click(yeardd);
+					click(year);
+					String date = new SimpleDateFormat("MMM dd").format(new Date());
+					String[] split = date.split(" ");
+					String month =split[0].toUpperCase();
+					WebElement mon = driver.findElement(By.xpath("//div[contains(text(),'" + month + "')]/parent::button"));
+					mon.click();
+					int p = Integer.parseInt(split[1]);
+					System.out.println(p);
+					WebElement start = driver.findElement(By.xpath("//div[contains(text(),'" + p + "')]/parent::button"));
+					start.click();
+					WebElement end = driver.findElement(By.xpath("//div[contains(text(),'" + p + "')]/parent::button"));
+					end.click();
+					Thread.sleep(500);
+				//	calendar(calendar, yeardd, year, startdate);
 					click(site);
 					List<WebElement> l5 = findWebElements(list);
 					for(int i=1;i<l5.size();i++) {

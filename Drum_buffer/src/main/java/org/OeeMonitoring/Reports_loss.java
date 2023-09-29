@@ -24,7 +24,10 @@ public class Reports_loss extends BasePage {
 	private By loc = By.xpath("(//mat-select[@role='combobox'])[3]/ancestor::div[1]/descendant::div[4]");
 	private By loclist = By.xpath("(//span[text()='Select Location'])/ancestor::div[1]/mat-option");
 	private By text = By.xpath("(//mat-select[@role='combobox'])[4]/descendant::span[2]");
-
+	private By calendar = By.xpath("//mat-label[contains(text(),'Date')]/following::span[1]");
+	private By yeardd = By.xpath("(//span[contains(text(),'2023')])[2]");
+	private By year = By.xpath("//div[text()=' 2023 ']");
+	private By startdate = By.xpath("//div[contains(text(),'1')]/parent::button");
 //	private By shift = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[4]");
 //	private By shiftlist = By.xpath("(//span[text()='Shift 1'])/ancestor::div[1]/mat-option");
 	private By machine = By.xpath("(//mat-select[@role='combobox'])[4]/ancestor::div[1]/descendant::div[3]");
@@ -75,7 +78,7 @@ private By chart = By.xpath("//*[local-name()='g' and contains(@class,'plot-grou
 	}
 	public void dd() {
 		try {
-	//		calendar(calendar, yeardd, year, startdate);
+			calendar(calendar, yeardd, year, startdate);
 			click(loc);
 			List<WebElement> l3 = findWebElements(loclist);
 			l3.get(1).click();

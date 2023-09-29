@@ -33,7 +33,6 @@ public class Reports_daily extends BasePage {
 	private By text = By.xpath("(//mat-select[@role='combobox'])[3]/descendant::span[2]");
 	private By text2 = By.xpath("(//mat-select[@role='combobox'])[4]/descendant::span[2]");
 	private By daterep = By.xpath("//table/tr/th[3]");
-	private By txt = By.xpath("(//mat-select[@role='combobox'])[2]/descendant::span[2]");
 	private By prodhour = By.xpath("//table/tr[12]/td");
 
 	public void oee() {
@@ -96,8 +95,7 @@ public class Reports_daily extends BasePage {
 					}					
 						l2.get(j).click();											
 					click(apply);
-					Thread.sleep(2000);
-					System.out.println(gettext(txt));
+					Thread.sleep(2000);		
 					System.out.println(gettext(daterep));
 					Thread.sleep(500);
 					List<WebElement> lis = findWebElements(prodhour);

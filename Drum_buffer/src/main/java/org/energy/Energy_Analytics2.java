@@ -65,7 +65,7 @@ public class Energy_Analytics2 extends BasePage {
 			waittobeclickable(analytics, 20);
 			click(analytics);
 			System.out.println("analytics menu is clicked");
-			waittobeclickable(eflow, 20);
+		Thread.sleep(1000);
 			click(eflow);
 			System.out.println("Energy flow analysis option is clicked");
 			Thread.sleep(1000);
@@ -247,6 +247,7 @@ public class Energy_Analytics2 extends BasePage {
 		}else {	
 			Thread.sleep(200);
 			a.moveToElement(findWebElement(apply)).click().perform();
+			Thread.sleep(500);
 		}
 			}
 		}

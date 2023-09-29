@@ -228,9 +228,6 @@ public class Energy_Analytics extends BasePage{
 			click(heat);
 			System.out.println("Heatmap option is clicked");
 			Thread.sleep(1000);
-//			String ExpectedURL = "https://portal.careworx.in/#/energy/consumption-heat-map";
-//			String ActualURL = getCurrentURL();
-//			assertEquals(ExpectedURL, ActualURL);
 			log.info("Assert verification is done for anlytics heatmap  page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -242,7 +239,21 @@ public class Energy_Analytics extends BasePage{
 			Thread.sleep(1000);
 			String data = new SimpleDateFormat("MMM dd,yyyy,hh:mm").format(new Date());
 			System.out.println("Current timing is " + data);			
-			calendar(calendar, yeardd, year, startdate);
+			click(calendar);
+			click(yeardd);
+			click(year);	
+			String[] split = data.split(" ");
+			String s = split[0].toUpperCase();
+			WebElement mon = driver.findElement(By.xpath("//div[contains(text(),'" + s + "')]/parent::button"));
+			mon.click();
+			click(startdate);
+			String[] split2 = data.split(",");
+			String[] split3 = split2[0].split(" ");
+			String m = split3[1];
+			int p = Integer.parseInt(m);
+			WebElement end = driver.findElement(By.xpath("//div[contains(text(),'" + (p-1) + "')]/parent::button"));
+			end.click();
+			
 			Thread.sleep(2000);
 			click(equip);			
 			List<WebElement> sites = findWebElements(ddlist);

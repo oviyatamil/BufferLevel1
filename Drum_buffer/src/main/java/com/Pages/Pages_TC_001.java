@@ -77,7 +77,7 @@ public class Pages_TC_001 extends BasePage {
 			System.out.println("Entered the username");
 			Thread.sleep(1000);
 				EnterText(Password,"!@#$Texelq20");
-				//	EnterText(Password,"Admin@123");
+				//		EnterText(Password,"Admin@123");
 				//	EnterText(Password,"Admin@123");
 			System.out.println("Entered the Password");
 			Thread.sleep(10000);
@@ -347,6 +347,56 @@ public void Login15() {
 		
 		e.printStackTrace();
 	}
+}
+public void Login16() {
+	try {
+		driver.get("https://www.intensivue.com/#/sign-in");
+		ReportSetup.test.log(Status.INFO,"Entered the URL");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		ReportSetup.test.log(Status.INFO,"Waiting For 10 sec");
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+		EnterText(Username,"democustomer@intensivue.com");
+		System.out.println("Entered the username");
+		Thread.sleep(1000);
+		EnterText(Password,"Admin@123");
+		System.out.println("Entered the Password");
+		Thread.sleep(60000);
+		click(Login);
+		System.out.println("Clicked on the Login");
+		Thread.sleep(2000);	       	        
+	} catch (Exception e) {
+		
+		e.printStackTrace();
+	}
+}
+public void Login17() {
+	try {
+		driver.get("https://v6drumbufferuat.azurewebsites.net/#/sign-in");
+		ReportSetup.test.log(Status.INFO,"Entered the URL");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		ReportSetup.test.log(Status.INFO,"Waiting For 10 sec");
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+			EnterText(Username,"admin@texelq.com");
+			//	EnterText(Username,"admin@indomim.com");
+			//	EnterText(Username,"admin@hanonsystem.com");
+		System.out.println("Entered the username");
+		Thread.sleep(1000);
+			EnterText(Password,"!@#$Texelq20");
+			//		EnterText(Password,"Admin@123");
+			//	EnterText(Password,"Admin@123");
+		System.out.println("Entered the Password");
+		Thread.sleep(1000);
+		click(Login);
+		System.out.println("Clicked on the Login");
+		Thread.sleep(3000);		
+	
+	       
+	        
+	} catch (Exception e) {
+		
+		e.printStackTrace();
+	}
+
 }
 
 

@@ -16,23 +16,14 @@ public class Registration extends BasePage {
 		super(driver);
 	}
 
-	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button/img");
-	private By superadmin = By.xpath("//div[contains(text(),'Super Admin')]/parent::div/button");
+	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button/img");	
 	private By icu = By.xpath("//div[contains(text(),'Digital ICU')]/parent::div/button");
-	private By smart = By.xpath("//mat-icon[@mattooltip='Click to Filter']");
 	private By sitedd = By.xpath("(//mat-select[@role='combobox'])[1]/child::div[1]/div[2]");	
 	private By sitelist = By.xpath("//span[text()='Select site']/parent::mat-option/parent::div/mat-option");
 	private By apply = By.xpath("//span[contains(text(),'Apply')]");
-	private By monitor = By.xpath("//span[contains(text(),'Monitor Movement')]");
-	
+	private By monitor = By.xpath("//span[contains(text(),'Monitor Movement')]");	
 	private By register = By.xpath("//span[contains(text(),'Patient Registration')]");
-	private By video = By.xpath("(//mat-icon[contains(@data-mat-icon-name,'video-camera')])[1]");
-	private By chat = By.xpath("(//mat-icon[contains(@data-mat-icon-name,'chat')])[1]");
-	private By notes = By.xpath("(//mat-icon[contains(@data-mat-icon-name,'chat')])[2]");
-	private By alarm = By.xpath("(//mat-icon[contains(@data-mat-icon-name,'cog')])[1]");
 	private By table = By.xpath("//table/tbody");
-	private By back = By.xpath("//span[contains(text(),'Back')]");
-	private By arrow = By.xpath("//mat-icon[contains(@data-mat-icon-name,'arrow-narrow-left')]");
 	private By text = By.xpath("//mat-select[@role='combobox']/descendant::span[2]");
 	private By add = By.xpath("//span[contains(text(),'Add')]");
 	private By hosdd = By.xpath("(//mat-select[@role='combobox'])[1]/descendant::div[4]");
@@ -57,8 +48,9 @@ public class Registration extends BasePage {
 	private By name = By.xpath("//input[@formcontrolname='patientName']");
 	private By age = By.xpath("//input[@formcontrolname='age']");
 	private By casename = By.xpath("//textarea[@formcontrolname='tags']");	
-	
+	private By patientname = By.xpath("//table/tbody/tr/td[2]");
 	private By discharge = By.xpath("(//span[contains(text(),'Discharge')])[1]");
+	private By discharge2 = By.xpath("(//span[contains(text(),'Discharge')])[2]");
 	private By view = By.xpath("//span[contains(text(),'View')]");
 	private By edit = By.xpath("//span[contains(text(),'Edit')]");
 	private By update = By.xpath("//span[contains(text(),'Update')]");
@@ -136,7 +128,7 @@ public class Registration extends BasePage {
 			Thread.sleep(100);
 			click(beddd);
 			List<WebElement> b = findWebElements(bedlist);
-			b.get(1).click();
+			b.get(2).click();
 			Thread.sleep(100);
 			EnterText(ipno, "4545");
 			EnterText(name, "Aaaa");
@@ -160,11 +152,24 @@ public class Registration extends BasePage {
 			d.get(1).click();
 			Thread.sleep(100);
 			EnterText(casename, "XYZ");
-			click(cancelbtn);
+			click(save);
 			Thread.sleep(500);
+			click(cancelbtn);
+			Thread.sleep(1000);
 			click(radio);
 			click(view);
 			click(cancelbtn);	
+			List<WebElement> r = findWebElements(patientname);
+			for(int i=0;i<r.size();i++) {
+				if(r.get(i).getText().equals("Aaaa")) {
+					List<WebElement> rad = findWebElements(radio);
+					rad.get(i).click();
+					Thread.sleep(500);
+					click(discharge);
+					click(discharge2);
+					break;
+				}
+			}
 			System.out.println("Checked adding patient record is working or not");
 			Thread.sleep(500);
 		} catch (InterruptedException e) {

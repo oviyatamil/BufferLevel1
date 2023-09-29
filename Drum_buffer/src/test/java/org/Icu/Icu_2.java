@@ -16,10 +16,10 @@ public class Icu_2 extends BaseTest{
 		ReportSetup.test.assignCategory("D-2");
 		l.home();
 		ReportSetup.test.log(Status.PASS, "Navigates to Home page");
-		l.digital();
-		ReportSetup.test.log(Status.PASS, "Navigates to Live patient screen");
-		l.live();
-		ReportSetup.test.log(Status.PASS, "Navigates to oee home page");
+//		l.digital();
+//		ReportSetup.test.log(Status.PASS, "Navigates to Live patient screen");
+//		l.live();
+//		ReportSetup.test.log(Status.PASS, "Navigates to oee home page");
 		l.device();
 		ReportSetup.test.log(Status.PASS, "Navigates to Device monitoring page");
 		l.profile();

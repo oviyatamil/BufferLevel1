@@ -26,7 +26,7 @@ public class Home_page extends BasePage {
 	private By ddlist = By.xpath("(//div[@role='listbox'])[1]/ancestor::div[1]/div[1]/mat-option");
 	private By text = By.xpath("(//mat-select[@role='combobox'])[1]/descendant::span[2]");
 	private By location = By.xpath("(//mat-select[@role='combobox'])[2]/ancestor::div[1]/descendant::div[3]");
-	private By loclist = By.xpath("(//span[text()='All'])[2]/ancestor::div[1]/mat-option/span");
+	private By loclist = By.xpath("(//span[text()='All'])[2]/ancestor::div[1]/mat-option");
 	private By table = By.xpath("//div[contains(@class,'grid md:grid')]/div/div[1]/div[1]/div");
 	private By fault = By.xpath("//span[text()='Fault']/parent::div/span[2]");
 	private By disable = By.xpath("//span[text()='Disable']/parent::div/span[2]");
@@ -45,9 +45,6 @@ public class Home_page extends BasePage {
 			click(fire);
 			System.out.println("Fire monitoring option is clicked");
 			Thread.sleep(2000);
-//			String ExpectedURL = "https://portal.careworx.in/#/fire/home";
-//			String ActualURL = getCurrentURL();
-//			assertEquals(ExpectedURL, ActualURL);
 			log.info("Assert verification is done for Fire home page");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -69,9 +66,8 @@ public class Home_page extends BasePage {
 					s.add(text);
 					
 				}
-				System.out.println(s);
-				Thread.sleep(500);
-				list2.get(0).click();
+				System.out.println(s);				
+				list2.get(0).click();				
 				click(apply);
 				Thread.sleep(4000);
 				List<WebElement> list3 = findWebElements(table);

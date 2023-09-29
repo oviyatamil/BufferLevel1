@@ -20,7 +20,7 @@ public class Alerts extends BasePage{
 	private By smartdrum = By.xpath("//mat-icon[@mattooltip='Click to Filter']");
 	private By equipdd = By.xpath("//mat-label[text()='Equipment']/ancestor::div[1]/descendant::div[3]");
 	private By equiplist = By.xpath("//div[@role='listbox']/mat-option/span");
-	private By text = By.xpath("(//mat-select[@role='combobox'])[2]/descendant::span[2]");
+	private By text = By.xpath("(//mat-select[@role='combobox'])[3]/descendant::span[2]");
 	private By datas = By.xpath("//table/tbody/tr/td");
 	private By pdf = By.xpath("//mat-icon[@mattooltip='Export to Excel']");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
@@ -32,7 +32,7 @@ public class Alerts extends BasePage{
 			waittobeclickable(ninedots, 20);
 			click(ninedots);
 			System.out.println("Ninedots button is clicked");
-			waittobeclickable(Oee, 20);
+			Thread.sleep(2000);
 			click(Oee);
 			System.out.println("Oee option is clicked");
 			Thread.sleep(2000);
@@ -83,7 +83,7 @@ public class Alerts extends BasePage{
 				}
 				System.out.println("*********");
 				}else {
-					log.info("No record found");
+					log.info("No record found for "+gettext(text));
 				}
 				if(i<list.size()-1) {
 				click(equipdd);

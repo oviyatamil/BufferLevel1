@@ -1,191 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="6" total="10" passed="3" failed="1" skipped="0">
+<testng-results ignored="8" total="13" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-21T10:34:22 IST" name="Suite" finished-at="2023-09-21T10:40:08 IST" duration-ms="346705">
+  <suite started-at="2023-09-29T15:41:44 IST" name="Suite" finished-at="2023-09-29T15:52:14 IST" duration-ms="630149">
     <groups>
+      <group name="Energy">
+        <method signature="E_1.home()[pri:0, instance:org.Energy.E_1@51bf5add]" name="home" class="org.Energy.E_1"/>
+        <method signature="E_2.monitoring()[pri:0, instance:org.Energy.E_2@7b50df34]" name="monitoring" class="org.Energy.E_2"/>
+        <method signature="E_3.analytic()[pri:0, instance:org.Energy.E_3@1b410b60]" name="analytic" class="org.Energy.E_3"/>
+        <method signature="E_6.analytic()[pri:0, instance:org.Energy.E_6@2462cb01]" name="analytic" class="org.Energy.E_6"/>
+        <method signature="E_7.customreport()[pri:0, instance:org.Energy.E_7@19b843ba]" name="customreport" class="org.Energy.E_7"/>
+      </group> <!-- Energy -->
     </groups>
-    <test started-at="2023-09-21T10:34:22 IST" name="Test" finished-at="2023-09-21T10:40:08 IST" duration-ms="346705">
-      <class name="org.dialysis.Dia_2">
-        <test-method is-config="true" signature="onetimelogin()[pri:0, instance:org.dialysis.Dia_2@51bd8b5c]" started-at="2023-09-21T10:35:37 IST" name="onetimelogin" finished-at="2023-09-21T10:35:51 IST" duration-ms="14007" status="PASS">
+    <test started-at="2023-09-29T15:41:44 IST" name="Test" finished-at="2023-09-29T15:52:14 IST" duration-ms="630149">
+      <class name="org.Energy.E_7">
+        <test-method is-config="true" signature="onetimelogin()[pri:0, instance:org.Energy.E_7@19b843ba]" started-at="2023-09-29T15:51:19 IST" name="onetimelogin" finished-at="2023-09-29T15:51:25 IST" duration-ms="5981" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- onetimelogin -->
-        <test-method signature="kpi()[pri:0, instance:org.dialysis.Dia_2@51bd8b5c]" started-at="2023-09-21T10:35:51 IST" name="kpi" finished-at="2023-09-21T10:36:12 IST" duration-ms="20498" status="PASS">
+        <test-method signature="customreport()[pri:0, instance:org.Energy.E_7@19b843ba]" started-at="2023-09-29T15:51:25 IST" name="customreport" finished-at="2023-09-29T15:52:03 IST" duration-ms="38022" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- kpi -->
-        <test-method is-config="true" signature="afterMerhod(org.testng.ITestResult)[pri:0, instance:org.dialysis.Dia_2@51bd8b5c]" started-at="2023-09-21T10:36:12 IST" name="afterMerhod" finished-at="2023-09-21T10:36:12 IST" duration-ms="421" status="PASS">
+        </test-method> <!-- customreport -->
+        <test-method is-config="true" signature="afterMerhod(org.testng.ITestResult)[pri:0, instance:org.Energy.E_7@19b843ba]" started-at="2023-09-29T15:52:03 IST" name="afterMerhod" finished-at="2023-09-29T15:52:03 IST" duration-ms="313" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=kpi status=SUCCESS method=Dia_2.kpi()[pri:0, instance:org.dialysis.Dia_2@51bd8b5c] output={null}]]]>
+                <![CDATA[[TestResult name=customreport status=SUCCESS method=E_7.customreport()[pri:0, instance:org.Energy.E_7@19b843ba] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMerhod -->
-        <test-method is-config="true" signature="afterclass()[pri:0, instance:org.dialysis.Dia_2@51bd8b5c]" started-at="2023-09-21T10:36:12 IST" name="afterclass" finished-at="2023-09-21T10:36:23 IST" duration-ms="10601" status="PASS">
+        <test-method is-config="true" signature="afterclass()[pri:0, instance:org.Energy.E_7@19b843ba]" started-at="2023-09-29T15:52:03 IST" name="afterclass" finished-at="2023-09-29T15:52:14 IST" duration-ms="10931" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterclass -->
-      </class> <!-- org.dialysis.Dia_2 -->
-      <class name="org.dialysis.Dia_1">
-        <test-method is-config="true" signature="BrowserSetup()[pri:0, instance:org.dialysis.Dia_1@163370c2]" started-at="2023-09-21T10:34:18 IST" name="BrowserSetup" finished-at="2023-09-21T10:34:22 IST" duration-ms="4009" status="PASS">
+      </class> <!-- org.Energy.E_7 -->
+      <class name="org.Energy.E_6">
+        <test-method is-config="true" signature="onetimelogin()[pri:0, instance:org.Energy.E_6@2462cb01]" started-at="2023-09-29T15:47:14 IST" name="onetimelogin" finished-at="2023-09-29T15:47:20 IST" duration-ms="6010" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onetimelogin -->
+        <test-method signature="analytic()[pri:0, instance:org.Energy.E_6@2462cb01]" started-at="2023-09-29T15:47:20 IST" name="analytic" finished-at="2023-09-29T15:51:07 IST" duration-ms="226899" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- analytic -->
+        <test-method is-config="true" signature="afterMerhod(org.testng.ITestResult)[pri:0, instance:org.Energy.E_6@2462cb01]" started-at="2023-09-29T15:51:07 IST" name="afterMerhod" finished-at="2023-09-29T15:51:08 IST" duration-ms="296" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=analytic status=SUCCESS method=E_6.analytic()[pri:0, instance:org.Energy.E_6@2462cb01] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMerhod -->
+        <test-method is-config="true" signature="afterclass()[pri:0, instance:org.Energy.E_6@2462cb01]" started-at="2023-09-29T15:51:08 IST" name="afterclass" finished-at="2023-09-29T15:51:19 IST" duration-ms="11244" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterclass -->
+      </class> <!-- org.Energy.E_6 -->
+      <class name="org.Energy.E_3">
+        <test-method is-config="true" signature="onetimelogin()[pri:0, instance:org.Energy.E_3@1b410b60]" started-at="2023-09-29T15:44:28 IST" name="onetimelogin" finished-at="2023-09-29T15:44:34 IST" duration-ms="5997" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onetimelogin -->
+        <test-method signature="analytic()[pri:0, instance:org.Energy.E_3@1b410b60]" started-at="2023-09-29T15:44:34 IST" name="analytic" finished-at="2023-09-29T15:47:03 IST" duration-ms="149331" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- analytic -->
+        <test-method is-config="true" signature="afterMerhod(org.testng.ITestResult)[pri:0, instance:org.Energy.E_3@1b410b60]" started-at="2023-09-29T15:47:03 IST" name="afterMerhod" finished-at="2023-09-29T15:47:04 IST" duration-ms="339" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=analytic status=SUCCESS method=E_3.analytic()[pri:0, instance:org.Energy.E_3@1b410b60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMerhod -->
+        <test-method is-config="true" signature="afterclass()[pri:0, instance:org.Energy.E_3@1b410b60]" started-at="2023-09-29T15:47:04 IST" name="afterclass" finished-at="2023-09-29T15:47:14 IST" duration-ms="10799" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterclass -->
+      </class> <!-- org.Energy.E_3 -->
+      <class name="org.Energy.E_2">
+        <test-method is-config="true" signature="onetimelogin()[pri:0, instance:org.Energy.E_2@7b50df34]" started-at="2023-09-29T15:42:38 IST" name="onetimelogin" finished-at="2023-09-29T15:42:45 IST" duration-ms="6095" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onetimelogin -->
+        <test-method signature="monitoring()[pri:0, instance:org.Energy.E_2@7b50df34]" started-at="2023-09-29T15:42:45 IST" name="monitoring" finished-at="2023-09-29T15:44:17 IST" duration-ms="92238" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- monitoring -->
+        <test-method is-config="true" signature="afterMerhod(org.testng.ITestResult)[pri:0, instance:org.Energy.E_2@7b50df34]" started-at="2023-09-29T15:44:17 IST" name="afterMerhod" finished-at="2023-09-29T15:44:17 IST" duration-ms="284" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=monitoring status=SUCCESS method=E_2.monitoring()[pri:0, instance:org.Energy.E_2@7b50df34] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMerhod -->
+        <test-method is-config="true" signature="afterclass()[pri:0, instance:org.Energy.E_2@7b50df34]" started-at="2023-09-29T15:44:17 IST" name="afterclass" finished-at="2023-09-29T15:44:28 IST" duration-ms="10848" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterclass -->
+      </class> <!-- org.Energy.E_2 -->
+      <class name="org.Energy.E_1">
+        <test-method is-config="true" signature="BrowserSetup()[pri:0, instance:org.Energy.E_1@51bf5add]" started-at="2023-09-29T15:41:39 IST" name="BrowserSetup" finished-at="2023-09-29T15:41:44 IST" duration-ms="4553" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserSetup -->
-        <test-method is-config="true" signature="onetimelogin()[pri:0, instance:org.dialysis.Dia_1@163370c2]" started-at="2023-09-21T10:34:22 IST" name="onetimelogin" finished-at="2023-09-21T10:34:38 IST" duration-ms="16543" status="PASS">
+        <test-method is-config="true" signature="onetimelogin()[pri:0, instance:org.Energy.E_1@51bf5add]" started-at="2023-09-29T15:41:44 IST" name="onetimelogin" finished-at="2023-09-29T15:41:53 IST" duration-ms="9170" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- onetimelogin -->
-        <test-method signature="home()[pri:0, instance:org.dialysis.Dia_1@163370c2]" started-at="2023-09-21T10:34:38 IST" name="home" finished-at="2023-09-21T10:35:26 IST" duration-ms="47804" status="PASS">
+        <test-method signature="home()[pri:0, instance:org.Energy.E_1@51bf5add]" started-at="2023-09-29T15:41:53 IST" name="home" finished-at="2023-09-29T15:42:27 IST" duration-ms="33832" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- home -->
-        <test-method is-config="true" signature="afterMerhod(org.testng.ITestResult)[pri:0, instance:org.dialysis.Dia_1@163370c2]" started-at="2023-09-21T10:35:26 IST" name="afterMerhod" finished-at="2023-09-21T10:35:26 IST" duration-ms="305" status="PASS">
+        <test-method is-config="true" signature="afterMerhod(org.testng.ITestResult)[pri:0, instance:org.Energy.E_1@51bf5add]" started-at="2023-09-29T15:42:27 IST" name="afterMerhod" finished-at="2023-09-29T15:42:27 IST" duration-ms="280" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=home status=SUCCESS method=Dia_1.home()[pri:0, instance:org.dialysis.Dia_1@163370c2] output={null}]]]>
+                <![CDATA[[TestResult name=home status=SUCCESS method=E_1.home()[pri:0, instance:org.Energy.E_1@51bf5add] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMerhod -->
-        <test-method is-config="true" signature="afterclass()[pri:0, instance:org.dialysis.Dia_1@163370c2]" started-at="2023-09-21T10:35:26 IST" name="afterclass" finished-at="2023-09-21T10:35:37 IST" duration-ms="10633" status="PASS">
+        <test-method is-config="true" signature="afterclass()[pri:0, instance:org.Energy.E_1@51bf5add]" started-at="2023-09-29T15:42:27 IST" name="afterclass" finished-at="2023-09-29T15:42:38 IST" duration-ms="11115" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterclass -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:org.dialysis.Dia_1@163370c2]" started-at="2023-09-21T10:40:08 IST" name="teardown" finished-at="2023-09-21T10:40:09 IST" duration-ms="1034" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:org.Energy.E_1@51bf5add]" started-at="2023-09-29T15:52:14 IST" name="teardown" finished-at="2023-09-29T15:52:16 IST" duration-ms="1366" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- org.dialysis.Dia_1 -->
-      <class name="org.dialysis.Dia_4">
-        <test-method is-config="true" signature="onetimelogin()[pri:0, instance:org.dialysis.Dia_4@1b410b60]" started-at="2023-09-21T10:39:06 IST" name="onetimelogin" finished-at="2023-09-21T10:39:20 IST" duration-ms="14003" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- onetimelogin -->
-        <test-method signature="analytics()[pri:0, instance:org.dialysis.Dia_4@1b410b60]" started-at="2023-09-21T10:39:20 IST" name="analytics" finished-at="2023-09-21T10:39:56 IST" duration-ms="36390" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"(//*[local-name()='g' and contains(@class,'plot-group')])[1]"}
-  (Session info: chrome=117.0.5938.88)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3631ccedcdfedaaace2c46089664736f, findElement {using=xpath, value=(//*[local-name()='g' and contains(@class,'plot-group')])[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.88, chrome: {chromedriverVersion: 117.0.5938.88 (be6afae47212..., userDataDir: C:\Users\oviya\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60788}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60788/devtoo..., se:cdpVersion: 117.0.5938.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3631ccedcdfedaaace2c46089664736f]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//*[local-name()='g' and contains(@class,'plot-group')])[1]"}
-  (Session info: chrome=117.0.5938.88)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3631ccedcdfedaaace2c46089664736f, findElement {using=xpath, value=(//*[local-name()='g' and contains(@class,'plot-group')])[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.88, chrome: {chromedriverVersion: 117.0.5938.88 (be6afae47212..., userDataDir: C:\Users\oviya\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60788}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60788/devtoo..., se:cdpVersion: 117.0.5938.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3631ccedcdfedaaace2c46089664736f
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at com.BasePage.BasePage.findWebElement(BasePage.java:41)
-at org.Dialysis.Analytics.heatmap(Analytics.java:184)
-at org.dialysis.Dia_4.analytics(Dia_4.java:28)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:829)
-at org.testng.TestRunner.run(TestRunner.java:602)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-at org.testng.TestNG.runSuites(TestNG.java:1099)
-at org.testng.TestNG.run(TestNG.java:1067)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- analytics -->
-        <test-method is-config="true" signature="afterMerhod(org.testng.ITestResult)[pri:0, instance:org.dialysis.Dia_4@1b410b60]" started-at="2023-09-21T10:39:56 IST" name="afterMerhod" finished-at="2023-09-21T10:39:56 IST" duration-ms="351" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=analytics status=FAILURE method=Dia_4.analytics()[pri:0, instance:org.dialysis.Dia_4@1b410b60] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMerhod -->
-        <test-method is-config="true" signature="afterclass()[pri:0, instance:org.dialysis.Dia_4@1b410b60]" started-at="2023-09-21T10:39:56 IST" name="afterclass" finished-at="2023-09-21T10:40:08 IST" duration-ms="11957" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterclass -->
-      </class> <!-- org.dialysis.Dia_4 -->
-      <class name="org.dialysis.Dia_3">
-        <test-method is-config="true" signature="onetimelogin()[pri:0, instance:org.dialysis.Dia_3@7b50df34]" started-at="2023-09-21T10:36:23 IST" name="onetimelogin" finished-at="2023-09-21T10:36:37 IST" duration-ms="14132" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- onetimelogin -->
-        <test-method signature="monitor()[pri:0, instance:org.dialysis.Dia_3@7b50df34]" started-at="2023-09-21T10:36:37 IST" name="monitor" finished-at="2023-09-21T10:38:54 IST" duration-ms="137709" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- monitor -->
-        <test-method is-config="true" signature="afterMerhod(org.testng.ITestResult)[pri:0, instance:org.dialysis.Dia_3@7b50df34]" started-at="2023-09-21T10:38:54 IST" name="afterMerhod" finished-at="2023-09-21T10:38:55 IST" duration-ms="328" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=monitor status=SUCCESS method=Dia_3.monitor()[pri:0, instance:org.dialysis.Dia_3@7b50df34] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMerhod -->
-        <test-method is-config="true" signature="afterclass()[pri:0, instance:org.dialysis.Dia_3@7b50df34]" started-at="2023-09-21T10:38:55 IST" name="afterclass" finished-at="2023-09-21T10:39:06 IST" duration-ms="10929" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterclass -->
-      </class> <!-- org.dialysis.Dia_3 -->
+      </class> <!-- org.Energy.E_1 -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

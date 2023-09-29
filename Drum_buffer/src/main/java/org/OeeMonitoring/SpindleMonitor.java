@@ -32,7 +32,7 @@ public class SpindleMonitor extends BasePage{
 			waittobeclickable(ninedots, 20);
 			click(ninedots);
 			System.out.println("Ninedots button is clicked");
-			waittobeclickable(Oee, 20);
+			Thread.sleep(1000);
 			click(Oee);
 			System.out.println("Oee option is clicked");
 			Thread.sleep(2000);

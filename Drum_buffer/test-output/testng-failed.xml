@@ -6,16 +6,16 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="org.dialysis.Dia_4">
+      <class name="org.Oee.OE_012">
         <methods>
+          <include name="kpioee"/>
           <include name="afterMerhod"/>
           <include name="teardown"/>
           <include name="onetimelogin"/>
           <include name="afterclass"/>
-          <include name="analytics"/>
           <include name="BrowserSetup"/>
         </methods>
-      </class> <!-- org.dialysis.Dia_4 -->
+      </class> <!-- org.Oee.OE_012 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

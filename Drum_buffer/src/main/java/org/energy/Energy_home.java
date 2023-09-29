@@ -215,10 +215,10 @@ public class Energy_home extends BasePage {
 	}
 	public void profile() {
 		click(pdf);
-		log.info("pdf is downloaded");
+		System.out.println("pdf is downloaded");
 		click(profile);
-		log.info("profile button is clicked");
+		System.out.println("profile button is clicked");
 		click(signout);
-		log.info("signout button is clicked");
+		System.out.println("signout button is clicked");
 	}
 }

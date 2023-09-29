@@ -28,8 +28,8 @@ public class Kpi_oee extends BasePage {
 	private By oeehigh = By.xpath("(//div[text()='OEE'])[2]/following::div[4]");
 	private By overalloee = By.xpath("(//div[text()='OEE'])[2]/following::div[1]");
 	private By oeelow = By.xpath("(//div[text()='OEE'])[2]/following::div[8]");
-	private By partnum = By.xpath("//*[@id='element-to-export']/div[4]/div[8]/div[7]/div/table/tbody/tr[1]/td[1]");
-	private By pgmnum = By.xpath("//*[@id='element-to-export']/div[4]/div[8]/div[7]/div/table/tbody/tr[1]/td[2]");
+	private By partnum = By.xpath("//*[@id=\"element-to-export\"]/div[6]/div[7]/table/tbody/tr/td[1]");
+	private By pgmnum = By.xpath("//*[@id=\"element-to-export\"]/div[6]/div[7]/table/tbody/tr/td[2]");
 	private By spindlehigh = By.xpath("//div[text()='Spindle']/following::div[4]");
 	private By spindlelow = By.xpath("//div[text()='Spindle']/following::div[8]");
 	private By overalspindle = By.xpath("//div[text()='Spindle']/following::div[1]");
@@ -145,16 +145,14 @@ public class Kpi_oee extends BasePage {
 						log.info("Block is - for " + gettext(equiptext));
 					} else {
 						System.out.println("Block is " + gettext(block));
-					}
-					// System.out.println("Block is "+gettext(block));
+					}					
 					if (gettext(line).equals("UNAVAILABLE")) {
 						log.info("Line is Unavailable for " + gettext(equiptext));
 					} else if (gettext(line).equals("-")) {
 						log.info("Line is - for " + gettext(equiptext));
 					} else {
 						System.out.println("Line no is " + gettext(line));
-					}
-					// System.out.println("Line No is "+gettext(line));
+					}				
 					System.out.println("Timestamp is " + gettext(timestamp));
 					if (gettext(msg).equals("UNAVAILABLE")) {
 						log.info("msg is Unavailable for " + gettext(equiptext));
@@ -162,16 +160,14 @@ public class Kpi_oee extends BasePage {
 						log.info("msg is - for " + gettext(equiptext));
 					} else {
 						System.out.println("Msg is " + gettext(msg));
-					}
-					// System.out.println("Message is "+gettext(msg));
+					}		
 					if (gettext(pgmno).equals("0")) {
 						log.info("Pgm no is 0 for " + gettext(equiptext));
 					} else if (gettext(pgmno).equals("-")) {
 						log.info("Pgm no is - for " + gettext(equiptext));
 					} else {
 						System.out.println("Pgm no is " + gettext(pgmno));
-					}
-					// System.out.println("Program no is "+gettext(pgmno));
+					}					
 					Thread.sleep(500);
 					System.out.println("Overall oee is " + gettext(overalloee));
 					System.out.println("Oee high hour is " + gettext(oeehigh));
@@ -204,7 +200,7 @@ public class Kpi_oee extends BasePage {
 					List<Float> l = new LinkedList<>();
 					float sum2 = 0f;					
 					for(int a=4;a<7;a++) {
-					List<WebElement>  dat = driver.findElements(By.xpath("//*[@id='element-to-export']/div[4]/div["+a+"]/div/table/tbody/tr[1]/td"));										
+					List<WebElement>  dat = driver.findElements(By.xpath("//*[@id='element-to-export']/div[4]/div[4]/table/tbody/tr[2]/td"));										
 					for (int p = 1; p < dat.size(); p++) {
 						String text = dat.get(p).getText();
 						String replace = text.replace("%", "").trim();
@@ -222,9 +218,9 @@ public class Kpi_oee extends BasePage {
 					String rou = String.valueOf(round);
 					if (sum2!= 0) {
 						if (gettext(overalloee).contains(rou)) {
-							System.out.println("Average actual OEE from calculation is " + sum2 / l.size());
+							System.out.println("Average actual OEE from calculation is " + sum2 / l.size()+"%");
 						} else {
-							log.info("Actual Oee percentage from table is "+gettext(overalloee)+" mismatches with overall calculated oee "+sum2 / l.size());
+							log.info("Actual Oee percentage from table is "+gettext(overalloee)+" mismatches with overall calculated oee "+sum2 / l.size()+"%");
 						}
 					} 
 		
@@ -242,14 +238,14 @@ public class Kpi_oee extends BasePage {
 						System.out.println("MAXIMUM OEE from calculation IS 0%");
 						System.out.println("MINIMUM OEE from calculation IS 0%");
 					} else {
-						System.out.println("MAXIMUM OEE from calculation IS " + Collections.max(l2));
-						System.out.println("MINIMUM OEE from calculation IS " + Collections.min(l2));
+						System.out.println("MAXIMUM OEE from calculation IS " + Collections.max(l2)+"%");
+						System.out.println("MINIMUM OEE from calculation IS " + Collections.min(l2)+"%");
 
 					}
 					List<Float> l3 = new LinkedList<>();
 					float sum3 = 0f;
 					for(int a=4;a<7;a++) {
-						List<WebElement>  dat = driver.findElements(By.xpath("//*[@id='element-to-export']/div[4]/div["+a+"]/div/table/tbody/tr[2]/td"));
+						List<WebElement>  dat = driver.findElements(By.xpath("//*[@id='element-to-export']/div[4]/div[4]/table/tbody/tr[1]/td"));
 					
 					
 					for (int k = 1; k < dat.size(); k++) {
@@ -273,23 +269,23 @@ public class Kpi_oee extends BasePage {
 					if (sum3 == 0) {
 						System.out.println("Sum is 0");
 					} else if (gettext(overalavailable).contains(rou2)) {
-						System.out.println("Average actual availability from calculation is " + sum3 / l.size());
+						System.out.println("Average actual availability from calculation is " + sum3 / l.size()+"%");
 					} else {
-						log.info("Actual availability percentage from table is "+gettext(overalavailable)+" mismatches with calculated availability "+sum3 / l.size());
+						log.info("Actual availability percentage from table is "+gettext(overalavailable)+" mismatches with calculated availability "+sum3 / l.size()+"%");
 					}
 
 					if (l3.size() == 0) {
 						System.out.println("MAXIMUM Availability from calculation IS 0%");
 						System.out.println("MINIMUM Availability from calculation IS 0%");
 					} else {
-						System.out.println("MAXIMUM Availability from calculation IS " + Collections.max(l3));
-						System.out.println("MINIMUM Availability from calculation IS " + Collections.min(l3));
+						System.out.println("MAXIMUM Availability from calculation IS " + Collections.max(l3)+"%");
+						System.out.println("MINIMUM Availability from calculation IS " + Collections.min(l3)+"%");
 
 					}
 					List<Float> l4 = new LinkedList<>();
 					float sum4 = 0f;
 					for(int a=4;a<7;a++) {
-						List<WebElement>  dat = driver.findElements(By.xpath("//*[@id='element-to-export']/div[4]/div["+a+"]/div/table/tbody/tr[3]/td"));
+						List<WebElement>  dat = driver.findElements(By.xpath("//*[@id='element-to-export']/div[4]/div[4]/table/tbody/tr[3]/td"));
 					
 					
 					for (int m = 1; m < dat.size(); m++) {
@@ -314,24 +310,24 @@ public class Kpi_oee extends BasePage {
 						System.out.println("Performance is 0");
 					} else {
 						if (gettext(overalperf).contains(rou3)) {
-							System.out.println("Average actual performance from calculation is " + sum4 / l.size());
+							System.out.println("Average actual performance from calculation is " + sum4 / l.size()+"%");
 						} else {
-							log.info("Actual performance percentage displayed is "+ gettext(overalperf)+" mismatches with calculated performance "+sum4 / l.size());
+							log.info("Actual performance percentage displayed is "+ gettext(overalperf)+" mismatches with calculated performance "+sum4 / l.size()+"%");
 						}
 					}
 					if (l4.size() == 0) {
 						System.out.println("MAXIMUM Performance from calculation IS 0%");
 						System.out.println("MINIMUM Performance from calculation IS 0%");
 					} else {
-						System.out.println("MAXIMUM Performance from calculation IS " + Collections.max(l4));
-						System.out.println("MINIMUM Performance from calculation IS " + Collections.min(l4));
+						System.out.println("MAXIMUM Performance from calculation IS " + Collections.max(l4)+"%");
+						System.out.println("MINIMUM Performance from calculation IS " + Collections.min(l4)+"%");
 
 					}
 					
 					List<Float> l5 = new LinkedList<>();
 					float sum5 = 0f;
 					for(int a=4;a<7;a++) {
-						List<WebElement>  dat = driver.findElements(By.xpath("//*[@id='element-to-export']/div[4]/div["+a+"]/div/table/tbody/tr[4]/td"));
+						List<WebElement>  dat = driver.findElements(By.xpath("//*[@id='element-to-export']/div[4]/div[4]/table/tbody/tr[4]/td"));
 					for (int n = 1; n < dat.size(); n++) {
 						String text = dat.get(n).getText();
 						if (text.equals("0%")) {
@@ -354,24 +350,21 @@ public class Kpi_oee extends BasePage {
 						System.out.println("Quality is 0");
 					} else {
 						if (gettext(overalquality).contains(rou4)) {
-							System.out.println("Average actual quality from calculation is " + sum2 / l.size());
+							System.out.println("Average actual quality from calculation is " + sum2 / l.size()+"%");
 						} else {
-							log.info("Actual quality percentage from table is "+ gettext(overalquality)+" mismatches with overall calculated quality "+ sum2 / l.size() );
+							log.info("Actual quality percentage from table is "+ gettext(overalquality)+" mismatches with overall calculated quality "+ sum2 / l.size()+"%" );
 						}
 					}
 					if (l5.size() == 0) {
 						System.out.println("MAXIMUM Quality from calculation IS 0%");
 						System.out.println("MINIMUM Quality from calculation IS 0%");
 					} else {
-						System.out.println("MAXIMUM Quality from calculation IS " + Collections.max(l5));
-						System.out.println("MINIMUM Quality from calculation IS " + Collections.min(l5));
+						System.out.println("MAXIMUM Quality from calculation IS " + Collections.max(l5)+"%");
+						System.out.println("MINIMUM Quality from calculation IS " + Collections.min(l5)+"%");
 
 					}
-					System.out.println("*******");
-					for(int k=4;k<7;k++) {
-				//	List<WebElement> shift = driver.findElements(By.xpath("//*[@id='element-to-export']/div[4]/div[7]/div["+k+"]"));
-				//	List<WebElement> act = findWebElements(activetable);
-					List<WebElement> act = driver.findElements(By.xpath("//*[@id='element-to-export']/div[4]/div[7]/div["+k+"]/div/table/tbody/tr[1]/td"));
+					System.out.println("*******");					
+					List<WebElement> act = driver.findElements(By.xpath("//*[@id='element-to-export']/div[5]/div[4]/table/tbody/tr[1]/td"));
 					List<Float> m2 = new LinkedList<>();
 					if(act.size()==1) {
 						break;
@@ -390,13 +383,13 @@ public class Kpi_oee extends BasePage {
 						System.out.println("MAXIMUM Active percentage from calculation IS 0%");
 						System.out.println("MINIMUM Active percentage from calculation IS 0%");
 					} else {
-						System.out.println("MAXIMUM Active percentage from calculation IS " + Collections.max(m2));
-						System.out.println("MINIMUM Active percentage from calculation IS " + Collections.min(m2));
+						System.out.println("MAXIMUM Active percentage from calculation IS " + Collections.max(m2)+"%");
+						System.out.println("MINIMUM Active percentage from calculation IS " + Collections.min(m2)+"%");
 
 					}
 
 					Thread.sleep(1000);
-					List<WebElement> spin = driver.findElements(By.xpath("//*[@id='element-to-export']/div[4]/div[7]/div["+k+"]/div/table/tbody/tr[2]/td"));
+					List<WebElement> spin = driver.findElements(By.xpath("//*[@id='element-to-export']/div[5]/div[4]/table/tbody/tr[5]/td"));
 					List<Float> m3 = new LinkedList<>();
 					for (int j = 1; j < spin.size(); j++) {
 						String text = spin.get(j).getText();
@@ -412,12 +405,12 @@ public class Kpi_oee extends BasePage {
 						System.out.println("MAXIMUM Spindle percentage from calculation IS 0%");
 						System.out.println("MINIMUM Spindle percentage from calculation IS 0%");
 					} else {
-						System.out.println("MAXIMUM Spindle percentage from calculation IS " + Collections.max(m3));
-						System.out.println("MINIMUM Spindle percentage from calculation IS " + Collections.min(m3));
+						System.out.println("MAXIMUM Spindle percentage from calculation IS " + Collections.max(m3)+"%");
+						System.out.println("MINIMUM Spindle percentage from calculation IS " + Collections.min(m3)+"%");
 
 					}
 					
-					List<WebElement> act4 = driver.findElements(By.xpath("//*[@id='element-to-export']/div[4]/div[7]/div["+k+"]/div/table/tbody/tr[3]/td"));
+					List<WebElement> act4 = driver.findElements(By.xpath("//*[@id='element-to-export']/div[5]/div[4]/table/tbody/tr[4]/td"));
 					List<Float> m4 = new LinkedList<>();
 					for (int m = 1; m < act4.size(); m++) {
 						String text = act4.get(m).getText();
@@ -433,12 +426,12 @@ public class Kpi_oee extends BasePage {
 						System.out.println("MAXIMUM Idle percentage from calculation IS 0%");
 						System.out.println("MINIMUM Idle percentage from calculation IS 0%");
 					} else {
-						System.out.println("MAXIMUM Idle percentage from calculation IS " + Collections.max(m4));
-						System.out.println("MINIMUM Idle percentage from calculation IS " + Collections.min(m4));
+						System.out.println("MAXIMUM Idle percentage from calculation IS " + Collections.max(m4)+"%");
+						System.out.println("MINIMUM Idle percentage from calculation IS " + Collections.min(m4)+"%");
 
 					}
 					Thread.sleep(1000);
-					List<WebElement> act5 = driver.findElements(By.xpath("//*[@id='element-to-export']/div[4]/div[7]/div["+k+"]/div/table/tbody/tr[4]/td"));
+					List<WebElement> act5 = driver.findElements(By.xpath("//*[@id='element-to-export']/div[5]/div[4]/table/tbody/tr[2]/td"));
 					List<Float> m5 = new LinkedList<>();
 					for (int n = 1; n < act5.size(); n++) {
 						String text = act5.get(n).getText();
@@ -454,13 +447,13 @@ public class Kpi_oee extends BasePage {
 						System.out.println("MAXIMUM Alert percentage from calculation IS 0%");
 						System.out.println("MINIMUM Alert percentage from calculation IS 0%");
 					} else {
-						System.out.println("MAXIMUM Alert percentage from calculation IS " + Collections.max(m5));
-						System.out.println("MINIMUM Alert percentage from calculation IS " + Collections.min(m5));
+						System.out.println("MAXIMUM Alert percentage from calculation IS " + Collections.max(m5)+"%");
+						System.out.println("MINIMUM Alert percentage from calculation IS " + Collections.min(m5)+"%");
 
 					}
 					Thread.sleep(1000);
 					
-					List<WebElement> act6 = driver.findElements(By.xpath("//*[@id='element-to-export']/div[4]/div[7]/div["+k+"]/div/table/tbody/tr[5]/td"));
+					List<WebElement> act6 = driver.findElements(By.xpath("//*[@id='element-to-export']/div[5]/div[4]/table/tbody/tr[3]/td"));
 					List<Float> m6 = new LinkedList<>();
 					for (int n = 1; n < act6.size(); n++) {
 						String text = act6.get(n).getText();
@@ -476,12 +469,11 @@ public class Kpi_oee extends BasePage {
 						System.out.println("MAXIMUM Down percentage from calculation IS 0%");
 						System.out.println("MINIMUM Down percentage from calculation IS 0%");
 					} else {
-						System.out.println("MAXIMUM Down percentage from calculation IS " + Collections.max(m6));
-						System.out.println("MINIMUM Down percentage from calculation IS " + Collections.min(m6));
+						System.out.println("MAXIMUM Down percentage from calculation IS " + Collections.max(m6)+"%");
+						System.out.println("MINIMUM Down percentage from calculation IS " + Collections.min(m6)+"%");
 
 					}
-					}
-					}
+					}				
 					System.out.println("24 hrs total parts average is " + gettext(partsavg));
 					System.out.println("High parts number and time is " + gettext(highparts));
 					System.out.println("low parts number and time  is " + gettext(lowparts));
@@ -491,18 +483,20 @@ public class Kpi_oee extends BasePage {
 
 					String sums = null;
 
-					for (int g = 7; g <10; g++) {
+					
 						List<WebElement> td = driver.findElements(
-								By.xpath("//*[@id='element-to-export']/div[4]/div[8]/div["+g+"]/div/table/tbody/tr"));
+								By.xpath("//*[@id='element-to-export']/div[6]/div[7]/table/tbody/tr/td"));
 						if(td.size()>1) {
-						for(int j=1;j<td.size();j++) {
+						for(int j=2;j<td.size();j++) {
 						
-						List<WebElement> part = driver.findElements(By.xpath(
-								"//*[@id='element-to-export']/div[4]/div[8]/div["+g+"]/div/table/tbody/tr["+j+"]/td"));
-						Thread.sleep(1000);
-						for (int f = 2; f < part.size(); f++) {
+//						List<WebElement> part = driver.findElements(By.xpath(
+//								"//*[@id='element-to-export']/div[4]/div[8]/div["+g+"]/div/table/tbody/tr["+j+"]/td"));
+//						Thread.sleep(1000);
+//						for (int f = 2; f < part.size(); f++) {
 
-							String txt = part.get(f).getText();
+						//	String txt = part.get(f).getText();
+							String txt = td.get(j).getText();
+							Thread.sleep(1000);
 							if (txt.equals("0")) {
 								continue;
 							} else if(txt.equals("N/A")) {
@@ -510,7 +504,7 @@ public class Kpi_oee extends BasePage {
 							}else {
 								count.add(Integer.valueOf(txt));
 							}
-						}
+//						}
 					}
 					
 
@@ -520,7 +514,7 @@ public class Kpi_oee extends BasePage {
 					}
 					sums = String.valueOf(y);
 					
-					System.out.println("sum is"+sums);
+					System.out.println("Part count total from calculation is "+sums);
 					
 					if (count.size() == 0) {
 						System.out.println("Maximum parts count from table is 0");
@@ -544,7 +538,7 @@ public class Kpi_oee extends BasePage {
 				log.info("Part count table has no data for "+gettext(equiptext));				
 			}
 				//		td.clear();
-					}
+					
 					if(sums!=null) {
 					if (gettext(totalparts).contains(sums)) {
 						System.out.println("24 hrs total parts is " + gettext(totalparts));

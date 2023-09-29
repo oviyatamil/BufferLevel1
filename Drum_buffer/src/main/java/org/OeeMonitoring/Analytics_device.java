@@ -24,7 +24,7 @@ public class Analytics_device extends BasePage{
 	private By type = By.xpath("//mat-label[text()='Type']/ancestor::div[1]/descendant::div[3]");
 	private By machtxt = By.xpath("(//mat-select[@role='combobox'])[4]/descendant::span[2]");
 	private By typelist = By.xpath("//span[text()='Select type']/ancestor::div[1]/mat-option");
-	private By text = By.xpath("(//mat-select[@role='combobox'])[2]/descendant::span[2]");
+	private By text = By.xpath("(//mat-select[@role='combobox'])[3]/descendant::span[2]");
 	private By typetext = By.xpath("(//mat-select[@role='combobox'])[3]/descendant::span[2]");
 	private By mouse = By.xpath("(//*[local-name()='g' and contains(@class,'plot-group')])[1]/*[20]");
 	private By slide = By.xpath("(//*[local-name()='g' and contains(@class,'fc-gl-slider')])[1]/*[local-name()='circle'][3]");
@@ -42,7 +42,7 @@ public class Analytics_device extends BasePage{
 			waittobeclickable(ninedots, 20);
 			click(ninedots);
 			System.out.println("Ninedots button is clicked");
-			waittobeclickable(Oee, 20);
+			Thread.sleep(2000);
 			click(Oee);
 			System.out.println("Oee option is clicked");
 			Thread.sleep(2000);

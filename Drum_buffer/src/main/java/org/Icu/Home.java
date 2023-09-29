@@ -14,23 +14,17 @@ public class Home extends BasePage{
 		super(driver);
 	}
 	private By ninedots = By.xpath("//div[@class='cursor-pointer']/button/img");
-	private By superadmin = By.xpath("//div[contains(text(),'Super Admin')]/parent::div/button");
 	private By icu = By.xpath("//div[contains(text(),'Digital ICU')]");
 	private By smart = By.xpath("//mat-icon[@mattooltip='Click to Filter']");
 	private By sitedd = By.xpath("(//mat-select[@role='combobox'])[1]/child::div[1]/div[2]");
 	private By sitelist = By.xpath("//span[contains(text(),'Select Site')]/ancestor::div[1]/mat-option");
 	private By apply = By.xpath("//span[contains(text(),'Apply')]");
-	private By bedno = By.xpath("//span[contains(text(),'Apply')]/following::div[1]/div/div/div[1]/div/div[1]/span");
-	private By patient = By.xpath("//span[contains(text(),'Apply')]/following::div[1]/div/div/div[1]/div/div[2]/span");
 	private By profile = By.xpath("//span[@class='relative']/child::mat-icon");
 	private By signout = By.xpath("//span[text()='Sign out']");
 	private By admit = By.xpath("//table/tbody/tr/td[7]/span[1]/span");
 	private By register = By.xpath("//span[contains(text(),'Patient Registration')]");
 	private By home = By.xpath("//span[contains(text(),'Home')]");
 	private By card = By.xpath("//span[contains(text(),'Apply')]/following::div[1]/div/div");
-	private By hr = By.xpath("//span[contains(text(),'Apply')]/following::div[1]/div/div[1]/div[3]/div/div[2]/div[1]/span");
-	private By sp = By.xpath("//span[contains(text(),'Apply')]/following::div[1]/div/div[1]/div[3]/div/div[2]/div[2]/span");
-	private By temp = By.xpath("//span[contains(text(),'Apply')]/following::div[1]/div/div[1]/div[3]/div/div[2]/div[3]/span");
 
 	public void home() {
 		try {
@@ -68,7 +62,7 @@ public class Home extends BasePage{
 					break;
 				}
 			}
-			System.out.println(ct);
+			System.out.println(b+1);
 			click(home);
 			Thread.sleep(1000);
 			click(smart);
