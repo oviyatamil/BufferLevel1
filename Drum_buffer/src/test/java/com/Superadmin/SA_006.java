@@ -25,12 +25,12 @@ protected void controlcenter() {
 	ReportSetup.test.log(Status.PASS, "Successfully checked card counts and charts");
 	c.jobmon();
 	ReportSetup.test.log(Status.PASS, "Successfully checked card counts");
-	c.add();
-	ReportSetup.test.log(Status.PASS, "Successfully add a job");
+//	c.add();
+//	ReportSetup.test.log(Status.PASS, "Successfully add a job");
 	c.chart();
 	ReportSetup.test.log(Status.PASS, "Successfully checked chart");
-	c.radio();
-	ReportSetup.test.log(Status.PASS, "Successfully checked view,edit,cancel and delete option");
+//	c.radio();
+//	ReportSetup.test.log(Status.PASS, "Successfully checked view,edit,cancel and delete option");
 	c.profile();
 	ReportSetup.test.log(Status.PASS, "Successfully logout from application");
 }

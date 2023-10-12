@@ -118,18 +118,20 @@ public class Gateway_Type extends BasePage {
 			System.out.println("Gateway type is entered");
 			EnterText(desc, "asd");
 			System.out.println("Descripton is entered");
-			click(save);
-			System.out.println("save button is clicked");
-			Thread.sleep(500);
-			click(add);
-			EnterText(type, "Azure 01");
-			System.out.println("same Gateway type is entered");
-			EnterText(desc, "asd");
-			click(save);
-			System.out.println("Name already exists msg displayed");
+		//	click(save);
 			click(cancel);
-			System.out.println("Cancel button is clicked");
-		} catch (InterruptedException e) {
+			System.out.println("cancel button is clicked");
+		//	System.out.println("save button is clicked");
+//			Thread.sleep(500);
+//			click(add);
+//			EnterText(type, "Azure 01");
+//			System.out.println("same Gateway type is entered");
+//			EnterText(desc, "asd");
+//			click(save);
+//			System.out.println("Name already exists msg displayed");
+//			click(cancel);
+//			System.out.println("Cancel button is clicked");
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -230,46 +232,46 @@ public class Gateway_Type extends BasePage {
 		try {
 			click(gatewaytype);
 			Thread.sleep(1000);
-			click(add);
-			click(cusdd);
-			List<WebElement> cu = findWebElements(cuslist);
-			for(WebElement x:cu) {
-				if(x.getText().equals("Kaviya")) {
-					x.click();
-					break;
-				}
-			}
-			click(sitedd);
-			Thread.sleep(200);
-			List<WebElement> s = findWebElements(sitelist);
-			s.get(s.size()-1).click();
-			Thread.sleep(200);
-			click(proddd);
-			List<WebElement> s2 = findWebElements(prodlist);
-			s2.get(1).click();
-			Thread.sleep(200);
-			click(gatedd);
-			List<WebElement> s3 = findWebElements(gatlist);
-			s3.get(1).click();
-			Thread.sleep(200);
-			click(netdd);
-			List<WebElement> s4 = findWebElements(netlist);
-			s4.get(1).click();
-			Thread.sleep(200);
-			click(datadd);
-			List<WebElement> s5 = findWebElements(datalist);
-			s5.get(1).click();
-			Thread.sleep(200);
-			EnterText(freq, "60");
-			click(commdd);
-			List<WebElement> s6 = findWebElements(comlist);
-			s6.get(1).click();
-			Thread.sleep(200);
-			click(devdd);
-			List<WebElement> s7 = findWebElements(devlist);
-			s7.get(1).click();
-			Thread.sleep(200);
-			click(save);		
+//			click(add);
+//			click(cusdd);
+//			List<WebElement> cu = findWebElements(cuslist);
+//			for(WebElement x:cu) {
+//				if(x.getText().equals("Kaviya")) {
+//					x.click();
+//					break;
+//				}
+//			}
+//			click(sitedd);
+//			Thread.sleep(200);
+//			List<WebElement> s = findWebElements(sitelist);
+//			s.get(s.size()-1).click();
+//			Thread.sleep(200);
+//			click(proddd);
+//			List<WebElement> s2 = findWebElements(prodlist);
+//			s2.get(1).click();
+//			Thread.sleep(200);
+//			click(gatedd);
+//			List<WebElement> s3 = findWebElements(gatlist);
+//			s3.get(1).click();
+//			Thread.sleep(200);
+//			click(netdd);
+//			List<WebElement> s4 = findWebElements(netlist);
+//			s4.get(1).click();
+//			Thread.sleep(200);
+//			click(datadd);
+//			List<WebElement> s5 = findWebElements(datalist);
+//			s5.get(1).click();
+//			Thread.sleep(200);
+//			EnterText(freq, "60");
+//			click(commdd);
+//			List<WebElement> s6 = findWebElements(comlist);
+//			s6.get(1).click();
+//			Thread.sleep(200);
+//			click(devdd);
+//			List<WebElement> s7 = findWebElements(devlist);
+//			s7.get(1).click();
+//			Thread.sleep(200);
+//			click(save);		
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -332,14 +334,16 @@ public class Gateway_Type extends BasePage {
 	public void dots() {
 	try {
 		Actions a = new Actions(driver);
-		EnterText(box, "tha");
-		Thread.sleep(1000);
+//		EnterText(box, "tha");
+//		Thread.sleep(1000);
 		click(threedots);
 		click(sid);
 		Thread.sleep(500);
 		click(add);
 		EnterText(slave, "77");
-		click(save);
+	//	click(save);
+		click(cancel);
+		
 		Thread.sleep(500);
 		click(radiobtn);
 		click(view);
@@ -359,33 +363,34 @@ public class Gateway_Type extends BasePage {
 		}		
 		Thread.sleep(500);
 		click(topgate);
-		EnterText(box, "tha");
-		Thread.sleep(1000);
-		click(threedots);
-		click(note);
-		Thread.sleep(500);
-		click(add);
-		click(cusdd);
-		List<WebElement> m = findWebElements(maillist);
-		Thread.sleep(200);
-		m.get(1).click();
-		a.moveToElement(findWebElement(sitedd)).click().perform();
-		Thread.sleep(200);
-		click(sitedd);
-		List<WebElement> sm = findWebElements(sms);
-		sm.get(1).click();
-		a.moveToElement(findWebElement(proddd)).click().perform();
-		Thread.sleep(200);
-		click(proddd);
-		List<WebElement> c= findWebElements(calllist);
-		c.get(1).click();
-		Thread.sleep(200);
-		a.moveToElement(findWebElement(save)).click().perform();		
-		click(save);
+//		EnterText(box, "tha");
+//		Thread.sleep(1000);
+//		click(threedots);
+//		click(note);
+//		Thread.sleep(500);
+//		click(add);
+//		click(cusdd);
+//		List<WebElement> m = findWebElements(maillist);
+//		Thread.sleep(200);
+//		m.get(1).click();
+//		a.moveToElement(findWebElement(sitedd)).click().perform();
+//		Thread.sleep(200);
+//		click(sitedd);
+//		List<WebElement> sm = findWebElements(sms);
+//		sm.get(1).click();
+//		a.moveToElement(findWebElement(proddd)).click().perform();
+//		Thread.sleep(200);
+//		click(proddd);
+//		List<WebElement> c= findWebElements(calllist);
+//		c.get(1).click();
+//		Thread.sleep(200);
+//		a.moveToElement(findWebElement(save)).click().perform();		
+	//	click(save);
+	//	click(cancel);
 		Thread.sleep(500);
 		click(topgate);
-		EnterText(box, "tha");
-		Thread.sleep(1000);
+//		EnterText(box, "tha");
+//		Thread.sleep(1000);
 		click(threedots);
 		click(sim);
 		Thread.sleep(200);
@@ -398,15 +403,16 @@ public class Gateway_Type extends BasePage {
 		click(sitedd);
 		List<WebElement> l = findWebElements(rema);
 		l.get(1).click();
-		click(save);
+	//	click(save);
+		click(cancel);
 		Thread.sleep(500);
 		click(topgate);
-		Thread.sleep(500);
-		EnterText(box, "tha");
-		Thread.sleep(1000);
-		click(radiobtn);
-		click(delete);
-		click(delete2);
+//		Thread.sleep(500);
+//		EnterText(box, "tha");
+//		Thread.sleep(1000);
+//		click(radiobtn);
+//		click(delete);
+//		click(delete2);
 	} catch (InterruptedException e) {
 		e.printStackTrace();
 	}

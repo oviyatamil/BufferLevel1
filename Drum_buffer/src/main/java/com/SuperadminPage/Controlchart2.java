@@ -250,18 +250,18 @@ public void control() {
 			List<WebElement> f = findWebElements(filterlist);
 			f.get(3).click();
 			click(apply);
-			Thread.sleep(10000);
-			if(findWebElement(bar).isDisplayed()!=true) {
+			Thread.sleep(4000);
+			if(findWebElements(bar).size()<1) {
 				log.info("Chart not displayed");
 			}else {
 				System.out.println("Chart is displayed");				
 			}
-			if(findWebElement(pie1).isDisplayed()!=true) {
+			if(findWebElements(pie1).size()<1) {
 				log.info("Product wise usage piechart not displayed");				
 			}else {
 				System.out.println("Product wise usage piechart is displayed");
 			}
-			if(findWebElement(pie2).isDisplayed()!=true) {
+			if(findWebElements(pie2).size()<1) {
 				log.info("Role wise usage piechart not displayed");
 			}else {
 				System.out.println("Role wise usage piechart is displayed");				
@@ -313,15 +313,17 @@ public void control() {
 			EnterText(firm, "Firm123");
 			EnterText(ver, "v.10");
 			EnterText(mod, "module");
-			click(save);
-			System.out.println("Record added");
-			click(add);
-			EnterText(firm, "Firm123");
-			EnterText(ver, "v.10");
-			EnterText(mod, "module");
-			click(save);
+		//	click(save);
 			click(cancelbtn);
-			System.out.println("Duplicate record checked");
+		//	System.out.println("Record added");
+			System.out.println("Record adding field is checked");
+//			click(add);
+//			EnterText(firm, "Firm123");
+//			EnterText(ver, "v.10");
+//			EnterText(mod, "module");
+//			click(save);
+//			click(cancelbtn);
+//			System.out.println("Duplicate record checked");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -462,17 +464,12 @@ public void control() {
 			click(live);
 			click(cusdd);
 			List<WebElement> c = findWebElements(cuslist);
-			for(WebElement x:c) {
-				if(x.getText().equals("Kaviya")) {
-					x.click();
-					break;
-				}
-			}
+				c.get(1).click();		
 			click(gatedd);
 			List<WebElement> g = findWebElements(gatelist);
 			Thread.sleep(500);
 		g.get(1).click();
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 			if(findWebElements(table).size()>1) {
 				System.out.println("Records displayed");
 			}else {

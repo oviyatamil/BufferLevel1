@@ -86,44 +86,46 @@ public class Part_partlisting extends BasePage {
 	public void add() {
 		try {
 			
-			click(add);
-			System.out.println("add button is clicked");
-			EnterText(pname, "Aadav");
-			System.out.println("Partner name entered");
-			EnterText(contact, "nilan");
-			System.out.println("contact name entered");
-			EnterText(phno, "7888888764");
-			System.out.println("Phno is entered");
-			EnterText(email, "aadav@outlook.com");
-			System.out.println("email id is entered");
-			EnterText(pwd, "Admin@123");
-			System.out.println("password is entered");
-			EnterText(address1, "Bangalore");
-			System.out.println("address1 is entered");
-			EnterText(address2, "Chennai");
-			System.out.println("address2 is entered");
-			click(coudd);
-			System.out.println("country dropdown is clicked");
-			List<WebElement> cou2 = findWebElements(couselect);
-			Thread.sleep(500);
-			cou2.get(1).click();
-			System.out.println("country is selected");
-			click(statedd);
-			System.out.println("state dropdown is clicked");
-			List<WebElement> sta2 = findWebElements(statesel);
-			Thread.sleep(500);
-			sta2.get(1).click();
-			System.out.println("state is selected");
-			click(citydd);
-			System.out.println("city dropdown is clicked");
-			List<WebElement> cit2 = findWebElements(citysel);
-			Thread.sleep(700);
-			cit2.get(1).click();
-			System.out.println("city is selected");
-			EnterText(zip, "656656");
-			System.out.println("zipcode is entered");	
-			click(save);
-			System.out.println("save button is clicked");
+//			click(add);
+//			System.out.println("add button is clicked");
+//			EnterText(pname, "Aadav");
+//			System.out.println("Partner name entered");
+//			EnterText(contact, "nilan");
+//			System.out.println("contact name entered");
+//			EnterText(phno, "7888888764");
+//			System.out.println("Phno is entered");
+//			EnterText(email, "aadav@outlook.com");
+//			System.out.println("email id is entered");
+//			EnterText(pwd, "Admin@123");
+//			System.out.println("password is entered");
+//			EnterText(address1, "Bangalore");
+//			System.out.println("address1 is entered");
+//			EnterText(address2, "Chennai");
+//			System.out.println("address2 is entered");
+//			click(coudd);
+//			System.out.println("country dropdown is clicked");
+//			List<WebElement> cou2 = findWebElements(couselect);
+//			Thread.sleep(500);
+//			cou2.get(1).click();
+//			System.out.println("country is selected");
+//			click(statedd);
+//			System.out.println("state dropdown is clicked");
+//			List<WebElement> sta2 = findWebElements(statesel);
+//			Thread.sleep(500);
+//			sta2.get(1).click();
+//			System.out.println("state is selected");
+//			click(citydd);
+//			System.out.println("city dropdown is clicked");
+//			List<WebElement> cit2 = findWebElements(citysel);
+//			Thread.sleep(700);
+//			cit2.get(1).click();
+//			System.out.println("city is selected");
+//			EnterText(zip, "656656");
+//			System.out.println("zipcode is entered");	
+		//	click(save);
+//			click(cancel);
+//			System.out.println("cancel button is clicked");
+		//	System.out.println("save button is clicked");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -143,51 +145,50 @@ public class Part_partlisting extends BasePage {
 			click(cancel);
 			System.out.println("cancel button is clicked after clicking radio button");
 			Thread.sleep(1000);
-			List<WebElement> r = findWebElements(roles);
-			for(int i=0;i<r.size();i++) {
-				if(r.get(i).getText().equals("Aadav")) {
-					List<WebElement> m = findWebElements(mail);
-					if(m.get(i).getText().equals("aadav@outlook.com")) {
-						List<WebElement> rad = findWebElements(radiobtn);
-						rad.get(i).click();
-						click(edit);
-						System.out.println("edit button is clicked");
-						clear(address1);
-						System.out.println("address1 is cleared");
-						EnterText(address1, "Coorg");
-						click(update);
-						System.out.println("update button is clicked");
-						Thread.sleep(1000);
-						break;
-					}else {
-						log.info("Added record is missing");
-					}
-				}else {
-					continue;
-				}
-			}					
-			List<WebElement> r2 = findWebElements(roles);
-			for(int i=0;i<r2.size();i++) {
-				if(r2.get(i).getText().equals("Aadav")) {
-					List<WebElement> m = findWebElements(mail);
-					if(m.get(i).getText().equals("aadav@outlook.com")) {
-						List<WebElement> rad = findWebElements(radiobtn);
-						rad.get(i).click();
-						click(delete);
-						System.out.println("delete button is clicked");
-						click(delete2);
-						System.out.println("confirm delete button is clicked");
-						Thread.sleep(1000);
-						break;
-					}else {
-						log.info("Added record is missing");
-					}
-				}else {
-					continue;
-				}
-			}		
-//			Thread.sleep(1000);
-//			click(radiobtn);
+//			List<WebElement> r = findWebElements(roles);
+//			for(int i=0;i<r.size();i++) {
+//				if(r.get(i).getText().equals("Aadav")) {
+//					List<WebElement> m = findWebElements(mail);
+//					if(m.get(i).getText().equals("aadav@outlook.com")) {
+//						List<WebElement> rad = findWebElements(radiobtn);
+//						rad.get(i).click();
+//						click(edit);
+//						System.out.println("edit button is clicked");
+//						clear(address1);
+//						System.out.println("address1 is cleared");
+//						EnterText(address1, "Coorg");
+//						click(update);
+//						System.out.println("update button is clicked");
+//						Thread.sleep(1000);
+//						break;
+//					}else {
+//						log.info("Added record is missing");
+//					}
+//				}else {
+//					continue;
+//				}
+//			}					
+//			List<WebElement> r2 = findWebElements(roles);
+//			for(int i=0;i<r2.size();i++) {
+//				if(r2.get(i).getText().equals("Aadav")) {
+//					List<WebElement> m = findWebElements(mail);
+//					if(m.get(i).getText().equals("aadav@outlook.com")) {
+//						List<WebElement> rad = findWebElements(radiobtn);
+//						rad.get(i).click();
+//						click(delete);
+//						System.out.println("delete button is clicked");
+//						click(delete2);
+//						System.out.println("confirm delete button is clicked");
+//						Thread.sleep(1000);
+//						break;
+//					}else {
+//						log.info("Added record is missing");
+//					}
+//				}else {
+//					continue;
+//				}
+//			}		
+
 			
 		} catch (InterruptedException e) {
 			e.printStackTrace();

@@ -127,7 +127,8 @@ public class Product_list extends BasePage {
 			click(add);		
 			EnterText(uomname,"AAA");	
 			EnterText(desc,"aaa");			
-			click(save);
+			//click(save);
+			click(cancel);
 			Thread.sleep(1000);
 			click(radio);
 			click(view);

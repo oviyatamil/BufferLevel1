@@ -19,7 +19,7 @@ public class Home extends BasePage{
 	private By arr = By.xpath("(//div[contains(text(),'ARR')])[1]/ancestor::div[2]/div[1]/div");
 	private By revenue = By.xpath("(//div[contains(text(),'Revenue/Customer')])[1]/ancestor::div[2]/div[1]/div");
 	private By renewal = By.xpath("(//div[contains(text(),'RENEWAL RATE')])[1]/ancestor::div[2]/div[1]/div");
-	private By chart = By.xpath("//*[local-name()='g' and contains(@class,'manager-anchor-group')]/*[local-name()='g'][2]/*[local-name()='rect']");
+	private By chart = By.xpath("//*[local-name()='g' and contains(@class,'manager-anchor-group')]/*[local-name()='g'][1]/*[local-name()='rect']");
 	private By legend = By.xpath("(//*[local-name()='g' and contains(@class,'legend')])[2]/*[local-name()='g']/*[local-name()='rect']");
 	private By table = By.xpath("//table/tbody/tr/td");
 	private By view = By.xpath("(//span[contains(text(),'View')])");

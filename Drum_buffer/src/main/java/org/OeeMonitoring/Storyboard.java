@@ -65,7 +65,7 @@ public class Storyboard extends BasePage{
 	private By signout = By.xpath("//span[text()='Sign out']");
 	public void oee() {
 		try {
-			waittobeclickable(ninedots, 20);
+			Thread.sleep(1000);
 			click(ninedots);
 			log.info("Ninedots button is clicked");
 			waittobeclickable(Oee, 20);

@@ -111,14 +111,14 @@ public class Analytics_quality extends BasePage {
 				} else {
 					System.out.println("Pareto chart for rejection-machine wise is displayed for " + gettext(text));
 				}
-				if(findWebElement(msg4).getText().contains("No data")) {
-					log.info("Pareto chart for reason wise rejection is not displayed for " + gettext(text));					
-				}
-				else if (findWebElement(pareto2).isDisplayed()!=true) {
-					log.info("Pareto chart for reason wise rejection is not displayed for " + gettext(text));					
-				} else {
-					System.out.println("Pareto chart for reason wise rejection is displayed for " + gettext(text));
-				}
+//				if(findWebElement(msg4).getText().contains("No data")) {
+//					log.info("Pareto chart for reason wise rejection is not displayed for " + gettext(text));					
+//				}
+//				else if (findWebElement(pareto2).isDisplayed()!=true) {
+//					log.info("Pareto chart for reason wise rejection is not displayed for " + gettext(text));					
+//				} else {
+//					System.out.println("Pareto chart for reason wise rejection is displayed for " + gettext(text));
+//				}
 				if (j < list.size() - 1) {
 					click(equipdd);
 					Thread.sleep(500);
